@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 	
-	@GetMapping("/test")
-	public String home() {
-		log.info("/test");
-		
-		return "test";
-	}
+
 
 }

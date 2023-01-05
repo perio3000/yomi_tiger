@@ -7,12 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 @Controller
 public class RestfulOrderController {
-	
-	@GetMapping("/test")
-	public String home() {
-		log.info("/test");
-		
-		return "test";
-	}
+
 
 }
