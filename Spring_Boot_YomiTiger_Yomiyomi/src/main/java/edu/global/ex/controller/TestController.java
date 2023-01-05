@@ -1,4 +1,4 @@
-package edu.global.ex;
+package edu.global.ex.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
