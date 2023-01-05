@@ -25,7 +25,7 @@
 			</nav>
 		</div>
 		<div class="row">
-			<div class="col-3 text-center">
+			<div class="col-3 text-center profileContainer">
 				<div>
 					<img src="logo.png" class="rounded-circle" width="100px" height="100px">
 				</div>
@@ -47,14 +47,12 @@
 			</div>
 			<div class="col-9">
 				<div class="row">
-				
-					<div class="btn-group flex" role="group" aria-label="Basic radio toggle button group">
+					<div class="radioButtonGroup">
 						<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked> 
-						<label class="btn btn-outline-primary" for="btnradio1">알림</label> 
+						<label class="btn" for="btnradio1">알림</label> 
 						<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"> 
-						<label class="btn btn-outline-primary" for="btnradio2">추천</label>
+						<label class="btn" for="btnradio2">추천</label>
 					</div>
-					
 				</div>
 				<div class="row">
 					<div class="col-4 book_recommand1">
@@ -71,15 +69,15 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-3">
-			<a href="#">마이페이지</a><br>
-			<a href="#">주문 배송 목록</a><br>
-			<a href="#">포인트</a><br>
-			<a href="#">활동내역</a><br>
-			<a href="#">문의내역</a><br>
-			<a href="#">회원정보</a><br>
-			<br>
-			<a href="#">서재</a>
+			<div class="col-3 menuText">
+				<a href="#" class="menuTitle">마이페이지</a><br>
+				<a href="#">주문 배송 목록</a><br>
+				<a href="#">포인트</a><br>
+				<a href="#">활동내역</a><br>
+				<a href="#">문의내역</a><br>
+				<a href="#">회원정보</a><br>
+				<br>
+				<a href="#" class="menuTitle">서재</a>
 			</div>
 			<div class="col-9">
 				<div class="row">

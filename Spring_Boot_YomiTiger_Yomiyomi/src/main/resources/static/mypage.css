@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 main{
-	height: 100vh;
+	
 }
 #breadcrumb{
 	padding: 15px;
@@ -18,10 +18,22 @@ main{
 	height: 200px;
 	background-color: #F4EEFF;
 }
+.profileContainer{
+	background-color: #F4EEFF;
+	padding: 20px;
+}
 .profile{
-	width: 80%;
+	width: 150px;
 }
 .name{
 	font-size: 20px;
 	margin: 10px;
+}
+.menuText{
+	font-size: 15px;
+	padding: 40px;
+}
+.menuTitle{
+	font-size: 18px;
+	font-weight: bolder;
 }
