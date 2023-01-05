@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+main{
+	height: 100vh;
+}
+#breadcrumb{
+	padding: 15px;
+}
+.book_recommand1{
+	height: 200px;
+	background-color: #A6B1E1;
+}
+.book_recommand2{
+	height: 200px;
+	background-color: #DCD6F7;
+}
+.book_recommand3{
+	height: 200px;
+	background-color: #F4EEFF;
+}
+.profile{
+	width: 80%;
+}
+.name{
+	font-size: 20px;
+	margin: 10px;
+}

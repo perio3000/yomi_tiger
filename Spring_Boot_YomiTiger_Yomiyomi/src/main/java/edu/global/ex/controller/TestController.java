@@ -13,7 +13,7 @@ public class TestController {
 	public String home() {
 		log.info("/test");
 		
-		return "main_page";
+		return "mypage";
 	}
 
 }
