@@ -12,12 +12,14 @@
 <title>1:1 문의</title>
 
 <link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="css/sendiquiry.css">
 </head>
 <body>
    <main class="container">
-   		<div class="row">
-   			1:1 문의 접수
+   		<div class="row title">
+   			&nbsp;1:1 문의 접수
    		</div>
+   		<hr>
    		<div class="row">
    			<div class="col-md-2">
    				문의 유형<font color="blue">&nbsp;*</font>
@@ -25,9 +27,9 @@
    			<div class="col-md-10">
    				<select class="form-select" aria-label="Default select example">
   				<option selected>문의 유형을 선택해 주세요.</option>
-  				<option value="1">머지</option>
- 				<option value="2">머죠</option>
-  				<option value="3">머야</option>
+  				<option value="1">상품 문의</option>
+ 				<option value="2">배송 문의</option>
+  				<option value="3">교환/환불 문의</option>
 				</select>
    			</div>
    		</div>
@@ -37,17 +39,14 @@
    				내용<font color="blue">&nbsp;*</font>
    			</div>
    			<div class="col-md-10">
-   				<div class="form-floating">
-  					<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" ></textarea>
-  					<label for="floatingTextarea">제목을 입력해 주세요.</label>
-  					<!-- 높이 낮추고싶은데 그건 좀 나중에 해보겟읍니다. -->
-				</div>
-   			</div>
+  				<textarea class="form-control" placeholder="제목을 입력해 주세요." id="floatingTextarea2" style="height: 30px;"></textarea>
+  				<label for="floatingTextarea2"></label>
+			</div>
    			<br>
    			<div class="col-md-2"></div>
    			<div class="col-md-10">
-   				<textarea class="form-control" placeholder="10자 이상의 문의 내용을 입력해 주세요." id="floatingTextarea" ></textarea>
-  				<label for="floatingTextarea"></label>
+   				<textarea class="form-control" placeholder="10자 이상의 문의 내용을 입력해 주세요." id="floatingTextarea2" style="height: 250px;"></textarea>
+  				<label for="floatingTextarea2"></label>
    			</div>
    		</div>
    		<div class="row">
@@ -55,10 +54,11 @@
    				사진 첨부
    			</div>
    			<div class="col-md-10">
-   				사진들어갈건데<br>
-   				네모만들어야해<br>
-   				근데어케할지를<br>
-   				모르겠으니까요
+   				<div class="input-group mb-3">
+  					<input type="file" class="form-control" id="inputGroupFile02">
+  					<label class="input-group-text" for="inputGroupFile02">Upload</label>
+				</div>
+   				<!-- 얘는 네모.. 어케하지? 나중에 물어봐야겠당 -->
    			</div>
    		</div>
    		<div class="row">
@@ -67,6 +67,47 @@
    			<font color="gray">* JPG, PNG, GIF 파일만 최대 3장 업로드 가능합니다.</font>
    			</div>
    		</div>
+   		<hr>
+   		<div class="row notice">
+   			&nbsp;&nbsp;문의에 대한 답변 등록 시 알려드립니다.
+   		</div>
+   		<br>
+   		<div class="row">
+   			<div class="col-md-2">
+   				연락처<font color="blue">&nbsp;*</font>
+   			</div>
+   			<div class="col-md-3">
+  				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+  				<label class="form-check-label" for="flexRadioDefault1">
+    			휴대폰 번호
+  				</label>
+			</div>
+			<div class="col-md-3">
+				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+				<label class="form-check-label" for="flexRadioDefault2">
+				이메일
+  				</label>
+			</div>
+   		</div>
+   		<div class="row">
+   			<div class="col-md-2"></div>
+   			<div class="col-md-10">
+  				<textarea class="form-control" placeholder="휴대폰 번호를 '-' 제외 후 입력해 주세요." id="floatingTextarea2" style="height: 30px"></textarea>
+ 			 	<label for="floatingTextarea2"></label>
+ 			 	<!-- 이메일 주소 선택하고 입력할때는 이메일주소를 입력해 주세요가 텍스트박스에 떠야되는거 아닌가? 어케하징... -->
+			</div>
+   		</div>
+   		<hr>
+   		<br>
+   		<div class="row">
+   			<div class="col-md-4"></div>
+   			<div class="col-md-6">
+   				<button type="button" class="btn btn-secondary btn-lg" style="width: 200px">취소</button>
+   				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   				<button type="button" class="btn btn-primary btn-lg" style="width: 200px">문의접수</button>
+   			</div>
+   		</div>
+   		<br><br>
    </main>
 </body>
 </html>
