@@ -83,6 +83,7 @@
 		    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 		      <div class="accordion-body">
 					문의 내용
+					<!-- 이게 맞나...? 내가 원하던거랑은 다르긴 합니다. -->
 		      </div>
 		    </div>
 		  </div>

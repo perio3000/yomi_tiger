@@ -103,6 +103,7 @@
    			<div class="col-md-4"></div>
    			<div class="col-md-6">
    				<button type="button" class="btn btn-secondary btn-lg" style="width: 200px">취소</button>
+   				<!-- 색상을 좀 더 연한 회색으로 바꿀 수 있나? -->
    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    				<button type="button" class="btn btn-primary btn-lg" style="width: 200px">문의접수</button>
    			</div>

@@ -15,6 +15,8 @@ public class TestController {
 		
 		return "mypage";
 	}
+	
+	// 1:1 문의하기
 	@GetMapping("/test2")
 	public String home2() {
 		log.info("/test2");
@@ -22,6 +24,7 @@ public class TestController {
 		return "test_jh";
 	}
 	
+	// 1:1 문의내역 확인
 	@GetMapping("/test3")
 	public String home3() {
 		log.info("/test3");
