@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+main{
+	
+}
+#breadcrumb{
+	padding: 15px;
+}
+.profileContainer{
+	padding: 40px;
+}
+.profile{
+	width: 150px;
+	background-color: #F4EEFF;
+}
+.name{
+	font-size: 20px;
+	margin: 10px;
+}
+.menuText{
+	font-size: 15px;
+	padding: 40px;
+}
+.menuTitle{
+	font-size: 18px;
+	font-weight: bolder;
+}
+.recCard{
+	margin-top: 20px;
+	padding: 9px;
+	height: 250px;
+	width: 250px;
+}
+.categoryText{
+	padding: 20px;
+	font-size: 30px;
+	font-weight: bolder;
+	/* background-color: #F4EEFF; */
+}
+.pointCard{
+	width: 50%;
+	font-size: 20px;
+}
+.aTag{
+	padding: 0;
+}
+.libList{
+	height: 150px;
+	background-color: #424874;
+	color: white;
+}
+.addListBox{
+	padding: 16px 16px 16px 4px;
+}
+.addList{
+	height: 100%;
+}
+.addHref{
+	margin-bottom: 8px;
+	height: 150px;
+}
+.goGuide{
+	margin-right: 4px;
+	height: 150px;
+	background-color: #A6B1E1;
+}
+.goLibrary{
+	margin-left: 4px;
+	height: 150px;
+	background-color: #DCD6F7;
+}
+.continue{
+	height: 100%;
+	background-color: #F4EEFF;
+}
+.explText{
+	height: 100%;
+}
