@@ -21,5 +21,11 @@ public class TestController {
 		
 		return "test_jh";
 	}
-
+	
+	@GetMapping("/test3")
+	public String home3() {
+		log.info("/test3");
+		
+		return "test_jh2";
+	}
 }
