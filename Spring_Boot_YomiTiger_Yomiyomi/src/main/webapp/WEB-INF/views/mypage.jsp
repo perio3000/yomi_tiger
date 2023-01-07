@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-3 text-center profileContainer">
 				<div>
-					<img src="logo.png" class="rounded-circle" width="100px" height="100px">
+					<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
 				</div>
 				<div class="name">
 					'요미타이거'님
@@ -87,9 +87,13 @@
                         
                         <!-- 2번 탭 -->
                         <div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">
-                            <div class="accordion row flex-nowrap" id="accordionExample2">
-                            
-								알림
+                            <div class="row">
+	                            <div style="margin-top: 40px" class="d-flex justify-content-center">
+	                            	<img src="icon/attention.png" width="40px" height="40px">
+	                            </div>
+								<div class="d-flex justify-content-center">
+									알림 소식이 없습니다.
+								</div>
 								
                             </div>
                         </div>
@@ -102,7 +106,7 @@
 			<div class="col-3 menuText">
 				<a href="#" class="menuTitle">마이페이지</a><br>
 				<a href="#">주문 배송 목록</a><br>
-				<a href="#">포인트</a><br>
+				<a href="/pointtest">포인트</a><br>
 				<a href="#">활동내역</a><br>
 				<a href="#">문의내역</a><br>
 				<a href="#">회원정보</a><br>
@@ -183,9 +187,9 @@
 								기억하고 기록하는<br>
 								나만의 공간
 								</div>
-								<div class="explText">라이브러리</div>
+								<div class="explText fs-5" style="color: #424874">서재</div>
 								<div class="text-end">
-									<a href="#">라이브러리 ></a>
+									<a href="#">서재 ></a>
 								</div>
 							</div>	
 						</div>

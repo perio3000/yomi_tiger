@@ -9,11 +9,18 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class TestController {
 	
-	@GetMapping("/test")
-	public String home() {
-		log.info("/test");
+	@GetMapping("/mypagetest")
+	public String mypagetest() {
+		log.info("/mypagetest");
 		
 		return "mypage";
+	}
+	
+	@GetMapping("/pointtest")
+	public String pointtest() {
+		log.info("/pointtest");
+		
+		return "point";
 	}
 	
 	// 1:1 문의하기

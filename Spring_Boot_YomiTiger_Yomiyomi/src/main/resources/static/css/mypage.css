@@ -10,7 +10,7 @@ main{
 	padding: 40px;
 }
 .profile{
-	width: 150px;
+	width: 225px;
 	background-color: #F4EEFF;
 }
 .name{
@@ -40,6 +40,11 @@ main{
 .pointCard{
 	width: 50%;
 	font-size: 20px;
+}
+.pointCard2{
+	width: 100%;
+	font-size: 20px;
+	background: #F4EEFF;
 }
 .aTag{
 	padding: 0;
