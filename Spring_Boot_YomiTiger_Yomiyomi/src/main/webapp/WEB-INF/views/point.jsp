@@ -98,13 +98,31 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+										<h1 class="modal-title fs-3 fw-bolder" id="staticBackdropLabel">상세조회</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
-									<div class="modal-body">...</div>
+									<div class="modal-body">
+										<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
+											• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
+											• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
+										</div>
+										<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
+											기간조회
+										</div>
+										
+										<div class="input-group input-daterange">
+											<div class="input-group-addon">&nbsp;시작일&nbsp;</div>
+										    <input type="date" name="start_date">
+										    <div class="input-group-addon">&nbsp;/종료일&nbsp;</div>
+										    <input type="date" name="end_date">
+										</div>
+										
+									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Understood</button>
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
+											<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
+										</button>
+										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
 									</div>
 								</div>
 							</div>
@@ -129,6 +147,20 @@
 								</tr>
 							</tbody>
 						</table>
+					</div>
+					
+					<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 40px 0 40px 0">
+						<div style="font-size: 16px; font-weight: bolder; margin-bottom: 10px;">통합포인트 안내</div>
+					
+						• 요미요미(인터넷, 매장)에서 적립 및 사용이 가능합니다.<br>
+						• 포인트를 사용한 금액을 제외한 실 결제금액에 한해 포인트를 적립해 드립니다.<br>
+						• 포인트는 비현금성으로 현금이나 예치금으로 전환되지 않습니다.<br>
+						• 주문취소나 반품시에는 적립된 포인트 차감됩니다.<br><br>
+					
+						<div style="font-size: 16px; font-weight: bolder; margin-bottom: 10px;">포인트 만료기간 안내</div>
+
+						• 포인트는 만료되지 않습니다.<br>
+						• 영구적으로 적립됩니다.
 					</div>
 					
 				</div>
