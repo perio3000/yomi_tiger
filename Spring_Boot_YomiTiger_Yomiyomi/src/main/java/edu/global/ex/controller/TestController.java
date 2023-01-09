@@ -16,11 +16,34 @@ public class TestController {
 		return "mypage";
 	}
 	
+
+	@GetMapping("/login")
+	public String login() {
+		log.info("/login()...");
+		
+		return "login";
+	}
+
+
 	@GetMapping("/pointtest")
 	public String pointtest() {
 		log.info("/pointtest");
 		
 		return "point";
+	}
+	
+	@GetMapping("/orderdeliverylisttest")
+	public String orderdeliverylisttest() {
+		log.info("/orderdeliverylisttest");
+		
+		return "orderdeliverylist";
+	}
+	
+	@GetMapping("/activitylisttest")
+	public String activitylisttest() {
+		log.info("/activitylisttest");
+		
+		return "activitylist";
 	}
 	
 	// 1:1 문의하기
@@ -46,4 +69,5 @@ public class TestController {
 			
 		return "FAQ";
 	}
+
 }

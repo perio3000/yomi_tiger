@@ -54,9 +54,9 @@
 				<div class="row">
 					<div class="menuText">
 						<a href="#" class="menuTitle">마이페이지</a><br>
-						<a href="#">주문 배송 목록</a><br>
+						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
 						<a href="/pointtest">포인트</a><br>
-						<a href="#">활동내역</a><br>
+						<a href="/activitylisttest">활동내역</a><br>
 						<a href="#">문의내역</a><br>
 						<a href="#">회원정보</a><br>
 						<br>
@@ -143,10 +143,14 @@
 							
 							<tbody>
 								<tr>
-									<td colspan="5" class="text-center fs-4">포인트 적립 내역이 없습니다.</td>
+									
 								</tr>
 							</tbody>
 						</table>
+						
+						<div class="ifNoPoint fs-4 text-center" style="margin: 100px 0 100px 0">
+							포인트 적립 내역이 없습니다.
+						</div>
 					</div>
 					
 					<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 40px 0 40px 0">
