@@ -24,18 +24,26 @@ public class TestController {
 	}
 	
 	// 1:1 문의하기
-	@GetMapping("/test2")
-	public String home2() {
-		log.info("/test2");
+	@GetMapping("/1by1qna")
+	public String onebyoneqna() {
+		log.info("/1by1qna");
 		
-		return "test_jh";
+		return "1by1qna";
 	}
 	
 	// 1:1 문의내역 확인
-	@GetMapping("/test3")
-	public String home3() {
-		log.info("/test3");
+	@GetMapping("/qnalist")
+	public String qnalist() {
+		log.info("/qnalist");
 		
-		return "test_jh2";
+		return "qnalist";
+	}
+	
+	// 자주 묻는 질문
+	@GetMapping("/FAQ")
+	public String FAQ() {
+		log.info("/FAQ");
+			
+		return "FAQ";
 	}
 }

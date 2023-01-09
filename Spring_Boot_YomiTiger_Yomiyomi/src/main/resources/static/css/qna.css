@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+.notice{
+	font-size: 17px;
+}
+#phoneTextarea1{
+	display: block;
+}
+#emailTextarea2{
+	display: none;
+}
