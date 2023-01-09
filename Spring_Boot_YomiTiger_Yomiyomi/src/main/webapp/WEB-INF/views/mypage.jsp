@@ -105,9 +105,9 @@
 		<div class="row">
 			<div class="col-3 menuText">
 				<a href="#" class="menuTitle">마이페이지</a><br>
-				<a href="#">주문 배송 목록</a><br>
+				<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
 				<a href="/pointtest">포인트</a><br>
-				<a href="#">활동내역</a><br>
+				<a href="/activitylisttest">활동내역</a><br>
 				<a href="#">문의내역</a><br>
 				<a href="#">회원정보</a><br>
 				<br>

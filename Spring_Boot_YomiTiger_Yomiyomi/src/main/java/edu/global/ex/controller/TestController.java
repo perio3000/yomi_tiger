@@ -23,6 +23,20 @@ public class TestController {
 		return "point";
 	}
 	
+	@GetMapping("/orderdeliverylisttest")
+	public String orderdeliverylisttest() {
+		log.info("/orderdeliverylisttest");
+		
+		return "orderdeliverylist";
+	}
+	
+	@GetMapping("/activitylisttest")
+	public String activitylisttest() {
+		log.info("/activitylisttest");
+		
+		return "activitylist";
+	}
+	
 	// 1:1 문의하기
 	@GetMapping("/test2")
 	public String home2() {
