@@ -16,7 +16,7 @@ public class TestController {
 		return "mypage";
 	}
 	
-<<<<<<< HEAD
+
 	@GetMapping("/login")
 	public String login() {
 		log.info("/login()...");
@@ -24,7 +24,7 @@ public class TestController {
 		return "login";
 	}
 
-=======
+
 	@GetMapping("/pointtest")
 	public String pointtest() {
 		log.info("/pointtest");
@@ -61,5 +61,5 @@ public class TestController {
 		
 		return "test_jh2";
 	}
->>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
+
 }
