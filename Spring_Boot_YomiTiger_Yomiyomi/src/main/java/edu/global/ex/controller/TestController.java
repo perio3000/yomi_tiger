@@ -15,5 +15,12 @@ public class TestController {
 		
 		return "test";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		log.info("/login()...");
+		
+		return "login";
+	}
 
 }
