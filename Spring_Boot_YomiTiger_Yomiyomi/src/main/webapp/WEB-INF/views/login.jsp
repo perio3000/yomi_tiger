@@ -15,7 +15,8 @@
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
 
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -29,6 +30,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/loginstyle.css">
 </head>
 <body>
@@ -43,55 +45,82 @@
 
 		<div class="row header">
 			<div class="logo col-4">
-				<a href="main.jsp">
-					<img alt="logo" src="logo/logo.png">
+				<a href="main.jsp"> <img alt="logo" src="logo/logo.png">
 				</a>
 			</div>
 			<form class="search-form col-8" role="search">
-				<input class="search-control" type="search"
-					placeholder="Search" aria-label="Search">
+				<input class="search-control" type="search" placeholder="Search"
+					aria-label="Search">
 				<button class="search-btn" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</form>
 			<div class="header-icon col">
 				<ul class="row justify-content-end">
-					<li class="col-1"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
-					<li class="col-1"><a href="#"><i class="fa-regular fa-user fa-2x"></i></a></li>
+					<li class="col-1"><a href="#"><i
+							class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
+					<li class="col-1"><a href="#"><i
+							class="fa-regular fa-user fa-2x"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</header>
 	<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><span class="material-symbols-outlined">menu</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">베스트</a>
-        </li>
- 		<li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">신상품</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">이벤트</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Picks</a>
-        </li>
-        
-
-      </ul>
-     
-    </div>
-  </div>
-</nav>
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><span
+				class="material-symbols-outlined">menu</span></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">베스트</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">신상품</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">이벤트</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="#">Picks</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<main>
-		<div>메인</div>
+		<div class="container">
+			<div class="global-cont">
+				<div class="inner-cont">
+					<div class="sign">
+						<img alt="logo" src="logo/logo.png">
+					</div>
+					<div class="sign-in-up">
+						<form class="sign-in-form active">
+							<input type="text" placeholder="아이디를 입력해 주세요."> <input
+								type="password" placeholder="비밀번호를 입력해 주세요."> <span>
+								<input type="checkbox"> <label>아이디 저장</label>
+							</span> <a href="#">아이디/비밀번호 찾기</a> <input type="submit" value="로그인">
+						</form>
+
+						<div class="social-login">
+							<a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>
+							<a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+							<a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+						</div>
+
+						<div class="clearfix"></div>
+						<div class="policy">개인정보 보호를 위해 공용 PC에서 사용 시 SNS계정의 로그아웃 상태를
+							꼭 확인해 주세요.</div>
+						<button onclick="location.href='SignUp.html'">회원가입</button>
+						<div class="divider"></div>
+						<div class="Non-member-order">비회원 주문조회 ></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<footer> 푸터 </footer>
