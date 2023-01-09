@@ -23,7 +23,7 @@
 		<div class="row notice">
 			&nbsp; &nbsp; 자주 묻는 질문
 		</div>
-		<!-- 검색창 넣어야되는데 어케하징? -->
+		<!-- 검색창 넣어야되는데 어케하징? 낼 찾아보기-->
    </main>
 </body>
 </html>

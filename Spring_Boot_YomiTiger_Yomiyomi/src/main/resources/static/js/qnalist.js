@@ -46,6 +46,7 @@ if(key === "first"){
    $("#third-tab").removeClass("active");
    $("#fourth-tab").addClass("active");
    
+   
    $("#second").removeClass("show active");
    $("#first").removeClass("show active");
    $("#third").removeClass("show active");
