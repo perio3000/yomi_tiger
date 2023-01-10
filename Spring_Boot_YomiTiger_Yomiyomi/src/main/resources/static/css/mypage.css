@@ -84,4 +84,9 @@ main{
 .pageText{
 	color: black;
 }
+.accordion-button:active, .accordion-button:focus, .accordion-button {
+    outline:none !important;
+    box-shadow:none !important;
+    background: none !important;
+}
 

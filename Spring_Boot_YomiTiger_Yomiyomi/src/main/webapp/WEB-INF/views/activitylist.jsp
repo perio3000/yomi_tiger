@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/mypage.js"></script>
-<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 </head>
 <body>
@@ -53,11 +53,11 @@
 				
 				<div class="row">
 					<div class="menuText">
-						<a href="#" class="menuTitle">마이페이지</a><br>
+						<a href="/mypagetest" class="menuTitle">마이페이지</a><br>
 						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
 						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
-						<a href="#">문의내역</a><br>
+						<a href="/inquirylisttest">문의내역</a><br>
 						<a href="#">회원정보</a><br>
 						<br>
 						<a href="#" class="menuTitle">서재</a>
@@ -97,59 +97,379 @@
 
                         <!-- 1번 탭 -->
                         <div class="tab-pane fade show active col" id="first" role="tabpanel" aria-labelledby="first-tab">
-                           
-                        	
+                        
+                           	<div class="fs-5" style="margin-top: 20px;">
+                        		2023.01.06
+                        	</div>
+	                        <div class="card">
+								<div class="container px-4">
+									<div class="row gx-4">
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/heart.png" width="20px" height="20px">
+													<a href="#" onclick="secondTab()"><span style="line-height: 20px">좋아요</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3" style="display: flex; align-items: center;">
+														<a href="#" onclick="secondTab()"><img alt="" src="icon/more.png" width="30px" height="30px"></a>
+													</div>
+												</div>
+											</div>
+											
+											<div style="display: none;">
+												<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+													<img alt="" src="icon/warning.png" width="40px" height="40px">
+													해당하는 내용이 없습니다.
+												</div>
+											</div>
+											
+										</div>
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/bubbles.png" width="20px" height="20px">
+													<a href="#" onclick="thirdTab()"><span style="line-height: 20px">댓글</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3" style="display: flex; align-items: center;">
+														<a href="#" onclick="thirdTab()"><img alt="" src="icon/more.png" width="30px" height="30px"></a>
+													</div>
+												</div>
+											</div>
+											
+											<div style="display: none;">
+												<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+													<img alt="" src="icon/warning.png" width="40px" height="40px">
+													해당하는 내용이 없습니다.
+												</div>
+											</div>
+											
+										</div>
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/text_bubble.png" width="20px" height="20px">
+													<a href="#" onclick="fourthTab()"><span style="line-height: 20px">리뷰</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3" style="display: flex; align-items: center;">
+														<a href="#" onclick="fourthTab()"><img alt="" src="icon/more.png" width="30px" height="30px"></a>
+													</div>
+												</div>
+											</div>
+											
+											<div style="display: none;">
+												<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+													<img alt="" src="icon/warning.png" width="40px" height="40px">
+													해당하는 내용이 없습니다.
+												</div>
+											</div>
+								
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+					
+								<div style="margin-top: 20px;">
+									
+									<div class="d-flex justify-content-center">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Previous"> 
+														<span aria-hidden="true" class="pageText">&laquo;</span>
+													</a>
+												</li>
+												
+												<li class="page-item">
+													<a class="page-link" href="#" >
+														<span class="pageText">1</span>
+													</a>
+												</li>
+				
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Next"> 
+														<span aria-hidden="true" class="pageText">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+			
+								</div>
+									
+							</div>
                            
                         </div>
                         
                         <!-- 2번 탭 -->
                         <div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">
+                        
+                        <div class="fs-5" style="margin-top: 20px;">
+                        		2023.01.06
+                        	</div>
+	                        <div class="card">
+								<div class="container px-4">
+									<div class="row gx-4">
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/heart.png" width="20px" height="20px">
+													<a href="#" onclick="likeTab()"><span style="line-height: 20px">좋아요</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
+							<div style="display: none;">
+								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+									<img alt="" src="icon/warning.png" width="40px" height="40px">
+									해당하는 내용이 없습니다.
+								</div>
+							</div>
+							
+							<div class="row">
+					
+								<div style="margin-top: 20px;">
+									
+									<div class="d-flex justify-content-center">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Previous"> 
+														<span aria-hidden="true" class="pageText">&laquo;</span>
+													</a>
+												</li>
+												
+												<li class="page-item">
+													<a class="page-link" href="#" >
+														<span class="pageText">1</span>
+													</a>
+												</li>
+				
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Next"> 
+														<span aria-hidden="true" class="pageText">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+			
+								</div>
+									
+							</div>
 
                         </div>
                         
                         <!-- 3번 탭 -->
                         <div class="tab-pane fade col" id="third" role="tabpanel" aria-labelledby="third-tab">
+                        
+                        <div class="fs-5" style="margin-top: 20px;">
+                        		2023.01.06
+                        	</div>
+	                        <div class="card">
+								<div class="container px-4">
+									<div class="row gx-4">
+										
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/bubbles.png" width="20px" height="20px">
+													<a href="#" onclick="replyTab()"><span style="line-height: 20px">댓글</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
+							<div style="display: none;">
+								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+									<img alt="" src="icon/warning.png" width="40px" height="40px">
+									해당하는 내용이 없습니다.
+								</div>
+							</div>
+							
+							<div class="row">
+					
+								<div style="margin-top: 20px;">
+									
+									<div class="d-flex justify-content-center">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Previous"> 
+														<span aria-hidden="true" class="pageText">&laquo;</span>
+													</a>
+												</li>
+												
+												<li class="page-item">
+													<a class="page-link" href="#" >
+														<span class="pageText">1</span>
+													</a>
+												</li>
+				
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Next"> 
+														<span aria-hidden="true" class="pageText">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+			
+								</div>
+									
+							</div>
 
                         </div>
                         
                         <!-- 4번 탭 -->
                         <div class="tab-pane fade col" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
+                        
+                        <div class="fs-5" style="margin-top: 20px;">
+                        		2023.01.06
+                        	</div>
+	                        <div class="card">
+								<div class="container px-4">
+									<div class="row gx-4">
+										
+										<div class="col">
+											<div class="p-2">
+												<div style="display: flex; align-items: center;">
+													<img alt="" src="icon/text_bubble.png" width="20px" height="20px">
+													<a href="#" onclick="reviewTab()"><span style="line-height: 20px">리뷰</span></a>
+												</div>
+												<div class="row" style="padding: 10px 0 10px 0">
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													<div class="col-3 mb-3">
+														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							
+							<div style="display: none;">
+								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+									<img alt="" src="icon/warning.png" width="40px" height="40px">
+									해당하는 내용이 없습니다.
+								</div>
+							</div>
+							
+							<div class="row">
+					
+								<div style="margin-top: 20px;">
+									
+									<div class="d-flex justify-content-center">
+										<nav aria-label="Page navigation example">
+											<ul class="pagination">
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Previous"> 
+														<span aria-hidden="true" class="pageText">&laquo;</span>
+													</a>
+												</li>
+												
+												<li class="page-item">
+													<a class="page-link" href="#" >
+														<span class="pageText">1</span>
+													</a>
+												</li>
+				
+												<li class="page-item">
+													<a class="page-link" href="#" aria-label="Next"> 
+														<span aria-hidden="true" class="pageText">&raquo;</span>
+													</a>
+												</li>
+											</ul>
+										</nav>
+									</div>
+			
+								</div>
+									
+							</div>
 
                         </div>
                     </div>
 
 				
-				<div class="row">
-					
-					<div style="margin-top: 20px;">
-						
-						<div class="d-flex justify-content-center">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Previous"> 
-											<span aria-hidden="true" class="pageText">&laquo;</span>
-										</a>
-									</li>
-									
-									<li class="page-item">
-										<a class="page-link" href="#" >
-											<span class="pageText">1</span>
-										</a>
-									</li>
-	
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Next"> 
-											<span aria-hidden="true" class="pageText">&raquo;</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-
-					</div>
-						
-				</div>
+				
 				
 			</div>
 		</div>
