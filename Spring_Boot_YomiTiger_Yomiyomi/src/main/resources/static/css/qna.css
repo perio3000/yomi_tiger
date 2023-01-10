@@ -8,3 +8,9 @@
 .notice{
 	font-size: 17px;
 }
+#phoneTextarea1{
+	display: block;
+}
+#emailTextarea2{
+	display: none;
+}

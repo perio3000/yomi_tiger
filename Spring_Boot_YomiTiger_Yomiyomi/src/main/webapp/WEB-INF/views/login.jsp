@@ -65,10 +65,11 @@
 			</div>
 		</div>
 	</header>
-	<nav class="navbar navbar-expand-lg">
+	<nav class="navbar-head navbar-expand-lg">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><span
-				class="material-symbols-outlined">menu</span></a>
+			<a class="navbar-menu" href="#">
+				<span class="material-symbols-outlined">menu</span>
+			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -77,15 +78,18 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link nav-active"
 						aria-current="page" href="#">베스트</a></li>
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link nav-active"
 						aria-current="page" href="#">신상품</a></li>
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link nav-active"
 						aria-current="page" href="#">이벤트</a></li>
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link nav-active"
 						aria-current="page" href="#">Picks</a></li>
+
+
 				</ul>
+
 			</div>
 		</div>
 	</nav>
@@ -94,15 +98,18 @@
 		<div class="container">
 			<div class="global-cont">
 				<div class="inner-cont">
+				
 					<div class="sign">
 						<img alt="logo" src="logo/logo.png">
 					</div>
+					
 					<div class="sign-in-up">
 						<form class="sign-in-form active">
-							<input type="text" placeholder="아이디를 입력해 주세요."> <input
-								type="password" placeholder="비밀번호를 입력해 주세요."> <span>
-								<input type="checkbox"> <label>아이디 저장</label>
-							</span> <a href="#">아이디/비밀번호 찾기</a> <input type="submit" value="로그인">
+							<input type="text" placeholder="아이디를 입력해 주세요."> 
+							<input type="password" placeholder="비밀번호를 입력해 주세요.">
+							<input type="submit" value="로그인">
+							<span class="check"><input type="checkbox"><label>아이디 저장</label></span> 
+							<a href="#">아이디/비밀번호 찾기</a> 
 						</form>
 
 						<div class="social-login">
@@ -112,11 +119,13 @@
 						</div>
 
 						<div class="clearfix"></div>
-						<div class="policy">개인정보 보호를 위해 공용 PC에서 사용 시 SNS계정의 로그아웃 상태를
+						<div class="policy">개인정보 보호를 위해 공용 PC에서 사용 시 SNS계정의 <br>로그아웃 상태를
 							꼭 확인해 주세요.</div>
-						<button onclick="location.href='SignUp.html'">회원가입</button>
+						<div class="sign-up-button">
+							<button onclick="location.href='SignUp.html'">회원가입</button>
+						</div>
 						<div class="divider"></div>
-						<div class="Non-member-order">비회원 주문조회 ></div>
+						<div class="Non-member-order"><a href="#">비회원 주문조회 ></a></div>
 					</div>
 				</div>
 			</div>

@@ -57,8 +57,11 @@ header {
 .search-btn>i {
 	color: #bbb;
 }
-.navbar { border-bottom: 1px solid #bbb;}
-.active { font-size: 1.5em;}
-.material-symbols-outlined {font-size: 2em;}
-.navbar-brand { height: 47px;}
-.navbar-brand:hover {color: #A6B1E1;}
+.container-fluid {
+	display: felx;
+	justify-content: flex-start;
+}
+.navbar-head { border-bottom: 1px solid #bbb;}
+.nav-link { font-size: 1.5em; margin-right: 1em;}
+.material-symbols-outlined {font-size: 2.5em;}
+.nav-link:hover, .navbar-menu:hover {color: #A6B1E1;}
