@@ -125,7 +125,7 @@
 							<button onclick="location.href='SignUp.html'">회원가입</button>
 						</div>
 						<div class="divider"></div>
-						<div class="Non-member-order"><a href="#">비회원 주문조회 ></a></div>
+						<div class="Non-member-order"><a href="#">비회원 주문조회  ></a></div>
 					</div>
 				</div>
 			</div>
