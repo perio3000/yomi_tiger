@@ -99,7 +99,10 @@ label{ margin-left: 5px;}
 	color: #fff;
 	border-radius: 100px;
 }
-.btn-social-icon:hover { color: #424874;}
+.btn-social-icon:hover { 
+	color: #424874; 
+	border: 2px solid #424874; 
+}
 .check {display: flex; align-content: center;}
 .social-login{ margin: 20px 0;}
 .btn-social-icon>span{
@@ -118,10 +121,12 @@ label{ margin-left: 5px;}
 	cursor: pointer;
 	border: 1px solid #D3D3D3;
 	border-radius: 5px;
+	color: 	#696969;
 }
 .sign-up-button button:hover{
 	background-color: #424874;
 	color: #fff;
+	
 }
 .Non-member-order {
 	margin-top: 40px;

@@ -30,7 +30,6 @@ public class TestController {
 		return "login";
 	}
 
-
 	@GetMapping("/pointtest")
 	public String pointtest() {
 		log.info("/pointtest");
@@ -100,5 +99,13 @@ public class TestController {
 		log.info("/FAQ");
 			
 		return "FAQ";
+	}
+	
+	//아이디 비번 찾기
+	@GetMapping("/findIDPW")
+	public String findIDPW() {
+		log.info("/findIDPW()...");
+
+		return "findIDPW";
 	}
 }

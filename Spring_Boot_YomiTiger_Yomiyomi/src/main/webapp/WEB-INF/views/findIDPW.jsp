@@ -31,7 +31,6 @@
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/header.css">
-<link rel="stylesheet" type="text/css" href="css/loginstyle.css">
 </head>
 <body>
 	<header>
@@ -95,41 +94,7 @@
 	</nav>
 
 	<main>
-		<div class="container">
-			<div class="global-cont">
-				<div class="inner-cont">
-				
-					<div class="sign">
-						<img alt="logo" src="logo/logo.png">
-					</div>
-					
-					<div class="sign-in-up">
-						<form class="sign-in-form active">
-							<input type="text" placeholder="아이디를 입력해 주세요."> 
-							<input type="password" placeholder="비밀번호를 입력해 주세요.">
-							<input type="submit" value="로그인">
-							<span class="check"><input type="checkbox"><label>아이디 저장</label></span> 
-							<a href="findIDPW">아이디/비밀번호 찾기</a> 
-						</form>
-
-						<div class="social-login">
-							<a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>
-							<a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-							<a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
-						</div>
-
-						<div class="clearfix"></div>
-						<div class="policy">개인정보 보호를 위해 공용 PC에서 사용 시 SNS계정의 <br>로그아웃 상태를
-							꼭 확인해 주세요.</div>
-						<div class="sign-up-button">
-							<button onclick="location.href='SignUp.html'">회원가입</button>
-						</div>
-						<div class="divider"></div>
-						<div class="Non-member-order"><a href="#">비회원 주문조회 ></a></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div>아이디 비번찾기메인</div>
 	</main>
 
 	<footer> 푸터 </footer>
