@@ -94,7 +94,7 @@
 	</nav>
 
 	<main>
-		<div>메인</div>
+		<div>아이디 비번찾기메인</div>
 	</main>
 
 	<footer> 푸터 </footer>

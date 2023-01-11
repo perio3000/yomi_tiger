@@ -1,64 +1,133 @@
-body { 
-	width: 80%;
-	margin: 0 auto;
+.clearfix {
+  clear: both
 }
 
-header {
-	width: 100%; 
+.container {
+  margin: 15px auto;
+  overflow: hidden;
+  width: 460px;
+  padding: 30px 10px 10px;
 }
-.rightNav {
-	display: flex;
-	justify-content: flex-end;
-	margin: 3em 1em 0 0;
+.global-cont {
+  width: 420px;
+  margin: auto;
+  padding: 20px;
 }
-.rightNav li {
-	width: 5em;
-	text-align: center;
-	padding: 0;
+.inner-cont {
+  margin: auto;
+  overflow: hidden;
+  width: 400px;
+  text-align: center;
 }
-.header {
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-}
-.logo {
-	width: 9em;
-	margin-left: 4em;
-	margin-bottom: 1em;
-}
-.logo img {
-	margin-top: 1em;
-	width: 7em;
-	height: 7em;
-}
-.search-form{
-	position: relative;
-	width: 50em;
+.inner-cont .sign {
+  overflow: hidden;
 }
 
-.search-control {
+
+.inner-cont .sign-in-up {
+  padding: 25px;
+}
+.inner-cont .sign-in-up form {
+  overflow: hidden;
+  display: none;
+}
+.inner-cont .sign-in-up form > span,
+.inner-cont .sign-in-up form > a {
+  float: left;
+  width: 50%;
+  font-size: 1em;
+}
+.inner-cont .sign-in-up form > span {
+  text-align: left;
+}
+.inner-cont .sign-in-up form > a {
+  text-align: right;
+  text-decoration: none;
+  color: #424874;
+}
+.inner-cont .sign-in-up form > a:hover {
+  text-decoration: underline;
+}
+.inner-cont .sign-in-up form input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #C2C7D0;
+  border-radius: 5px;
+  box-sizing: border-box
+}
+.inner-cont .sign-in-up form input[type="submit"]{
+  margin-top: 10px;
+  background-color: #424874;
+  color: #FFF;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .3s
+}
+.inner-cont .sign-in-up form.active {
+  display: block;
+}
+.inner-cont .divider {
+  position: relative;
+  margin-bottom: 15px;
+}
+.inner-cont .divider::after{
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #C2C7D0;
+  position: absolute;
+  top: 9px;
+  left: 0;
+}
+
+.policy {
+  	font-size: 1em;
+  	margin: 30px 0;
+	color: grey;
+}
+.inner-cont .sign-in-up form input[type="submit"]:hover  {
+  opacity: .7
+}
+
+.sign { margin-top: 10px;}
+label{ margin-left: 5px;}
+.btn-social-icon {
+	width: 40px; height: 40px;
+	margin: 0 10px;
+	background-color: #424874;
+	color: #fff;
+	border-radius: 100px;
+}
+.btn-social-icon:hover { 
+	color: #424874; 
+	border: 2px solid #424874; 
+}
+.check {display: flex; align-content: center;}
+.social-login{ margin: 20px 0;}
+.btn-social-icon>span{
+	display:flex;
+	justify-content: center;
+	align-item: center;
+	padding-top:5px;
+}
+
+.sign-up-button button {
 	width: 100%;
-	border: 1px solid #bbb;
+	height: 40px;
+	margin: 10px 0;
+	background-color: #D3D3D3;
+	font-size: 18px;
+	cursor: pointer;
+	border: 1px solid #D3D3D3;
 	border-radius: 5px;
-	padding: 0.63em 0.75em;
-	font-size: 0.88em;
+	color: 	#696969;
 }
-.search-btn {
-	position: absolute;
-	width: 2em;
-	top: 0.6em;
-	right: 1.2em;
-	maring: 0;
-	padding: 0;
-	border: hidden;
-	background-color: white;
+.sign-up-button button:hover{
+	background-color: #424874;
+	color: #fff;
+	
 }
-.search-btn>i {
-	color: #bbb;
+.Non-member-order {
+	margin-top: 40px;
 }
-.navbar { border-bottom: 1px solid #bbb;}
-.active { font-size: 1.5em;}
-.material-symbols-outlined {font-size: 2em;}
-.navbar-brand { height: 47px;}
-.navbar-brand:hover {color: #A6B1E1;}

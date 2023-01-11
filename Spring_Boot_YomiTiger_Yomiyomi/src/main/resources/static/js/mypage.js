@@ -48,4 +48,14 @@ if(key === "first"){
 	$("#fourth").addClass("show active");
 }
 
+function secondTab(){
+	$("#second-tab").click();
+}
 
+function thirdTab(){
+	$("#third-tab").click();
+}
+
+function fourthTab(){
+	$("#fourth-tab").click();
+}

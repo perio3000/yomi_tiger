@@ -11,10 +11,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/mypage.js"></script>
-<link rel="stylesheet" type="text/css" href="reset.css">
+<link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 </head>
 <body>
+
+	<%-- <jsp:include page="header.jsp"></jsp:include> --%>
+	
 	<main class="container">
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -68,17 +71,17 @@
                             
 								<div class="card recCard recCard1 col-4">
 									<a href="#">
-										<img alt="" src="logo.png" class="rounded" width="230px" height="230px">
+										<img alt="" src="logo/logo.png" class="rounded" width="230px" height="230px">
 									</a>
 								</div>
                                 <div class="card recCard recCard2 col-4">
 									<a href="#">
-										<img alt="" src="logo.png" class="rounded" width="230px" height="230px">
+										<img alt="" src="logo/logo.png" class="rounded" width="230px" height="230px">
 									</a>
 								</div>
 								<div class="card recCard recCard3 col-4">
 									<a href="#">
-										<img alt="" src="logo.png" class="rounded" width="230px" height="230px">
+										<img alt="" src="logo/logo.png" class="rounded" width="230px" height="230px">
 									</a>
 								</div>
             
@@ -104,11 +107,11 @@
 		
 		<div class="row">
 			<div class="col-3 menuText">
-				<a href="#" class="menuTitle">마이페이지</a><br>
+				<a href="/mypagetest" class="menuTitle">마이페이지</a><br>
 				<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
 				<a href="/pointtest">포인트</a><br>
 				<a href="/activitylisttest">활동내역</a><br>
-				<a href="#">문의내역</a><br>
+				<a href="/inquirylisttest">문의내역</a><br>
 				<a href="#">회원정보</a><br>
 				<br>
 				<a href="#" class="menuTitle">서재</a>
