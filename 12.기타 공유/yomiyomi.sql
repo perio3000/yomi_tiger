@@ -1,4 +1,4 @@
-CREATE TABLE `yomi_user` (
+CREATE TABLE yomi_user (
 	id	number(30)	NOT NULL,
 	password	varchar2(100)	NOT NULL,
 	username	varchar2(100)	NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `yomi_user` (
 	bank	varchar2(100)	NULL
 );
 
-CREATE TABLE `yomi_item` (
+CREATE TABLE yomi_item (
 	id	number(30)	NOT NULL,
 	title	varchar2(100)	NOT NULL,
 	price	number(30)	NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE `yomi_item` (
 	event_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_event` (
+CREATE TABLE yomi_event (
 	id	number(30)	NOT NULL,
 	event_name	varchar2(100)	NOT NULL,
 	event_start	date	NULL,
@@ -39,27 +39,27 @@ CREATE TABLE `yomi_event` (
 	discount	number	NULL
 );
 
-CREATE TABLE `yomi_cart` (
+CREATE TABLE yomi_cart (
 	id	number(30)	NOT NULL,
 	amount	number(30)	NOT NULL,
 	item_id	number(30)	NOT NULL,
 	user_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_order` (
+CREATE TABLE yomi_order (
 	id	number(30)	NOT NULL,
 	order_date	date	NULL,
 	user_id	number(30)	NULL
 );
 
-CREATE TABLE `yomi_pay` (
+CREATE TABLE yomi_pay (
 	id	number(30)	NOT NULL,
 	pay_date	date	NULL,
 	pay_result	varchar2(100)	NULL,
 	order_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_delivery` (
+CREATE TABLE yomi_delivery (
 	id	number(30)	NOT NULL,
 	delivery_name	varchar2(100)	NULL,
 	delivery_date date	NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `yomi_delivery` (
 	order_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_nonmember` (
+CREATE TABLE yomi_nonmember (
 	name	varchar2(100)	NOT NULL,
 	tel	varchar2(20)	NOT NULL,
 	account	varchar2(100)	NULL,
@@ -76,7 +76,7 @@ CREATE TABLE `yomi_nonmember` (
 	order_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_orderdetail` (
+CREATE TABLE yomi_orderdetail (
 	amount	number(30)	NOT NULL,
 	recipient_name	varchar2(100)	NOT NULL,
 	recipient_postnumber	number(10)	NOT NULL,
@@ -88,13 +88,13 @@ CREATE TABLE `yomi_orderdetail` (
 	order_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_auth` (
+CREATE TABLE yomi_auth (
 	id	number(30)	NOT NULL,
 	authority	varchar2(100)	NULL,
 	user_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_board` (
+CREATE TABLE yomi_board (
 	board_id	number(30)	NOT NULL,
 	title	varchar2(100)	NOT NULL,
 	content	varchar2(3000)	NOT NULL,
@@ -104,18 +104,18 @@ CREATE TABLE `yomi_board` (
 	board_number	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_boardcategory` (
+CREATE TABLE yomi_boardcategory (
 	id	number(30)	NOT NULL,
 	board_name	varchar2(100)	NOT NULL
 );
 
-CREATE TABLE `yomi_review` (
+CREATE TABLE yomi_review (
 	board_id	number(30)	NOT NULL,
 	item_id	number(30)	NOT NULL,
 	order_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_addfile` (
+CREATE TABLE yomi_addfile (
 	id	number(30)	NOT NULL,
 	file_name	varchar2(100)	NOT NULL,
 	file_path	varchar2(200)	NOT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `yomi_addfile` (
 	board_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_reply` (
+CREATE TABLE yomi_reply (
 	id	number(30)	NOT NULL,
 	group	number(30)	NOT NULL,
 	step	number(10)	NULL,
@@ -133,13 +133,13 @@ CREATE TABLE `yomi_reply` (
 	board_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_ebook` (
+CREATE TABLE yomi_ebook (
 	bookmark	number(10)	NULL,
 	item_id	number(30)	NOT NULL,
 	user_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `yomi_image` (
+CREATE TABLE yomi_image (
 	id	number(30)	NOT NULL,
 	image	varchar2(300)	NULL,
 	image_order	number(10)	NULL,
