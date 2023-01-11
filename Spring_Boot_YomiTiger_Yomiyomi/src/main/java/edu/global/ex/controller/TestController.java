@@ -58,6 +58,13 @@ public class TestController {
 		return "inquirylist";
 	}
 	
+	@GetMapping("/userupdatetest")
+	public String userupdatetest() {
+		log.info("/userupdatetest");
+		
+		return "userupdate";
+	}
+	
 	// 1:1 문의하기
 	@GetMapping("/1by1qna")
 	public String onebyoneqna() {
