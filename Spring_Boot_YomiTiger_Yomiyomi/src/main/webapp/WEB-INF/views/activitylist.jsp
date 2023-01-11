@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-3">
+			<div class="col-md-3">
 				<div class="row">
 					<div class="text-center profileContainer">
 						<div>
@@ -58,14 +58,14 @@
 						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
 						<a href="/inquirylisttest">문의내역</a><br>
-						<a href="#">회원정보</a><br>
+						<a href="/userupdatetest">회원정보</a><br>
 						<br>
 						<a href="#" class="menuTitle">서재</a>
 					</div>
 				</div>
 			</div>
 			
-			<div class="col-9">
+			<div class="col-md-9">
 				<div class="row">
 					<div class="fs-1 fw-bolder">
 						활동내역

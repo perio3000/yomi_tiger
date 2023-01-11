@@ -27,7 +27,7 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-3">
+			<div class="col-md-3">
 				<div class="row">
 					<div class="text-center profileContainer">
 						<div>
@@ -58,14 +58,14 @@
 						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
 						<a href="/inquirylisttest">문의내역</a><br>
-						<a href="#">회원정보</a><br>
+						<a href="/userupdatetest">회원정보</a><br>
 						<br>
 						<a href="#" class="menuTitle">서재</a>
 					</div>
 				</div>
 			</div>
 			
-			<div class="col-9">
+			<div class="col-md-9">
 				<div class="row">
 					<div class="fs-1 fw-bolder">
 						문의내역
@@ -73,368 +73,368 @@
 				</div>
 				
 				<!-- 탭 메뉴 -->
-                    <ul class="nav nav-tabs d-flex mt-3" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first"
-                                type="button" role="tab" aria-controls="first" aria-selected="true" style="color: #325341; font-weight: bolder;">전체</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button"
-                                role="tab" aria-controls="second" aria-selected="false" style="color: #325341; font-weight: bolder;">준비중</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button"
-                                role="tab" aria-controls="third" aria-selected="false" style="color: #325341; font-weight: bolder;">처리중</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#fourth" type="button"
-                                role="tab" aria-controls="fourth" aria-selected="false" style="color: #325341; font-weight: bolder;">답변완료</button>
-                        </li>
-                    </ul>
-                
-                    <!-- 내용 -->
-                    <div class="tab-content d-flex justify-content-center row" id="myTabContent">
+                   <ul class="nav nav-tabs d-flex mt-3" id="myTab" role="tablist">
+                       <li class="nav-item" role="presentation">
+                           <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first"
+                               type="button" role="tab" aria-controls="first" aria-selected="true" style="color: #325341; font-weight: bolder;">전체</button>
+                       </li>
+                       <li class="nav-item" role="presentation">
+                           <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button"
+                               role="tab" aria-controls="second" aria-selected="false" style="color: #325341; font-weight: bolder;">준비중</button>
+                       </li>
+                       <li class="nav-item" role="presentation">
+                           <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button"
+                               role="tab" aria-controls="third" aria-selected="false" style="color: #325341; font-weight: bolder;">처리중</button>
+                       </li>
+                       <li class="nav-item" role="presentation">
+                           <button class="nav-link" id="fourth-tab" data-bs-toggle="tab" data-bs-target="#fourth" type="button"
+                               role="tab" aria-controls="fourth" aria-selected="false" style="color: #325341; font-weight: bolder;">답변완료</button>
+                       </li>
+                   </ul>
+               
+                   <!-- 내용 -->
+                   <div class="tab-content d-flex justify-content-center row" id="myTabContent">
 
-                        <!-- 1번 탭 -->
-                        <div class="tab-pane fade show active col" id="first" role="tabpanel" aria-labelledby="first-tab">
-                        
-                           	<div class="fs-5" style="margin-top: 20px;">
-                        		준비중
-                        	</div>
-	                        <div class="card">
-								<div class="p-3">
-								
-									<div>
-										<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div style="display: none;">
-										<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-											<img alt="" src="icon/warning.png" width="40px" height="40px">
-											해당하는 내용이 없습니다.
-										</div>
-									</div>
-								</div>
-							</div>
+                       <!-- 1번 탭 -->
+                       <div class="tab-pane fade show active col" id="first" role="tabpanel" aria-labelledby="first-tab">
+                       
+                          	<div class="fs-5" style="margin-top: 20px;">
+                       		준비중
+                       	</div>
+                        <div class="card">
+							<div class="p-3">
 							
-							<div class="fs-5" style="margin-top: 20px;">
-                        		처리중
-                        	</div>
-	                        <div class="card">
-	                        
-								<div class="p-3">
-									<div>
-										<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div style="display: none;">
-										<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-											<img alt="" src="icon/warning.png" width="40px" height="40px">
-											해당하는 내용이 없습니다.
-										</div>
-									</div>
-								</div>
-		
-							</div>
-							
-							<div class="fs-5" style="margin-top: 20px;">
-                        		답변완료
-                        	</div>
-	                        <div class="card">
-																
-								<div class="p-3">
-									<div>
-										<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>
-									
-									<div>
-										<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
-									</div>									
-									
-									<div style="display: none;">
-										<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-											<img alt="" src="icon/warning.png" width="40px" height="40px">
-											해당하는 내용이 없습니다.
-										</div>
-									</div>
+								<div>
+									<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
 								</div>
 								
-							</div>
-
-                        </div>
-                        
-                        <!-- 2번 탭 -->
-                        <div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">
-
-							<div class="accordion accordion-flush" id="accordionFlushExample_1">
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingOne">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-											aria-expanded="false" aria-controls="flush-collapseOne">
-											책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseOne" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingOne"
-										data-bs-parent="#accordionFlushExample_1">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the first item's accordion body.
-										</div>
-									</div>
+								<div>
+									<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
 								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingTwo">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-											aria-expanded="false" aria-controls="flush-collapseTwo">
-											책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingTwo"
-										data-bs-parent="#accordionFlushExample_1">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the second item's accordion body. Let's imagine
-											this being filled with some actual content.
-										</div>
-									</div>
+								
+								<div>
+									<a href="#" onclick="secondTab()">책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</a>
 								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingThree">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#flush-collapseThree" aria-expanded="false"
-											aria-controls="flush-collapseThree">
-											책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseThree"
-										class="accordion-collapse collapse"
-										aria-labelledby="flush-headingThree"
-										data-bs-parent="#accordionFlushExample_1">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the third item's accordion body. Nothing more
-											exciting happening here in terms of content, but just filling
-											up the space to make it look, at least at first glance, a bit
-											more representative of how this would look in a real-world
-											application.
-										</div>
+								
+								<div style="display: none;">
+									<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+										<img alt="" src="icon/warning.png" width="40px" height="40px">
+										해당하는 내용이 없습니다.
 									</div>
 								</div>
 							</div>
-							
-							<div style="display: none;">
-								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-									<img alt="" src="icon/warning.png" width="40px" height="40px">
-									해당하는 내용이 없습니다.
-								</div>
-							</div>
-
 						</div>
+						
+						<div class="fs-5" style="margin-top: 20px;">
+                       		처리중
+                       	</div>
+                        <div class="card">
                         
-                        <!-- 3번 탭 -->
-                        <div class="tab-pane fade col" id="third" role="tabpanel" aria-labelledby="third-tab">
-                        
-                        	<div class="accordion accordion-flush" id="accordionFlushExample_2">
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingOne">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-											aria-expanded="false" aria-controls="flush-collapseOne">
-											책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseOne" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingOne"
-										data-bs-parent="#accordionFlushExample_2">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the first item's accordion body.
-										</div>
+							<div class="p-3">
+								<div>
+									<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>
+								
+								<div>
+									<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>
+								
+								<div>
+									<a href="#" onclick="thirdTab()">책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>
+								
+								<div style="display: none;">
+									<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+										<img alt="" src="icon/warning.png" width="40px" height="40px">
+										해당하는 내용이 없습니다.
 									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingTwo">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-											aria-expanded="false" aria-controls="flush-collapseTwo">
-											책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingTwo"
-										data-bs-parent="#accordionFlushExample_2">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the second item's accordion body. Let's imagine
-											this being filled with some actual content.
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingThree">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#flush-collapseThree" aria-expanded="false"
-											aria-controls="flush-collapseThree">
-											책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseThree"
-										class="accordion-collapse collapse"
-										aria-labelledby="flush-headingThree"
-										data-bs-parent="#accordionFlushExample_2">
-										<div class="accordion-body">
-											Placeholder content for this accordion, which is intended to
-											demonstrate the
-											<code>.accordion-flush</code>
-											class. This is the third item's accordion body. Nothing more
-											exciting happening here in terms of content, but just filling
-											up the space to make it look, at least at first glance, a bit
-											more representative of how this would look in a real-world
-											application.
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div style="display: none;">
-								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-									<img alt="" src="icon/warning.png" width="40px" height="40px">
-									해당하는 내용이 없습니다.
-								</div>
-							</div>
-
-                        </div>
-                        
-                        <!-- 4번 탭 -->
-                        <div class="tab-pane fade col" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
-                        
-							<div class="accordion accordion-flush" id="accordionFlushExample_3">
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingOne">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-											aria-expanded="false" aria-controls="flush-collapseOne">
-											책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseOne" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingOne"
-										data-bs-parent="#accordionFlushExample_3">
-										<div class="accordion-body">
-											<div>
-												Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the first item's accordion body.
-											</div>
-											<div class="card mt-3 p-3">
-												답변Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the first item's accordion body.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingTwo">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-											aria-expanded="false" aria-controls="flush-collapseTwo">
-											책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="flush-headingTwo"
-										data-bs-parent="#accordionFlushExample_3">
-										<div class="accordion-body">
-											<div>
-												Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the second item's accordion body. Let's imagine
-												this being filled with some actual content.
-											</div>
-											<div class="card mt-3 p-3">
-												답변Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the first item's accordion body.
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="flush-headingThree">
-										<button class="accordion-button collapsed" type="button"
-											data-bs-toggle="collapse"
-											data-bs-target="#flush-collapseThree" aria-expanded="false"
-											aria-controls="flush-collapseThree">
-											책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
-									</h2>
-									<div id="flush-collapseThree"
-										class="accordion-collapse collapse"
-										aria-labelledby="flush-headingThree"
-										data-bs-parent="#accordionFlushExample_3">
-										<div class="accordion-body">
-											<div>
-												Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the third item's accordion body. Nothing more
-												exciting happening here in terms of content, but just filling
-												up the space to make it look, at least at first glance, a bit
-												more representative of how this would look in a real-world
-												application.
-											</div>
-											<div class="card mt-3 p-3">
-												답변Placeholder content for this accordion, which is intended to
-												demonstrate the
-												<code>.accordion-flush</code>
-												class. This is the first item's accordion body.
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div style="display: none;">
-								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-									<img alt="" src="icon/warning.png" width="40px" height="40px">
-									해당하는 내용이 없습니다.
 								</div>
 							</div>
 	
-                        </div>
-                    </div>
+						</div>
+						
+						<div class="fs-5" style="margin-top: 20px;">
+                       		답변완료
+                       	</div>
+                        <div class="card">
+															
+							<div class="p-3">
+								<div>
+									<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>
+								
+								<div>
+									<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>
+								
+								<div>
+									<a href="#" onclick="fourthTab()">책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</a>
+								</div>									
+								
+								<div style="display: none;">
+									<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+										<img alt="" src="icon/warning.png" width="40px" height="40px">
+										해당하는 내용이 없습니다.
+									</div>
+								</div>
+							</div>
+							
+						</div>
+
+                       </div>
+                       
+                       <!-- 2번 탭 -->
+                       <div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">
+
+						<div class="accordion accordion-flush" id="accordionFlushExample_1">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingOne">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+										aria-expanded="false" aria-controls="flush-collapseOne">
+										책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseOne" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingOne"
+									data-bs-parent="#accordionFlushExample_1">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the first item's accordion body.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingTwo">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+										aria-expanded="false" aria-controls="flush-collapseTwo">
+										책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingTwo"
+									data-bs-parent="#accordionFlushExample_1">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the second item's accordion body. Let's imagine
+										this being filled with some actual content.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingThree">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseThree" aria-expanded="false"
+										aria-controls="flush-collapseThree">
+										책 배송이 언제쯤 될까요? (준비중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseThree"
+									class="accordion-collapse collapse"
+									aria-labelledby="flush-headingThree"
+									data-bs-parent="#accordionFlushExample_1">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the third item's accordion body. Nothing more
+										exciting happening here in terms of content, but just filling
+										up the space to make it look, at least at first glance, a bit
+										more representative of how this would look in a real-world
+										application.
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div style="display: none;">
+							<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+								<img alt="" src="icon/warning.png" width="40px" height="40px">
+								해당하는 내용이 없습니다.
+							</div>
+						</div>
+
+					</div>
+                       
+                       <!-- 3번 탭 -->
+                       <div class="tab-pane fade col" id="third" role="tabpanel" aria-labelledby="third-tab">
+                       
+                       	<div class="accordion accordion-flush" id="accordionFlushExample_2">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingOne">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+										aria-expanded="false" aria-controls="flush-collapseOne">
+										책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseOne" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingOne"
+									data-bs-parent="#accordionFlushExample_2">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the first item's accordion body.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingTwo">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+										aria-expanded="false" aria-controls="flush-collapseTwo">
+										책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingTwo"
+									data-bs-parent="#accordionFlushExample_2">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the second item's accordion body. Let's imagine
+										this being filled with some actual content.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingThree">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseThree" aria-expanded="false"
+										aria-controls="flush-collapseThree">
+										책 배송이 언제쯤 될까요? (처리중) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseThree"
+									class="accordion-collapse collapse"
+									aria-labelledby="flush-headingThree"
+									data-bs-parent="#accordionFlushExample_2">
+									<div class="accordion-body">
+										Placeholder content for this accordion, which is intended to
+										demonstrate the
+										<code>.accordion-flush</code>
+										class. This is the third item's accordion body. Nothing more
+										exciting happening here in terms of content, but just filling
+										up the space to make it look, at least at first glance, a bit
+										more representative of how this would look in a real-world
+										application.
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div style="display: none;">
+							<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+								<img alt="" src="icon/warning.png" width="40px" height="40px">
+								해당하는 내용이 없습니다.
+							</div>
+						</div>
+
+                       </div>
+                       
+                       <!-- 4번 탭 -->
+                       <div class="tab-pane fade col" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
+                       
+						<div class="accordion accordion-flush" id="accordionFlushExample_3">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingOne">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+										aria-expanded="false" aria-controls="flush-collapseOne">
+										책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseOne" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingOne"
+									data-bs-parent="#accordionFlushExample_3">
+									<div class="accordion-body">
+										<div>
+											Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the first item's accordion body.
+										</div>
+										<div class="card mt-3 p-3">
+											답변Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the first item's accordion body.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingTwo">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+										aria-expanded="false" aria-controls="flush-collapseTwo">
+										책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="flush-headingTwo"
+									data-bs-parent="#accordionFlushExample_3">
+									<div class="accordion-body">
+										<div>
+											Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the second item's accordion body. Let's imagine
+											this being filled with some actual content.
+										</div>
+										<div class="card mt-3 p-3">
+											답변Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the first item's accordion body.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="flush-headingThree">
+									<button class="accordion-button collapsed" type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#flush-collapseThree" aria-expanded="false"
+										aria-controls="flush-collapseThree">
+										책 배송이 언제쯤 될까요? (답변완료) 문의 일자 : 2023.01.06 12:43:08</button>
+								</h2>
+								<div id="flush-collapseThree"
+									class="accordion-collapse collapse"
+									aria-labelledby="flush-headingThree"
+									data-bs-parent="#accordionFlushExample_3">
+									<div class="accordion-body">
+										<div>
+											Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the third item's accordion body. Nothing more
+											exciting happening here in terms of content, but just filling
+											up the space to make it look, at least at first glance, a bit
+											more representative of how this would look in a real-world
+											application.
+										</div>
+										<div class="card mt-3 p-3">
+											답변Placeholder content for this accordion, which is intended to
+											demonstrate the
+											<code>.accordion-flush</code>
+											class. This is the first item's accordion body.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div style="display: none;">
+							<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
+								<img alt="" src="icon/warning.png" width="40px" height="40px">
+								해당하는 내용이 없습니다.
+							</div>
+						</div>
+
+                       </div>
+                   </div>
 
 				
 				
