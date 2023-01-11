@@ -31,6 +31,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/findidpw.css">
 </head>
 <body>
 	<header>
@@ -66,7 +67,7 @@
 	</header>
 	<nav class="navbar-head navbar-expand-lg">
 		<div class="container-fluid">
-			<a class="navbar-menu" href="#">
+			<a class="navbar-menu" href="#"> 
 				<span class="material-symbols-outlined">menu</span>
 			</a>
 			<button class="navbar-toggler" type="button"
@@ -77,26 +78,111 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">베스트</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">신상품</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">이벤트</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">Picks</a></li>
-
-
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">베스트</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">신상품</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">이벤트</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">Picks</a>
+					</li>
 				</ul>
-
 			</div>
 		</div>
 	</nav>
 
-	<main>
-		<div>아이디 비번찾기메인</div>
-	</main>
+	<section>
+		<div class="container">
+			<div class="global-cont">
+				<div class="inner-cont">
+					<img alt="logo" src="logo/logo.png">
+					<div class="find">
+						<span class="active find-id">아이디 찾기</span> 
+						<span class="find-pw">비밀번호 찾기</span>
+					</div>
+					<div class="find-id-pw">
+						<form class="find-id-form active">
+							<div class="formst">
+								<label>이름</label>
+								<input type="text" id="" placeholder="이름을 입력해 주세요."> 
+							</div>
+							<div class="formst">
+								<label>생년월일</label>
+								<input type="password" id="" placeholder="생년월일 8자리를 입력해 주세요.">  
+							</div>
+							<div class="formst">
+								<label>이메일</label>
+								<input type="text" id="" placeholder="이메일을 입력해 주세요.">  
+							</div>
+							<div class="formst">
+								<input type="submit" value="확인">
+							</div>
+						</form>
+						<form class="find-pw-form">
+							<div class="formst">
+								<label>아이디</label>
+								<input type="text" id="" placeholder="아이디를 입력해 주세요."> 
+							</div>
+							<div class="formst">
+								<label>이름</label>
+								<input type="text" id="" placeholder="이름을 입력해 주세요."> 
+							</div>
+							<div class="formst">
+								<label>생년월일</label>
+								<input type="password" id="" placeholder="생년월일 8자리를 입력해 주세요.">  
+							</div>
+							<div class="formst">
+								<label>이메일</label>
+								<input type="text" id="" placeholder="이메일을 입력해 주세요.">  
+							</div>
+							<div class="formst">
+								<input type="submit" value="인증번호 발송">
+							</div>
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<footer> 푸터 </footer>
+	
+	<script type="text/javascript">
+	let spanOption = document.querySelectorAll(".find span");
+
+	spanOption.forEach(function (span) {
+	    span.addEventListener("click", function (e) {
+	        
+	        //Remove class active
+	        e.target.parentElement.querySelectorAll(".active").forEach(function (element) {
+	            element.classList.remove("active");
+	        });
+	        //Add class active
+	        e.target.classList.add("active");
+	      
+	       if (e.target.classList.contains("find-id")) {
+	         
+	        document.querySelectorAll(".find-id-pw form").forEach(function (element) {
+	            element.classList.remove("active");
+	        });
+	         
+	        document.querySelector(".find-id-form").classList.add("active");
+	        
+	       } else {
+	         
+	        document.querySelectorAll(".find-id-pw form").forEach(function (element) {
+	            element.classList.remove("active");
+	        });
+	         
+	        document.querySelector(".find-pw-form").classList.add("active");
+	       }
+	    })
+	})
+	</script>
 </body>
 </html>

@@ -48,18 +48,15 @@
 				</a>
 			</div>
 			<form class="search-form col-8" role="search">
-				<input class="search-control" type="search" placeholder="Search"
-					aria-label="Search">
+				<input class="search-control" type="search" placeholder="Search" aria-label="Search">
 				<button class="search-btn" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</form>
 			<div class="header-icon col">
 				<ul class="row justify-content-end">
-					<li class="col-1"><a href="#"><i
-							class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
-					<li class="col-1"><a href="#"><i
-							class="fa-regular fa-user fa-2x"></i></a></li>
+					<li class="col-1"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
+					<li class="col-1"><a href="#"><i class="fa-regular fa-user fa-2x"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -77,18 +74,19 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">베스트</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">신상품</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">이벤트</a></li>
-					<li class="nav-item"><a class="nav-link nav-active"
-						aria-current="page" href="#">Picks</a></li>
-
-
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">베스트</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">신상품</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">이벤트</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-active" aria-current="page" href="#">Picks</a>
+					</li>
 				</ul>
-
 			</div>
 		</div>
 	</nav>

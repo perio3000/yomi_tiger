@@ -108,4 +108,12 @@ public class TestController {
 
 		return "findIDPW";
 	}
+	
+	//장바구니
+	@GetMapping("/cart")
+	public String cart() {
+		log.info("/cart()...");
+
+		return "cart";
+	}
 }
