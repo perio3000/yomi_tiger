@@ -127,9 +127,9 @@ CREATE TABLE yomi_addfile (
 
 CREATE TABLE yomi_reply (
 	id	number(30)	NOT NULL,
-	group	number(30)	NOT NULL,
-	step	number(10)	NULL,
-	indent	number(10)	NULL,
+	reply_group	number(30)	NOT NULL,
+	reply_step	number(10)	NULL,
+	reply_indent	number(10)	NULL,
 	board_id	number(30)	NOT NULL
 );
 
