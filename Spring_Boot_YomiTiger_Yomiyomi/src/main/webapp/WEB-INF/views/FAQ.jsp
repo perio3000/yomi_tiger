@@ -25,7 +25,8 @@
 		   		</div>
 		   		<br>
 		   		<div class="notice">메인</div>
-		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; -->
+		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; 
+		   			 이거 틀 몇페이지에는 이용할거니까 잘 냅두기-->
 		   		<div class="">
 					<a href="#" class="qnaMenu">자주 묻는 질문<br></a>
 					<a href="#" class="qnaMenu">회원</a><br>
