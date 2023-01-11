@@ -8,27 +8,32 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class TestController {
-	
+
 	@GetMapping("/mypagetest")
 	public String mypagetest() {
 		log.info("/mypagetest");
-		
+
 		return "mypage";
 	}
-	
+	//헤더
+	@GetMapping("/header")
+	public String header() {
+		log.info("/header()...");
 
+		return "header";
+	}
+	//로그인
 	@GetMapping("/login")
 	public String login() {
 		log.info("/login()...");
-		
+
 		return "login";
 	}
-
 
 	@GetMapping("/pointtest")
 	public String pointtest() {
 		log.info("/pointtest");
-		
+
 		return "point";
 	}
 	
@@ -66,16 +71,17 @@ public class TestController {
 		log.info("/1by1qna");
 		
 		return "1by1qna";
+
 	}
-	
-	// 1:1 문의내역 확인
+
 	@GetMapping("/qnalist")
 	public String qnalist() {
 		log.info("/qnalist");
 		
 		return "qnalist";
+
 	}
-	
+
 	// 자주 묻는 질문
 	@GetMapping("/FAQ")
 	public String FAQ() {
@@ -84,5 +90,11 @@ public class TestController {
 		return "FAQ";
 	}
 	
+	//아이디 비번 찾기
+	@GetMapping("/findIDPW")
+	public String findIDPW() {
+		log.info("/findIDPW()...");
 
+		return "findIDPW";
+	}
 }
