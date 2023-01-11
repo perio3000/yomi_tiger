@@ -157,7 +157,7 @@
 				    </tr>
 				</tfoot>
 		</form>
-	</table>
+	</table>	
 	<div class="cart__mainbtns">
 	    <button class="cart__bigorderbtn left">쇼핑 계속하기</button>
 	    <button class="cart__bigorderbtn right">주문하기</button>
