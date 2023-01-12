@@ -156,7 +156,6 @@
 							<button class="cart-list-optionbtn">선택상품 삭제</button>
 							<button class="cart-list-optionbtn">선택상품 찜</button>
 						</td>
-
 					</tr>
 				</tfoot>
 			</form>
