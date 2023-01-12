@@ -7,7 +7,27 @@
 
 .notice{
 	font-size: 17px;
+	font-weight: bold;
 }
+
+.qnaMenu{
+	font-size: 14px;
+}
+/* 고객센터번호, 근무시간 등 */
+.customerInfo{
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.customerInfo2{
+	font-size:15px;
+}
+
+.custmomerNum{
+	font-size: 18px;
+	color: #148ffe;
+}
+
 #phoneTextarea1{
 	display: block;
 }

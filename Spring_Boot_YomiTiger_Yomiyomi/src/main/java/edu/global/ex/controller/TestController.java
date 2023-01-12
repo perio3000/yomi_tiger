@@ -36,16 +36,6 @@ public class TestController {
 
 		return "point";
 	}
-
-
-	// 1:1 문의하기
-	@GetMapping("/test2")
-	public String home2() {
-		log.info("/test2");
-
-		return "test_jh";
-	}
-
 	
 	@GetMapping("/orderdeliverylisttest")
 	public String orderdeliverylisttest() {
@@ -68,6 +58,13 @@ public class TestController {
 		return "inquirylist";
 	}
 	
+	@GetMapping("/userupdatetest")
+	public String userupdatetest() {
+		log.info("/userupdatetest");
+		
+		return "userupdate";
+	}
+	
 	// 1:1 문의하기
 	@GetMapping("/1by1qna")
 	public String onebyoneqna() {
@@ -75,14 +72,6 @@ public class TestController {
 		
 		return "1by1qna";
 
-	}
-
-	// 1:1 문의내역 확인
-	@GetMapping("/test3")
-	public String home3() {
-		log.info("/test3");
-
-		return "test_jh2";
 	}
 
 	@GetMapping("/qnalist")

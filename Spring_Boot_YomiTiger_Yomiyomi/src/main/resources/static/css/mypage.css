@@ -28,8 +28,8 @@ main{
 .recCard{
 	margin-top: 20px;
 	padding: 9px;
-	height: 250px;
-	width: 250px;
+	height: 15vw;
+	width: 15vw;
 }
 .categoryText{
 	padding: 20px;
@@ -89,4 +89,47 @@ main{
     box-shadow:none !important;
     background: none !important;
 }
-
+/* userupdate페이지  */
+.updateBtn{
+	width: 76px; 
+	height: 38px; 
+	line-height: 38px;
+	background-color: #424874;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+}
+.resetBtn{
+	width: 100%;
+	height: 40px;
+	line-height: 38px;
+	background-color: #DCD6F7;
+	border-radius: 10px;
+	font-size: 20px;
+	border: none;
+}
+.submitBtn{
+	width: 100%;
+	height: 40px;
+	line-height: 38px;
+	background-color: #424874;
+	border-radius: 10px;
+	font-size: 20px;
+	border: none;
+	color: white;
+}
+.resetBtn:hover {
+	color: white;
+}
+.submitBtn:hover {
+	color: #DCD6F7;
+}
+.loginSet{
+	width: 150px; 
+	height: 38px; 
+	line-height: 38px;
+	background-color: #424874;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+}
