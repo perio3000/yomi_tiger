@@ -61,7 +61,7 @@
 						<a href="/inquirylisttest">문의내역</a><br>
 						<a href="/userupdatetest">회원정보</a><br>
 						<br>
-						<a href="#" class="menuTitle">서재</a>
+						<a href="/librarytest" class="menuTitle">서재</a>
 					</div>
 				</div>
 			</div>

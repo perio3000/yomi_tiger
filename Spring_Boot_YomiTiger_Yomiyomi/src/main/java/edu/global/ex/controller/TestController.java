@@ -65,6 +65,13 @@ public class TestController {
 		return "userupdate";
 	}
 	
+	@GetMapping("/librarytest")
+	public String librarytest() {
+		log.info("/librarytest");
+		
+		return "library";
+	}
+	
 	// 1:1 문의하기
 	@GetMapping("/1by1qna")
 	public String onebyoneqna() {
