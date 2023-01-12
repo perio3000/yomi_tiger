@@ -25,7 +25,26 @@
 
 .custmomerNum{
 	font-size: 18px;
-	color: #148ffe;
+	color: #A6B1E1;
+	font-weight: bold;
+}
+
+.table{
+	text-align: center;
+	width: 700px;
+}
+
+.btn{
+	/* background-color: #A6B1E1; 
+	color: #424874; */
+	background-color: #424874; 
+	color: #A6B1E1;
+}
+
+.accordion-button:active, .accordion-button:focus, .accordion-button {
+    outline:none !important;
+    box-shadow:none !important;
+    background: none !important;
 }
 
 #phoneTextarea1{

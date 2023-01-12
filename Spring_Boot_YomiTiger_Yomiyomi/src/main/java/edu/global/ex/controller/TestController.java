@@ -90,6 +90,14 @@ public class TestController {
 		return "FAQ";
 	}
 	
+	// 자주 묻는 질문
+	@GetMapping("/customercenter")
+	public String custmoercenter() {
+		log.info("/customercenter");
+				
+		return "customercenter";
+	}
+		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
 	public String findIDPW() {
