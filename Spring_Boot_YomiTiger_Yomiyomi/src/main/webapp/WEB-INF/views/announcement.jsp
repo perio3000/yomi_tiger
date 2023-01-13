@@ -12,10 +12,10 @@
 <%-- <jsp:include page="header.jsp"></jsp:include> --%>
 <!-- 얘가 들어가면 비율이 좀 달라지는 이슈..나중에 생각할게요 -->
 <meta charset="UTF-8">
-<title>고객센터</title>
+<title>공지사항</title>
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/customercenter.css">
+<link rel="stylesheet" type="text/css" href="css/announcement.css">
 </head>
 <body>
    <main class="container">
@@ -58,79 +58,23 @@
    			
    			<div class="col-md-9">
    			<br><br><br>
-   				<div class="col notice">자주 묻는 질문</div>
+   				<div class="col notice">공지사항</div>
 				
 				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
 					<div class="">
-						<input class="form-control" type="text" placeholder="질문을 검색해보세요." aria-label="default input example">
+						<input class="form-control" type="text" placeholder="공지사항을 검색해보세요." aria-label="default input example">
 					</div>
 					<div class="">
 					  	<button type="button" class="btn">검색</button>
 					</div>
 				</div>
 				<br>
-				<div class="d-flex justify-content-center align-items-center" style="height: 150px; border: 1px solid #F4EEFF;">
-					<table class="table menu">
-					  <tbody>
-					    <tr>
-					      <td><a href="#" class="qnaMenu">회원</a></td>
-					      <td><a href="#" class="qnaMenu">도서/상품정보</a></td>
-					      <td><a href="#" class="qnaMenu">주문/결제</a></td>
-					    </tr>
-					    <tr>
-					      <td><a href="#" class="qnaMenu">배송</a></td>
-					      <td><a href="#" class="qnaMenu">반품/교환/환불</a></td>
-					      <td><a href="#" class="qnaMenu">세금계산서/증빙</a></td>
-					    </tr>
-					    <tr>
-					      <td><a href="#" class="qnaMenu">기타</a></td>
-					      <td><a href="#" class="qnaMenu">eBook</a></td>
-					    </tr>
-					  </tbody>
-					</table>
-   			  	</div>
+				
    			  	<br>
-   				<div class="row notice-area">
-   				<!-- 옆 라인이 안맞아서 한쪽만 패딩줬더니 둘이 떨어졌어요...흥입니다. -->
-	   				<h2 class="notice">1:1 문의</h2>
-					<div class="col-md-3">
-						<div class="d-flex justify-content-center align-items-center flex-column" style="height: 150px; background-color: #F4EEFF;">
-							<div>
-								<i class="ri-question-answer-line ri-3x"></i>
-							</div>
-							<div>
-								<a href="1by1qna" class="qnaMenu">1:1문의 접수</a>
-							</div>
-						</div>
-					</div>
-					<!-- <span></span> -->	
-					<div class="col-md-3">
-						<div class="d-flex justify-content-center align-items-center flex-column list" style="height: 150px;background-color: #F4EEFF;">
-							<div>
-								<i class="ri-file-list-3-line ri-3x"></i>
-							</div>
-							<div>
-									<a href="#" class="qnaMenu">1:1문의 내역</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 d-flex justify-content-center flex-column" style="height: 150px; border: 1px solid #F4EEFF;">
-						<div class="telConsult">
-							전화 상담
-						</div>
-						<div class="telNumber">
-							0000-0000
-						</div>
-						<div class="qnaMenu">
-							평일 09:00 ~ 18:00 (주말 및 공휴일 휴무)
-						</div>
-					</div>
-   			  	</div>
+   				
    			  	<br>
    			  	<div class="row">
-				<div class="col notice">공지사항</div>
-				<div class="col-md-1 d-flex justify-content-center align-items-right"><a href="announcement">더보기 ></a></div>
+				<a class="col count">100건</a>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -159,6 +103,48 @@
 								<tr>
 									<td>3</td>
 									<td><a href="#">3번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td><a href="#">4번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td><a href="#">5번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td><a href="#">6번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td><a href="#">7번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td><a href="#">8번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td><a href="#">9번 공지사항</a></td>
+									<td>고객센터</td>
+									<td>2023-01-13</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td><a href="#">10번 공지사항</a></td>
 									<td>고객센터</td>
 									<td>2023-01-13</td>
 								</tr>

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body{
+	margin: 0 auto;
+	width: 80%;
+}
+
+.notice{
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.title{
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.add{
+	font-size: 20px;
+}

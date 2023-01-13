@@ -81,14 +81,6 @@ public class TestController {
 
 	}
 
-	@GetMapping("/qnalist")
-	public String qnalist() {
-		log.info("/qnalist");
-		
-		return "qnalist";
-
-	}
-
 	// 자주 묻는 질문
 	@GetMapping("/FAQ")
 	public String FAQ() {
@@ -104,6 +96,23 @@ public class TestController {
 				
 		return "customercenter";
 	}
+	
+	// 공지사항
+	@GetMapping("/announcement")
+	public String announcement() {
+		log.info("/announcement");
+				
+		return "announcement";
+	}
+	
+	// 오프라인 매장 위치
+	@GetMapping("/location")
+	public String location() {
+		log.info("/location");
+				
+		return "location";
+	}
+	
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")

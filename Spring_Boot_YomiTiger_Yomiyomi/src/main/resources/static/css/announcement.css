@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+.notice{
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.qnaMenu{
+	font-size: 14px;
+}
+
+.btn{
+	/* background-color: #A6B1E1; 
+	color: #424874; */
+	background-color: #424874; 
+	color: #A6B1E1;
+}
+
+/* 고객센터번호, 근무시간 등 */
+.customerInfo{
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.customerInfo2{
+	font-size:15px;
+}
+
+.custmomerNum{
+	font-size: 18px;
+	color: #A6B1E1;
+	font-weight: bold;
+}
+
+.count{
+	font-size: 17px;
+	color: #424874;
+	font-weight: 500;
+}
