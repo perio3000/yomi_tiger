@@ -44,7 +44,7 @@
 		</div>
 
 		<div class="row header">
-			<div class="logo col-4">
+			<div class="logo col-1">
 				<a href="main.jsp"> <img alt="logo" src="logo/logo.png">
 				</a>
 			</div>
@@ -54,10 +54,10 @@
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</form>
-			<div class="header-icon col">
+			<div class="header-icon col-2">
 				<ul class="row justify-content-end">
-					<li class="col-1"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
-					<li class="col-1"><a href="#"><i class="fa-regular fa-user fa-2x"></i></a></li>
+					<li class="col icon-i"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
+					<li class="col icon-i"><a href="#"><i class="fa-regular fa-user fa-2x"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -91,11 +91,5 @@
 			</div>
 		</div>
 	</nav>
-
-	<main>
-		<div>메인</div>
-	</main>
-
-	<footer> 푸터 </footer>
 </body>
 </html>

@@ -21,9 +21,15 @@ header {
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 }
+.header-icon, .header-icon>a>i{
+	display: flex;
+	justify-content: flex-end;
+	text-align: right;
+}
+
 .logo {
-	
 	width: 9em;
 	margin-left: 3.5em;
 	margin-bottom: 1em;
@@ -42,7 +48,7 @@ header {
 }
 
 .search-control {
-	width: 100%;
+	width: 80%;
 	border: 1px solid #bbb;
 	border-radius: 5px;
 	padding: 0.63em 0.75em;
@@ -52,7 +58,7 @@ header {
 	position: absolute;
 	width: 2em;
 	top: 0.6em;
-	right: 1.2em;
+	right: 15.5em;
 	maring: 0;
 	padding: 0;
 	border: hidden;
@@ -68,16 +74,30 @@ header {
 	vertical-align: center;
 	margin-right: 10px;
 }
-
-
+.justify-content-end {
+	width: 200px;
+	display: flex;
+	justify-content: flex-end;
+}
 .container-fluid {
-	height: 50px;
+	height: 60px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	
+	font-size: 1.5em;
 }
+li>a{height:30px;}
+.navbar-menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px; height: 50px;
+}
+.justify-content-end { width: 100px;}
+.col {width: 20px;}
+.navbar-collapse {height: 50px;}
+.header-icon {align-items: right;}
 .navbar-head { border-bottom: 1px solid #bbb;}
-.nav-link { font-size: 1.5em; margin-right: 1em;}
+.nav-link { margin-right: 1em; height: 50px;}
 .material-symbols-outlined {font-size: 2.5em;}
-.nav-link:hover, .navbar-menu:hover {color: #A6B1E1;}
+.nav-item:hover, .navbar-menu:hover {color: #A6B1E1;}
