@@ -65,6 +65,13 @@ public class TestController {
 		return "userupdate";
 	}
 	
+	@GetMapping("/librarytest")
+	public String librarytest() {
+		log.info("/librarytest");
+		
+		return "library";
+	}
+	
 	// 1:1 문의하기
 	@GetMapping("/1by1qna")
 	public String onebyoneqna() {
@@ -90,6 +97,14 @@ public class TestController {
 		return "FAQ";
 	}
 	
+	// 자주 묻는 질문
+	@GetMapping("/customercenter")
+	public String custmoercenter() {
+		log.info("/customercenter");
+				
+		return "customercenter";
+	}
+		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
 	public String findIDPW() {
