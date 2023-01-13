@@ -53,3 +53,11 @@
 #emailTextarea2{
 	display: none;
 }
+.notice-area {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.col-md-2 {
+	padding: 0px;
+}
