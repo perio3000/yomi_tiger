@@ -17,7 +17,13 @@ main{
 	font-size: 20px;
 	margin: 10px;
 }
+
+/* 메뉴 */
 .menuText{
+	font-size: 15px;
+	padding: 40px;
+}
+.menuText2{
 	font-size: 15px;
 	padding: 40px;
 }
@@ -25,6 +31,18 @@ main{
 	font-size: 18px;
 	font-weight: bolder;
 }
+.menuBtn{
+	display: none;
+}
+@media all and (max-width:767px) { 
+	.menuBtn{
+		display: block;
+	}
+	.menuText{
+		display: none;
+	}
+} 
+
 .recCard{
 	margin-top: 20px;
 	padding: 9px;

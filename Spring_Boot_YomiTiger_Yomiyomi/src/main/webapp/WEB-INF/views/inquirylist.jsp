@@ -63,6 +63,40 @@
 						<a href="/librarytest" class="menuTitle">서재</a>
 					</div>
 				</div>
+				
+				<!-- 오프캔버스 메뉴 -->
+				<div class="d-flex justify-content-center">
+					<nav class="navbar menuBtn">
+						<div class="container-fluid">
+							<button class="navbar-toggler" type="button"
+								data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+								aria-controls="offcanvasNavbar">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="offcanvas offcanvas-start" tabindex="-1"
+								id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+								<div class="offcanvas-header">
+									<button type="button" class="btn-close"
+										data-bs-dismiss="offcanvas" aria-label="Close"></button>
+								</div>
+								<div class="offcanvas-body">
+									<div class="p-4">
+										<div class="menuText2">
+											<a href="/mypagetest" class="menuTitle">마이페이지</a><br> 
+											<a href="/orderdeliverylisttest">주문 배송 목록</a><br> 
+											<a href="/pointtest">포인트</a><br> 
+											<a href="/activitylisttest">활동내역</a><br>
+											<a href="/inquirylisttest">문의내역</a><br> 
+											<a href="/userupdatetest">회원정보</a><br><br> 
+											<a href="/librarytest" class="menuTitle">서재</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+				
 			</div>
 			
 			<div class="col-md-9">
