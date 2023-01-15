@@ -104,13 +104,13 @@
 					</div>
 					
 					<div class="sign-in-up">
-						<form class="sign-in-form active">
-							<input type="text" placeholder="아이디를 입력해 주세요."> 
-							<input type="password" placeholder="비밀번호를 입력해 주세요.">
+						<form:form class="sign-in-form active" action="/member/user" method="post">
+							<input type="text" placeholder="아이디를 입력해 주세요." name="username"> 
+							<input type="password" placeholder="비밀번호를 입력해 주세요." name="password">
 							<input type="submit" value="로그인">
 							<span class="check"><input type="checkbox"><label>아이디 저장</label></span> 
 							<a href="findIDPW">아이디/비밀번호 찾기</a> 
-						</form>
+						</form:form>
 
 						<div class="social-login">
 							<a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>

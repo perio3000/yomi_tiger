@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 //		로그인 폼을 커스터마이징
 		http.formLogin()
-			.loginPage("/login")
+			.loginPage("/log")
 //			로그인폼 파라미터 변경
 //			.usernameParameter("userId")
 //			.passwordParameter("passwd")
