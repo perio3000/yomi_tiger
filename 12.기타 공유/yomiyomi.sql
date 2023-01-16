@@ -95,7 +95,7 @@ CREATE TABLE yomi_auth (
 );
 
 CREATE TABLE yomi_board (
-	board_id	number(30)	NOT NULL,
+	id	number(30)	NOT NULL,
 	title	varchar2(100)	NOT NULL,
 	content	varchar2(3000)	NOT NULL,
 	written_date	date	NOT NULL,
