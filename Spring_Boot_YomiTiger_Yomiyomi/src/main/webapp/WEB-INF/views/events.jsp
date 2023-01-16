@@ -28,11 +28,11 @@
 		</div>
 		
 		<div class="row">
-			<div class="d-flex flex-row-reverse event-search-area">
-				<form class="search-form col-md-5 align-self-end event-search-form" role="search">
-					<input class="search-control event-search-control" type="search"
-						placeholder="이벤트, 상품명으로  검색해보세요." aria-label="Search">
-					<button class="search-btn event-search-btn" type="submit">
+			<div class="d-flex justify-content-end">
+				<form class="search-form searchForm" role="search">
+					<input class="search-control searchControl" type="search"
+						placeholder="이벤트, 상품명으로 검색해 보세요." aria-label="Search">
+					<button class="search-btn searchBtn" type="submit">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
 				</form>
