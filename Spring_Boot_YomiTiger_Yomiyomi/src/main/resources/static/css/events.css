@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body{
+	margin: 0 auto;
+	width: 80%;
+}
+
+.title{
+	font-size: 30px;
+	font-weight: 500;
+}
+
+/* .event-search-area, .event-search-btn {
+	display: flex;
+	justify-content: flex-end;
+} */
+.event-search-form, .event-search-control { width: 400px;}
+/* .event-search-btn { 
+	display: flex;
+	justify-content: flex-end; } */
