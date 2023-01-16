@@ -109,8 +109,7 @@
 			</table>
 			<div class="accordion accordion-flush" id="accordionFlushExample">
 				<div class="accordion-item">
-					<h2 class="accordion-headers" id="flush-headingOne"
-						style="background-color: #efefef;">
+					<h2 class="accordion-headers" id="flush-headingOne">
 						<button class="accordion-button collapsed" type="button"
 							data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
 							aria-expanded="false" aria-controls="flush-collapseOne">
@@ -141,8 +140,7 @@
 					</ul>
 					<ul class="list-group list-group-horizontal-sm">
 						<li class="list-group-item">배송비</li>
-						<li class="list-group-item right">+ 0원</li>
-
+						<li class="list-group-item right"> 0원</li>
 					</ul>
 					<div class="line"></div>
 					<ul class="list-group list-group-horizontal">
@@ -151,18 +149,15 @@
 					</ul>
 					<ul class="list-group list-group-horizontal-sm">
 						<li class="list-group-item">적립 예정 포인트</li>
-						<li class="list-group-item right">+ 10원</li>
+						<li class="list-group-item right">+ 10P</li>
 
 					</ul>
 					<a href="#" class="btn btn-primary">주문하기 (2)</a>
 				</div>
 			</div>
-
-			<div class="sidebar-nav">
-				<div class="sidebar-info"></div>
-			</div>
 		</aside>
 	</section>
+	
 
 
 	<footer> 푸터 </footer>

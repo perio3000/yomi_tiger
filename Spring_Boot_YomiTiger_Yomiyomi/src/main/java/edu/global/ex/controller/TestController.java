@@ -129,4 +129,12 @@ public class TestController {
 
 		return "cart";
 	}
+	//결제하기
+	@GetMapping("/pay")
+	public String pay() {
+		log.info("/pay()...");
+
+		return "pay";
+	}
 }
+	
