@@ -113,6 +113,13 @@ public class TestController {
 		return "location";
 	}
 	
+	// 이벤트 페이지
+	@GetMapping("/events")
+	public String events() {
+		log.info("/events");
+				
+		return "events";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
