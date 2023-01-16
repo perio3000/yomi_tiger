@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 <jsp:include page="header.jsp"></jsp:include>
-<!-- 얘가 들어가면 비율이 좀 달라지는 이슈..나중에 생각할게요 -->
+
 <meta charset="UTF-8">
 <title>오프라인 매장</title>
 
@@ -29,16 +29,23 @@
 			
 			<div class="col-md-5">
 				<br><br>
-				<div class="row">매장소개</div>
-				<div class="row">영업시간 : 09:30 ~ 21:00 (공휴일 휴무)</div>
-				<div class="row">주소 : 서울특별시 영등포구 영중로 56 (신한빌딩 4층)</div>
-				<div class="row">매장번호 : 02-1234-5678</div>
+				<div class="row notice">매장소개</div>
+				<br>
+				<div class="row contents">영업시간 : 09:30 ~ 21:00 (공휴일 휴무)</div>
+				<br>
+				<div class="row contents">주소 : 서울특별시 영등포구 영중로 56 (신한빌딩 4층)</div>
+				<br>
+				<div class="row contents">매장번호 : 02-1234-5678</div>
 				<br><br>
 				<div class="row">
 					<div class="col-md-4 notice"><i class="ri-map-pin-2-fill ri-2x"></i>오시는 길</div>
 				</div>
-				<div class="row">1호선</div>
-				<div class="row">영등포역 3번 출구 도보 10분</div>
+				<br>
+				<div class="row contents" style="color: #0052A4; font-weight: bold;">1호선</div>
+				<div class="row contents">영등포역 3번 출구 도보 10분</div>
+				<br>
+				<div class="row contents" style="color: #996CAC; font-weight: bold;">5호선</div>
+				<div class="row contents">영등포시장역 3번 출구 도보 3분</div>
 			</div>
 		</div>
 		<br><br>
