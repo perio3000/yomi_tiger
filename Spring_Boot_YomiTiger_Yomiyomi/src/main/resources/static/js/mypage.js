@@ -60,3 +60,10 @@ function fourthTab(){
 	$("#fourth-tab").click();
 }
 
+$(document).ready(function(){
+	$(".preText").text($(".preparing").length)
+	$(".ingText").text($(".delivered").length);
+	$(".endText").text($(".delivering").length);
+	$(".canText").text($(".canceled").length);
+	$(".refText").text($(".refund").length);
+})

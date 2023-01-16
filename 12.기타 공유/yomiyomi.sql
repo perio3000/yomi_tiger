@@ -8,7 +8,7 @@ CREATE TABLE yomi_user (
 	city	varchar2(100)	NULL,
 	street	varchar2(100)	NULL,
 	location	varchar2(200)	NULL,
-	point	number(30)	NULL,
+	point_id	number(30)	NULL,
 	logintime	date	NULL,
 	enabled	number(1)	NULL,
 	account	varchar2(100)	NULL,
@@ -95,7 +95,7 @@ CREATE TABLE yomi_auth (
 );
 
 CREATE TABLE yomi_board (
-	board_id	number(30)	NOT NULL,
+	id	number(30)	NOT NULL,
 	title	varchar2(100)	NOT NULL,
 	content	varchar2(3000)	NOT NULL,
 	written_date	date	NOT NULL,
@@ -146,6 +146,13 @@ CREATE TABLE yomi_image (
 	item_id	number(30)	NOT NULL
 );
 
+CREATE TABLE yomi_point (
+	id	number(30)	NOT NULL,
+	point	number(30)	NULL,
+	point_date	date	NULL,
+	user_id	number(30)	NOT NULL
+);
+
 CREATE SEQUENCE yomi_user_seq;
 
 CREATE SEQUENCE yomi_item_seq;
@@ -169,3 +176,8 @@ CREATE SEQUENCE yomi_addfile_seq;
 CREATE SEQUENCE yomi_reply_seq;
 
 CREATE SEQUENCE yomi_image_seq;
+
+CREATE SEQUENCE yomi_image_seq;
+
+CREATE SEQUENCE yomi_point_seq;
+
