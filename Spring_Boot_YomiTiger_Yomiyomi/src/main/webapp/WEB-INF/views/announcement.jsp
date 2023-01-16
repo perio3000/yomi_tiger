@@ -9,8 +9,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-<%-- <jsp:include page="header.jsp"></jsp:include> --%>
-<!-- 얘가 들어가면 비율이 좀 달라지는 이슈..나중에 생각할게요 -->
+<jsp:include page="header.jsp"></jsp:include>
+
 <meta charset="UTF-8">
 <title>공지사항</title>
 
@@ -19,7 +19,8 @@
 </head>
 <body>
    <main class="container">
-   
+   	<br>
+   	
    		<div class="row">
    			<div class="col-md-3">
 	   			<div class="row title">
@@ -58,7 +59,7 @@
    			
    			<div class="col-md-9">
    			<br><br><br>
-   				<div class="col notice">공지사항</div>
+   				<div class="col-md-3 notice">공지사항</div>
 				
 				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
 					<div class="">

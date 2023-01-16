@@ -6,7 +6,7 @@ body{
 }
 
 .notice{
-	font-size: 17px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
@@ -15,6 +15,14 @@ body{
 	font-weight: 500;
 }
 
+.contents{
+	font-size: 18px;
+}
+
 .add{
 	font-size: 20px;
+}
+
+i{
+	color: #424874;
 }

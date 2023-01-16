@@ -8,7 +8,7 @@ CREATE TABLE yomi_user (
 	city	varchar2(100)	NULL,
 	street	varchar2(100)	NULL,
 	location	varchar2(200)	NULL,
-	point	number(30)	NULL,
+	point_id	number(30)	NULL,
 	logintime	date	NULL,
 	enabled	number(1)	NULL,
 	account	varchar2(100)	NULL,
@@ -95,7 +95,7 @@ CREATE TABLE yomi_auth (
 );
 
 CREATE TABLE yomi_board (
-	board_id	number(30)	NOT NULL,
+	id	number(30)	NOT NULL,
 	title	varchar2(100)	NOT NULL,
 	content	varchar2(3000)	NOT NULL,
 	written_date	date	NOT NULL,
@@ -146,202 +146,38 @@ CREATE TABLE yomi_image (
 	item_id	number(30)	NOT NULL
 );
 
-ALTER TABLE `yomi_user` ADD CONSTRAINT `PK_YOMI_USER` PRIMARY KEY (
-	`id`
+CREATE TABLE yomi_point (
+	id	number(30)	NOT NULL,
+	point	number(30)	NULL,
+	point_date	date	NULL,
+	user_id	number(30)	NOT NULL
 );
 
-ALTER TABLE `yomi_item` ADD CONSTRAINT `PK_YOMI_ITEM` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_user_seq;
 
-ALTER TABLE `yomi_event` ADD CONSTRAINT `PK_YOMI_EVENT` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_item_seq;
 
-ALTER TABLE `yomi_cart` ADD CONSTRAINT `PK_YOMI_CART` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_event_seq;
 
-ALTER TABLE `yomi_order` ADD CONSTRAINT `PK_YOMI_ORDER` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_cart_seq;
 
-ALTER TABLE `yomi_pay` ADD CONSTRAINT `PK_YOMI_PAY` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_order_seq;
 
-ALTER TABLE `yomi_delivery` ADD CONSTRAINT `PK_YOMI_DELIVERY` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_pay_seq;
 
-ALTER TABLE `yomi_auth` ADD CONSTRAINT `PK_YOMI_AUTH` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_delivery_seq;
 
-ALTER TABLE `yomi_board` ADD CONSTRAINT `PK_YOMI_BOARD` PRIMARY KEY (
-	`board_id`
-);
+CREATE SEQUENCE yomi_auth_seq;
 
-ALTER TABLE `yomi_boardcategory` ADD CONSTRAINT `PK_YOMI_BOARDCATEGORY` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_boardcategory_seq;
 
-ALTER TABLE `yomi_addfile` ADD CONSTRAINT `PK_YOMI_ADDFILE` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_addfile_seq;
 
-ALTER TABLE `yomi_reply` ADD CONSTRAINT `PK_YOMI_REPLY` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_reply_seq;
 
-ALTER TABLE `yomi_image` ADD CONSTRAINT `PK_YOMI_IMAGE` PRIMARY KEY (
-	`id`
-);
+CREATE SEQUENCE yomi_image_seq;
 
-ALTER TABLE `yomi_item` ADD CONSTRAINT `FK_yomi_event_TO_yomi_item_1` FOREIGN KEY (
-	`event_id`
-)
-REFERENCES `yomi_event` (
-	`id`
-);
+CREATE SEQUENCE yomi_image_seq;
 
-ALTER TABLE `yomi_cart` ADD CONSTRAINT `FK_yomi_item_TO_yomi_cart_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
-
-ALTER TABLE `yomi_cart` ADD CONSTRAINT `FK_yomi_user_TO_yomi_cart_1` FOREIGN KEY (
-	`user_id`
-)
-REFERENCES `yomi_user` (
-	`id`
-);
-
-ALTER TABLE `yomi_order` ADD CONSTRAINT `FK_yomi_user_TO_yomi_order_1` FOREIGN KEY (
-	`user_id`
-)
-REFERENCES `yomi_user` (
-	`id`
-);
-
-ALTER TABLE `yomi_pay` ADD CONSTRAINT `FK_yomi_order_TO_yomi_pay_1` FOREIGN KEY (
-	`order_id`
-)
-REFERENCES `yomi_order` (
-	`id`
-);
-
-ALTER TABLE `yomi_delivery` ADD CONSTRAINT `FK_yomi_order_TO_yomi_delivery_1` FOREIGN KEY (
-	`order_id`
-)
-REFERENCES `yomi_order` (
-	`id`
-);
-
-ALTER TABLE `yomi_nonmember` ADD CONSTRAINT `FK_yomi_order_TO_yomi_nonmember_1` FOREIGN KEY (
-	`order_id`
-)
-REFERENCES `yomi_order` (
-	`id`
-);
-
-ALTER TABLE `yomi_orderdetail` ADD CONSTRAINT `FK_yomi_item_TO_yomi_orderdetail_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
-
-ALTER TABLE `yomi_orderdetail` ADD CONSTRAINT `FK_yomi_order_TO_yomi_orderdetail_1` FOREIGN KEY (
-	`order_id`
-)
-REFERENCES `yomi_order` (
-	`id`
-);
-
-ALTER TABLE `yomi_auth` ADD CONSTRAINT `FK_yomi_user_TO_yomi_auth_1` FOREIGN KEY (
-	`user_id`
-)
-REFERENCES `yomi_user` (
-	`id`
-);
-
-ALTER TABLE `yomi_board` ADD CONSTRAINT `FK_yomi_user_TO_yomi_board_1` FOREIGN KEY (
-	`user_id`
-)
-REFERENCES `yomi_user` (
-	`id`
-);
-
-ALTER TABLE `yomi_board` ADD CONSTRAINT `FK_yomi_boardcategory_TO_yomi_board_1` FOREIGN KEY (
-	`board_number`
-)
-REFERENCES `yomi_boardcategory` (
-	`id`
-);
-
-ALTER TABLE `yomi_review` ADD CONSTRAINT `FK_yomi_board_TO_yomi_review_1` FOREIGN KEY (
-	`board_id`
-)
-REFERENCES `yomi_board` (
-	`board_id`
-);
-
-ALTER TABLE `yomi_review` ADD CONSTRAINT `FK_yomi_item_TO_yomi_review_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
-
-ALTER TABLE `yomi_review` ADD CONSTRAINT `FK_yomi_order_TO_yomi_review_1` FOREIGN KEY (
-	`order_id`
-)
-REFERENCES `yomi_order` (
-	`id`
-);
-
-ALTER TABLE `yomi_addfile` ADD CONSTRAINT `FK_yomi_item_TO_yomi_addfile_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
-
-ALTER TABLE `yomi_addfile` ADD CONSTRAINT `FK_yomi_board_TO_yomi_addfile_1` FOREIGN KEY (
-	`board_id`
-)
-REFERENCES `yomi_board` (
-	`board_id`
-);
-
-ALTER TABLE `yomi_reply` ADD CONSTRAINT `FK_yomi_board_TO_yomi_reply_1` FOREIGN KEY (
-	`board_id`
-)
-REFERENCES `yomi_board` (
-	`board_id`
-);
-
-ALTER TABLE `yomi_ebook` ADD CONSTRAINT `FK_yomi_item_TO_yomi_ebook_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
-
-ALTER TABLE `yomi_ebook` ADD CONSTRAINT `FK_yomi_user_TO_yomi_ebook_1` FOREIGN KEY (
-	`user_id`
-)
-REFERENCES `yomi_user` (
-	`id`
-);
-
-ALTER TABLE `yomi_image` ADD CONSTRAINT `FK_yomi_item_TO_yomi_image_1` FOREIGN KEY (
-	`item_id`
-)
-REFERENCES `yomi_item` (
-	`id`
-);
+CREATE SEQUENCE yomi_point_seq;
 

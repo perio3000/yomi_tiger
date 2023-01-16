@@ -9,6 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
+<jsp:include page="header.jsp"></jsp:include>
 <title>FAQ</title>
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -16,6 +17,7 @@
 </head>
 <body>
    <main class="container">
+   	<br>
    
    		<div class="row">
    			<div class="col-md-3">
@@ -39,7 +41,7 @@
 					<br>
 					<a href="#" class="notice">1:1문의</a><br>
 					<a href="1by1qna" class="qnaMenu">1:1문의 접수</a><br>
-					<a href="" class="qnaMenu">1:1문의 내역</a><br>
+					<a href="#" class="qnaMenu">1:1문의 내역</a><br>
 					<br>
 					<a href="#" class="notice">공지사항</a><br>
 					<br>
@@ -52,9 +54,10 @@
 						<a class="customerInfo2">(주말 및 공휴일 휴무)</a>
 				</div>
    			</div>
+   			
 	   			<div class="col-md-9">
 	   			<br><br><br>
-	   				<div class="col notice">자주 묻는 질문</div>
+	   				<div class="col-md-3 notice">자주 묻는 질문</div>
 					
 					<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
 						<div class="">
