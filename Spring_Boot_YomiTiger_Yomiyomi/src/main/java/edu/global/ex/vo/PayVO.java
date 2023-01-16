@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class OrderVO {
+public class PayVO {
 	
 	private int id;
-	private Date order_date;
+	private Date pay_date;
+	private String pay_result;
 	private int user_id;
-	
-	
+
 }
