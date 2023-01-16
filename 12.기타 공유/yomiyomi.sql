@@ -146,7 +146,7 @@ CREATE TABLE yomi_image (
 	item_id	number(30)	NOT NULL
 );
 
-CREATE TABLE `point` (
+CREATE TABLE yomi_point (
 	id	number(30)	NOT NULL,
 	point	number(30)	NULL,
 	date	date	NULL,
@@ -176,3 +176,7 @@ CREATE SEQUENCE yomi_addfile_seq;
 CREATE SEQUENCE yomi_reply_seq;
 
 CREATE SEQUENCE yomi_image_seq;
+
+CREATE SEQUENCE yomi_image_seq;
+
+CREATE SEQUENCE yomi_point_seq;
