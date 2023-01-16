@@ -8,7 +8,7 @@ CREATE TABLE yomi_user (
 	city	varchar2(100)	NULL,
 	street	varchar2(100)	NULL,
 	location	varchar2(200)	NULL,
-	point	number(30)	NULL,
+	point_id	number(30)	NULL,
 	logintime	date	NULL,
 	enabled	number(1)	NULL,
 	account	varchar2(100)	NULL,
@@ -144,6 +144,13 @@ CREATE TABLE yomi_image (
 	image	varchar2(300)	NULL,
 	image_order	number(10)	NULL,
 	item_id	number(30)	NOT NULL
+);
+
+CREATE TABLE `point` (
+	id	number(30)	NOT NULL,
+	point	number(30)	NULL,
+	date	date	NULL,
+	user_id	number(30)	NOT NULL
 );
 
 CREATE SEQUENCE yomi_user_seq;
