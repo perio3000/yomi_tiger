@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body{
+	margin: 0 auto;
+	width: 80%;
+}
+
 .title{
 	font-size: 30px;
 	font-weight: bolder;
@@ -35,8 +40,6 @@
 }
 
 .btn{
-	/* background-color: #A6B1E1; 
-	color: #424874; */
 	background-color: #424874; 
 	color: #A6B1E1;
 }

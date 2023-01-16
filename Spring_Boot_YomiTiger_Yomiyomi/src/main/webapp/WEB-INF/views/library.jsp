@@ -16,6 +16,9 @@
 <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
+
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<main class="container">
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">

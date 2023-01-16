@@ -15,6 +15,9 @@
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 </head>
 <body>
+
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<main class="container">
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -156,23 +159,23 @@
 								<div class="text-secondary">주문/배송 안내</div>
 							</div>
 							<div class="col" style="border-right: 2px solid gray;">
-								<div class="fs-5">0</div>
+								<div class="fs-5 preText">0</div>
 								<div class="text-secondary">준비중</div>
 							</div>
 							<div class="col" style="border-right: 2px solid gray;">
-								<div class="fs-5">0</div>
+								<div class="fs-5 ingText">0</div>
 								<div class="text-secondary">배송중</div>
 							</div>
 							<div class="col" style="border-right: 2px solid gray;">
-								<div class="fs-5">0</div>
+								<div class="fs-5 endText">0</div>
 								<div class="text-secondary">배송완료</div>
 							</div>
 							<div class="col" style="border-right: 2px solid gray;">
-								<div class="fs-5">0</div>
+								<div class="fs-5 canText">0</div>
 								<div class="text-secondary">취소</div>
 							</div>
 							<div class="col">
-								<div class="fs-5">0</div>
+								<div class="fs-5 refText">0</div>
 								<div class="text-secondary">교환/반품</div>
 							</div>
 						</div>
@@ -197,6 +200,34 @@
 							
 							<tbody>
 								<!-- 주문배송목록1 -->
+								<%-- <c:forEach var="orderList" items="${ order }">
+									<tr>
+										<td class="align-middle">
+											<div>
+												<div class="fs-6">022008021154</div>
+												<div class="text-secondary">(2023-01-09)</div>
+											</div>
+										</td>
+										<td class="align-middle">
+											<div>23,000원</div>
+										</td>
+										<td class="align-middle">
+											<div class="row">
+												<div class="col"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="140px" height="195px"></div>
+												<div class="col d-flex align-items-center">
+													<div class="">상품명</div>
+												</div>
+											</div>
+										</td>
+										<td class="align-middle">
+											<div>1</div>
+										</td>
+										<td class="align-middle">
+											<div class="delivering">배송중</div>
+										</td>
+									</tr>
+								</c:forEach> --%>
+								
 								<tr>
 									<td class="align-middle">
 										<div>
@@ -219,7 +250,7 @@
 										<div>1</div>
 									</td>
 									<td class="align-middle">
-										<div>배송중</div>
+										<div class="delivering">배송중</div>
 									</td>
 								</tr>
 								
@@ -246,7 +277,7 @@
 										<div>1</div>
 									</td>
 									<td class="align-middle">
-										<div>배송중</div>
+										<div class="delivering">배송중</div>
 									</td>
 								</tr>
 								
@@ -273,7 +304,7 @@
 										<div>1</div>
 									</td>
 									<td class="align-middle">
-										<div>배송중</div>
+										<div class="delivered">배송완료</div>
 									</td>
 								</tr>
 								

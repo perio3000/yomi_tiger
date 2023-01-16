@@ -16,6 +16,9 @@
 <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
+
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<main class="container">
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
@@ -35,7 +38,7 @@
 							<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
 						</div>
 						<div class="name">
-							'요미타이거'님
+							'${ member.name }'님
 						</div>
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
@@ -54,12 +57,12 @@
 				
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypagetest" class="menuTitle">마이페이지</a><br>
+						<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
 						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
 						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
 						<a href="/inquirylisttest">문의내역</a><br>
-						<a href="/userupdatetest">회원정보</a><br>
+						<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
 						<br>
 						<a href="/librarytest" class="menuTitle">서재</a>
 					</div>
@@ -83,12 +86,13 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypagetest" class="menuTitle">마이페이지</a><br> 
-											<a href="/orderdeliverylisttest">주문 배송 목록</a><br> 
-											<a href="/pointtest">포인트</a><br> 
+											<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+											<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
+											<a href="/pointtest">포인트</a><br>
 											<a href="/activitylisttest">활동내역</a><br>
-											<a href="/inquirylisttest">문의내역</a><br> 
-											<a href="/userupdatetest">회원정보</a><br><br> 
+											<a href="/inquirylisttest">문의내역</a><br>
+											<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
+											<br>
 											<a href="/librarytest" class="menuTitle">서재</a>
 										</div>
 									</div>
@@ -135,7 +139,7 @@
 										<label for="staticEmail" class="col-sm-2 col-form-label fw-bolder">아이디</label>
 										<div class="col-sm-10">
 											<input type="text" readonly class="form-control-plaintext"
-												id="staticEmail" value="email@example.com">
+												id="staticEmail" value="${ member.username }">
 										</div>
 									</div>
 									
@@ -161,7 +165,7 @@
 										<label for="name" class="col-sm-2 col-form-label fw-bolder">이름</label>
 										<div class="col-sm-10 d-flex">
 											<input type="text" readonly class="form-control-plaintext"
-												id="name" value="홍길동">
+												id="name" value="${ member.name }">
 											<a class="text-center updateBtn">변경</a>
 										</div>
 									</div>
@@ -170,7 +174,7 @@
 										<label for="tel" class="col-sm-2 col-form-label fw-bolder">전화번호</label>
 										<div class="col-sm-10 d-flex">
 											<input type="text" readonly class="form-control-plaintext"
-												id="tel" value="010-1234-5678">
+												id="tel" value="${ member.tel }">
 											<a class="text-center updateBtn">변경</a>
 										</div>
 									</div>
@@ -179,7 +183,7 @@
 										<label for="address" class="col-sm-2 col-form-label fw-bolder">주소</label>
 										<div class="col-sm-10 d-flex">
 											<input type="text" readonly class="form-control-plaintext"
-												id="address" value="서울특별시 영등포구 영중로 56 &#12306;12345">
+												id="address" value="${ member.city } ${ member.street } ${ member.location } &#12306;${ member.postnumber }">
 											<a class="text-center updateBtn">변경</a>
 										</div>
 									</div>
