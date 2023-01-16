@@ -36,7 +36,7 @@
 							<img src="icon/user.png" class="rounded-circle" width="100px"
 								height="100px">
 						</div>
-						<div class="name">'요미타이거'님</div>
+						<div class="name">'${ member.name }'님</div>
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
 								<div class="row">
@@ -54,12 +54,13 @@
 
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypagetest" class="menuTitle">마이페이지</a><br> 
-						<a href="/orderdeliverylisttest">주문 배송 목록</a><br> 
-						<a href="/pointtest">포인트</a><br> 
+						<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
+						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
-						<a href="/inquirylisttest">문의내역</a><br> 
-						<a href="/userupdatetest">회원정보</a><br><br> 
+						<a href="/inquirylisttest">문의내역</a><br>
+						<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
+						<br>
 						<a href="/librarytest" class="menuTitle">서재</a>
 					</div>
 				</div>
@@ -82,12 +83,13 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypagetest" class="menuTitle">마이페이지</a><br> 
-											<a href="/orderdeliverylisttest">주문 배송 목록</a><br> 
-											<a href="/pointtest">포인트</a><br> 
+											<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+											<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
+											<a href="/pointtest">포인트</a><br>
 											<a href="/activitylisttest">활동내역</a><br>
-											<a href="/inquirylisttest">문의내역</a><br> 
-											<a href="/userupdatetest">회원정보</a><br><br> 
+											<a href="/inquirylisttest">문의내역</a><br>
+											<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
+											<br>
 											<a href="/librarytest" class="menuTitle">서재</a>
 										</div>
 									</div>
@@ -171,7 +173,7 @@
 										<img alt="" src="icon/loyal-customer.png" width="40"
 											height="40">
 									</div>
-									<div class="col align-self-center text-end">0</div>
+									<div class="col align-self-center text-end">${ member.point }</div>
 									<div class="col align-self-center">포인트</div>
 								</div>
 							</div>

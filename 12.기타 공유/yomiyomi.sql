@@ -149,7 +149,7 @@ CREATE TABLE yomi_image (
 CREATE TABLE yomi_point (
 	id	number(30)	NOT NULL,
 	point	number(30)	NULL,
-	date	date	NULL,
+	point_date	date	NULL,
 	user_id	number(30)	NOT NULL
 );
 
@@ -180,3 +180,4 @@ CREATE SEQUENCE yomi_image_seq;
 CREATE SEQUENCE yomi_image_seq;
 
 CREATE SEQUENCE yomi_point_seq;
+
