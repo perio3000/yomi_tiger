@@ -5,10 +5,110 @@ section {
 	display: flex;
 	justify-content: flex-start;
 }
-.order-content{
+.pay-content{
 	width: 80%;
 	padding: 30px;
 }
+.unknow-pay{
+	font-size: 2em;
+	font-weight: 800;
+	margin: 20px 0;
+}
+.pay-content-head {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	background-color: #efefef;
+	border-radius: 10px;
+	height: 20%;
+	font-size: 1.1em;
+}
+.pay-content-head p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.pay-content-head i {
+	color: #808080;
+	font-size: 0.8em;
+	margin: 0 10px;
+}
+.pay-head-btn{
+	display:flex;
+	justify-content: center;
+	
+}
+.pay-head-btn>a{
+	margin: 10px 10px 0 0;
+	width: 100px;
+	height: 40px;
+}
+.pay-head-btn>.pay-btn1{
+	border: 1px solid #424874;
+	background-color: #fff;
+	color: #424874;
+}
+.pay-head-btn>.pay-btn2{
+	border: 1px solid #424874;
+	background-color: #424874;
+	color: #fff;
+}
+.pay-head-btn>.pay-btn1:hover,.pay-head-btn>.pay-btn2:hover{
+	width: 100px;
+	border: 1px solid #424874;
+	background-color: #424874;
+	color:#fff;
+	opacity:0.5;
+}
+/* ----------------------------------------------------------------------------------- */
+/* 주문자 정보 입력 */
+.pay-order-info {
+	margin: 20px 0;
+	border: 1px solid #dcdcdc;
+	border-radius: 10px;
+	display: flex;
+	justify-content: flex-start;
+	padding: 30px 0;
+}
+.pay-orderer-head{
+	padding-top: 10px;
+	width: 30%;
+	font-size: 1.5em;
+	font-weight: 800;
+} 
+.pay-orderer-head h3{ text-align: center;}
+.pay-orderer-form{
+	width: 50%;
+}
+.form-pw{
+	font-size: 1.2em;
+	font-weight: 800;
+}
+.col-12>input{
+	height:45px;
+}
+.form-label{
+	margin-top: 5px;
+	color: #868686;
+	font-size: 1em;
+}
+.form-control:last-child{
+	margin-bottom: 20px;
+}
+
+.btn-info{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+	background-color: #fff;
+}
+
+
+
+/* ----------------------------------------------------------------------------------- */
 .aside {
 	position: sticky;
 	position: -webkit-sticky;
@@ -93,7 +193,7 @@ input[id="check"]:checked + label::before {
 
 }
 .check-wrap {
-	margin-top: 10px;
+	margin: 30px 0;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -103,4 +203,59 @@ input[id="check"]:checked + label::before {
 }
 .check-wrap span {
 	margin-left: 10px;
+}
+.accordion-headers, .accordion-button {
+	outline: none !important;
+	box-shadow: none !important;
+}
+.accordion-button:not(.collapsed){
+	color: #000;	
+	background-color: #fff;
+}
+
+.pay-accordion-body {
+	height: 300px;
+	overflow: scroll;
+	overflow-x: hidden;
+	background-color:#efefef;
+	border-radius: 10px;
+	margin: 10px;
+	color: #686868;
+}
+.pay-accordion-body li {padding: 10px;}
+.pay-accordion-body ul{
+	font-size: 1em;
+	display: block;
+}
+.accordion-body-head {
+	color: #000;
+	font-weight: 800;
+	margin: 10px 0;
+}
+.pay-accordion-body::-webkit-scrollbar {
+  width: 6px;
+
+}
+
+.pay-accordion-body::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.pay-accordion-body::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #808080;
+}
+
+.pay-accordion-body::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+.pay-accordion-last{
+	height: auto;
+	background-color:#efefef;
+	border-radius: 10px;
+	margin: 10px;
+	color: #686868;
 }
