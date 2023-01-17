@@ -58,7 +58,7 @@
 				<div class="row">
 					<div class="menuText">
 						<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
+						<a href="/mypageorderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
 						<a href="/pointtest">포인트</a><br>
 						<a href="/activitylisttest">활동내역</a><br>
 						<a href="/inquirylisttest">문의내역</a><br>
@@ -87,7 +87,7 @@
 									<div class="p-4">
 										<div class="menuText2">
 											<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-											<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
+											<a href="/mypageorderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
 											<a href="/pointtest">포인트</a><br>
 											<a href="/activitylisttest">활동내역</a><br>
 											<a href="/inquirylisttest">문의내역</a><br>

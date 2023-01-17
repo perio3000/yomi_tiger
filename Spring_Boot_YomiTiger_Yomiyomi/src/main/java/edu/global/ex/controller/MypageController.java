@@ -26,6 +26,31 @@ public class MypageController {
 		return "mypage";
 	}
 	
+	//http://localhost:8282/mypageorderdeliverylist?username=user@naver.com
+	@GetMapping("/mypageorderdeliverylist")
+	public String mypageorderdeliverylist(Model model, MemberVO memberVO) {
+		log.info("mypageorderdeliverylist..");
+		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("order", mypageService.getOrder(memberVO.getUsername()));
+		
+		System.out.println(mypageService.getOrder(memberVO.getUsername()));
+		
+		return "orderdeliverylist";
+	}
+	
+	@GetMapping("/mypagerorderlistsearch")
+	public String mypagerorderlistsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate) {
+		log.info("mypagerorderlistsearch..");
+		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("order", mypageService.getOrderSearch(memberVO.getUsername(), startdate, enddate));
+		
+		System.out.println(mypageService.getOrder(memberVO.getUsername()));
+		
+		return "orderdeliverylist";
+	}
+	
 	@GetMapping("/mypageuserupdate")
 	public String mypageuserupdate(Model model, MemberVO memberVO) {
 		log.info("mypageuserupdate..");

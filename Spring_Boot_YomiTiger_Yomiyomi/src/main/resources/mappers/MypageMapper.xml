@@ -6,12 +6,6 @@
 <mapper namespace="edu.global.ex.mapper.MypageMapper">
 
 	<!-- VO객체와 데이터베이스 컬럼을 매핑 -->
-	<resultMap id="authMap" type="AuthVO">
-		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
-		<result property="authority" column="authority" />
-		<result property="user_id" column="user_id" />
-	</resultMap>
-
 	<resultMap id="userMap" type="MemberVO">
 		<id property="id" column="id" />
 		<result property="password" column="password" />
@@ -30,10 +24,114 @@
 		<collection property="authList" resultMap="authMap"></collection> <!-- 1:N, List 매핑 -->
 	</resultMap>   
 	
+	<resultMap id="authMap" type="AuthVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="authority" column="authority" />
+		<result property="user_id" column="user_id" />
+	</resultMap>
+	
+	<resultMap id="orderMap" type="OrderVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="order_date" column="order_date" />
+		<result property="user_id" column="user_id" />
+		<collection property="payList" resultMap="payMap"></collection> <!-- 1:N, List 매핑 -->
+		<collection property="orderdetailList" resultMap="orderdetailMap"></collection> <!-- 1:N, List 매핑 -->
+		<collection property="deliveryList" resultMap="deliveryMap"></collection> <!-- 1:N, List 매핑 -->
+	</resultMap>
+	
+	<resultMap id="payMap" type="PayVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="pay_date" column="pay_date" />
+		<result property="pay_result" column="pay_result" />
+		<result property="user_id" column="user_id" />
+	</resultMap>
+	
+	<resultMap id="DeliveryMap" type="DeliveryVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="delivery_name" column="delivery_name" />
+		<result property="delivery_date" column="delivery_date" />
+		<result property="delivery_number" column="delivery_number" />
+		<result property="delivery_state" column="delivery_state" />
+		<result property="order_id" column="order_id" />
+	</resultMap>
+	
+	<resultMap id="OrderdetailMap" type="OrderdetailVO">
+		<result property="amount" column="amount" />
+		<result property="recipient_name" column="recipient_name" />
+		<result property="recipient_postnumber" column="recipient_postnumber" />
+		<result property="recipient_city" column="recipient_city" />
+		<result property="recipient_street" column="recipient_street" />
+		<result property="recipient_location" column="recipient_location" />
+		<result property="please" column="please" />
+		<result property="item_id" column="item_id" />
+		<result property="order_id" column="order_id" />
+		<collection property="itemList" resultMap="itemMap"></collection> <!-- 1:N, List 매핑 -->
+	</resultMap>
+	
+	<resultMap id="itemMap" type="ItemVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="title" column="title" />
+		<result property="price" column="price" />
+		<result property="publisher" column="publisher" />
+		<result property="datetime" column="datetime" />
+		<result property="star" column="star" />
+		<result property="stock" column="stock" />
+		<result property="contents" column="contents" />
+		<result property="authors" column="authors" />
+		<result property="translators" column="translators" />
+		<result property="status" column="status" />
+		<result property="thumbnail" column="thumbnail" />
+		<result property="event_id" column="event_id" />
+		<collection property="eventList" resultMap="eventMap"></collection> <!-- 1:N, List 매핑 -->
+		<collection property="imageList" resultMap="imageMap"></collection> <!-- 1:N, List 매핑 -->
+	</resultMap>
+	
+	<resultMap id="eventMap" type="EventVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="event_name" column="event_name" />
+		<result property="event_start" column="event_start" />
+		<result property="event_end" column="event_end" />
+		<result property="discount" column="discount" />
+	</resultMap>
+	
+	<resultMap id="imageMap" type="ImageVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="image" column="image" />
+		<result property="image_order" column="image_order" />
+		<result property="item_id" column="item_id" />
+	</resultMap>
+	
  	<select id="getUser" resultMap="userMap">
 		<![CDATA[
 			SELECT * FROM yomi_user, yomi_auth 
       		WHERE yomi_user.id = yomi_auth.user_id AND yomi_user.USERNAME = #{username}
+		]]>
+	</select>
+	
+	 <select id="getOrder" resultType="OrderVO">
+		<![CDATA[
+			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_item.price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
+			FROM yomi_user, yomi_order, yomi_orderdetail, yomi_delivery, yomi_pay, yomi_item
+			WHERE yomi_user.id = yomi_order.user_id 
+			AND yomi_order.id = yomi_orderdetail.order_id 
+			AND yomi_order.id = yomi_delivery.order_id 
+			AND yomi_order.id = yomi_pay.order_id
+			AND yomi_orderdetail.item_id = yomi_item.id
+			AND yomi_user.USERNAME = #{username}
+		]]>
+	</select>
+	
+	<select id="getOrderSearch" resultType="OrderVO">
+		<![CDATA[
+			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_item.price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
+			FROM yomi_user, yomi_order, yomi_orderdetail, yomi_delivery, yomi_pay, yomi_item
+			WHERE yomi_user.id = yomi_order.user_id 
+			AND yomi_order.id = yomi_orderdetail.order_id 
+			AND yomi_order.id = yomi_delivery.order_id 
+			AND yomi_order.id = yomi_pay.order_id
+			AND yomi_orderdetail.item_id = yomi_item.id
+			AND yomi_user.USERNAME = #{username}
+			AND yomi_order.order_date between to_date(#{startdate}, 'YYYY-MM-DD') and to_date(#{enddate}, 'YYYY-MM-DD')
 		]]>
 	</select>
 	
