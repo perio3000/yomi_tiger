@@ -9,9 +9,11 @@ body{
 	font-size: 30px;
 	font-weight: 500;
 }
+
 .searchForm{
 	width: 400px;
 }
+
 .searchBtn {
 	position: relative;
 	width: 2em;
@@ -22,9 +24,11 @@ body{
 	border: hidden;
 	background-color: white;
 }
+
 .searchBtn>i {
 	color: #bbb;
 }
+
 .searchControl {
 	width: 100%;
 	border: 1px solid #bbb;
@@ -32,11 +36,27 @@ body{
 	padding: 0.63em 0.75em;
 	font-size: 0.88em;
 }
-/* .event-search-area, .event-search-btn {
-	display: flex;
-	justify-content: flex-end;
-} */
-/* .event-search-form, .event-search-control { width: 400px;} */
-/* .event-search-btn { 
-	display: flex;
-	justify-content: flex-end; } */
+
+.btn-primary {
+	background-color: #424874;
+	color: #F4EEFF;
+	border: 1px solid #DCD6F7;
+	width: 200px;
+}
+
+.count{
+	font-size: 17px;
+	color: #424874;
+	font-weight: 500;
+}
+
+.eventTitle {
+	font-size: 15px;
+	font-weight: bold;
+	color: #424874;
+}
+
+.period {
+	font-size: 12px;
+	color: #A6B1E1;
+}
