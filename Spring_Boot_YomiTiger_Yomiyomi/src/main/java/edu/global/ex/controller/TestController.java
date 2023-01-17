@@ -89,7 +89,7 @@ public class TestController {
 		return "FAQ";
 	}
 	
-	// 자주 묻는 질문
+	// 고객센터
 	@GetMapping("/customercenter")
 	public String custmoercenter() {
 		log.info("/customercenter");
