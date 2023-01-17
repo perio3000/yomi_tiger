@@ -15,6 +15,9 @@
 <link rel="stylesheet" type="text/css" href="css/mypage.css">
 </head>
 <body>
+
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	<main class="container">
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">

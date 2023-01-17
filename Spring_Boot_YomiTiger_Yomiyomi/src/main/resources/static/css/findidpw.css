@@ -1,4 +1,5 @@
 @charset "EUC-KR";
+body{ margin: 0 auto; }
 .clearfix {
   clear: both;
 }

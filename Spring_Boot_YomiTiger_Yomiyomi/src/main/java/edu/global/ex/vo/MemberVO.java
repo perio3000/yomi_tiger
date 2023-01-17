@@ -51,4 +51,5 @@ public class MemberVO {
 	private String bank;
 	
 	private List<AuthVO> authList;
+	private List<OrderVO> orderList;
 }

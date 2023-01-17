@@ -79,7 +79,7 @@ CREATE TABLE yomi_nonmember (
 CREATE TABLE yomi_orderdetail (
 	amount	number(30)	NOT NULL,
 	recipient_name	varchar2(100)	NOT NULL,
-	recipient_postnumber	number(10)	NOT NULL,
+	recipient_postnumber	varchar2(20)	NOT NULL,
 	recipient_city	varchar2(100)	NOT NULL,
 	recipient_street	varchar2(100)	NOT NULL,
 	recipient_location	varchar2(200)	NULL,

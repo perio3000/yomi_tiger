@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 경로지정 -->
+<mapper namespace="edu.global.ex.mapper.NoticeMapper">
+
+	<resultMap id="boardCategoryMap" type="BoardCategoryVO">
+		<id property="id" column="id" />
+		<result property="board_name" column="board_name" />
+	</resultMap>
+
+	<resultMap id="boardMap" type="BoardVO">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="written_date" column="written_date" />
+		<result property="hit" column="hit" />
+		<result property="user_id" column="user_id" />
+		<result property="board_number" column="board_number"/>
+		<collection property="boardCategoryList" resultMap="boardCategoryMap"></collection>
+		<collection property="userList" resultMap="userMap"></collection> <!-- 1:N, List 매핑 -->
+	</resultMap>
+
+	<!--usermapper-->
+	<resultMap id="authMap" type="AuthVO">
+		<id property="id" column="id" /> <!-- id = key (result로 해도 상관없음) -->
+		<result property="authority" column="authority" />
+		<result property="user_id" column="user_id" />
+	</resultMap>
+
+	<resultMap id="userMap" type="MemberVO">
+		<id property="id" column="id" />
+		<result property="password" column="password" />
+		<result property="username" column="username" />
+		<result property="name" column="name" />
+		<result property="tel" column="tel" />
+		<result property="postnumber" column="postnumber" />
+		<result property="city" column="city" />
+		<result property="street" column="street" />
+		<result property="location" column="location" />
+		<result property="point" column="point" />
+		<result property="logintime" column="logintime" />
+		<result property="enabled" column="enabled" />
+		<result property="account" column="account" />
+		<result property="bank" column="bank" />
+		<collection property="authList" resultMap="authMap"></collection> <!-- 1:N, List 매핑 -->
+	</resultMap>
+
+
+
+
+	<!--
+	<select id="getUser" resultMap="userMap">
+		<![CDATA[
+			SELECT * FROM yomi_user, yomi_auth
+      		WHERE yomi_user.id = yomi_auth.user_id AND yomi_user.USERNAME = #{username}
+		]]>
+	</select>
+	-->
+
+	<!-- VO객체와 데이터베이스 컬럼을 매핑 -->
+	<select id="getList" resultMap="boardMap">
+		<![CDATA[
+		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
+		WHERE yomi_board.user_id = yomi_user.id
+		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID
+		]]>
+	</select>
+
+<!--	<select id="read" resultType="NoticeVO">
+		<![CDATA[
+		select * from yomi_board where id = #{id}
+		]]>
+	</select>-->
+
+
+	
+</mapper>
