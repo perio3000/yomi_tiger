@@ -1,7 +1,5 @@
 package edu.global.ex.vo;
 
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +11,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EventVO {
+public class ImageVO {
 	
 	private int id;
-	private String event_name;
-	private Date event_start;
-	private Date event_end;
-	private double discount;
+	private String image;
+	private int image_order;
+	private int item_id;
+
 }

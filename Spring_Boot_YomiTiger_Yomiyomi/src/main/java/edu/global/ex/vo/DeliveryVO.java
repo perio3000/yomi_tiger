@@ -13,11 +13,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EventVO {
+public class DeliveryVO {
 	
 	private int id;
-	private String event_name;
-	private Date event_start;
-	private Date event_end;
-	private double discount;
+	private String delivery_name;
+	private Date delivery_date;
+	private String delivery_number;
+	private String delivery_state;
+	private int order_id;
 }
