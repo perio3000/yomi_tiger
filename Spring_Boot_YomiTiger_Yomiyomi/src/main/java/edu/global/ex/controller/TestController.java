@@ -121,7 +121,7 @@ public class TestController {
 		return "events";
 	}
 	
-	// 푸터
+	// 푸터 (굉장히 간단한데 이래도 되나요)
 	@GetMapping("/footer")
 	public String footer() {
 		log.info("/footer");
