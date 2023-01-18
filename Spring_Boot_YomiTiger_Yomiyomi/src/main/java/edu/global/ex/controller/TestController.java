@@ -73,11 +73,11 @@ public class TestController {
 	}
 	
 	// 1:1 문의하기
-	@GetMapping("/1by1qna")
+	@GetMapping("/qna")
 	public String onebyoneqna() {
-		log.info("/1by1qna");
+		log.info("/qna");
 		
-		return "1by1qna";
+		return "qna";
 
 	}
 
