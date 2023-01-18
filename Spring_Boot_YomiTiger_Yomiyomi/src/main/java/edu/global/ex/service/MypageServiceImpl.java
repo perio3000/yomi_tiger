@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.global.ex.mapper.MypageMapper;
 import edu.global.ex.vo.MemberVO;
 import edu.global.ex.vo.OrderVO;
+import edu.global.ex.vo.PointVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -38,7 +39,18 @@ public class MypageServiceImpl implements MypageService{
 		return mypageMapper.getOrderSearch(username, startdate, enddate);
 	}
 
-	
-	
+	@Override
+	public List<PointVO> getPointList(String username) {
+		log.info("getOrder()..");
+		
+		return mypageMapper.getPointList(username);
+	}
+
+	@Override
+	public List<PointVO> getPointSearch(String username, String startdate, String enddate) {
+		log.info("getOrderSearch()..");
+		
+		return mypageMapper.getPointSearch(username, startdate, enddate);
+	}
 
 }

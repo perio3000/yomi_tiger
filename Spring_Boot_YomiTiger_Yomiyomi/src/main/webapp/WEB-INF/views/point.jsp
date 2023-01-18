@@ -23,7 +23,7 @@
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="/mypagetest">마이페이지</a></li>
+					<li class="breadcrumb-item"><a href="/mypage_main?username=${ member.username }">마이페이지</a></li>
 					<li class="breadcrumb-item active" aria-current="page">포인트</li>
 				</ol>
 			</nav>
@@ -37,7 +37,7 @@
 							<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
 						</div>
 						<div class="name">
-							'요미타이거'님
+							'${ member.name }'님
 						</div>
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
@@ -114,7 +114,7 @@
 							<div class="col">
 								<img alt="" src="icon/loyal-customer.png" width="40" height="40">
 							</div>
-							<div class="col align-self-center text-end">0</div>
+							<div class="col align-self-center text-end">${ member.point }</div>
 							<div class="col align-self-center">포인트</div>
 						</div>
 					</div>
@@ -139,56 +139,94 @@
 										<h1 class="modal-title fs-3 fw-bolder" id="staticBackdropLabel">상세조회</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
-									<div class="modal-body">
-										<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
-											• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
-											• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
+									<form:form action="mypage_pointsearch" method="get">
+										<input type="hidden" name="username" value="${ member.username }">
+										<div class="modal-body">
+											<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
+												• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
+												• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
+											</div>
+											<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
+												기간조회
+											</div>
+											
+											<div class="input-group input-daterange">
+												<div class="input-group-addon">&nbsp;시작일&nbsp;</div>
+											    <input type="date" name="startdate">
+											    <div class="input-group-addon">&nbsp;/종료일&nbsp;</div>
+											    <input type="date" name="enddate">
+											</div>
+											
 										</div>
-										<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
-											기간조회
+										<div class="modal-footer">
+											<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
+												<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
+											</button>
+											<button type="submit" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
 										</div>
-										
-										<div class="input-group input-daterange">
-											<div class="input-group-addon">&nbsp;시작일&nbsp;</div>
-										    <input type="date" name="start_date">
-										    <div class="input-group-addon">&nbsp;/종료일&nbsp;</div>
-										    <input type="date" name="end_date">
-										</div>
-										
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
-											<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
-										</button>
-										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
-									</div>
+									</form:form>
 								</div>
 							</div>
 						</div>
 					</div>
 					
 					<div style="margin-top: 40px">
-						<table class="table table-hover">
+						<table class="table table-hover text-center">
 							<thead>
 								<tr>
 									<th>상세내용</th>
 									<th>등록일</th>
 									<th>구분</th>
-									<th>금액</th>
-									<th>만료일</th>
+									<th>포인트</th>
+									<th>총 포인트</th>
 								</tr>
 							</thead>
 							
-							<tbody>
-								<tr>
-									
-								</tr>
+							<tbody class="">
+								
+								<c:forEach var="pointList" items="${ point }">
+									<tr>
+										<td class="align-middle"><img src="${ pointList.thumbnail }" width="100px" height="140px"><br> 가격 : ${ pointList.price } 원</td>
+										<td class="align-middle">${ pointList.point_date }</td>
+										<td class="align-middle">${ pointList.point_state }</td>
+										<td class="align-middle">${ pointList.point }</td>
+										<td class="align-middle">${ pointList.total_point }</td>	
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 						
-						<div class="ifNoPoint fs-4 text-center" style="margin: 100px 0 100px 0">
-							포인트 적립 내역이 없습니다.
-						</div>
+						<c:if test="${ empty point}">
+							<div class="ifNoPoint fs-4 text-center" style="margin: 100px 0 100px 0;">
+								포인트 적립 내역이 없습니다.
+							</div>
+						</c:if>
+						
+						
+					</div>
+					
+					<div class="d-flex justify-content-center">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination">
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Previous"> 
+										<span aria-hidden="true" class="pageText">&laquo;</span>
+									</a>
+								</li>
+								
+								<li class="page-item">
+									<a class="page-link" href="#" >
+										<span class="pageText">1</span>
+									</a>
+								</li>
+
+								<li class="page-item">
+									<a class="page-link" href="#" aria-label="Next"> 
+										<span aria-hidden="true" class="pageText">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 					
 					<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 40px 0 40px 0">

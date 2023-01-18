@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import edu.global.ex.vo.MemberVO;
 import edu.global.ex.vo.OrderVO;
+import edu.global.ex.vo.PointVO;
 
 @Mapper
 public interface MypageMapper {
@@ -15,5 +16,9 @@ public interface MypageMapper {
 	List<OrderVO> getOrder(String username);
 	
 	List<OrderVO> getOrderSearch(String username, String startdate, String enddate);
+	
+	List<PointVO> getPointList(String username);
+	
+	List<PointVO> getPointSearch(String username, String startdate, String enddate);
 	
 }
