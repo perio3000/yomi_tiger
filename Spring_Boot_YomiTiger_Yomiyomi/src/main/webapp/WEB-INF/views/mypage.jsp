@@ -54,14 +54,14 @@
 
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-						<a href="/mypageorderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-						<a href="/pointtest">포인트</a><br>
-						<a href="/activitylisttest">활동내역</a><br>
-						<a href="/inquirylisttest">문의내역</a><br>
-						<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
+						<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+						<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
+						<a href="/mypage_point?username=${ member.username }">포인트</a><br>
+						<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
+						<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
+						<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
 						<br>
-						<a href="/librarytest" class="menuTitle">서재</a>
+						<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
 					</div>
 				</div>
 				
@@ -83,14 +83,14 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypagemain?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-											<a href="/mypageorderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-											<a href="/pointtest">포인트</a><br>
-											<a href="/activitylisttest">활동내역</a><br>
-											<a href="/inquirylisttest">문의내역</a><br>
-											<a href="/mypageuserupdate?username=${ member.username }">회원정보</a><br>
+											<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+											<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
+											<a href="/mypage_point?username=${ member.username }">포인트</a><br>
+											<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
+											<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
+											<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
 											<br>
-											<a href="/librarytest" class="menuTitle">서재</a>
+											<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
 										</div>
 									</div>
 								</div>
