@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body { 
+	width: 80%;
+	margin: 0 auto;
+}
+
+.footerMenu {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.footerContents {
+	font-size: 14px;
+}
+
+.footerNum {
+	font-size: 14px;
+	font-weight: 700;
+	color: #424874;
+}
+
+.footerCopyright {
+	color: #A6B1E1;
+}
