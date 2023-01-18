@@ -120,6 +120,14 @@ public class TestController {
 				
 		return "events";
 	}
+	
+	// 푸터
+	@GetMapping("/footer")
+	public String footer() {
+		log.info("/footer");
+		
+		return "footer";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
