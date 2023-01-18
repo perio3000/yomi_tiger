@@ -150,7 +150,9 @@ CREATE TABLE yomi_point (
 	id	number(30)	NOT NULL,
 	point	number(30)	NULL,
 	point_date	date	NULL,
-	user_id	number(30)	NOT NULL
+	user_id	number(30)	NOT NULL,
+	total_point number(30) NULL,
+	point_state varchar2(20) NULL
 );
 
 CREATE SEQUENCE yomi_user_seq;
