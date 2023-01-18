@@ -10,9 +10,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/mypage.js"></script>
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/mypage.css">
+<script type="text/javascript" src="/js/mypage.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage.css">
 <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
@@ -35,7 +35,7 @@
 			<div class="row">
 				<div class="text-center profileContainer" style="display: flex; align-items: center; background-color: #A6B1E1; border-radius: 20px">
 					<div>
-						<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
+						<img src="/icon/user.png" class="rounded-circle" width="100px" height="100px">
 					</div>
 					<div class="fs-2 fw-bolder">
 						&nbsp;'요미타이거'님의 서재
@@ -76,12 +76,12 @@
 								aria-label="Basic radio toggle button group">
 								<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked> 
 								<label class="btn" for="btnradio1" style="display: flex; align-items: center;">
-									<img alt="" src="icon/grid.png" width="20px" height="20px">
+									<img alt="" src="/icon/grid.png" width="20px" height="20px">
 								</label>
 
 								<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"> 
 								<label class="btn" for="btnradio2" style="display: flex; align-items: center;">
-									<img alt="" src="icon/list.png" width="20px" height="20px">
+									<img alt="" src="/icon/list.png" width="20px" height="20px">
 								</label>
 							</div>
 						</div>

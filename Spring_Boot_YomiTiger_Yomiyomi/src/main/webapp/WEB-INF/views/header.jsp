@@ -29,8 +29,8 @@
 	crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
 </head>
 <body>
 	<header>
@@ -44,7 +44,7 @@
 
 		<div class="row header">
 			<div class="header_logo col-1">
-				<a href="main.jsp"> <img alt="logo" src="logo/logo.png">
+				<a href="main.jsp"> <img alt="logo" src="/logo/logo.png">
 				</a>
 			</div>
 			<form class="search-form col-8 search_form" role="search">

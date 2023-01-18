@@ -2,108 +2,113 @@ package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.MemberVO;
 
 @Slf4j
 @Controller
+@RequestMapping("/mypage")
 public class MypageController {
 
 	@Autowired
 	private MypageService mypageService;
 	
 	//메인
-	@GetMapping("/mypage_main")
-	public String mypage_main(Model model, MemberVO memberVO) {
-		log.info("mypage_main..");
+	@GetMapping("/main")
+	public String main(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("main..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
 		
 		return "mypage";
 	}
 	
 	//주문배송목록
-	//http://localhost:8282/mypage_orderdeliverylist?username=user@naver.com
-	@GetMapping("/mypage_orderdeliverylist")
-	public String mypage_orderdeliverylist(Model model, MemberVO memberVO) {
-		log.info("mypage_orderdeliverylist..");
+	//http://localhost:8282/mypage/orderdeliverylist?username=user@naver.com
+	@GetMapping("/orderdeliverylist")
+	public String orderdeliverylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("orderdeliverylist..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
-		model.addAttribute("order", mypageService.getOrder(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("order", mypageService.getOrder(authentication.getName()));
 		
 		return "orderdeliverylist";
 	}
 	
-	@GetMapping("/mypage_orderlistsearch")
-	public String mypage_orderlistsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate) {
-		log.info("mypage_orderlistsearch..");
+	@GetMapping("/orderlistsearch")
+	public String orderlistsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate, Authentication authentication, Principal principal) {
+		log.info("orderlistsearch..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
-		model.addAttribute("order", mypageService.getOrderSearch(memberVO.getUsername(), startdate, enddate));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("order", mypageService.getOrderSearch(authentication.getName(), startdate, enddate));
 		
 		return "orderdeliverylist";
 	}
 	
 	//포인트페이지
-	@GetMapping("/mypage_point")
-	public String mypage_point(Model model, MemberVO memberVO) {
-		log.info("mypage_point..");
+	@GetMapping("/point")
+	public String point(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("point..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
-		model.addAttribute("point", mypageService.getPointList(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("point", mypageService.getPointList(authentication.getName()));
 		
 		return "point";
 	}
 	
-	@GetMapping("/mypage_pointsearch")
-	public String mypage_pointsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate) {
-		log.info("mypage_pointsearch..");
+	@GetMapping("/pointsearch")
+	public String pointsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate, Authentication authentication, Principal principal) {
+		log.info("pointsearch..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
-		model.addAttribute("point", mypageService.getPointSearch(memberVO.getUsername(), startdate, enddate));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("point", mypageService.getPointSearch(authentication.getName(), startdate, enddate));
 		
 		return "point";
 	}
 	
 	//활동내역
-	@GetMapping("/mypage_activitylist")
-	public String mypage_activitylist(Model model, MemberVO memberVO) {
-		log.info("mypage_activitylist..");
+	@GetMapping("/activitylist")
+	public String activitylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("activitylist..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
 		
 		return "activitylist";
 	}
 	
 	//문의내역
-	@GetMapping("/mypage_inquirylist")
-	public String mypage_inquirylist(Model model, MemberVO memberVO) {
-		log.info("mypage_inquirylist..");
+	@GetMapping("/inquirylist")
+	public String inquirylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("inquirylist..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
 		
 		return "inquirylist";
 	}
 	
 	//회원정보
-	@GetMapping("/mypage_userupdate")
-	public String mypage_userupdate(Model model, MemberVO memberVO) {
-		log.info("mypage_userupdate..");
+	@GetMapping("/userupdate")
+	public String userupdate(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("userupdate..");
 		
-		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
 		
 		return "userupdate";
 	}
 	
 	//서재
-	@GetMapping("/mypage_library")
-	public String mypage_library(Model model, MemberVO memberVO) {
-		log.info("mypage_library..");
+	@GetMapping("/library")
+	public String library(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+		log.info("library..");
 		
 		
 		

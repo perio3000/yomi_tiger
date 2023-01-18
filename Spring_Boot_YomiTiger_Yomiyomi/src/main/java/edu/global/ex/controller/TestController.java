@@ -9,12 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class TestController {
 
-	@GetMapping("/mypagetest")
-	public String mypagetest() {
-		log.info("/mypagetest");
-
-		return "mypage";
-	}
 	//헤더
 	@GetMapping("/header")
 	public String header() {
@@ -30,47 +24,7 @@ public class TestController {
 		return "login";
 	}
 
-	@GetMapping("/pointtest")
-	public String pointtest() {
-		log.info("/pointtest");
-
-		return "point";
-	}
 	
-	@GetMapping("/orderdeliverylisttest")
-	public String orderdeliverylisttest() {
-		log.info("/orderdeliverylisttest");
-		
-		return "orderdeliverylist";
-	}
-	
-	@GetMapping("/activitylisttest")
-	public String activitylisttest() {
-		log.info("/activitylisttest");
-		
-		return "activitylist";
-	}
-	
-	@GetMapping("/inquirylisttest")
-	public String inquirylisttest() {
-		log.info("/inquirylisttest");
-		
-		return "inquirylist";
-	}
-	
-	@GetMapping("/userupdatetest")
-	public String userupdatetest() {
-		log.info("/userupdatetest");
-		
-		return "userupdate";
-	}
-	
-	@GetMapping("/librarytest")
-	public String librarytest() {
-		log.info("/librarytest");
-		
-		return "library";
-	}
 	
 	// 1:1 문의하기
 	@GetMapping("/qna")

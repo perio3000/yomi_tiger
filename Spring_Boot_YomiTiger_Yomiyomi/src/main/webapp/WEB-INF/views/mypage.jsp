@@ -10,9 +10,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/mypage.js"></script>
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/mypage.css">
+<script type="text/javascript" src="/js/mypage.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage.css">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
 				<div class="row">
 					<div class="text-center profileContainer">
 						<div>
-							<img src="icon/user.png" class="rounded-circle" width="100px"
+							<img src="/icon/user.png" class="rounded-circle" width="100px"
 								height="100px">
 						</div>
 						<div class="name">'${ member.name }'님</div>
@@ -54,14 +54,14 @@
 
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-						<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-						<a href="/mypage_point?username=${ member.username }">포인트</a><br>
-						<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
-						<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
-						<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
+						<a href="/mypage/main" class="menuTitle">마이페이지</a><br>
+						<a href="/mypage/orderdeliverylist">주문 배송 목록</a><br>
+						<a href="/mypage/point">포인트</a><br>
+						<a href="/mypage/activitylist">활동내역</a><br>
+						<a href="/mypage/inquirylist">문의내역</a><br>
+						<a href="/mypage/userupdate">회원정보</a><br>
 						<br>
-						<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
+						<a href="/mypage/library" class="menuTitle">서재</a>
 					</div>
 				</div>
 				
@@ -83,14 +83,14 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-											<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-											<a href="/mypage_point?username=${ member.username }">포인트</a><br>
-											<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
-											<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
-											<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
+											<a href="/mypage/main" class="menuTitle">마이페이지</a><br>
+											<a href="/mypage/orderdeliverylist">주문 배송 목록</a><br>
+											<a href="/mypage/point">포인트</a><br>
+											<a href="/mypage/activitylist">활동내역</a><br>
+											<a href="/mypage/inquirylist">문의내역</a><br>
+											<a href="/mypage/userupdate">회원정보</a><br>
 											<br>
-											<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
+											<a href="/mypage/library" class="menuTitle">서재</a>
 										</div>
 									</div>
 								</div>
@@ -130,17 +130,17 @@
 							id="accordionExample">
 
 							<div class="card recCard recCard1 col-4">
-								<a href="#"> <img alt="" src="logo/logo.png" class="rounded"
+								<a href="#"> <img alt="" src="/logo/logo.png" class="rounded"
 									width="100%" height="83%">
 								</a>
 							</div>
 							<div class="card recCard recCard2 col-4">
-								<a href="#"> <img alt="" src="logo/logo.png" class="rounded"
+								<a href="#"> <img alt="" src="/logo/logo.png" class="rounded"
 									width="100%" height="83%">
 								</a>
 							</div>
 							<div class="card recCard recCard3 col-4">
-								<a href="#"> <img alt="" src="logo/logo.png" class="rounded"
+								<a href="#"> <img alt="" src="/logo/logo.png" class="rounded"
 									width="100%" height="83%">
 								</a>
 							</div>
@@ -154,7 +154,7 @@
 						<div class="row" style="height: 16.5vw">
 							<div style="margin-top: 40px"
 								class="d-flex justify-content-center">
-								<img src="icon/attention.png" width="40px" height="40px">
+								<img src="/icon/attention.png" width="40px" height="40px">
 							</div>
 							<div class="d-flex justify-content-center">알림 소식이 없습니다.</div>
 
@@ -170,7 +170,7 @@
 							<div class="card pointCard p-3">
 								<div class="row flex-nowrap justify-content-evenly">
 									<div class="col">
-										<img alt="" src="icon/loyal-customer.png" width="40"
+										<img alt="" src="/icon/loyal-customer.png" width="40"
 											height="40">
 									</div>
 									<div class="col align-self-center text-end">${ member.point }</div>

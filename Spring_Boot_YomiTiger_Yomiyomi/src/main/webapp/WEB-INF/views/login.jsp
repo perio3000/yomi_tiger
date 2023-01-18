@@ -33,7 +33,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/loginstyle.css">
 </head>
-<body>
+<body onload="document.f.username.focus();">
 	
 	<main>
 		<div class="container">
@@ -43,11 +43,17 @@
 					<div class="sign">
 						<img alt="logo" src="logo/logo.png">
 					</div>
-					
+					<c:url value="/login" var="loginUrl" />
 					<div class="sign-in-up">
-						<form:form class="sign-in-form active" action="/member/user" method="post">
-							<input type="text" placeholder="아이디를 입력해 주세요." name="username"> 
-							<input type="password" placeholder="비밀번호를 입력해 주세요." name="password">
+						<form:form class="sign-in-form active" action="${loginUrl}" method="post">
+							<input type="text" placeholder="아이디를 입력해 주세요." id="username" name="username"> 
+							<input type="password" placeholder="비밀번호를 입력해 주세요." id="password" name="password">
+							<c:if test="${param.error != null}">
+								<p>아이디와 비밀번호가 잘못되었습니다.</p>
+							</c:if>
+							<c:if test="${param.logout != null}">
+								<p>로그아웃 하였습니다.</p>
+							</c:if>
 							<input type="submit" value="로그인">
 							<span class="check"><input type="checkbox"><label>아이디 저장</label></span> 
 							<a href="findIDPW">아이디/비밀번호 찾기</a> 

@@ -12,9 +12,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/mypage.js"></script>
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/mypage.css">
+<script type="text/javascript" src="/js/mypage.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="text-center profileContainer">
 						<div>
-							<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
+							<img src="/icon/user.png" class="rounded-circle" width="100px" height="100px">
 						</div>
 						<div class="name">
 							'${ member.name }'님
@@ -58,14 +58,14 @@
 				
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-						<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-						<a href="/mypage_point?username=${ member.username }">포인트</a><br>
-						<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
-						<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
-						<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
+						<a href="/mypage/main" class="menuTitle">마이페이지</a><br>
+						<a href="/mypage/orderdeliverylist">주문 배송 목록</a><br>
+						<a href="/mypage/point">포인트</a><br>
+						<a href="/mypage/activitylist">활동내역</a><br>
+						<a href="/mypage/inquirylist">문의내역</a><br>
+						<a href="/mypage/userupdate">회원정보</a><br>
 						<br>
-						<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
+						<a href="/mypage/library" class="menuTitle">서재</a>
 					</div>
 				</div>
 				
@@ -87,14 +87,14 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
-											<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
-											<a href="/mypage_point?username=${ member.username }">포인트</a><br>
-											<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
-											<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
-											<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
+											<a href="/mypage/main" class="menuTitle">마이페이지</a><br>
+											<a href="/mypage/orderdeliverylist">주문 배송 목록</a><br>
+											<a href="/mypage/point">포인트</a><br>
+											<a href="/mypage/activitylist">활동내역</a><br>
+											<a href="/mypage/inquirylist">문의내역</a><br>
+											<a href="/mypage/userupdate">회원정보</a><br>
 											<br>
-											<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
+											<a href="/mypage/library" class="menuTitle">서재</a>
 										</div>
 									</div>
 								</div>
@@ -114,7 +114,7 @@
 					<div class="col d-flex justify-content-end" style="display: flex; align-items: center;">
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="display: flex; align-items: center;">
-							<img alt="" src="icon/browser2.png" width="20px" height="20px">&nbsp;상세조회
+							<img alt="" src="/icon/browser2.png" width="20px" height="20px">&nbsp;상세조회
 						</button>
 	
 						<!-- Modal -->
@@ -125,7 +125,7 @@
 										<h1 class="modal-title fs-3 fw-bolder" id="staticBackdropLabel">상세조회</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
-									<form:form action="mypage_orderlistsearch" method="get">
+									<form:form action="orderlistsearch" method="get">
 										<input type="hidden" name="username" value="${ member.username }">
 										<div class="modal-body">
 											<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
@@ -146,7 +146,7 @@
 										</div>
 										<div class="modal-footer">
 											<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
-												<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
+												<img src="/icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
 											</button>
 											<button type="submit" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
 										</div>
