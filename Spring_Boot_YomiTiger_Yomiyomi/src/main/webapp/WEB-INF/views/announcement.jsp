@@ -23,9 +23,10 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<div class="row title">
-		   			&nbsp;고객센터
-		   		</div>
+	   			<a href="customercenter" class="title">
+		   			고객센터
+		   		</a>
+		   		<br>
 		   		<br>
 		   		<div class="notice">메인</div>
 		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; 
@@ -41,7 +42,7 @@
 					<a href="#" class="qnaMenu">기타</a><br>
 					<a href="#" class="qnaMenu">eBook</a><br>
 					<br>
-					<a href="#" class="notice">1:1문의</a><br>
+					<span class="notice">1:1문의</span><br>
 					<a href="1by1qna" class="qnaMenu">1:1문의 접수</a><br>
 					<a href="#" class="qnaMenu">1:1문의 내역</a><br>
 					<br>
@@ -65,6 +66,7 @@
 					<div class="">
 						<input class="form-control" type="text" placeholder="공지사항을 검색해보세요." aria-label="default input example">
 					</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="">
 					  	<button type="button" class="btn">검색</button>
 					</div>
