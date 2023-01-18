@@ -74,7 +74,7 @@ public class TestController {
 	
 	// 1:1 문의하기
 	@GetMapping("/qna")
-	public String onebyoneqna() {
+	public String qna() {
 		log.info("/qna");
 		
 		return "qna";
