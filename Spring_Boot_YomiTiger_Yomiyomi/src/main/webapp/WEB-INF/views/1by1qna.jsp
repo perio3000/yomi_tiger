@@ -12,7 +12,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 <meta charset="UTF-8">
 <title>1:1 문의</title>
-<!--  -->
+
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/1by1qna.css">
@@ -26,7 +26,7 @@
    		<hr>
    		<div class="row">
    			<div class="col-md-2">
-   				문의 유형<font color="blue">&nbsp;*</font>
+   				문의 유형<font color="#424874">&nbsp;*</font>
    			</div>
    			<div class="col-md-10">
    				<select class="form-select" aria-label="Default select example">
@@ -40,7 +40,7 @@
    		<br>
    		<div class="row">
    			<div class="col-md-2">
-   				내용<font color="blue">&nbsp;*</font>
+   				내용<font color="#424874">&nbsp;*</font>
    			</div>
    			<div class="col-md-10">
   				<textarea class="form-control" placeholder="제목을 입력해 주세요." id="floatingTextarea2" style="height: 30px;"></textarea>
@@ -78,7 +78,7 @@
    		<br>
    		<div class="row">
    			<div class="col-md-2">
-   				연락처<font color="blue">&nbsp;*</font>
+   				연락처<font color="#424874">&nbsp;*</font>
    			</div>
    			<div class="col-md-3">
   				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
@@ -105,14 +105,13 @@
    		<div class="row">
    			<div class="col-md-4"></div>
    			<div class="col-md-6">
-   				<button type="button" class="btn btn-secondary btn-lg" style="width: 200px">취소</button>
-   				<!-- 색상을 좀 더 연한 회색으로 바꿀 수 있나? -->
+   				<button type="button" class="btn btn-secondary btn-lg" id="btnCancle" style="width: 200px">취소</button>
    				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   				<button type="button" class="btn btn-primary btn-lg" style="width: 200px" onclick="location.href='qnalist'">문의접수</button>
-   				<!-- 일단 문의 리스트까지 넘어가겐 했는데... 이걸 눌렀을때 데이터베이스로 넘어가는건 뭔가를 설정 따로 해야되는거겠죠? 응... -->
+   				<button type="button" class="btn btn-primary btn-lg" id="btnOk" style="width: 200px" onclick="location.href='qnalist'">문의접수</button>
    			</div>
    		</div>
    		<br><br>
    </main>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
