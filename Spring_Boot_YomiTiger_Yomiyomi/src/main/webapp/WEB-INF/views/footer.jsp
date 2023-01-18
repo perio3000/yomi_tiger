@@ -37,7 +37,7 @@
 		<br>
 		<span class="footerContents">대표이사 : 홍길동</span> <div class="vr"></div>&nbsp;<span class="footerContents">서울특별시 영등포구 영중로56 신한빌딩 4층</span>&nbsp;<div class="vr"></div>&nbsp;<span class="footerContents">사업자등록번호 : 123-45-67890</span><br>
 		<span class="footerNum">대표전화 : 0000-0000(발신자 부담 전화)</span>&nbsp;<div class="vr"></div>&nbsp;<span class="footerContents">FAX : 0502-0000-0000</span>&nbsp;<div class="vr"></div>&nbsp;<span class="footerContents">서울특별시 통신판매업신고번호 : 제 000호</span><br>
-		<span class="footerCopyright">&copy; YOMIYOMI BOOK</span>
+		<span class="footerCopyright">&copy; YOMIYOMI BOOKS</span>
 		<br>
 		<br>
 	</main>
