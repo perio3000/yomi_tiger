@@ -40,10 +40,9 @@ body{
 	padding: 0px 0px 0px 12px;
 }
 
-.btn{
-	/* background-color: #A6B1E1; 
-	color: #424874; */
+#btnSearch{
 	background-color: #424874; 
+	border: 1px solid #424874; 
 	color: #A6B1E1;
 }
 

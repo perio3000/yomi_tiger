@@ -39,8 +39,9 @@ body{
 	width: 700px;
 }
 
-.btn{
+#btnSearch{
 	background-color: #424874; 
+	border: 1px solid #424874; 
 	color: #A6B1E1;
 }
 

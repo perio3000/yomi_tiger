@@ -68,7 +68,7 @@
 					</div>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="">
-					  	<button type="button" class="btn">검색</button>
+					  	<button type="button" class="btn" id="btnSearch">검색</button>
 					</div>
 				</div>
 				<br>
@@ -102,7 +102,7 @@
 								<i class="ri-question-answer-line ri-3x"></i>
 							</div>
 							<div>
-								<a href="1by1qna" class="qnaMenu">1:1문의 접수</a>
+								<a href="qna" class="qnaMenu">1:1문의 접수</a>
 							</div>
 						</div>
 					</div>

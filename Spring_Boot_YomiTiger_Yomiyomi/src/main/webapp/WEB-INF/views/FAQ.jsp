@@ -66,7 +66,7 @@
 					</div>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="">
-					  	<button type="button" class="btn">검색</button>
+					  	<button type="button" class="btn" id="btnSearch">검색</button>
 					</div>
 				</div>
 				<br>
