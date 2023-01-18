@@ -61,9 +61,9 @@ function fourthTab(){
 }
 
 $(document).ready(function(){
-	$(".preText").text($(".preparing").length)
-	$(".ingText").text($(".delivered").length);
-	$(".endText").text($(".delivering").length);
-	$(".canText").text($(".canceled").length);
-	$(".refText").text($(".refund").length);
+	$(".preText").text($(".준비중").length)
+	$(".ingText").text($(".배송중").length);
+	$(".endText").text($(".배송완료").length);
+	$(".canText").text($(".취소").length);
+	$(".refText").text($(".교환환불").length);
 })

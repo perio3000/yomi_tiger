@@ -28,24 +28,110 @@
 		</div>
 		
 		<div class="row">
-<<<<<<< HEAD
-			<div class="d-flex flex-row-reverse event-search-area">
-				<form class="search-form col-md-5 align-self-end event-search-form" role="search">
-					<input class="search-control event-search-control" type="search"
-						placeholder="이벤트, 상품명으로  검색해보세요." aria-label="Search" style="width: 300px">
-					<button class="search-btn event-search-btn" type="submit">
-=======
 			<div class="d-flex justify-content-end">
 				<form class="search-form searchForm" role="search">
-					<input class="search-control searchControl" type="search"
-						placeholder="이벤트, 상품명으로 검색해 보세요." aria-label="Search">
+					<input class="search-control searchControl" type="search" placeholder="이벤트, 상품명으로 검색해 보세요." aria-label="Search">
 					<button class="search-btn searchBtn" type="submit">
->>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
 				</form>
 			</div>
 		</div>
+		
+		<div class="row">
+			<div class="col">
+				<div class="d-flex justify-content-center align-items-center" style="height: 100px; border: 1px solid #F4EEFF;">
+					<a class="btn btn-primary" href="#" role="button">전체</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-primary" href="#" role="button">국내도서</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-primary" href="#" role="button">외국도서</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="btn btn-primary" href="#" role="button">E-Book</a>
+	   			</div>
+   			 </div>
+		</div>
+		
+		<br>
+		<div class="row">
+			<div class="col">
+				<a class="col count">100건</a>
+			</div>
+			<div class="col">
+				<div class="d-flex justify-content-end">
+					<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+					  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+					  <label class="btn btn-outline-primary" for="btnradio1">진행</label>
+					
+					  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+					  <label class="btn btn-outline-primary" for="btnradio2">종료</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		
+		<br>
+		<div class="row">
+			<div class="col">
+				<img class="rounded" src="logo/events/50percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">신규 오픈 기념 50% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.02.28</a>
+			</div>
+			<div class="col">
+				<img class="rounded" src="logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">전 회원 10% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.05.31</a>
+			</div>
+			<div class="col">
+				<img class="rounded" src="logo/events/mission_20percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">미션 달성 시 20% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.01.31</a>
+			</div>
+		</div>
+		
+		<br>
+		<div class="row">
+			<div class="col">
+				<img class="rounded" src="logo/events/50percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">신규 오픈 기념 50% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.02.28</a>
+			</div>
+			<div class="col">
+				<img class="rounded" src="logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">전 회원 10% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.05.31</a>
+			</div>
+			<div class="col">
+				<img class="rounded" src="logo/events/mission_20percent_coupon.jpg" width="350px" height="150px"><br>
+				<a class="eventTitle" href="#">미션 달성 시 20% 할인 쿠폰</a><br>
+				<a class="period">2023.01.17~2023.01.31</a>
+			</div>
+		</div>
+		<br>
+		
+		<div class="row">
+			<div class="d-flex justify-content-center align-items-center">
+				<nav aria-label="Page navigation example">
+				  <ul class="pagination pagination">
+				    <li class="page-item">
+				      <a class="page-link" href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li class="page-item"><a class="page-link" href="#">1</a></li>
+				    <li class="page-item"><a class="page-link" href="#">2</a></li>
+				    <li class="page-item"><a class="page-link" href="#">3</a></li>
+				    <li class="page-item"><a class="page-link" href="#">4</a></li>
+				    <li class="page-item"><a class="page-link" href="#">5</a></li>
+				    <li class="page-item">
+				      <a class="page-link" href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+		</div>
+		<br><br>
+		
 	</div>
 </body>
 </html>

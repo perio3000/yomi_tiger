@@ -19,6 +19,11 @@ public class OrderVO {
 	private int id;
 	private Date order_date;
 	private int user_id;
+	private String price;
+	private String thumbnail;
+	private String title;
+	private int amount;
+	private String delivery_state;
 	
 	private List<PayVO> payList;
 	private List<OrderdetailVO> orderdetailList;

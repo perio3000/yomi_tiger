@@ -39,7 +39,7 @@
 							<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
 						</div>
 						<div class="name">
-							'요미타이거'님
+							'${ member.name }'님
 						</div>
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
@@ -58,14 +58,14 @@
 				
 				<div class="row">
 					<div class="menuText">
-						<a href="/mypagetest" class="menuTitle">마이페이지</a><br>
-						<a href="/orderdeliverylisttest">주문 배송 목록</a><br>
-						<a href="/pointtest">포인트</a><br>
-						<a href="/activitylisttest">활동내역</a><br>
-						<a href="/inquirylisttest">문의내역</a><br>
-						<a href="/userupdatetest">회원정보</a><br>
+						<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+						<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
+						<a href="/mypage_point?username=${ member.username }">포인트</a><br>
+						<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
+						<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
+						<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
 						<br>
-						<a href="/librarytest" class="menuTitle">서재</a>
+						<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
 					</div>
 				</div>
 				
@@ -87,13 +87,14 @@
 								<div class="offcanvas-body">
 									<div class="p-4">
 										<div class="menuText2">
-											<a href="/mypagetest" class="menuTitle">마이페이지</a><br> 
-											<a href="/orderdeliverylisttest">주문 배송 목록</a><br> 
-											<a href="/pointtest">포인트</a><br> 
-											<a href="/activitylisttest">활동내역</a><br>
-											<a href="/inquirylisttest">문의내역</a><br> 
-											<a href="/userupdatetest">회원정보</a><br><br> 
-											<a href="/librarytest" class="menuTitle">서재</a>
+											<a href="/mypage_main?username=${ member.username }" class="menuTitle">마이페이지</a><br>
+											<a href="/mypage_orderdeliverylist?username=${ member.username }">주문 배송 목록</a><br>
+											<a href="/mypage_point?username=${ member.username }">포인트</a><br>
+											<a href="/mypage_activitylist?username=${ member.username }">활동내역</a><br>
+											<a href="/mypage_inquirylist?username=${ member.username }">문의내역</a><br>
+											<a href="/mypage_userupdate?username=${ member.username }">회원정보</a><br>
+											<br>
+											<a href="/mypage_library?username=${ member.username }" class="menuTitle">서재</a>
 										</div>
 									</div>
 								</div>
@@ -124,29 +125,32 @@
 										<h1 class="modal-title fs-3 fw-bolder" id="staticBackdropLabel">상세조회</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
-									<div class="modal-body">
-										<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
-											• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
-											• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
+									<form:form action="mypagerorderlistsearch" method="get">
+										<input type="hidden" name="username" value="${ member.username }">
+										<div class="modal-body">
+											<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
+												• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
+												• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
+											</div>
+											<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
+												기간조회
+											</div>
+											
+											<div class="input-group input-daterange">
+												<div class="input-group-addon">&nbsp;시작일&nbsp;</div>
+											    <input type="date" name="startdate">
+											    <div class="input-group-addon">&nbsp;/종료일&nbsp;</div>
+											    <input type="date" name="enddate">
+											</div>
+											
 										</div>
-										<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
-											기간조회
+										<div class="modal-footer">
+											<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
+												<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
+											</button>
+											<button type="submit" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
 										</div>
-										
-										<div class="input-group input-daterange">
-											<div class="input-group-addon">&nbsp;시작일&nbsp;</div>
-										    <input type="date" name="start_date">
-										    <div class="input-group-addon">&nbsp;/종료일&nbsp;</div>
-										    <input type="date" name="end_date">
-										</div>
-										
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="display: flex; align-items: center;">
-											<img src="icon/sync_white.png" width="25px" height="25px">&nbsp;초기화
-										</button>
-										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">적용</button>
-									</div>
+									</form:form>
 								</div>
 							</div>
 						</div>
@@ -202,114 +206,36 @@
 							
 							<tbody>
 								<!-- 주문배송목록1 -->
-								<%-- <c:forEach var="orderList" items="${ order }">
+								<c:forEach var="orderList" items="${ order }">
+								
 									<tr>
 										<td class="align-middle">
 											<div>
-												<div class="fs-6">022008021154</div>
-												<div class="text-secondary">(2023-01-09)</div>
+												<div class="fs-6">${ orderList.id }</div>
+												<div class="text-secondary">(${ orderList.order_date })</div>
 											</div>
 										</td>
 										<td class="align-middle">
-											<div>23,000원</div>
+											<div>${ orderList.price }원</div>
 										</td>
 										<td class="align-middle">
 											<div class="row">
-												<div class="col"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="140px" height="195px"></div>
+												<div class="col"><img alt="" src="${ orderList.thumbnail }" width="140px" height="195px"></div>
 												<div class="col d-flex align-items-center">
-													<div class="">상품명</div>
+													<div class="">${ orderList.title }</div>
 												</div>
 											</div>
 										</td>
 										<td class="align-middle">
-											<div>1</div>
+											<div>${ orderList.amount }</div>
 										</td>
 										<td class="align-middle">
-											<div class="delivering">배송중</div>
+											<div class="${ orderList.delivery_state }">${ orderList.delivery_state }</div>
 										</td>
 									</tr>
-								</c:forEach> --%>
 								
-								<tr>
-									<td class="align-middle">
-										<div>
-											<div class="fs-6">022008021154</div>
-											<div class="text-secondary">(2023-01-09)</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>23,000원</div>
-									</td>
-									<td class="align-middle">
-										<div class="row">
-											<div class="col"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="140px" height="195px"></div>
-											<div class="col d-flex align-items-center">
-												<div class="">상품명</div>
-											</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>1</div>
-									</td>
-									<td class="align-middle">
-										<div class="delivering">배송중</div>
-									</td>
-								</tr>
-								
-								<!-- 주문배송목록2 -->
-								<tr>
-									<td class="align-middle">
-										<div>
-											<div class="fs-6">022008021154</div>
-											<div class="text-secondary">(2023-01-09)</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>23,000원</div>
-									</td>
-									<td class="align-middle">
-										<div class="row">
-											<div class="col"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="140px" height="195px"></div>
-											<div class="col d-flex align-items-center">
-												<div class="">상품명</div>
-											</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>1</div>
-									</td>
-									<td class="align-middle">
-										<div class="delivering">배송중</div>
-									</td>
-								</tr>
-								
-								<!-- 주문배송목록3 -->
-								<tr>
-									<td class="align-middle">
-										<div>
-											<div class="fs-6">022008021154</div>
-											<div class="text-secondary">(2023-01-09)</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>23,000원</div>
-									</td>
-									<td class="align-middle">
-										<div class="row">
-											<div class="col"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="140px" height="195px"></div>
-											<div class="col d-flex align-items-center">
-												<div class="">상품명</div>
-											</div>
-										</div>
-									</td>
-									<td class="align-middle">
-										<div>1</div>
-									</td>
-									<td class="align-middle">
-										<div class="delivered">배송완료</div>
-									</td>
-								</tr>
-								
+								</c:forEach>
+
 							</tbody>
 						</table>
 						
