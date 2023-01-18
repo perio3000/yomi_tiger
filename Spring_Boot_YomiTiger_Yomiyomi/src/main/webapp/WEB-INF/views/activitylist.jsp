@@ -23,7 +23,7 @@
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="/mypagetest">마이페이지</a></li>
+					<li class="breadcrumb-item"><a href="/mypage_main?username=${ member.username }">마이페이지</a></li>
 					<li class="breadcrumb-item active" aria-current="page">활동내역</li>
 				</ol>
 			</nav>
@@ -37,7 +37,7 @@
 							<img src="icon/user.png" class="rounded-circle" width="100px" height="100px">
 						</div>
 						<div class="name">
-							'요미타이거'님
+							'${ member.name }'님
 						</div>
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
@@ -117,10 +117,6 @@
                                 type="button" role="tab" aria-controls="first" aria-selected="true" style="color: #325341; font-weight: bolder;">전체</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="second-tab" data-bs-toggle="tab" data-bs-target="#second" type="button"
-                                role="tab" aria-controls="second" aria-selected="false" style="color: #325341; font-weight: bolder;">좋아요</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
                             <button class="nav-link" id="third-tab" data-bs-toggle="tab" data-bs-target="#third" type="button"
                                 role="tab" aria-controls="third" aria-selected="false" style="color: #325341; font-weight: bolder;">댓글</button>
                         </li>
@@ -142,36 +138,6 @@
 	                        <div class="card">
 								<div class="container px-4">
 									<div class="row gx-4">
-										<div class="col">
-											<div class="p-2">
-												<div style="display: flex; align-items: center;">
-													<img alt="" src="icon/heart.png" width="20px" height="20px">
-													<a href="#" onclick="secondTab()"><span style="line-height: 20px">좋아요</span></a>
-												</div>
-												<div class="row" style="padding: 10px 0 10px 0">
-													<div class="col-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3" style="display: flex; align-items: center;">
-														<a href="#" onclick="secondTab()"><img alt="" src="icon/more.png" width="30px" height="30px"></a>
-													</div>
-												</div>
-											</div>
-											
-											<div style="display: none;">
-												<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-													<img alt="" src="icon/warning.png" width="40px" height="40px">
-													해당하는 내용이 없습니다.
-												</div>
-											</div>
-											
-										</div>
 										<div class="col">
 											<div class="p-2">
 												<div style="display: flex; align-items: center;">
@@ -270,85 +236,6 @@
                            
                         </div>
                         
-                        <!-- 2번 탭 -->
-                        <div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">
-                        
-                        <div class="fs-5" style="margin-top: 20px;">
-                        		2023.01.06
-                        	</div>
-	                        <div class="card">
-								<div class="container px-4">
-									<div class="row gx-4">
-										<div class="col">
-											<div class="p-2">
-												<div style="display: flex; align-items: center;">
-													<img alt="" src="icon/heart.png" width="20px" height="20px">
-													<a href="#" onclick="likeTab()"><span style="line-height: 20px">좋아요</span></a>
-												</div>
-												<div class="row" style="padding: 10px 0 10px 0">
-													<div class="col-3 mb-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3 mb-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3 mb-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3 mb-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-													<div class="col-3 mb-3">
-														<a href="#"><img alt="" src="https://contents.kyobobook.co.kr/sih/fit-in/234x0/pdt/9791167740847.jpg" width="100%" height="100%"></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-							
-							<div style="display: none;">
-								<div class="d-flex justify-content-center" style="display: flex; align-items: center;">
-									<img alt="" src="icon/warning.png" width="40px" height="40px">
-									해당하는 내용이 없습니다.
-								</div>
-							</div>
-							
-							<div class="row">
-					
-								<div style="margin-top: 20px;">
-									
-									<div class="d-flex justify-content-center">
-										<nav aria-label="Page navigation example">
-											<ul class="pagination">
-												<li class="page-item">
-													<a class="page-link" href="#" aria-label="Previous"> 
-														<span aria-hidden="true" class="pageText">&laquo;</span>
-													</a>
-												</li>
-												
-												<li class="page-item">
-													<a class="page-link" href="#" >
-														<span class="pageText">1</span>
-													</a>
-												</li>
-				
-												<li class="page-item">
-													<a class="page-link" href="#" aria-label="Next"> 
-														<span aria-hidden="true" class="pageText">&raquo;</span>
-													</a>
-												</li>
-											</ul>
-										</nav>
-									</div>
-			
-								</div>
-									
-							</div>
-
-                        </div>
                         
                         <!-- 3번 탭 -->
                         <div class="tab-pane fade col" id="third" role="tabpanel" aria-labelledby="third-tab">

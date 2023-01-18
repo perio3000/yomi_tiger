@@ -135,4 +135,25 @@
 		]]>
 	</select>
 	
+	<select id="getPointList" resultType="PointVO">
+		<![CDATA[
+			select yomi_point.point, yomi_point.point_date, yomi_point.total_point, yomi_point.point_state, yomi_item.THUMBNAIL, TO_CHAR(yomi_item.price, '999,999') as price
+			from yomi_point, yomi_user, yomi_item
+			where yomi_point.user_id = yomi_user.id
+			and yomi_point.item_id = yomi_item.id
+			and yomi_user.username = #{username}
+		]]>
+	</select>
+	
+	<select id="getPointSearch" resultType="PointVO">
+		<![CDATA[
+			select yomi_point.point, yomi_point.point_date, yomi_point.total_point, yomi_point.point_state, yomi_item.THUMBNAIL, TO_CHAR(yomi_item.price, '999,999') as price
+			from yomi_point, yomi_user, yomi_item
+			where yomi_point.user_id = yomi_user.id
+			and yomi_point.item_id = yomi_item.id
+			and yomi_user.username = #{username}
+			AND yomi_point.point_date between to_date(#{startdate}, 'YYYY-MM-DD') and to_date(#{enddate}, 'YYYY-MM-DD')
+		]]>
+	</select>
+	
 </mapper>

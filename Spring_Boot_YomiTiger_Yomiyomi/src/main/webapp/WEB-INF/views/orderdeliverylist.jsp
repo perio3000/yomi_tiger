@@ -25,7 +25,7 @@
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="/mypagetest">마이페이지</a></li>
+					<li class="breadcrumb-item"><a href="/mypage_main?username=${ member.username }">마이페이지</a></li>
 					<li class="breadcrumb-item active" aria-current="page">주문배송목록</li>
 				</ol>
 			</nav>
@@ -125,7 +125,7 @@
 										<h1 class="modal-title fs-3 fw-bolder" id="staticBackdropLabel">상세조회</h1>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
-									<form:form action="mypagerorderlistsearch" method="get">
+									<form:form action="mypage_orderlistsearch" method="get">
 										<input type="hidden" name="username" value="${ member.username }">
 										<div class="modal-body">
 											<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
@@ -239,9 +239,11 @@
 							</tbody>
 						</table>
 						
-						<div class="ifNoPoint fs-4 text-center" style="margin: 100px 0 100px 0; display: none">
-							해당 기간에 주문한 상품이 없습니다.
-						</div>
+						<c:if test="${ empty order }">
+							<div class="ifNoPoint fs-4 text-center" style="margin: 100px 0 100px 0;">
+								해당 기간에 주문한 상품이 없습니다.
+							</div>
+						</c:if>
 						
 						<div class="d-flex justify-content-center">
 							<nav aria-label="Page navigation example">

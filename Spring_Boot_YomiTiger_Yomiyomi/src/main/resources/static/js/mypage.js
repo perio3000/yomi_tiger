@@ -66,4 +66,5 @@ $(document).ready(function(){
 	$(".endText").text($(".배송완료").length);
 	$(".canText").text($(".취소").length);
 	$(".refText").text($(".교환환불").length);
+	
 })

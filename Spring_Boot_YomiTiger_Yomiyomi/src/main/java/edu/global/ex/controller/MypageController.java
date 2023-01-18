@@ -36,8 +36,6 @@ public class MypageController {
 		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
 		model.addAttribute("order", mypageService.getOrder(memberVO.getUsername()));
 		
-		System.out.println(mypageService.getOrder(memberVO.getUsername()));
-		
 		return "orderdeliverylist";
 	}
 	
@@ -48,8 +46,6 @@ public class MypageController {
 		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
 		model.addAttribute("order", mypageService.getOrderSearch(memberVO.getUsername(), startdate, enddate));
 		
-		System.out.println(mypageService.getOrder(memberVO.getUsername()));
-		
 		return "orderdeliverylist";
 	}
 	
@@ -58,7 +54,18 @@ public class MypageController {
 	public String mypage_point(Model model, MemberVO memberVO) {
 		log.info("mypage_point..");
 		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("point", mypageService.getPointList(memberVO.getUsername()));
 		
+		return "point";
+	}
+	
+	@GetMapping("/mypage_pointsearch")
+	public String mypage_pointsearch(Model model, MemberVO memberVO, String username, String startdate, String enddate) {
+		log.info("mypage_pointsearch..");
+		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
+		model.addAttribute("point", mypageService.getPointSearch(memberVO.getUsername(), startdate, enddate));
 		
 		return "point";
 	}
@@ -68,17 +75,17 @@ public class MypageController {
 	public String mypage_activitylist(Model model, MemberVO memberVO) {
 		log.info("mypage_activitylist..");
 		
-		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
 		
 		return "activitylist";
 	}
 	
-	//활동내역
+	//문의내역
 	@GetMapping("/mypage_inquirylist")
 	public String mypage_inquirylist(Model model, MemberVO memberVO) {
 		log.info("mypage_inquirylist..");
 		
-		
+		model.addAttribute("member", mypageService.getUser(memberVO.getUsername()));
 		
 		return "inquirylist";
 	}
