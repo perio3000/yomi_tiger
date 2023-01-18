@@ -26,13 +26,10 @@ body {
 	border: 1px solid #A6B1E1; 
 }
 
-/* 
-라디오버튼 선택했을 때 색상 변경하고 싶은데 변경이 안됨 ㅠ 힝. .. .
-
 .form-check-input:checked {
-    background-color: #424874;
-    border-color: #424874;
-} */
+    background-color: #424874 !important;
+    border-color: #424874 !important;
+}
 
 #phoneTextarea1 {
 	display: block;

@@ -15,7 +15,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/1by1qna.css">
+<link rel="stylesheet" type="text/css" href="css/qna.css">
 </head>
 <body>
    <main class="container">
