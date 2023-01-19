@@ -72,6 +72,45 @@
 				<br>
 				
    			  	<br>
+
+				<div>
+
+
+
+					<table>
+						<tr>
+							<td> 번호 </td>
+							<td> ${notice_view.user_id} </td>
+						</tr>
+
+						<tr>
+							<td> 제목 </td>
+							<td> ${notice_view.title} </td>
+						</tr>
+						<tr>
+							<td> 작성자 </td>
+							<td> ${notice_view.user_id} </td>
+						</tr>
+						<tr>
+							<td> 작성일 </td>
+							<td> ${notice_view.written_date}</td>
+						</tr>
+						<tr>
+							<td> 내용 </td>
+							<td> ${notice_view.content}</td>
+						</tr>
+
+
+					</table>
+
+
+
+
+
+				</div>
+
+				<br>
+				<br>
    				
    			  	<br>
    			  	<div class="row">
@@ -93,7 +132,7 @@
 								<tr>
 									<td>${notice.id}</td>
 									<td>
-									<a href="notice_view?id=${notice.id}">${notice.title}</a>
+									<a href="content_view?id=${notice.id}">${notice.title}</a>
 									</td>
 											<%--
 									<td>
