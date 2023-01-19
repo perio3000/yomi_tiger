@@ -28,23 +28,33 @@
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
 
-
+<script type="text/javascript" src="/js/header.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 </head>
 <body>
 	<header>
+		
 		<div class="rightNav">
 			<ul class="row">
-				<li class="col col2"><a href="#">회원가입</a></li>
-				<li class="col col2"><a href="login.jsp">로그인</a></li>
-				<li class="col col2"><a href="#">고객센터</a></li>
+				<sec:authorize access="isAnonymous()">
+					<li class="col col2"><a href="#">회원가입</a></li>
+					<li class="col col2"><a href="<c:url value="/login" />">로그인</a></li>
+					<li class="col col2"><a href="#">고객센터</a></li>
+				</sec:authorize>
+				<sec:authorize access="isAuthenticated()">
+					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
+						<li class="col col2"><a href="#" onclick="logout()">로그아웃</a></li>
+						<li class="col col2"><a href="#">고객센터</a></li>
+					</form:form>
+				</sec:authorize>
+				
 			</ul>
 		</div>
 
 		<div class="row header">
 			<div class="header_logo col-1">
-				<a href="main.jsp"> <img alt="logo" src="/logo/logo.png">
+				<a href="/"> <img alt="logo" src="/logo/logo.png">
 				</a>
 			</div>
 			<form class="search-form col-8 search_form" role="search">
@@ -56,15 +66,15 @@
 			<div class="header-icon col-2 header_icon">
 				<ul class="row justify-content-end justify_content_end">
 					<li class="col icon-i col2"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
-					<li class="col icon-i col2"><a href="#"><i class="fa-regular fa-user fa-2x"></i></a></li>
+					<li class="col icon-i col2"><a href="/mypage/main"><i class="fa-regular fa-user fa-2x"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</header>
 	<nav class="navbar-head navbar-expand-lg navbar_head">
 		<div class="container-fluid container_fluid">
-			<a class="navbar-menu navbar_menu" href="#">
-				<span class="material-symbols-outlined material_symbols_outlined">menu</span>
+			<a class="navbar-menu navbar_menu" >
+				<span class="material-symbols-outlined material_symbols_outlined" onclick="menuOpen()">menu</span>
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -87,6 +97,54 @@
 						<a class="nav-link nav-active nav_link" aria-current="page" href="#">Picks</a>
 					</li>
 				</ul>
+			</div>
+		</div>
+		
+		<div class="menuBody">
+			<div class="row">
+				<div class="col">
+					<ul>
+						<li><a href="#" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="#">베스트셀러</a></li>
+						<li><a href="#">신상품</a></li>
+						<li><a href="#">할인상품</a></li>
+						<li><a href="#">추천</a></li>
+					</ul>
+					<br>
+					<ul>
+						<li><a href="#" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="#">국내도서</a></li>
+						<li><a href="#">해외도서</a></li>
+						<li><a href="#">eBook</a></li>
+					</ul>
+				</div>
+				
+				<div class="col">
+					<ul>
+						<li><a href="/customercenter" class="fs-5 fw-bolder">고객센터&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/FAQ">자주 묻는 질문</a></li>
+						<li><a href="/qna">1:1 문의</a></li>
+						<li><a href="/events">이벤트</a></li>
+						<li><a href="/location">오프라인 매장</a></li>
+						<li><a href="/announcement">공지사항</a></li>
+					</ul>
+					<br>
+					<ul>
+						<li><a href="/mypage/main" class="fs-5 fw-bolder">마이페이지&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/mypage/orderdeliverylist">주문 배송 목록</a></li>
+						<li><a href="/mypage/point">포인트</a></li>
+						<li><a href="/mypage/activitylist">활동내역</a></li>
+						<li><a href="/mypage/inquirylist">문의내역</a></li>
+						<li><a href="/mypage/userupdate">회원정보</a></li>
+					</ul>
+				</div>
+				
+				<div class="col">
+					<ul>
+						<li><a href="/mypage/library" class="fs-5 fw-bolder">서재&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+					</ul>
+				</div>
+			
 			</div>
 		</div>
 	</nav>

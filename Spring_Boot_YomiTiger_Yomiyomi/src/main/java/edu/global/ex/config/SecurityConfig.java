@@ -26,15 +26,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 //		로그인 폼을 커스터마이징
 		http.formLogin()
-			.loginPage("/login");
+			.loginPage("/login")
 //			로그인폼 파라미터 변경
 //			.usernameParameter("userId")
 //			.passwordParameter("passwd")
 //			.defaultSuccessUrl("/")
-//			.and()
-//			.logout()
-//			.logoutUrl("/logout")
-//			.logoutSuccessUrl("/login?logout");
+			.and()
+			.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/login?logout");
 		
 		http.authorizeHttpRequests()
 //			.antMatchers("/user/**").hasAnyRole("USER", "ADMIN") //user/**로 접근할 때는 USER 또는 ADMIN 권한이 있어야 한다
