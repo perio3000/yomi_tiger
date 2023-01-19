@@ -216,7 +216,7 @@ tfoot tr td {
 .accordion-button::after {
 	color: #000;
 }
-
+/*-----------------------------------------사이드바 -----------------------------  */
 .aside {
 	position: sticky;
 	position: -webkit-sticky;
@@ -224,7 +224,7 @@ tfoot tr td {
 	margin: 0 auto;
 	padding: 30px;
 	width: 30%;
-	height: 400px;
+	height: auto;
 }
 .card {
 	border: 1px solid #c0c0c0;
@@ -232,7 +232,7 @@ tfoot tr td {
 }
 .card-body {
 	padding: 30px;
-	height: 350px;
+	height: auto;
 	font-size: 1.2em;
 }
 .aside li {
