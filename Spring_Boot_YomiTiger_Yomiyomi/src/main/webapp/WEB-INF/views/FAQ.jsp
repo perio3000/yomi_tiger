@@ -41,7 +41,7 @@
 				<a href="#" class="qnaMenu">eBook</a><br>
 				<br>
 				<span class="notice">1:1문의</span><br>
-				<a href="1by1qna" class="qnaMenu">1:1문의 접수</a><br>
+				<a href="qna" class="qnaMenu">1:1문의 접수</a><br>
 				<a href="#" class="qnaMenu">1:1문의 내역</a><br>
 				<br>
 				<a href="announcement" class="notice">공지사항</a><br>
