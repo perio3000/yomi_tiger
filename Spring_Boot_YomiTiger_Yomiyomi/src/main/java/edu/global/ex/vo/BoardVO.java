@@ -32,6 +32,7 @@ public class BoardVO {
     private int user_id;
     private int board_number;
     private String board_name;
+    private int reply_group;
 
     private List<BoardCategoryVO> boardCategoryList;
     private List<MemberVO> userList;

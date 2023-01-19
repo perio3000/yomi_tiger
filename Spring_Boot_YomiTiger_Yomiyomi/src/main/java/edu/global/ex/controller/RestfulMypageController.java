@@ -1,12 +1,35 @@
 package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.global.ex.service.MypageService;
+import edu.global.ex.vo.BoardVO;
 
 @Slf4j
-@Controller
+@RestController
 public class RestfulMypageController {
+	
+	@Autowired
+	private MypageService mypageService;
+	
+	@GetMapping("/inquiry/{group}")
+	public List<BoardVO> list(Authentication authentication, @PathVariable(name = "group") int reply_group) {
+		log.info("list() ..");
+		System.out.println(reply_group);
+		System.out.println(authentication.getName());
+
+		return mypageService.getInquiry(authentication.getName(), reply_group);
+	}
 	
 
 }

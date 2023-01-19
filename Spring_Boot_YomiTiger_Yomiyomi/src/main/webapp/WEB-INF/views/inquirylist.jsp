@@ -333,23 +333,28 @@
 
 							<c:forEach var="inquiryList" items="${ inquiry }">
 								<c:choose>
-									<c:when test="${ inquiryList.board_name == '문의답변' }">
+									<c:when test="${ inquiryList.board_name == '답변완료' }">
 										<div class="accordion-item">
 											<h2 class="accordion-header"
 												id="flush-heading${ inquiryList.id }">
-												<button class="accordion-button collapsed" type="button"
-													data-bs-toggle="collapse"
-													data-bs-target="#flush-collapse${ inquiryList.id }"
-													aria-expanded="false"
-													aria-controls="flush-collapse${ inquiryList.id }">
-													${ inquiryList.title } (${ inquiryList.board_name }) 문의 일자
-													: ${ inquiryList.written_date }</button>
+												<form:form id="inquiryForm" action="inquiry" method="get">
+													<input type="hidden" id="reply_group" value="${ inquiryList.id }">
+													<button class="accordion-button collapsed" type="submit"
+														data-bs-toggle="collapse"
+														data-bs-target="#flush-collapse${ inquiryList.id }"
+														aria-expanded="false"
+														aria-controls="flush-collapse${ inquiryList.id }">
+														${ inquiryList.title } (${ inquiryList.board_name }) 문의 일자
+														: ${ inquiryList.written_date }</button>
+												</form:form>
 											</h2>
 											<div id="flush-collapse${ inquiryList.id }"
 												class="accordion-collapse collapse"
 												aria-labelledby="flush-heading${ inquiryList.id }"
 												data-bs-parent="#accordionFlushExample_3">
-												<div class="accordion-body">${ inquiryList.content }
+												<div class="accordion-body">
+													<div class="replyTitle${ inquiryList.id }"></div>
+													<div class="card p-3 mt-3 replyBody${ inquiryList.id }"></div>
 												</div>
 											</div>
 										</div>

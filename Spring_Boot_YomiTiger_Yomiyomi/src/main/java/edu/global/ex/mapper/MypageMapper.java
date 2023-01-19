@@ -24,4 +24,5 @@ public interface MypageMapper {
 	
 	List<BoardVO> getInquiryList(String username);
 	
+	List<BoardVO> getInquiry(String username, int reply_group);
 }

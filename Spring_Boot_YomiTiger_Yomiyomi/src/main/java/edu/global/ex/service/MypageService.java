@@ -20,4 +20,6 @@ public interface MypageService {
 	List<PointVO> getPointSearch(String username, String startdate, String enddate);
 	
 	List<BoardVO> getInquiryList(String username);
+	
+	List<BoardVO> getInquiry(String username, int reply_group);
 }

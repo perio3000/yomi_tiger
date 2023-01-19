@@ -61,4 +61,11 @@ public class MypageServiceImpl implements MypageService{
 		return mypageMapper.getInquiryList(username);
 	}
 
+	@Override
+	public List<BoardVO> getInquiry(String username, int reply_group) {
+		log.info("getInquiry()..");
+		
+		return mypageMapper.getInquiry(username, reply_group);
+	}
+
 }

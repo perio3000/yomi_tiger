@@ -166,4 +166,20 @@
 		]]>
 	</select>
 	
+	<select id="getInquiry" resultType="BoardVO">
+		<![CDATA[
+			select b.title, b.content, r.REPLY_GROUP, b.WRITTEN_DATE, c.BOARD_NAME, b.id 
+			from yomi_board b, yomi_boardcategory c, yomi_user u, yomi_reply r 
+			where u.username = #{username}
+			and r.reply_group = #{reply_group}
+			and b.user_id = u.id
+			and b.board_number = c.id 
+			and (r.reply_group = b.id
+			or r.board_id = b.id)
+			order by b.id
+		]]>
+	</select>
+	
+	
+	
 </mapper>
