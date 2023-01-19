@@ -33,7 +33,7 @@
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		
 		<div class="rightNav">
 			<ul class="row">
@@ -144,9 +144,15 @@
 						<li><a href="/mypage/library" class="fs-5 fw-bolder">서재&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
 					</ul>
 				</div>
-			
+
 			</div>
 		</div>
 	</nav>
+	
+	<div style="position: fixed; bottom: 50px; right: 40px;">
+		<a href="#header"> <img src="/icon/up-arrow.png" title="맨 위로"
+			style="width: 50px; height: 50px;">
+		</a>
+	</div>
 </body>
 </html>
