@@ -231,7 +231,7 @@ tfoot tr td {
 	border: 1px solid #c0c0c0;
 	border-radius: 10px;
 }
-.card-body {
+.card-body{
 	padding: 30px;
 	height: auto;
 	font-size: 1.1em;
