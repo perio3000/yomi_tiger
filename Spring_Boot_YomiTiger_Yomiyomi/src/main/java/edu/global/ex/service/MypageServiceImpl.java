@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.global.ex.mapper.MypageMapper;
+import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.MemberVO;
 import edu.global.ex.vo.OrderVO;
 import edu.global.ex.vo.PointVO;
@@ -51,6 +52,13 @@ public class MypageServiceImpl implements MypageService{
 		log.info("getOrderSearch()..");
 		
 		return mypageMapper.getPointSearch(username, startdate, enddate);
+	}
+
+	@Override
+	public List<BoardVO> getInquiryList(String username) {
+		log.info("getInquiryList()..");
+		
+		return mypageMapper.getInquiryList(username);
 	}
 
 }

@@ -235,7 +235,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>
@@ -249,7 +249,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>
@@ -263,7 +263,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>

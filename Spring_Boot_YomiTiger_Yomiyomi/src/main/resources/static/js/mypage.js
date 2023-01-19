@@ -67,4 +67,16 @@ $(document).ready(function(){
 	$(".canText").text($(".취소").length);
 	$(".refText").text($(".교환환불").length);
 	
+	if($("input[name=preList]").length == 0){
+		$(".nonPreList").css("display", "block");
+	};
+	
+	if($("input[name=ingList]").length == 0){
+		$(".nonIngList").css("display", "block");
+	};
+	
+	if($("input[name=comList]").length == 0){
+		$(".nonComList").css("display", "block");
+	};
+	
 })

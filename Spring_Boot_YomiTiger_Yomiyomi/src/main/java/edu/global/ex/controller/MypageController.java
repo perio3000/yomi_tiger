@@ -91,6 +91,7 @@ public class MypageController {
 		log.info("inquirylist..");
 		
 		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("inquiry", mypageService.getInquiryList(authentication.getName()));
 		
 		return "inquirylist";
 	}

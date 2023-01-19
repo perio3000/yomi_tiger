@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.MemberVO;
 import edu.global.ex.vo.OrderVO;
 import edu.global.ex.vo.PointVO;
@@ -20,5 +21,7 @@ public interface MypageMapper {
 	List<PointVO> getPointList(String username);
 	
 	List<PointVO> getPointSearch(String username, String startdate, String enddate);
+	
+	List<BoardVO> getInquiryList(String username);
 	
 }
