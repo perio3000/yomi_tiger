@@ -115,3 +115,32 @@ li>a{height:30px;}
 .nav_link { margin-right: 1em; height: 50px;}
 .material_symbols_outlined {font-size: 2.5em;}
 .nav_item:hover, .navbar_menu:hover {color: #A6B1E1;}
+
+body::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+body::-webkit-scrollbar-thumb {
+     /* 스크롤바의 길이 */
+    background: #424874; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: white;  /*스크롤바 뒷 배경 색상*/
+}
+
+/* Header */
+.offcanvas-body::-webkit-scrollbar {
+    width: 8px;  /* 스크롤바의 너비 */
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+     /* 스크롤바의 길이 */
+    background: #424874; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+.offcanvas-body::-webkit-scrollbar-track {
+    background: white;  /*스크롤바 뒷 배경 색상*/
+}

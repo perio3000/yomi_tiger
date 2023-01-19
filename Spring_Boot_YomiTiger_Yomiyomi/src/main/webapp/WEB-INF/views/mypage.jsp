@@ -23,7 +23,7 @@
 		<div class="row" id="breadcrumb">
 			<nav style="-bs-breadcrumb-divider: '&gt;';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">마이페이지</li>
 				</ol>
 			</nav>
@@ -230,7 +230,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>	
 
 			</div>
 		</div>
