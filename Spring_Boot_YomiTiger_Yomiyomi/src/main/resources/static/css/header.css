@@ -92,9 +92,21 @@ li>a{height:30px;}
 	justify-content: center;
 	align-items: center;
 	width: 50px; height: 50px;
+	cursor: pointer;
 }
 .justify_content_end { 
 	width: 100px;
+}
+.menuBody{
+	position: absolute;
+	left: 11.5vw;
+	display: none;
+	background-color: white;
+	z-index: 100;
+	width: 75vw;
+	padding: 3vw;
+	border: 2px solid #424874;
+	border-radius: 20px;
 }
 .col2 {width: 20px;}
 .navbar_collapse {height: 50px;}

@@ -105,5 +105,13 @@ public class TestController {
 
 		return "pay";
 	}
+	
+	//메인
+	@GetMapping("/")
+	public String main() {
+		log.info("/main()...");
+
+		return "main";
+	}
 }
 	

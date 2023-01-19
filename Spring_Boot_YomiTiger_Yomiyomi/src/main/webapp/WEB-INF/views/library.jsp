@@ -176,5 +176,8 @@
 		</div>
 		
 	</main>
+	
+	<div style="height: 150px"></div>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
