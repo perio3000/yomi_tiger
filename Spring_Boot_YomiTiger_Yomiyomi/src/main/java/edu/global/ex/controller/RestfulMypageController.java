@@ -33,11 +33,13 @@ public class RestfulMypageController {
 	}
 
 	@PutMapping("/userUpdate/{id}")
-	public MemberVO userUpdate(@RequestBody MemberVO memberVO) {
+	public int userUpdate(@RequestBody MemberVO memberVO) {
 		log.info("userUpdate() ..");
 		log.info("userUpdate() .." + memberVO);
 		
-		return mypageService.userUpdate(memberVO);
+		int rn = mypageService.userUpdate(memberVO);
+		
+		return rn;
 	}
 	
 

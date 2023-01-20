@@ -3,6 +3,7 @@ package edu.global.ex.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import edu.global.ex.mapper.MypageMapper;
@@ -18,6 +19,9 @@ public class MypageServiceImpl implements MypageService{
 	
 	@Autowired
 	private MypageMapper mypageMapper;
+	
+	@Autowired
+    private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public MemberVO getUser(String username) {
@@ -83,8 +87,11 @@ public class MypageServiceImpl implements MypageService{
 	}
 
 	@Override
-	public MemberVO userUpdate(MemberVO memberVO) {
+	public int userUpdate(MemberVO memberVO) {
 		log.info("userUpdate()..");
+		
+		String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
+		memberVO.setPassword(encodedPassword);
 		
 		return mypageMapper.userUpdate(memberVO);
 	}

@@ -27,5 +27,5 @@ public interface MypageService {
 	
 	List<BoardVO> getReplyList(String username);
 	
-	MemberVO userUpdate(MemberVO memberVO);
+	int userUpdate(MemberVO memberVO);
 }

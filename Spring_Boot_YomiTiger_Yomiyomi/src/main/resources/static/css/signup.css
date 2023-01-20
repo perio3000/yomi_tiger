@@ -54,15 +54,25 @@ body{
 }
 
 #checkBtn {
-	width: 175px;
+	/* width: 175px; */
+	width: 100%;
+	min-width: 100px;
 	height: 40px;
 	border: 1px solid #424874;
 	color: #DCD6F7;
+	background-color: #424874;
+	border-radius: 7px;
+	line-height: 40px;
+	cursor: pointer;
 	--bs-btn-bg: #424874;
 	--bs-btn-hover-bg: #424874;
 	--bs-btn-hover-border-color: #424874;
 	--bs-btn-active-bg: #424874;
     --bs-btn-active-border-color: #424874;
+}
+
+#checkBtn:hover {
+	opacity: .7;
 }
 
 .form-check-input:checked {
@@ -79,4 +89,8 @@ body{
 	--bs-btn-hover-border-color: #424874;
 	--bs-btn-active-bg: #424874;
     --bs-btn-active-border-color: #424874;
+}
+
+button:hover {
+	opacity: .7;
 }

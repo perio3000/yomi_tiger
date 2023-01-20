@@ -174,9 +174,8 @@ $(document).ready(function(){
 			data : JSON.stringify(form),
 			success : function(result) {
 				console.log(result);
-				//location.href = "/list";
-				//$(location).attr('href', '/rest_board.html');
-				$(location).attr('href', '/logout');
+				window.location.href= "/logout?logout";
+				alert("회원정보가 변경되었습니다.")
 			},
 			error : function(e) {
 				console.log(e);

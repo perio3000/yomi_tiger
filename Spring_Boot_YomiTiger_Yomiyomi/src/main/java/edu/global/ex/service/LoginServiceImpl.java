@@ -20,6 +20,13 @@ public class LoginServiceImpl implements LoginService{
 		
 		return loginMapper.getUser(username);
 	}
+
+	@Override
+	public int idCheck(String username) {
+		log.info("idCheck()..");
+		
+		return loginMapper.idCheck(username);
+	}
 	
 	
 

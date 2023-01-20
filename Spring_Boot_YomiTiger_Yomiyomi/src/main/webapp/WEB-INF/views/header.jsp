@@ -38,7 +38,7 @@
 		<div class="rightNav">
 			<ul class="row">
 				<sec:authorize access="isAnonymous()">
-					<li class="col col2"><a href="#">회원가입</a></li>
+					<li class="col col2"><a href="/member/signup">회원가입</a></li>
 					<li class="col col2"><a href="<c:url value="/login" />">로그인</a></li>
 					<li class="col col2"><a href="#">고객센터</a></li>
 				</sec:authorize>

@@ -37,4 +37,10 @@
 		]]>
 	</select>
 	
+	 <select id="idCheck" resultType="int">
+		<![CDATA[
+			select count(*) as count from yomi_user where username = #{username}
+		]]>
+	</select>
+	
 </mapper>

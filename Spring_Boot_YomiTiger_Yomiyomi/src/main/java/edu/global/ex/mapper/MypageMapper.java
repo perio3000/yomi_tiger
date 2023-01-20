@@ -30,5 +30,5 @@ public interface MypageMapper {
 	
 	List<BoardVO> getReplyList(String username);
 	
-	MemberVO userUpdate(MemberVO memberVO);
+	int userUpdate(MemberVO memberVO);
 }

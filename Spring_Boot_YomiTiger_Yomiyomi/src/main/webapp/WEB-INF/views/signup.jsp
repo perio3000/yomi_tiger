@@ -9,14 +9,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-<script type="text/javascript" src="js/signup.js"></script>
+<script type="text/javascript" src="/js/signup.js"></script>
 <jsp:include page="header.jsp"></jsp:include>
 
 <meta charset="UTF-8">
 <title>회원가입</title>
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/signup.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/signup.css">
 </head>
 <body>
 	<main class="container">
@@ -32,30 +32,32 @@
 				<div class="row signupTitle">회원가입</div>
 				<hr>
 				<div class="row userInfo">
-					<div class="col-md-10">
+					<div class="col">
 						회원정보 입력
 					</div>
-					<div class="col-md-2">
+					<div class="col">
 						<div class="d-flex justify-content-end">
 							<span style="color:#424874">*</span>&nbsp;필수 입력
 						</div>
 					</div>
 				</div>
 				<br>
+				<form:form id="signupForm">
+				<input type="hidden" id="idCheck" value="">
+				
 				<!-- 아이디, 중복확인 -->
 				<div class="row">
 					<div class="col signupContents">
-						아이디&nbsp;<span style="color:#424874">*</span>
+						아이디(이메일)&nbsp;<span style="color:#424874">*</span>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9">
-						<textarea class="form-control" placeholder="아이디를 입력해 주세요." id="floatingTextarea2" style="height: 40px; width: 650px;"></textarea>
-  						<label for="floatingTextarea2"></label>
+					<div class="col-9">
+						<input type="text" class="form-control" placeholder="이메일을 입력해 주세요." id="email" style="height: 40px;">
+  						<label for="email"></label>
 					</div>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-					<div class="col">
-						<button type="button" class="btn btn-primary" id="checkBtn">중복확인</button>
+					<div class="col-3">
+						<div id="checkBtn" class="text-center" onclick="usernameCheck()">중복확인</div>
 					</div>
 				</div>
 				
@@ -67,13 +69,14 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<textarea class="form-control" placeholder="비밀번호를 입력해 주세요." id="floatingTextarea2" style="height: 40px;"></textarea>
+						<input type="password" class="form-control" placeholder="비밀번호를 입력해 주세요." id="floatingTextarea2" style="height: 40px;">
   						<label for="floatingTextarea2"></label>
+  						<span class="signupNotice">* 영어 대문자/소문자/특수문자 중 2가지 이상 이용. 최소 8글자 이상.</span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<span class="signupNotice">* 영어 대문자/소문자/특수문자 중 2가지 이상 이용. 최소 8글자 이상.</span>
+						
 					</div>
 				</div><br>
 				<!-- 텍스트박스 아래에 틈 남아있어서 간격 이상한거 개열받네... -->
@@ -86,7 +89,7 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<textarea class="form-control" placeholder="비밀번호를 한번 더 입력해 주세요." id="floatingTextarea2" style="height: 40px;"></textarea>
+						<input type="password" class="form-control" placeholder="비밀번호를 한번 더 입력해 주세요." id="floatingTextarea2" style="height: 40px;">
   						<label for="floatingTextarea2"></label>
 					</div>
 				</div>
@@ -115,23 +118,22 @@
 					</div>
 				</div>
 				<!-- 이메일 -->
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col signupContents">
 						이메일&nbsp;<span style="color:#424874">*</span>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-9">
-						<textarea class="form-control" placeholder="이메일을 입력해 주세요." id="floatingTextarea2" style="height: 40px; width: 650px;"></textarea>
+					<div class="col-9">
+						<textarea class="form-control" placeholder="이메일을 입력해 주세요." id="floatingTextarea2" style="height: 40px;"></textarea>
   						<label for="floatingTextarea2"></label>
 					</div>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-					<div class="col">
+					<div class="col-3">
 						<button type="button" class="btn btn-primary" id="checkBtn">중복확인</button>
 					</div>
-				</div>
+				</div> -->
 				<!-- 생년월일 -->
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col signupContents">
 						생년월일&nbsp;<span style="color:#424874">*</span>
 					</div>
@@ -142,9 +144,9 @@
   						<label for="floatingTextarea2"></label>
 					</div>
 				</div>
-				<br>
+				<br> -->
 				
-				<!-- 현재 전체선택, 전체해제만 됨 ^^! -->
+				<!-- 전체선택, 전체해제 -->
 				<div class="row termsOfUseTitle">서비스 이용약관 동의</div>
 				<br>
 				<div class="col termsOfUse">
@@ -241,9 +243,10 @@
 				<br>
 				<div class="row">
 					<div class="d-grid gap-2">
-					  <button class="btn btn-primary" type="button" id="signupBtn">회원가입</button>
+					  <button class="btn btn-primary" type="submit" id="signupBtn">회원가입</button>
 					</div>
 				</div>
+				</form:form>
 				<div class="col-md-2">&nbsp;</div>
 			</div>
 		</div>

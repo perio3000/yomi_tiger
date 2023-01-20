@@ -69,7 +69,7 @@
 						<div class="policy">개인정보 보호를 위해 공용 PC에서 사용 시 SNS계정의 <br>로그아웃 상태를
 							꼭 확인해 주세요.</div>
 						<div class="sign-up-button">
-							<button onclick="location.href='SignUp.html'">회원가입</button>
+							<button onclick="location.href='/member/signup'">회원가입</button>
 						</div>
 						<div class="divider"></div>
 						<div class="Non-member-order"><a href="#">비회원 주문조회 ></a></div>
