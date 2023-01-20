@@ -90,6 +90,14 @@ public class TestController {
 		
 		return "announceread";
 	}
+	
+	// 회원가입
+	@GetMapping("/signup")
+	public String signup() {
+		log.info("/signup");
+		
+		return "signup";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")

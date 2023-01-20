@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+body{
+	margin: 0 auto;
+	width: 80%;
+}
+
+.nameTitle {
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.signupTitle {
+	font-size: 20px;
+	font-weight: 600;
+	padding: 0 0 0 12px;
+}
+
+.userInfo {
+	font-size: 16px;
+	font-weight: 600;
+	
+}
+
+.signupNotice {
+	font-size: 14px;
+	color: #A6B1E1;
+}
+
+.signupContents {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.termsOfUseTitle {
+	font-size: 20px;
+	font-weight: 600;
+	padding: 0 0 0 12px;
+}
+
+.termsOfUse {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.advertisement {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+#checkBtn {
+	width: 175px;
+	height: 40px;
+	border: 1px solid #424874;
+	color: #DCD6F7;
+	--bs-btn-bg: #424874;
+	--bs-btn-hover-bg: #424874;
+	--bs-btn-hover-border-color: #424874;
+	--bs-btn-active-bg: #424874;
+    --bs-btn-active-border-color: #424874;
+}
+
+.form-check-input:checked {
+    background-color: #424874;
+    border-color: #424874;
+}
