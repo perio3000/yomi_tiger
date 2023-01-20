@@ -21,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 //		http.csrf().disable(); //CSRF 설정을 해제(초기 개발시에만 하는게 좋다)
+//		http.csrf().disable().cors();
 		
 //		http.httpBasic(); //디폴트 로그인 화면을 띄움(팝업)
 		

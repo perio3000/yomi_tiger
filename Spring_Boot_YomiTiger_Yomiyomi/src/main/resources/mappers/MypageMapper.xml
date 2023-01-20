@@ -180,6 +180,38 @@
 		]]>
 	</select>
 	
+	<select id="getReviewList" resultType="BoardVO">
+		<![CDATA[
+			select i.thumbnail, b.title, b.content, b.written_date, c.board_name, v.item_id 
+			from yomi_user u, yomi_item i, yomi_board b, yomi_boardcategory c, yomi_review v, yomi_order o
+			where u.username = #{username}
+			and b.board_number = 1
+			and b.board_number = c.id
+			and u.id = b.user_id
+			and v.order_id = o.id
+			and v.item_id = i.id
+			and v.board_id = b.id
+		]]>
+	</select>
+	
+	<select id="getReplyList" resultType="BoardVO">
+		<![CDATA[
+			select b.title, b.content, b.written_date, c.board_name, b.id, r.reply_group
+			from yomi_user u, yomi_board b, yomi_boardcategory c, yomi_reply r 
+			where u.username = #{username}
+			and b.board_number = 2
+			and b.board_number = c.id
+			and r.board_id = b.id
+		]]>
+	</select>
+	
+	<update id="userUpdate">
+		<![CDATA[
+			UPDATE yomi_user 
+			SET password = #{password}, name = #{name}, tel = #{tel} , city = #{city} , street = #{street} , location = #{location} , postnumber = #{postnumber} 
+			WHERE id = #{id}
+		]]>
+	</update>
 	
 	
 </mapper>
