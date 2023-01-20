@@ -77,7 +77,7 @@
    				
    			  	<br>
    			  	<div class="row">
-				<a class="col count">100건</a>
+				<a class="col count">건  ${pageMaker.total} 건   </a>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -113,6 +113,19 @@
 
 						</table>
 
+
+						<c:if test="${pageMaker.prev}">
+							<a href="announcement${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
+						</c:if>
+
+						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+							<%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
+							<a href="announcement${pageMaker.makeQuery(idx)}">${idx}</a>
+						</c:forEach>
+
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<a href="announcement${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
+						</c:if> <br>
 
 
 					</div>
