@@ -84,14 +84,13 @@ public class TestController {
 	}
 	
 	// 공지사항 조회
-	/*@GetMapping("/announceread")
+	@GetMapping("/announceread")
 	public String announceread() {
 		log.info("/announceread");
 		
 		return "announceread";
-<<<<<<< HEAD
 	}
-	
+
 	// 회원가입
 	@GetMapping("/signup")
 	public String signup() {
@@ -99,9 +98,6 @@ public class TestController {
 		
 		return "signup";
 	}
-=======
-	}*/
->>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
