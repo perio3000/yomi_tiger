@@ -15,7 +15,7 @@
 <title>공지사항</title>
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/announcement.css">
+<link rel="stylesheet" type="text/css" href="css/announceread.css">
 </head>
 <body>
    <main class="container">
@@ -23,9 +23,10 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<div class="row title">
-		   			&nbsp;고객센터
-		   		</div>
+	   			<a href="customercenter" class="title">
+		   			고객센터
+		   		</a>
+		   		<br>
 		   		<br>
 		   		<div class="notice">메인</div>
 		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; 
@@ -41,8 +42,8 @@
 					<a href="#" class="qnaMenu">기타</a><br>
 					<a href="#" class="qnaMenu">eBook</a><br>
 					<br>
-					<a href="#" class="notice">1:1문의</a><br>
-					<a href="1by1qna" class="qnaMenu">1:1문의 접수</a><br>
+					<span class="notice">1:1문의</span><br>
+					<a href="qna" class="qnaMenu">1:1문의 접수</a><br>
 					<a href="#" class="qnaMenu">1:1문의 내역</a><br>
 					<br>
 					<a href="#" class="notice">공지사항</a><br>
@@ -59,80 +60,50 @@
    			
    			<div class="col-md-9">
    			<br><br><br>
-   				<div class="col-md-3 notice">공지사항</div>
-				
-				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
-					<div class="">
-						<input class="form-control" type="text" placeholder="공지사항을 검색해보세요." aria-label="default input example">
-					</div>
-					<div class="">
-					  	<button type="button" class="btn">검색</button>
-					</div>
+   				<div class="col announceTitle">
+					${announceread.title}
 				</div>
-				<br>
-				
-   			  	<br>
-   				
-   			  	<br>
-   			  	<div class="row">
-				<a class="col count">100건</a>
+   				<div class="col announceDate">공지사항&nbsp;&nbsp;
+					<div class="vr"></div>&nbsp;&nbsp;${announceread.written_date}
 				</div>
+
+				<br><hr>
+
+   				<div class="col">
+					${announceread.content}
+				</div>
+
+   				<br><hr>
+
 				<div class="row">
-					<div class="col-md-12">
-						<table class="table announcement" style="text-align: center; border: 1px solid #F4EEFF ">
-							<thead>
-								<tr>
-									<th style="background-color: #F4EEFF; text-align: center;">번호</th>
-									<th style="background-color: #F4EEFF; text-align: center; width:300px;">제목</th>
-									<th style="background-color: #F4EEFF; text-align: center;">작성자</th>
-									<th style="background-color: #F4EEFF; text-align: center;">작성일</th>
-								</tr>
-							</thead>
-
-							<tbody>
-							<c:forEach var="notice" items="${notice_john}">
-								<tr>
-									<td>${notice.id}</td>
-									<td>
-									<a href="announceread?id=${notice.id}">${notice.title}</a>
-									</td>
-											<%--
-									<td>
-										<c:forEach begin="1" end="${notice.bindent}">[Re]</c:forEach>
-										<a href="content_view?id=${notice.id}">${notice.title}</a>
-										<!--bindent : 가로 (댓글이 보이는 순서 때문에 들어간 것)-->
-									</td>
-									--%>
-									<td>${notice.user_id}</td>
-									<td>${notice.written_date}</td>
-								</tr>
-							</c:forEach>
-							</tbody>
-
-						</table>
-
-
-
-						<c:if test="${pageMaker.prev}">
-							<a href="JOHN${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
-						</c:if>
-
-						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-							<%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
-							<a href="JOHN${pageMaker.makeQuery(idx)}">${idx}</a>
-						</c:forEach>
-
-						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<a href="JOHN${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
-						</c:if> <br>
-
-
-
+	   				<div class="col announcePrev">이전글</div>
+	   				<div class="col-md-11 announcePrev">
+						<a href="#">
+							이전글 제목 ${announceread.next_id}
+						</a>
 					</div>
-				</div>
+   				</div>
+
+				<hr>
+
+				<div class="row">
+	   				<div class="col announceNext">다음글</div>
+	   				<div class="col-md-11 announceNext">
+						<a href="#">
+							다음글 제목
+						</a>
+					</div>
+	   			</div>
+
+	   			<hr><br>
+
+	   			<div class="d-flex justify-content-center align-items-center">
+   					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="location='announcement'" style="width: 200px">공지사항 목록</button>
+   				</div>
 			</div>				
 		</div>	
 		<br><br>	
 	</main>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

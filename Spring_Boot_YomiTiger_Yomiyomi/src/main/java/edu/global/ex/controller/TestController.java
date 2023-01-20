@@ -52,12 +52,12 @@ public class TestController {
 	}
 	
 	// 공지사항
-	@GetMapping("/announcement")
+/*	@GetMapping("/announcement")
 	public String announcement() {
 		log.info("/announcement");
 				
 		return "announcement";
-	}
+	}*/
 	
 	// 오프라인 매장 위치
 	@GetMapping("/location")
@@ -82,6 +82,14 @@ public class TestController {
 		
 		return "footer";
 	}
+	
+	// 공지사항 조회
+	/*@GetMapping("/announceread")
+	public String announceread() {
+		log.info("/announceread");
+		
+		return "announceread";
+	}*/
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")

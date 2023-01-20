@@ -36,6 +36,7 @@ public class BoardVO {
     private int item_id;
     private String thumbnail;
 
+
     private List<BoardCategoryVO> boardCategoryList;
     private List<MemberVO> userList;
 
