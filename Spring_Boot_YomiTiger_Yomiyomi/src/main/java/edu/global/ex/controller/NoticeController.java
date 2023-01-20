@@ -42,7 +42,7 @@ public class NoticeController {
 
     @GetMapping("/announcement")
     public String announcement(Criteria criteria, Model model){
-        log.info("john()...");
+        log.info("CONTROLLER : announcement()...");
 
         model.addAttribute("announcement", noticeService.getList(criteria));
 
@@ -59,11 +59,20 @@ public class NoticeController {
 
     @GetMapping("/announceread")
     public String announceread(BoardVO boardVO, Model model){
-        log.info("notice()..");
+        log.info("CONTROLLER : announceread()..");
 
         int id = boardVO.getId();
         model.addAttribute("announceread", noticeService.read(id));
 
         return "announceread";
     }
+
+    @GetMapping("/announcewrite")
+    public String announcewrite(BoardVO boardVO, Model model){
+        log.info("CONTROLLER : announcewrite()..");
+
+
+        return "announcewrite";
+    }
+
 }
