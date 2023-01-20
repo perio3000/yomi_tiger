@@ -48,6 +48,11 @@ body{
 	font-weight: 500;
 }
 
+.advertisementNotice {
+	font-size: 14px;
+	color: #A6B1E1;
+}
+
 #checkBtn {
 	width: 175px;
 	height: 40px;
@@ -63,4 +68,15 @@ body{
 .form-check-input:checked {
     background-color: #424874;
     border-color: #424874;
+}
+
+#signupBtn {
+	height: 50px;
+	border: 1px solid #424874;
+	color: #DCD6F7;
+	--bs-btn-bg: #424874;
+	--bs-btn-hover-bg: #424874;
+	--bs-btn-hover-border-color: #424874;
+	--bs-btn-active-bg: #424874;
+    --bs-btn-active-border-color: #424874;
 }

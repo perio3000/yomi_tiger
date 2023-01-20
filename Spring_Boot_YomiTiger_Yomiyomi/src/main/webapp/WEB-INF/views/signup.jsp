@@ -164,7 +164,7 @@
 					  </label>
 					</div>
 					<div class="col">
-						<div class="d-flex justify-content-end">내용 보기 ></div>
+						<div class="d-flex justify-content-end"><a href="#">내용 보기 ></a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="d-flex justify-content-end">내용 보기 ></div>
+						<div class="d-flex justify-content-end"><a href="#">내용 보기 ></a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -190,7 +190,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="d-flex justify-content-end">내용 보기 ></div>
+						<div class="d-flex justify-content-end"><a href="#">내용 보기 ></a></div>
 					</div>
 				</div>
 				<hr>
@@ -205,7 +205,7 @@
 						</div>
 					</div>
 					<div class="col">
-						<div class="d-flex justify-content-end">내용 보기 ></div>
+						<div class="d-flex justify-content-end"><a href="#">내용 보기 ></a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -235,10 +235,17 @@
 						</div>
 					</div>
 				</div>
-				
-				
+				<div class="row">
+					<span class="advertisementNotice">마케팅 수신 동의 시 다양한 혜택을 받아볼 수 있습니다.</span>
+				</div>
+				<br>
+				<div class="row">
+					<div class="d-grid gap-2">
+					  <button class="btn btn-primary" type="button" id="signupBtn">회원가입</button>
+					</div>
+				</div>
+				<div class="col-md-2">&nbsp;</div>
 			</div>
-			<div class="col-md-2">&nbsp;</div>
 		</div>
 	</main>
 	<br><br>
