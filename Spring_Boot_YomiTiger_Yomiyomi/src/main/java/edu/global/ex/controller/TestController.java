@@ -82,6 +82,14 @@ public class TestController {
 		
 		return "footer";
 	}
+	
+	// 공지사항 조회
+	@GetMapping("/announceread")
+	public String announceread() {
+		log.info("/announceread");
+		
+		return "announceread";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
