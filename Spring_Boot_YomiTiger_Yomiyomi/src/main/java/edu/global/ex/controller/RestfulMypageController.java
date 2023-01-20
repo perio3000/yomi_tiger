@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.BoardVO;
+import edu.global.ex.vo.MemberVO;
 
 @Slf4j
 @RestController
@@ -29,6 +30,14 @@ public class RestfulMypageController {
 		System.out.println(authentication.getName());
 
 		return mypageService.getInquiry(authentication.getName(), reply_group);
+	}
+
+	@PutMapping("/userUpdate/{id}")
+	public MemberVO userUpdate(@RequestBody MemberVO memberVO) {
+		log.info("userUpdate() ..");
+		log.info("userUpdate() .." + memberVO);
+		
+		return mypageService.userUpdate(memberVO);
 	}
 	
 

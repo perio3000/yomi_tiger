@@ -133,9 +133,11 @@
 					<!-- 1번 탭 -->
 					<div class="tab-pane fade show active col" id="first" role="tabpanel" aria-labelledby="first-tab">
 					
-						<form:form>
+						<form:form id="updateForm">
 							<table class="table">
 								<tr>
+								<td>
+									<input type="hidden" id="userId" value="${ member.id }">
 									<div class="mb-3 row mt-3">
 										<label for="staticEmail" class="col-sm-2 col-form-label fw-bolder">아이디</label>
 										<div class="col-sm-10">
@@ -145,10 +147,10 @@
 									</div>
 									
 									<div class="mb-3 row">
-										<label for="inputPassword1" class="col-sm-2 col-form-label fw-bolder">비밀번호</label>
+										<label for="inputPassword" class="col-sm-2 col-form-label fw-bolder">비밀번호</label>
 										<div class="col-sm-10">
 											<input type="password" class="form-control"
-												id="inputPassword1">
+												id="inputPassword">
 											<div class="text-secondary">&#10003; 영문, 숫자, 특수문자 3가지 조합 / 8자리 이상 20자리 이하</div>
 											<div class="text-secondary">&#10003; 공백 및 3자 이상의 연속 또는 중복 문자는 사용 불가</div>
 										</div>
@@ -197,6 +199,7 @@
 											<button type="submit" class="submitBtn">확인</button>
 										</div>
 									</div>
+									</td>
 								</tr>
 							</table>
 						</form:form>

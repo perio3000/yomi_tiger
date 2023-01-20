@@ -60,19 +60,16 @@
    			
    			<div class="col-md-9">
    			<br><br><br>
-   				<div class="col announceTitle">공지사항 제목</div>
-   				<div class="col announceDate">공지사항&nbsp;&nbsp;<div class="vr"></div>&nbsp;&nbsp;2023.01.20</div>
+   				<div class="col announceTitle">${announceread.title}</div>
+   				<div class="col announceDate">공지사항&nbsp;&nbsp;<div class="vr"></div>&nbsp;&nbsp;${announceread.written_date}</div>
    				<br><hr>
-   				<div class="col">공지사항 내용</div>
-   				<div class="col">공지사항 내용</div>
-   				<div class="col">공지사항 내용</div>
-   				<div class="col">공지사항 내용</div>
-   				<div class="col">공지사항 내용</div>
-   				<div class="col">공지사항 내용</div>
+
+   				<div class="col">${announceread.content}</div>
+
    				<br><hr>
    				<div class="row">
 	   				<div class="col announcePrev">이전글</div>
-	   				<div class="col-md-11 announcePrev"><a href="#">이전글 제목</a></div>
+	   				<div class="col-md-11 announcePrev"><a href="#">이전글 제목 ${announceread.next_id}</a></div>
    				</div>
    				<hr>
    				<div class="row">

@@ -40,5 +40,39 @@ public class NoticeController {
         return "JOHN_detail";
     }
 
+    @GetMapping("/announcement")
+    public String announcement(Criteria criteria, Model model){
+        log.info("CONTROLLER : announcement()...");
+
+        model.addAttribute("announcement", noticeService.getList(criteria));
+
+        int total = noticeService.getTotal();
+        log.info("total" + total );
+
+        model.addAttribute("pageMaker", new PageVO(criteria, total));
+        return "announcement";
+    }
+
+
+
+
+
+    @GetMapping("/announceread")
+    public String announceread(BoardVO boardVO, Model model){
+        log.info("CONTROLLER : announceread()..");
+
+        int id = boardVO.getId();
+        model.addAttribute("announceread", noticeService.read(id));
+
+        return "announceread";
+    }
+
+    @GetMapping("/announcewrite")
+    public String announcewrite(BoardVO boardVO, Model model){
+        log.info("CONTROLLER : announcewrite()..");
+
+
+        return "announcewrite";
+    }
 
 }

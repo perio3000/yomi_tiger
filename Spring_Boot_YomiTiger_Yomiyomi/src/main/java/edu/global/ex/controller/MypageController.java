@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.global.ex.service.MypageService;
+import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.MemberVO;
 
 @Slf4j
@@ -77,10 +78,12 @@ public class MypageController {
 	
 	//활동내역
 	@GetMapping("/activitylist")
-	public String activitylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+	public String activitylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal, BoardVO boardVO) {
 		log.info("activitylist..");
 		
 		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+		model.addAttribute("review", mypageService.getReviewList(authentication.getName()));
+		model.addAttribute("reply", mypageService.getReplyList(authentication.getName()));
 		
 		return "activitylist";
 	}

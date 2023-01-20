@@ -22,4 +22,10 @@ public interface MypageService {
 	List<BoardVO> getInquiryList(String username);
 	
 	List<BoardVO> getInquiry(String username, int reply_group);
+	
+	List<BoardVO> getReviewList(String username);
+	
+	List<BoardVO> getReplyList(String username);
+	
+	MemberVO userUpdate(MemberVO memberVO);
 }

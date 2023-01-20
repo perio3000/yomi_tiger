@@ -1,3 +1,4 @@
+// 탭메뉴
 let key = "${param.key}";
 
 if(key === "first"){
@@ -48,6 +49,7 @@ if(key === "first"){
 	$("#fourth").addClass("show active");
 }
 
+//클릭시 해당 탭으로 이동
 function secondTab(){
 	$("#second-tab").click();
 }
@@ -63,12 +65,14 @@ function fourthTab(){
 
 
 $(document).ready(function(){
+//	주문 배송 목록 진행상태 표시
 	$(".preText").text($(".준비중").length)
 	$(".ingText").text($(".배송중").length);
 	$(".endText").text($(".배송완료").length);
 	$(".canText").text($(".취소").length);
 	$(".refText").text($(".교환환불").length);
-	
+
+//	목록이 없을 경우 메세지 띄우기
 	if($("input[name=preList]").length == 0){
 		$(".nonPreList").css("display", "block");
 	};
@@ -81,7 +85,7 @@ $(document).ready(function(){
 		$(".nonComList").css("display", "block");
 	};
 	
-
+//	문의내역 답변완료 목록 불러오기
 	$("#inquiryForm").submit(function(event) {
 		//prevendDefault()는 href로 연결해 주지 않고 
 		//단순히 click에 대한 처리를 하도록 해준다.
@@ -120,6 +124,59 @@ $(document).ready(function(){
 				$(".replyTitle"+group).append(result[0].content);
 				$(".replyBody"+group).append(result[1].content);
 				
+			},
+			error : function(e) {
+				console.log(e);
+			}
+		});
+
+	});
+	
+//	회원정보 수정
+	$("#updateForm").submit(function(event) {
+		//prevendDefault()는 href로 연결해 주지 않고 
+		//단순히 click에 대한 처리를 하도록 해준다.
+		event.preventDefault();
+		
+		let id = $("#userId").val();
+		let username = $("#staticEmail").val();
+		let password = $("#inputPassword").val();
+		let name = $("#name").val();
+		let tel = $("#tel").val();
+		
+		let address = $("#address").val();
+		let addressSplit = address.split(" ");
+		
+		let city = addressSplit[0];
+		let street = addressSplit[1];
+		let location = addressSplit[2];
+		let postnumber = addressSplit[3].substr(1,6);		
+
+		let form = {
+			id : id,
+			username : username,
+			password : password,
+			name : name,
+			tel : tel,
+			city : city,
+			street : street,
+			location : location,
+			postnumber : postnumber
+		};
+
+		console.log(JSON.stringify(form));
+
+		$.ajax({
+			type : "PUT",
+			url : "/userUpdate/" + id,
+			cashe : false,
+			contentType : 'application/json; charset=utf-8', //MIME 타입
+			data : JSON.stringify(form),
+			success : function(result) {
+				console.log(result);
+				//location.href = "/list";
+				//$(location).attr('href', '/rest_board.html');
+				$(location).attr('href', '/logout');
 			},
 			error : function(e) {
 				console.log(e);

@@ -88,12 +88,13 @@
 									<th style="background-color: #F4EEFF; text-align: center;">작성일</th>
 								</tr>
 							</thead>
+
 							<tbody>
 							<c:forEach var="notice" items="${notice_john}">
 								<tr>
 									<td>${notice.id}</td>
 									<td>
-									<a href="notice_view?id=${notice.id}">${notice.title}</a>
+									<a href="announceread?id=${notice.id}">${notice.title}</a>
 									</td>
 											<%--
 									<td>
@@ -106,10 +107,8 @@
 									<td>${notice.written_date}</td>
 								</tr>
 							</c:forEach>
-
-
-
 							</tbody>
+
 						</table>
 
 
