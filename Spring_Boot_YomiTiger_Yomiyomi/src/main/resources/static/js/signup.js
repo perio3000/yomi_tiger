@@ -1,5 +1,6 @@
-// 전체선택
+
 $(document).ready(function() {
+	// 전체선택
 	$("#defaultCheck1").click(function() {
 		if($("#defaultCheck1").is(":checked")) $("input[name=chk]").prop("checked", true);
 		else $("input[name=chk]").prop("checked", false);

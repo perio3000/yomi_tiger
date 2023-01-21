@@ -1,6 +1,4 @@
-$(document).ready(function() {
 
-});
 
 function logout(){
 	$("#logoutForm").submit();

@@ -24,6 +24,13 @@ public class TestController {
 		return "login";
 	}
 
+	//카카오 로그인
+	@GetMapping("/kakaologin")
+	public String kakaologin() {
+		log.info("/kakaologin()...");
+
+		return "/main";
+	}
 	
 	
 	// 1:1 문의하기

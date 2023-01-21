@@ -28,7 +28,10 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+<script type="text/javascript" src="/js/login.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript" src="/js/kakaologin.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/loginstyle.css">
@@ -45,7 +48,7 @@
 					</div>
 					<c:url value="/login" var="loginUrl" />
 					<div class="sign-in-up">
-						<form:form class="sign-in-form active" action="${loginUrl}" method="post">
+						<form:form class="sign-in-form active" action="${loginUrl}" method="post" name="f">
 							<input type="text" placeholder="아이디를 입력해 주세요." id="username" name="username"> 
 							<input type="password" placeholder="비밀번호를 입력해 주세요." id="password" name="password">
 							<c:if test="${param.error != null}">
@@ -55,14 +58,14 @@
 								<p>로그아웃 하였습니다.</p>
 							</c:if>
 							<input type="submit" value="로그인">
-							<span class="check"><input type="checkbox"><label>아이디 저장</label></span> 
+							<span class="check"><input type="checkbox" id="idSaveCheck"><label>아이디 저장</label></span> 
 							<a href="findIDPW">아이디/비밀번호 찾기</a> 
 						</form:form>
 
 						<div class="social-login">
 							<a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>
-							<a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-							<a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+							<a class="btn btn-social-icon btn-naver"><span class="xi-naver xi-x"></span></a>
+							<a class="btn btn-social-icon btn-kakakotalk" href="javascript:kakaoLogin();"><span class="xi-kakaotalk xi-x"></span></a>
 						</div>
 
 						<div class="clearfix"></div>
