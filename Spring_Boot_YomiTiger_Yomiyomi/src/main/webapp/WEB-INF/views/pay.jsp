@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="logo/logo.png" />
+<link rel="icon" href="/logo/logo.png" />
 <title>주문하기</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="logo/logo-back-white.png" />
+<link rel="icon" href="/logo/logo-back-white.png" />
 <!-- <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -44,7 +44,7 @@
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
-						<li class="col col2"><a href="#" onclick="logout()">로그아웃</a></li>
+						<li class="col me-4 col2"><a href="#" onclick="logout()">로그아웃</a></li>
 						<li class="col col2"><a href="#">고객센터</a></li>
 					</form:form>
 				</sec:authorize>

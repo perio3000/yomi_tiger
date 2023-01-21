@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="/logo/logo.png" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -69,8 +70,8 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<input type="password" class="form-control" placeholder="비밀번호를 입력해 주세요." id="floatingTextarea2" style="height: 40px;">
-  						<label for="floatingTextarea2"></label>
+						<input type="password" class="form-control" placeholder="비밀번호를 입력해 주세요." id="password" style="height: 40px;">
+  						<label for="password"></label>
   						<span class="signupNotice">* 영어 대문자/소문자/특수문자 중 2가지 이상 이용. 최소 8글자 이상.</span>
 					</div>
 				</div>
@@ -79,7 +80,6 @@
 						
 					</div>
 				</div><br>
-				<!-- 텍스트박스 아래에 틈 남아있어서 간격 이상한거 개열받네... -->
 				
 				<!-- 비밀번호 확인 -->
 				<div class="row">
@@ -89,8 +89,8 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<input type="password" class="form-control" placeholder="비밀번호를 한번 더 입력해 주세요." id="floatingTextarea2" style="height: 40px;">
-  						<label for="floatingTextarea2"></label>
+						<input type="password" class="form-control" placeholder="비밀번호를 한번 더 입력해 주세요." id="password2" style="height: 40px;">
+  						<label for="password2"></label>
 					</div>
 				</div>
 				<!-- 이름 -->
@@ -101,8 +101,8 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<textarea class="form-control" placeholder="이름을 입력해 주세요." id="floatingTextarea2" style="height: 40px;"></textarea>
-  						<label for="floatingTextarea2"></label>
+						<input type="text" class="form-control" placeholder="이름을 입력해 주세요." id="name" style="height: 40px;">
+  						<label for="name"></label>
 					</div>
 				</div>
 				<!-- 휴대폰 번호 -->
@@ -113,8 +113,8 @@
 				</div>
 				<div class="row">
 					<div class="col">
-						<textarea class="form-control" placeholder="휴대폰 번호를 입력해 주세요." id="floatingTextarea2" style="height: 40px;"></textarea>
-  						<label for="floatingTextarea2"></label>
+						<input type="text" class="form-control" placeholder="휴대폰 번호를 입력해 주세요." id="tel" style="height: 40px;" onkeyup="inputPhoneNumber(this);">
+  						<label for="tel"></label>
 					</div>
 				</div>
 				<!-- 이메일 -->
@@ -160,8 +160,8 @@
 				<hr>
 				<div class="row">
 					<div class="col-md-10 termsOfUse">
-					  <input class="form-check-input" type="checkbox" name="chk" id="defaultCheck2">
-					  <label class="form-check-label" for="defaultCheck2">
+					  <input class="form-check-input" type="checkbox" name="chk" id="check1">
+					  <label class="form-check-label" for="check1">
 					   	 요미타이거 이용약관&nbsp;<span style="color:#424874">(필수)</span>
 					  </label>
 					</div>
@@ -172,8 +172,8 @@
 				<div class="row">
 					<div class="col termsOfUse">
 						<div>
-						  <input class="form-check-input" type="checkbox" name="chk" id="defaultCheck3">
-					  	  <label class="form-check-label" for="defaultCheck3">
+						  <input class="form-check-input" type="checkbox" name="chk" id="check2">
+					  	  <label class="form-check-label" for="check2">
 						  	개인정보 수집 및 이용 동의&nbsp;<span style="color:#424874">(필수)</span>
 						  </label>
 						</div>
@@ -185,8 +185,8 @@
 				<div class="row">
 					<div class="col termsOfUse">
 						<div>
-						  <input class="form-check-input" type="checkbox" name="chk" id="defaultCheck4">
-					 	  <label class="form-check-label" for="defaultCheck4">
+						  <input class="form-check-input" type="checkbox" name="chk" id="check3">
+					 	  <label class="form-check-label" for="check3">
 					 	  	개인정보 처리 위탁 동의&nbsp;<span style="color:#424874">(필수)</span>
 					 	  </label>
 						</div>
@@ -200,8 +200,8 @@
 				<div class="row">
 					<div class="col termsOfUse">
 						<div>
-						  <input class="form-check-input" type="checkbox" name="chk" id="defaultCheck5">
-					 	  <label class="form-check-label" for="defaultCheck5">
+						  <input class="form-check-input" type="checkbox" name="chk" id="check4">
+					 	  <label class="form-check-label" for="check4">
 					 	  	개인정보 수집 및 이용 동의&nbsp;<span>(선택)</span>
 					 	  </label>
 						</div>
@@ -213,8 +213,8 @@
 				<div class="row">
 					<div class="col termsOfUse">
 						<div>
-						  <input class="form-check-input" type="checkbox" name="chk" id="defaultCheck6">
-					 	  <label class="form-check-label" for="defaultCheck6">
+						  <input class="form-check-input" type="checkbox" name="chk" id="check5">
+					 	  <label class="form-check-label" for="check5">
 					 	  	마케팅 수신 동의&nbsp;<span>(선택)</span>
 					 	  </label>
 						</div>

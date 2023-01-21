@@ -7,4 +7,6 @@ public interface LoginService {
 	MemberVO getUser(String username);
 	
 	int idCheck(String username);
+	
+	int signupMember(MemberVO memberVO);
 }

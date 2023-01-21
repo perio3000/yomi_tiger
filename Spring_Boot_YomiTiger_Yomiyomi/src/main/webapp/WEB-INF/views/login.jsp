@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="logo/logo.png" />
+<link rel="icon" href="/logo/logo.png" />
 <title>yomiyomi</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link

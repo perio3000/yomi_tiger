@@ -43,4 +43,15 @@
 		]]>
 	</select>
 	
+	<insert id="signupMember">
+		<![CDATA[
+			insert all
+				into yomi_user (id, username, password, name, tel) 
+				values (yomi_user_seq.nextval, #{username}, #{password}, #{name}, #{tel})
+				into yomi_auth (id, authority, user_id)
+				values (yomi_auth_seq.nextval, 'ROLE_MEMBER', yomi_user_seq.currval)
+			select * from dual
+		]]>
+	</insert>
+	
 </mapper>
