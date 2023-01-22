@@ -47,7 +47,7 @@
 					<a href="qna" class="qnaMenu">1:1문의 접수</a><br>
 					<a href="#" class="qnaMenu">1:1문의 내역</a><br>
 					<br>
-					<a href="#" class="notice">공지사항</a><br>
+					<a href="announcementtest" class="notice">공지사항</a><br>
 					<br>
 					<p class="customerInfo">고객센터 이용안내
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">

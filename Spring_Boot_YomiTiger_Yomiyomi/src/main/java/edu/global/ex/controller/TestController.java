@@ -97,6 +97,14 @@ public class TestController {
 		
 		return "signup";
 	}
+	
+	// 책리스트
+	@GetMapping("/booklist")
+	public String booklist() {
+		log.info("/booklist");
+		
+		return "booklist";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")

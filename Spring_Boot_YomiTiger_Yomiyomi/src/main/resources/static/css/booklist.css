@@ -1,0 +1,31 @@
+.bookTitle {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#bookBtn,
+.btn-outline-success {
+    --bs-btn-color: #424874;
+    --bs-btn-border-color: #424874;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #424874;
+    --bs-btn-hover-border-color: #424874;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #424874;
+    --bs-btn-active-border-color: #424874;
+    --bs-btn-disabled-color: #424874;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #424874;
+}
+
+#yearDropdown, #monthDropdown, #weekDropdown, #sortDropdown, #viewDropdown{
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #424874;
+    --bs-btn-border-color: #424874;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #424874;
+    --bs-btn-hover-border-color: #424874;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #424874;
+    --bs-btn-active-border-color: #424874;
+}
