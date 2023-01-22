@@ -4,6 +4,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.security.SecureRandom" %>
+<%@ page import="java.math.BigInteger" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,10 +62,20 @@
 							<a href="findIDPW">아이디/비밀번호 찾기</a> 
 						</form:form>
 
+						<%
+							String clientId = "f12Ftt_0n5ohdIkldJsh";//애플리케이션 클라이언트 아이디값";
+							String redirectURI = URLEncoder.encode("http://localhost:8282/auth/naver/callback", "UTF-8");
+							SecureRandom random = new SecureRandom();
+							String state = new BigInteger(130, random).toString();
+							String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code" + "&client_id=" + clientId
+									+ "&redirect_uri=" + redirectURI + "&state=" + state;
+							session.setAttribute("state", state);
+						%>
+
 						<div class="social-login">
 							<a class="btn btn-social-icon btn-google">
 								<span class="fa fa-google"></span></a>
-							<a class="btn btn-social-icon btn-naver">
+							<a class="btn btn-social-icon btn-naver" href="<%=apiURL%>">
 								<span class="xi-naver xi-x"></span></a>
 							<a class="btn btn-social-icon btn-kakakotalk" href="https://kauth.kakao.com/oauth/authorize?client_id=bc4cda6f8f7a42949e52b295bbbaca0f&redirect_uri=http://localhost:8282/auth/kakao/callback&response_type=code">
 								<span class="xi-kakaotalk xi-x"></span></a>

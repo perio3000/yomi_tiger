@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -31,6 +32,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.global.ex.security.KakaoProfile;
+import edu.global.ex.security.NaverProfile;
 import edu.global.ex.security.OAuthToken;
 import edu.global.ex.service.LoginService;
 import edu.global.ex.vo.MemberVO;
@@ -146,9 +148,113 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = kakaoProfile.getKakao_account().getEmail();
+		String username = kakaoProfile.getKakao_account().getEmail() + String.valueOf(kakaoProfile.getId());
 		String password = String.valueOf(kakaoProfile.getId());
 		String name = kakaoProfile.getProperties().getNickname();
+		
+		System.out.println("username : " + username);
+		System.out.println("password " + password);
+		System.out.println("name : " + name);
+		
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO.setUsername(username);
+		memberVO.setPassword(password);
+		memberVO.setName(name);
+		
+		//회원가입
+		if(loginService.findMember(username) == 0) {
+			loginService.signupSocialLogin(memberVO);
+		}
+		
+		//로그인
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+		String redirect_uri="/";
+		try {
+			httpServletResponse.sendRedirect(redirect_uri);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//네이버 인증
+	@GetMapping("/auth/naver/callback")
+	public @ResponseBody void authNaverCallback(String code, String state, HttpServletResponse httpServletResponse) {
+		log.info("authNaverCallback() ..");
+		
+		RestTemplate rt = new RestTemplate();
+		
+		//HttpHeader 오브젝트 생성
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		//HttpBody 오브젝트 생성
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+		params.add("grant_type", "authorization_code");
+		params.add("client_id", "f12Ftt_0n5ohdIkldJsh");
+		params.add("client_secret", "I6JoPPRbqf");
+		params.add("code", code);
+		params.add("state", state);
+		
+		//HttpHeader와 body를 하나의 오브젝트에 담기
+		HttpEntity<MultiValueMap<String, String>> naverTokenRequest = new HttpEntity<>(params, headers);
+		
+		//Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음
+		ResponseEntity<String> response = rt.exchange(
+					"https://nid.naver.com/oauth2.0/token",
+					HttpMethod.POST,
+					naverTokenRequest,
+					String.class
+				);
+		
+		//ObjectMapper
+		ObjectMapper objectMapper = new ObjectMapper();
+		OAuthToken oAuthToken = null;
+		try {
+			oAuthToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("네이버 엑세스 토큰 : " + oAuthToken.getAccess_token());
+		
+		//post방식으로 key=value 데이터 요청(카카오 쪽으로)
+		RestTemplate rt2 = new RestTemplate();
+		
+		//HttpHeader 오브젝트 생성
+		HttpHeaders headers2 = new HttpHeaders();
+		headers2.add("Authorization", "Bearer " + oAuthToken.getAccess_token());
+		headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		HttpEntity<MultiValueMap<String, String>> naverProfileRequest = new HttpEntity<>(headers2);
+		
+		//Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음
+		ResponseEntity<String> response2 = rt2.exchange(
+					"https://openapi.naver.com/v1/nid/me",
+					HttpMethod.POST,
+					naverProfileRequest,
+					String.class
+				);
+
+		System.out.println(response2);
+		//ObjectMapper
+		ObjectMapper objectMapper2 = new ObjectMapper();
+		NaverProfile naverProfile = null;
+		try {
+			naverProfile = objectMapper2.readValue(response2.getBody(), NaverProfile.class);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		
+		String username = naverProfile.getResponse().getEmail() + naverProfile.getResponse().getId();
+		String password = naverProfile.getResponse().getId();
+		String name = naverProfile.getResponse().getName();
 		
 		System.out.println("username : " + username);
 		System.out.println("password " + password);
