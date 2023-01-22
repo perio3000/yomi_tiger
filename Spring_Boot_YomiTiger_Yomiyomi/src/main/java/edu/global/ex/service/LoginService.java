@@ -9,4 +9,9 @@ public interface LoginService {
 	int idCheck(String username);
 	
 	int signupMember(MemberVO memberVO);
+	
+	void signupSocialLogin(MemberVO memberVO);
+	
+	int findMember(String username);
+	
 }

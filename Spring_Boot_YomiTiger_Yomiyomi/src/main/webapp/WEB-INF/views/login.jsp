@@ -30,8 +30,6 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <script type="text/javascript" src="/js/login.js"></script>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script type="text/javascript" src="/js/kakaologin.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/loginstyle.css">
@@ -63,9 +61,12 @@
 						</form:form>
 
 						<div class="social-login">
-							<a class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a>
-							<a class="btn btn-social-icon btn-naver"><span class="xi-naver xi-x"></span></a>
-							<a class="btn btn-social-icon btn-kakakotalk" href="javascript:kakaoLogin();"><span class="xi-kakaotalk xi-x"></span></a>
+							<a class="btn btn-social-icon btn-google">
+								<span class="fa fa-google"></span></a>
+							<a class="btn btn-social-icon btn-naver">
+								<span class="xi-naver xi-x"></span></a>
+							<a class="btn btn-social-icon btn-kakakotalk" href="https://kauth.kakao.com/oauth/authorize?client_id=bc4cda6f8f7a42949e52b295bbbaca0f&redirect_uri=http://localhost:8282/auth/kakao/callback&response_type=code">
+								<span class="xi-kakaotalk xi-x"></span></a>
 						</div>
 
 						<div class="clearfix"></div>

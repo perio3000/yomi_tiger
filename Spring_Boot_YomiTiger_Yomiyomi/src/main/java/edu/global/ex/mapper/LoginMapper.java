@@ -12,4 +12,6 @@ public interface LoginMapper {
 	int idCheck(String username);
 	
 	int signupMember(MemberVO memberVO);
+	
+	int signupSocialLogin(MemberVO memberVO);
 }
