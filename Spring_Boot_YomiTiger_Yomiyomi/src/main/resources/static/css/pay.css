@@ -150,9 +150,7 @@ section {
     border: 1px solid #dcdcdc;
     text-align: right;
 }
-.accordion-body td img{
-	
-}
+
 .accordion-body td{
 	padding: 20px;
 	width: 20%;
@@ -193,9 +191,20 @@ section {
 	border-top: 1px solid #dcdcdc;
 }
 
+/* ----------------------------결제 방식------------------------------------------------------- */
+.form-check{
+	font-size: 1.2em;
+	display: flex;
+	font-weight: 700;
+	align-items: center;
+}
+.form-check>input[type='radio']{
+	accent-color: #424874 !important;
+	margin-right: 10px;
+	font-size: 1.3em;
+}
 
-
-/* ----------------------------------------------------------------------------------- */
+/* -------------------------사이드바---------------------------------------------------------- */
 .aside {
 	position: sticky;
 	position: -webkit-sticky;
@@ -213,12 +222,15 @@ section {
 
 .card-body {
 	padding: 30px;
-	height: 420px;
-	font-size: 1.2em;
+	height: auto;
+	font-size: 1.1em;
 }
 
 .aside li {
 	border: none;
+	width: 100%;
+	padding: 5px 0;
+	text-align: left;
 }
 
 .aside ul {
@@ -250,7 +262,11 @@ section {
 }
 
 .right {
-	font-weight: bold;
+	font-weight: 800;
+	text-align: right !important;
+	width: 80% !important;
+	font-size: 1.2em;	
+	
 }
 
 input[type='checkbox']{
@@ -258,7 +274,7 @@ input[type='checkbox']{
 }
 input[type="checkbox"] + label {
   display: inline-block;
-  width: 22px;
+  width: 24px;
   height: 22px;  
   border: 1px solid #424874;
   cursor: pointer;
@@ -268,6 +284,7 @@ input[type="checkbox"] + label {
 input[id="check"]:checked + label::before {
   content: '\f00c';
   display: block;
+  position: absolute;
   width: 22px;
   height: 22px;
   font-size: 1em;
@@ -277,7 +294,6 @@ input[id="check"]:checked + label::before {
   background-color: #424874;
   color: #fff;
   border-radius: 100%;
-
 }
 .check-wrap {
 	margin: 30px 0;
@@ -321,7 +337,6 @@ input[id="check"]:checked + label::before {
 }
 .pay-accordion-body::-webkit-scrollbar {
   width: 6px;
-
 }
 
 .pay-accordion-body::-webkit-scrollbar-track {
