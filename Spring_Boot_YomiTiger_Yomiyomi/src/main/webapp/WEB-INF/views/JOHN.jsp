@@ -88,12 +88,15 @@
 									<th style="background-color: #F4EEFF; text-align: center;">작성일</th>
 								</tr>
 							</thead>
+
 							<tbody>
 							<c:forEach var="notice" items="${notice_john}">
 								<tr>
 									<td>${notice.id}</td>
-									<td>${notice.title}</td>
-									<%--
+									<td>
+									<a href="announceread?id=${notice.id}">${notice.title}</a>
+									</td>
+											<%--
 									<td>
 										<c:forEach begin="1" end="${notice.bindent}">[Re]</c:forEach>
 										<a href="content_view?id=${notice.id}">${notice.title}</a>
@@ -104,25 +107,23 @@
 									<td>${notice.written_date}</td>
 								</tr>
 							</c:forEach>
-
-
-
 							</tbody>
+
 						</table>
 
 
 
 						<c:if test="${pageMaker.prev}">
-							<a href="list2${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
+							<a href="JOHN${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
 						</c:if>
 
 						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
 							<%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
-							<a href="list2${pageMaker.makeQuery(idx)}">${idx}</a>
+							<a href="JOHN${pageMaker.makeQuery(idx)}">${idx}</a>
 						</c:forEach>
 
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<a href="list2${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
+							<a href="JOHN${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
 						</c:if> <br>
 
 

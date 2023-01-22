@@ -9,6 +9,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+=======
+<link rel="icon" href="/logo/logo.png" />
+>>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
 <title>주문하기</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link

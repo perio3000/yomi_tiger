@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="logo/logo.png" />
+<link rel="icon" href="/logo/logo.png" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -24,8 +24,8 @@
 		<div class="row" id="breadcrumb">
 			<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="/mypage_main?username=${ member.username }">마이페이지</a></li>
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item"><a href="/mypage/main">마이페이지</a></li>
 					<li class="breadcrumb-item active" aria-current="page">회원정보</li>
 				</ol>
 			</nav>
@@ -133,9 +133,11 @@
 					<!-- 1번 탭 -->
 					<div class="tab-pane fade show active col" id="first" role="tabpanel" aria-labelledby="first-tab">
 					
-						<form:form>
+						<form:form id="updateForm">
 							<table class="table">
 								<tr>
+								<td>
+									<input type="hidden" id="userId" value="${ member.id }">
 									<div class="mb-3 row mt-3">
 										<label for="staticEmail" class="col-sm-2 col-form-label fw-bolder">아이디</label>
 										<div class="col-sm-10">
@@ -145,10 +147,10 @@
 									</div>
 									
 									<div class="mb-3 row">
-										<label for="inputPassword1" class="col-sm-2 col-form-label fw-bolder">비밀번호</label>
+										<label for="inputPassword" class="col-sm-2 col-form-label fw-bolder">비밀번호</label>
 										<div class="col-sm-10">
 											<input type="password" class="form-control"
-												id="inputPassword1">
+												id="inputPassword">
 											<div class="text-secondary">&#10003; 영문, 숫자, 특수문자 3가지 조합 / 8자리 이상 20자리 이하</div>
 											<div class="text-secondary">&#10003; 공백 및 3자 이상의 연속 또는 중복 문자는 사용 불가</div>
 										</div>
@@ -197,6 +199,7 @@
 											<button type="submit" class="submitBtn">확인</button>
 										</div>
 									</div>
+									</td>
 								</tr>
 							</table>
 						</form:form>
@@ -235,7 +238,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>
@@ -249,7 +252,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>
@@ -263,7 +266,7 @@
 											<span>2022.12.12</span>&nbsp;
 											<span>연동</span>&nbsp;
 											<div class="form-check form-switch">
-												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+												<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
 											</div>
 										</div>	
 									</div>

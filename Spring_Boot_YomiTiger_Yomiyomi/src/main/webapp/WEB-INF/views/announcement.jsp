@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="/logo/logo.png" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
@@ -77,7 +78,7 @@
    				
    			  	<br>
    			  	<div class="row">
-				<a class="col count">100건</a>
+				<a class="col count">건  ${pageMaker.total} 건   </a>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -90,69 +91,44 @@
 									<th style="background-color: #F4EEFF; text-align: center;">작성일</th>
 								</tr>
 							</thead>
+
 							<tbody>
+							<c:forEach var="announcement" items="${announcement}">
 								<tr>
-									<td>1</td>
-									<td><a href="#">1번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
+									<td>${announcement.id}</td>
+									<td>
+										<a href="announceread?id=${announcement.id}">${announcement.title}</a>
+									</td>
+										<%--
+                                <td>
+                                    <c:forEach begin="1" end="${notice.bindent}">[Re]</c:forEach>
+                                    <a href="content_view?id=${notice.id}">${notice.title}</a>
+                                    <!--bindent : 가로 (댓글이 보이는 순서 때문에 들어간 것)-->
+                                </td>
+                                --%>
+									<td>${announcement.user_id}</td>
+									<td>${announcement.written_date}</td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="#">2번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td><a href="#">3번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td><a href="#">4번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td><a href="#">5번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td><a href="#">6번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td><a href="#">7번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td><a href="#">8번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>9</td>
-									<td><a href="#">9번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>10</td>
-									<td><a href="#">10번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
+							</c:forEach>
 							</tbody>
+
 						</table>
+
+
+						<c:if test="${pageMaker.prev}">
+							<a href="announcement${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
+						</c:if>
+
+						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+							<%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
+							<a href="announcement${pageMaker.makeQuery(idx)}">${idx}</a>
+						</c:forEach>
+
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<a href="announcement${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
+						</c:if> <br>
+
+
 					</div>
 				</div>
 			</div>				

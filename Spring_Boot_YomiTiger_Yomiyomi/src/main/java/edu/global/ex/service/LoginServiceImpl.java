@@ -1,6 +1,7 @@
 package edu.global.ex.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import edu.global.ex.mapper.LoginMapper;
@@ -14,13 +15,31 @@ public class LoginServiceImpl implements LoginService{
 	@Autowired
 	private LoginMapper loginMapper;
 	
+	@Autowired
+    private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public MemberVO getUser(String username) {
 		log.info("getUser()..");
 		
 		return loginMapper.getUser(username);
 	}
+
+	@Override
+	public int idCheck(String username) {
+		log.info("idCheck()..");
+		
+		return loginMapper.idCheck(username);
+	}
 	
-	
+	@Override
+	public int signupMember(MemberVO memberVO) {
+		log.info("signupMember()..");
+		
+		String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
+		memberVO.setPassword(encodedPassword);
+		
+		return loginMapper.signupMember(memberVO);
+	}
 
 }

@@ -24,6 +24,13 @@ public class TestController {
 		return "login";
 	}
 
+	//카카오 로그인
+	@GetMapping("/kakaologin")
+	public String kakaologin() {
+		log.info("/kakaologin()...");
+
+		return "/main";
+	}
 	
 	
 	// 1:1 문의하기
@@ -52,7 +59,7 @@ public class TestController {
 	}
 	
 	// 공지사항
-	@GetMapping("/announcement")
+	@GetMapping("/announcementtest")
 	public String announcement() {
 		log.info("/announcement");
 				
@@ -81,6 +88,22 @@ public class TestController {
 		log.info("/footer");
 		
 		return "footer";
+	}
+	
+	// 공지사항 조회
+	@GetMapping("/announcereadtest")
+	public String announceread() {
+		log.info("/announceread");
+		
+		return "announceread";
+	}
+
+	// 회원가입
+	@GetMapping("/signup")
+	public String signup() {
+		log.info("/signup");
+		
+		return "signup";
 	}
 		
 	//아이디 비번 찾기

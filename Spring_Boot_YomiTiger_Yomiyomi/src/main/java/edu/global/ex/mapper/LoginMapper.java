@@ -8,4 +8,8 @@ import edu.global.ex.vo.MemberVO;
 public interface LoginMapper {
 	
 	MemberVO getUser(String username);
+	
+	int idCheck(String username);
+	
+	int signupMember(MemberVO memberVO);
 }

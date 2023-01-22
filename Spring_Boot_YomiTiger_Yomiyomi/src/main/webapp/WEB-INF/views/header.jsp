@@ -9,7 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <link rel="icon" href="logo/logo-white.png" />
+=======
+<link rel="icon" href="/logo/logo-back-white.png" />
+>>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
 <!-- <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -33,18 +37,18 @@
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 </head>
 <body>
-	<header>
+	<header id="header">
 		
 		<div class="rightNav">
 			<ul class="row">
 				<sec:authorize access="isAnonymous()">
-					<li class="col col2"><a href="#">회원가입</a></li>
+					<li class="col col2"><a href="/member/signup">회원가입</a></li>
 					<li class="col col2"><a href="<c:url value="/login" />">로그인</a></li>
 					<li class="col col2"><a href="#">고객센터</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
-						<li class="col col2"><a href="#" onclick="logout()">로그아웃</a></li>
+						<li class="col me-4 col2"><a href="#" onclick="logout()">로그아웃</a></li>
 						<li class="col col2"><a href="#">고객센터</a></li>
 					</form:form>
 				</sec:authorize>
@@ -144,9 +148,15 @@
 						<li><a href="/mypage/library" class="fs-5 fw-bolder">서재&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
 					</ul>
 				</div>
-			
+
 			</div>
 		</div>
 	</nav>
+	
+	<div style="position: fixed; bottom: 50px; right: 40px;">
+		<a href="#header"> <img src="/icon/up-arrow.png" title="맨 위로"
+			style="width: 50px; height: 50px;">
+		</a>
+	</div>
 </body>
 </html>
