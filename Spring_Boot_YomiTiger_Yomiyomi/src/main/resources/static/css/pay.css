@@ -197,13 +197,38 @@ section {
 	display: flex;
 	font-weight: 700;
 	align-items: center;
+	margin-bottom: 30px;
 }
 .form-check>input[type='radio']{
-	accent-color: #424874 !important;
 	margin-right: 10px;
-	font-size: 1.3em;
+	width: 25px;
+	height: 25px;
+	background-color: #424874;
+	border: 1px solid #424874;
 }
-
+.paytypes {width: 100%; }
+.paytypes>button{
+	margin: 5px 5px 5px 0;
+	width: 18%;
+	height: 60px;
+	border: 1px solid #dcdcdc;
+	font-weight: 700;
+}
+.paytypes>button:hover{
+	background-color: #dfdfdf;
+	border:1px solid #a1a1a1;
+	color: #000;
+}
+.paytypes>button>img{
+	width: 40%;
+	vertical-align:middle;
+}
+.paytypes>button:nth-child(4)>img{
+	width: 80%;
+}
+.paytypes>button:last-child>img{
+	width: 50% !important;
+}
 /* -------------------------사이드바---------------------------------------------------------- */
 .aside {
 	position: sticky;

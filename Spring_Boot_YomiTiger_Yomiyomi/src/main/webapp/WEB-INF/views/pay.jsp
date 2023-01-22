@@ -9,10 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
-<link rel="icon" href="/logo/logo.png" />
->>>>>>> branch 'main' of https://github.com/perio3000/yomiyomi.git
 <title>주문하기</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link
@@ -161,6 +157,15 @@
 							다른 결제 수단
 						</label>
 					</div>
+					<div class="paytypes">
+						<button type="button" class="btn btn-outline-dark">신용카드</button>
+						<button type="button" class="btn btn-outline-dark"><img src="logo/naver_pay/npay_32.png" alt="네이버페이"></button>
+						<button type="button" class="btn btn-outline-dark"><img src="logo/kakao_pay_icon/카카오페이.png"></button>
+						<button type="button" class="btn btn-outline-dark sizing"><img src="logo/samsungpay.png"></button>
+						<button type="button" class="btn btn-outline-dark">온라인입금</button>
+						<button type="button" class="btn btn-outline-dark">실시간 계좌이체</button>
+						<button type="button" class="btn btn-outline-dark"><img src="logo/toss.png"></button>
+					</div>
 				</div>
 			</div>
 
@@ -221,7 +226,7 @@
 							<div class="accordion-body pay-accordion-body">
 								<p class ="accordion-body-head">수집하는 개인정보의 항목</p>
 								<ol>
-									<li>① “교보문고”는 비회원구매, 원활한 고객상담, 각종 서비스의 제공을 위해 비회원 주문 이용 시
+									<li>① “요미요미”는 비회원구매, 원활한 고객상담, 각종 서비스의 제공을 위해 비회원 주문 이용 시
 										아래와 같은 개인정보를 수집하고 있습니다.
 										<ul>
 											<li>ο 필수수집항목 : 주문자 정보 (이름, 연락처, SMS수신여부, 이메일, 주문 비밀번호), 배송지 정보 (배송방법, 배송주소, 수신자 이름, 휴대폰번호, 영수증)</li>

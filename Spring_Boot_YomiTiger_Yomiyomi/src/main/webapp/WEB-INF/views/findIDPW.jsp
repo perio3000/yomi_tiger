@@ -8,7 +8,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="/logo/logo.png" />
 <title>아이디 비밀번호 찾기</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link
