@@ -126,66 +126,31 @@
 		<div class="d-flex justify-content-center">
 			<div class="row">
 				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover2.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover3.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover4.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover5.png" width="220px" height="280px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="d-flex justify-content-center">
-			<div class="row">
-				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="220px" height="280px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover2.png" width="220px" height="280px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover3.png" width="220px" height="280px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover4.png" width="220px" height="280px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover5.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
@@ -196,31 +161,31 @@
 		<div class="d-flex justify-content-center">
 			<div class="row">
 				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover2.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover3.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover4.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover5.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
@@ -231,31 +196,66 @@
 		<div class="d-flex justify-content-center">
 			<div class="row">
 				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover2.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover3.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover4.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
 				<div class="col">
-					<img src="logo/book/bookcover5.png" width="220px" height="280px"><br>
+					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
+					<a class="bookName" href="#">책 제목</a><br>
+					<span class="bookAuthor">작가, 출판사</span><br>
+					<span class="bookCost">10,000원</span>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="d-flex justify-content-center">
+			<div class="row">
+				<div class="col">
+					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
+					<a class="bookName" href="#">책 제목</a><br>
+					<span class="bookAuthor">작가, 출판사</span><br>
+					<span class="bookCost">10,000원</span>
+				</div>
+				<div class="col">
+					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
+					<a class="bookName" href="#">책 제목</a><br>
+					<span class="bookAuthor">작가, 출판사</span><br>
+					<span class="bookCost">10,000원</span>
+				</div>
+				<div class="col">
+					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
+					<a class="bookName" href="#">책 제목</a><br>
+					<span class="bookAuthor">작가, 출판사</span><br>
+					<span class="bookCost">10,000원</span>
+				</div>
+				<div class="col">
+					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
+					<a class="bookName" href="#">책 제목</a><br>
+					<span class="bookAuthor">작가, 출판사</span><br>
+					<span class="bookCost">10,000원</span>
+				</div>
+				<div class="col">
+					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
