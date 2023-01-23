@@ -18,6 +18,7 @@ public class UserDetailsVO implements UserDetails{
 	private String username;
 	private String password;
 	private List<GrantedAuthority> authorities;
+	
 
 	public UserDetailsVO(MemberVO user) {
 		this.setAuthorities(user);

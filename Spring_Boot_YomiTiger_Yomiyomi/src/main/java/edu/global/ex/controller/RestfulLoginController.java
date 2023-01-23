@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -31,6 +30,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import edu.global.ex.security.GoogleProfile;
 import edu.global.ex.security.KakaoProfile;
 import edu.global.ex.security.NaverProfile;
 import edu.global.ex.security.OAuthToken;
@@ -282,5 +282,113 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 	}
+
+	//구글 인증
+	@GetMapping("login/oauth2/code/google")
+	public @ResponseBody void authGoogleCallback(String code, HttpServletResponse httpServletResponse) {
+		log.info("authGoogleCallback() ..");
+		
+		RestTemplate rt = new RestTemplate();
+		
+		//HttpHeader 오브젝트 생성
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		//HttpBody 오브젝트 생성
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+		params.add("code", code);
+		params.add("client_id", "305589923343-id0m33jrcjjgfv985bbj9rtgc0qc8vul.apps.googleusercontent.com");
+		params.add("client_secret", "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");
+		params.add("redirect_uri", "http://localhost:8282/login/oauth2/code/google");
+		params.add("grant_type", "authorization_code");
+		
+		//HttpHeader와 body를 하나의 오브젝트에 담기
+		HttpEntity<MultiValueMap<String, String>> googleTokenRequest = new HttpEntity<>(params, headers);
+		
+		//Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음
+		ResponseEntity<String> response = rt.exchange(
+					"https://www.googleapis.com/oauth2/v4/token",
+					HttpMethod.POST,
+					googleTokenRequest,
+					String.class
+				);
+		
+		//ObjectMapper
+		ObjectMapper objectMapper = new ObjectMapper();
+		OAuthToken oAuthToken = null;
+		try {
+			oAuthToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("구글 엑세스 토큰 : " + oAuthToken.getAccess_token());
+		
+		RestTemplate rt2 = new RestTemplate();
+		
+		//HttpHeader 오브젝트 생성
+		HttpHeaders headers2 = new HttpHeaders();
+		headers2.add("Authorization", "Bearer " + oAuthToken.getAccess_token());
+//		headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		HttpEntity<MultiValueMap<String, String>> googleProfileRequest = new HttpEntity<>(headers2);
+		
+		//Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음
+		ResponseEntity<String> response2 = rt2.exchange(
+					"https://www.googleapis.com/oauth2/v1/userinfo",
+					HttpMethod.GET,
+					googleProfileRequest,
+					String.class
+				);
+		
+		System.out.println(response2);
+		
+		//ObjectMapper
+		ObjectMapper objectMapper2 = new ObjectMapper();
+		GoogleProfile googleProfile = null;
+		try {
+			googleProfile = objectMapper2.readValue(response2.getBody(), GoogleProfile.class);
+			System.out.println(googleProfile);
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		
+		String username = googleProfile.getEmail()+"_"+googleProfile.getId();
+		String password = googleProfile.getId();
+		String name = googleProfile.getName();
+		
+		System.out.println("username : " + username);
+		System.out.println("password " + password);
+		System.out.println("name : " + name);
+		
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO.setUsername(username);
+		memberVO.setPassword(password);
+		memberVO.setName(name);
+		
+		//회원가입
+		if(loginService.findMember(username) == 0) {
+			loginService.signupSocialLogin(memberVO);
+		}
+		
+		//로그인
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
+		String redirect_uri="/";
+		try {
+			httpServletResponse.sendRedirect(redirect_uri);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+
+	}
+	
+
 
 }

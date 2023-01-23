@@ -70,10 +70,17 @@
 							String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code" + "&client_id=" + clientId
 									+ "&redirect_uri=" + redirectURI + "&state=" + state;
 							session.setAttribute("state", state);
+							
+							String state2 = new BigInteger(130, random).toString();
+							session.setAttribute("state2", state2);
 						%>
 
 						<div class="social-login">
-							<a class="btn btn-social-icon btn-google">
+							<a class="btn btn-social-icon btn-google" href="https://accounts.google.com/o/oauth2/v2/auth?
+scope=https://www.googleapis.com/auth/analytics.readonly&
+access_type=offline&
+include_granted_scopes=true&state=state_parameter_passthrough_value&
+redirect_uri=http://localhost:8282/login/oauth2/code/google&response_type=code&client_id=305589923343-id0m33jrcjjgfv985bbj9rtgc0qc8vul.apps.googleusercontent.com">
 								<span class="fa fa-google"></span></a>
 							<a class="btn btn-social-icon btn-naver" href="<%=apiURL%>">
 								<span class="xi-naver xi-x"></span></a>
