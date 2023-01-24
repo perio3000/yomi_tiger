@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>YOMIYOMI-회원정보</title>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="/js/mypage.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/mypage.css">
@@ -166,28 +167,41 @@
 									
 									<div class="mb-3 row">
 										<label for="name" class="col-sm-2 col-form-label fw-bolder">이름</label>
-										<div class="col-sm-10 d-flex">
-											<input type="text" readonly class="form-control-plaintext"
+										<div class="col-sm-10 d-flex row" style="margin: 0;">
+											<input type="text" readonly class="form-control-plaintext col"
 												id="name" value="${ member.name }">
-											<a class="text-center updateBtn">변경</a>
+											<a class="text-center updateBtn col-2" data-bs-toggle="modal" data-bs-target="#changeName">변경</a>
 										</div>
 									</div>
 									
 									<div class="mb-3 row">
 										<label for="tel" class="col-sm-2 col-form-label fw-bolder">전화번호</label>
-										<div class="col-sm-10 d-flex">
-											<input type="text" readonly class="form-control-plaintext"
+										<div class="col-sm-10 d-flex row" style="margin: 0;">
+											<input type="text" readonly class="form-control-plaintext col"
 												id="tel" value="${ member.tel }">
-											<a class="text-center updateBtn">변경</a>
+											<a class="text-center updateBtn col-2" data-bs-toggle="modal" data-bs-target="#changeTel">변경</a>
 										</div>
 									</div>
 									
 									<div class="mb-3 row">
 										<label for="address" class="col-sm-2 col-form-label fw-bolder">주소</label>
-										<div class="col-sm-10 d-flex">
-											<input type="text" readonly class="form-control-plaintext"
-												id="address" value="${ member.city } ${ member.street } ${ member.location } &#12306;${ member.postnumber }">
-											<a class="text-center updateBtn">변경</a>
+										<div class="col-sm-10 d-flex row" style="margin: 0;">
+											<input type="text" readonly class="form-control-plaintext col"
+												id="address1" value="${ member.city } ">
+											<a class="text-center updateBtn col-2" data-bs-toggle="modal" data-bs-target="#changeAddress" style="">변경</a>
+											<div class="row">
+												<input type="text" readonly class="form-control-plaintext"
+													id="address2" value="${ member.street } ">
+											</div>
+											<div class="row">
+												<input type="text" readonly class="form-control-plaintext"
+													id="address3" value="${ member.location } ">
+											</div>
+											<div class="row">
+												<div class="col-1 text-end" style="line-height: 32px;">&#12306;</div>
+												<input type="text" readonly class="form-control-plaintext col"
+													id="address4" value="${ member.postnumber }">
+											</div>
 										</div>
 									</div>
 									
@@ -203,8 +217,107 @@
 								</tr>
 							</table>
 						</form:form>
-					
+						
+						<!-- Modal 이름 -->
+						<div class="modal fade" id="changeName"
+							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="staticBackdropLabel">이름 변경</h1>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<label for="inputName" class="col-form-label fw-bolder">이름</label>
+										<div class="">
+											<input type="text" class="form-control"
+												id="inputName">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-primary" onclick="changeName();" data-bs-dismiss="modal">변경</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Modal 전화번호 -->
+						<div class="modal fade" id="changeTel"
+							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="staticBackdropLabel">전화번호 변경</h1>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<label for="inputTel" class="col-form-label fw-bolder">전화번호</label>
+										<div class="">
+											<input type="text" class="form-control"
+												id="inputTel" onkeyup="inputPhoneNumber(this);">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-primary" onclick="changeTel();" data-bs-dismiss="modal">변경</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Modal 쥬소 -->
+						<div class="modal fade" id="changeAddress"
+							data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+							aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5" id="staticBackdropLabel">주소 변경</h1>
+										<button type="button" class="btn-close"
+											data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<label for="sample6_postcode" class="col-form-label fw-bolder">우편번호</label>
+										<div class="d-flex">
+											<input type="text" id="sample6_postcode" class="form-control" readonly>
+											<a class="text-center updateBtn" onclick="sample6_execDaumPostcode()">검색</a>
+										</div>
+										
+										<label for="sample6_address" class="col-form-label fw-bolder">주소</label>
+										<div class="">
+											<input  type="text" id="sample6_address" class="form-control" readonly>
+										</div>
+										
+										<label for="sample6_extraAddress" class="col-form-label fw-bolder">참고항목</label>
+										<div class="">
+											<input type="text" id="sample6_extraAddress" class="form-control" readonly>
+										</div>
+										
+										<label for="sample6_detailAddress" class="col-form-label fw-bolder">상세주소</label>
+										<div class="">
+											<input type="text" id="sample6_detailAddress" class="form-control">
+										</div>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-primary" onclick="changeAddress();" data-bs-dismiss="modal">변경</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
+					
+					
 
 					<!-- 2번 탭 -->
 					<div class="tab-pane fade col" id="second" role="tabpanel" aria-labelledby="second-tab">

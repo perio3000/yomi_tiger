@@ -3,6 +3,7 @@ package edu.global.ex.controller;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -165,17 +166,30 @@ public class RestfulLoginController {
 		//회원가입
 		if(loginService.findMember(username) == 0) {
 			loginService.signupSocialLogin(memberVO);
+			
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('카카오톡 계정으로 회원가입이 되었습니다.'); window.location.href='/login'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
 		//로그인
 		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		String redirect_uri="/";
+		httpServletResponse.setContentType("text/html; charset=UTF-8");
 		try {
-			httpServletResponse.sendRedirect(redirect_uri);
-		} catch (IOException e) {
-			e.printStackTrace();
+			PrintWriter out = httpServletResponse.getWriter();
+			
+			out.println("<script>alert('카카오톡 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+			out.flush();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 	
@@ -269,17 +283,30 @@ public class RestfulLoginController {
 		//회원가입
 		if(loginService.findMember(username) == 0) {
 			loginService.signupSocialLogin(memberVO);
+			
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('네이버 계정으로 회원가입이 되었습니다.'); window.location.href='/login'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
 		//로그인
 		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		String redirect_uri="/";
+		httpServletResponse.setContentType("text/html; charset=UTF-8");
 		try {
-			httpServletResponse.sendRedirect(redirect_uri);
-		} catch (IOException e) {
-			e.printStackTrace();
+			PrintWriter out = httpServletResponse.getWriter();
+			
+			out.println("<script>alert('네이버 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+			out.flush();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 	}
 
@@ -374,18 +401,31 @@ public class RestfulLoginController {
 		//회원가입
 		if(loginService.findMember(username) == 0) {
 			loginService.signupSocialLogin(memberVO);
+			
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('구글 계정으로 회원가입이 되었습니다.'); window.location.href='/login'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
 		//로그인
 		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
-		String redirect_uri="/";
+		httpServletResponse.setContentType("text/html; charset=UTF-8");
 		try {
-			httpServletResponse.sendRedirect(redirect_uri);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}	
+			PrintWriter out = httpServletResponse.getWriter();
+			
+			out.println("<script>alert('구글 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+			out.flush();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 
 	}
 	
