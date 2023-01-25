@@ -261,6 +261,7 @@ function inputPhoneNumber(obj) {
     obj.value = phone;
 }
 
+//카카오 주소 검색 api
 function sample6_execDaumPostcode() {
     new daum.Postcode({
         oncomplete: function(data) {

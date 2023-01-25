@@ -149,7 +149,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = kakaoProfile.getKakao_account().getEmail() + String.valueOf(kakaoProfile.getId());
+		String username = kakaoProfile.getKakao_account().getEmail();
 		String password = String.valueOf(kakaoProfile.getId());
 		String name = kakaoProfile.getProperties().getNickname();
 		
@@ -266,7 +266,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = naverProfile.getResponse().getEmail() + naverProfile.getResponse().getId();
+		String username = naverProfile.getResponse().getEmail();
 		String password = naverProfile.getResponse().getId();
 		String name = naverProfile.getResponse().getName();
 		
@@ -384,7 +384,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = googleProfile.getEmail()+"_"+googleProfile.getId();
+		String username = googleProfile.getEmail();
 		String password = googleProfile.getId();
 		String name = googleProfile.getName();
 		
