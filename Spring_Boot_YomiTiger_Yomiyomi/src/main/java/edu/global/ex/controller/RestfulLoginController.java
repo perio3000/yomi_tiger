@@ -149,7 +149,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = kakaoProfile.getKakao_account().getEmail();
+		String username = kakaoProfile.getKakao_account().getEmail() + "_kakao";
 		String password = String.valueOf(kakaoProfile.getId());
 		String name = kakaoProfile.getProperties().getNickname();
 		
@@ -176,21 +176,22 @@ public class RestfulLoginController {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-		}
-		
-		//로그인
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
-		httpServletResponse.setContentType("text/html; charset=UTF-8");
-		try {
-			PrintWriter out = httpServletResponse.getWriter();
+		}else {
+			//로그인
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
-			out.println("<script>alert('카카오톡 계정으로 로그인했습니다.'); window.location.href='/'</script>");
-			out.flush();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('카카오톡 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
+		
 	}
 	
 	//네이버 인증
@@ -266,7 +267,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = naverProfile.getResponse().getEmail();
+		String username = naverProfile.getResponse().getEmail() + "_naver";
 		String password = naverProfile.getResponse().getId();
 		String name = naverProfile.getResponse().getName();
 		
@@ -293,21 +294,22 @@ public class RestfulLoginController {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-		}
-		
-		//로그인
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
-		httpServletResponse.setContentType("text/html; charset=UTF-8");
-		try {
-			PrintWriter out = httpServletResponse.getWriter();
+		}else {
+			//로그인
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
-			out.println("<script>alert('네이버 계정으로 로그인했습니다.'); window.location.href='/'</script>");
-			out.flush();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('네이버 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
+
 	}
 
 	//구글 인증
@@ -384,7 +386,7 @@ public class RestfulLoginController {
 			e.printStackTrace();
 		}
 		
-		String username = googleProfile.getEmail();
+		String username = googleProfile.getEmail()+"_google";
 		String password = googleProfile.getId();
 		String name = googleProfile.getName();
 		
@@ -397,9 +399,9 @@ public class RestfulLoginController {
 		memberVO.setUsername(username);
 		memberVO.setPassword(password);
 		memberVO.setName(name);
-		
+
 		//회원가입
-		if(loginService.findMember(username) == 0) {
+		if(loginService.findMember(username) == 0) {			
 			loginService.signupSocialLogin(memberVO);
 			
 			httpServletResponse.setContentType("text/html; charset=UTF-8");
@@ -411,20 +413,20 @@ public class RestfulLoginController {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-		}
-		
-		//로그인
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
-		httpServletResponse.setContentType("text/html; charset=UTF-8");
-		try {
-			PrintWriter out = httpServletResponse.getWriter();
+		}else {
+			//로그인
+			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
+			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
-			out.println("<script>alert('구글 계정으로 로그인했습니다.'); window.location.href='/'</script>");
-			out.flush();
-		} catch (IOException e1) {
-			e1.printStackTrace();
+			httpServletResponse.setContentType("text/html; charset=UTF-8");
+			try {
+				PrintWriter out = httpServletResponse.getWriter();
+				
+				out.println("<script>alert('구글 계정으로 로그인했습니다.'); window.location.href='/'</script>");
+				out.flush();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 
 	}

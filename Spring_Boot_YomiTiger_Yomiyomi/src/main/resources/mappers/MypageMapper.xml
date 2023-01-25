@@ -208,7 +208,7 @@
 	<update id="userUpdate">
 		<![CDATA[
 			UPDATE yomi_user 
-			SET password = #{password}, name = #{name}, tel = #{tel} , city = #{city} , street = #{street} , location = #{location} , postnumber = #{postnumber} 
+			SET name = #{name}, tel = #{tel} , city = #{city} , street = #{street} , location = #{location} , postnumber = #{postnumber} 
 			WHERE id = #{id}
 		]]>
 	</update>

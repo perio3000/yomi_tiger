@@ -147,7 +147,7 @@
 										</div>
 									</div>
 									
-									<div class="mb-3 row">
+									<!-- <div class="mb-3 row">
 										<label for="inputPassword" class="col-sm-2 col-form-label fw-bolder">비밀번호</label>
 										<div class="col-sm-10">
 											<input type="password" class="form-control"
@@ -163,7 +163,7 @@
 											<input type="password" class="form-control"
 												id="inputPassword2">
 										</div>
-									</div>
+									</div> -->
 									
 									<div class="mb-3 row">
 										<label for="name" class="col-sm-2 col-form-label fw-bolder">이름</label>
@@ -217,6 +217,9 @@
 								</tr>
 							</table>
 						</form:form>
+						<div class="row p-2">
+							<a href="#"><button type="button" class="changePassword col">비밀번호 변경하러 가기</button></a>
+						</div>
 						
 						<!-- Modal 이름 -->
 						<div class="modal fade" id="changeName"

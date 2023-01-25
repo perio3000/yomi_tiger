@@ -90,8 +90,8 @@ public class MypageServiceImpl implements MypageService{
 	public int userUpdate(MemberVO memberVO) {
 		log.info("userUpdate()..");
 		
-		String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
-		memberVO.setPassword(encodedPassword);
+//		String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
+//		memberVO.setPassword(encodedPassword);
 		
 		return mypageMapper.userUpdate(memberVO);
 	}
