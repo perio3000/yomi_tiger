@@ -28,96 +28,70 @@
 			</div>
 			<div class="col-md-4">
 				<div class="d-flex align-items-center" style="height: 48px">
-				<!-- 라디오 버튼으로 해야할 것 같은데 라디오가 뭔가 안됩니다. ㅇㅅaㅇ 알아봐야돼 -->
-					<button type="button" class="btn btn-outline-primary btn-sm" id="bookBtn">국내도서</button>&nbsp;&nbsp;
-					<button type="button" class="btn btn-outline-primary btn-sm" id="bookBtn">해외도서</button>&nbsp;&nbsp;
-					<button type="button" class="btn btn-outline-primary btn-sm" id="bookBtn">eBook</button>&nbsp;&nbsp;
-					
-					<!-- <input type="radio" class="btn-check bookBtn1" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+
+					<input type="radio" class="btn-check bookBtn1" name="options-outlined" id="success-outlined" autocomplete="off" checked>
 					<label class="btn btn-outline-success" for="success-outlined">국내도서</label>&nbsp;&nbsp;
-					<input type="radio" class="btn-check bookBtn2" name="options-outlined" id="success-outlined" autocomplete="on">
-					<label class="btn btn-outline-success" for="success-outlined">해외도서</label>&nbsp;&nbsp;
-					<input type="radio" class="btn-check bookBtn3" name="options-outlined" id="success-outlined" autocomplete="off">
-					<label class="btn btn-outline-success" for="success-outlined">eBook</label>&nbsp;&nbsp;
-					<input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-					<label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label> -->
+					<input type="radio" class="btn-check bookBtn2" name="options-outlined" id="success-outlined2" autocomplete="on">
+					<label class="btn btn-outline-success" for="success-outlined2">해외도서</label>&nbsp;&nbsp;
+					<input type="radio" class="btn-check bookBtn3" name="options-outlined" id="success-outlined3" autocomplete="off">
+					<label class="btn btn-outline-success" for="success-outlined3">eBook</label>
+					
 				</div>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
 			<div class="col-md-6">
-				<!-- 이거 선택하면 쟤로 바뀌게 해야 되는 것 같은데 잘 모루겠어요.... 얘도 찾아봐야됨.. 내가 한 건 아무것도 없는 상태 되어버림.-->
-				<div class="btn-group">
-				  <button id="yearDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-				    2023년
-				  </button>
-				  <ul id="year" class="dropdown-menu">
-				    <li><a class="dropdown-item">2022년</a></li>
-				    <li><a class="dropdown-item">2021년</a></li>
-				    <li><a class="dropdown-item">2020년</a></li>
-				    <li><a class="dropdown-item">2019년</a></li>
-				    <li><a class="dropdown-item">2018년</a></li>
-				    <li><a class="dropdown-item">2017년</a></li>
-				    <li><a class="dropdown-item">2016년</a></li>
-				    <li><a class="dropdown-item">2015년</a></li>
-				  </ul>
-				</div>
-				&nbsp;&nbsp;
-				<div class="btn-group">
-				  <button id="monthDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-				    1월
-				  </button>
-				  <ul id="month" class="dropdown-menu">
-				    <li><a class="dropdown-item">2월</a></li>
-				    <li><a class="dropdown-item">3월</a></li>
-				    <li><a class="dropdown-item">4월</a></li>
-				    <li><a class="dropdown-item">5월</a></li>
-				    <li><a class="dropdown-item">6월</a></li>
-				    <li><a class="dropdown-item">7월</a></li>
-				    <li><a class="dropdown-item">8월</a></li>
-				    <li><a class="dropdown-item">9월</a></li>
-				    <li><a class="dropdown-item">10월</a></li>
-				    <li><a class="dropdown-item">11월</a></li>
-				    <li><a class="dropdown-item">12월</a></li>
-				  </ul>
-				</div>
-				&nbsp;&nbsp;
-				<div class="btn-group">
-				  <button id="weekDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-				          첫째 주
-				  </button>
-				  <ul id="week" class="dropdown-menu">
-				    <li><a class="dropdown-item">둘째 주</a></li>
-				    <li><a class="dropdown-item">셋째 주</a></li>
-				    <li><a class="dropdown-item">넷째 주</a></li>
-				    <li><a class="dropdown-item">다섯째 주</a></li>
-				  </ul>
-				</div>
+				<select id="yearDropdown" class="form-select" aria-label="Default select example">
+				  <option selected>2023년</option>
+				  <option value="1">2022년</option>
+				  <option value="2">2021년</option>
+				  <option value="3">2020년</option>
+				  <option value="4">2019년</option>
+				  <option value="5">2018년</option>
+				  <option value="6">2017년</option>
+				  <option value="7">2016년</option>
+				  <option value="8">2015년</option>
+				</select>
+				&nbsp;
+				<select id="monthDropdown" class="form-select" aria-label="Default select example">
+				  <option selected>1월</option>
+				  <option value="1">2월</option>
+				  <option value="2">3월</option>
+				  <option value="3">4월</option>
+				  <option value="4">5월</option>
+				  <option value="5">6월</option>
+				  <option value="6">7월</option>
+				  <option value="7">8월</option>
+				  <option value="8">9월</option>
+				  <option value="9">10월</option>
+				  <option value="10">11월</option>
+				  <option value="11">12월</option>
+				</select>
+				&nbsp;
+				<select id="weekDropdown" class="form-select" aria-label="Default select example">
+				  <option selected>첫째 주</option>
+				  <option value="1">둘째 주</option>
+				  <option value="2">셋째 주</option>
+				  <option value="3">넷째 주</option>
+				  <option value="4">다섯째 주</option>
+				</select>
 			</div>
 			<div class="col-md-6">
 				<div class="d-flex justify-content-end">
-					<div class="btn-group">
-					  <button id="sortDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-					     	인기순
-					  </button>
-					  <ul id="sort" class="dropdown-menu">
-					    <li><a class="dropdown-item">최신순</a></li>
-					    <li><a class="dropdown-item">상품평많은순</a></li>
-					    <li><a class="dropdown-item">낮은가격순</a></li>
-					    <li><a class="dropdown-item">높은가격순</a></li>
-					  </ul>
-					</div>
+					<select id="sortDropdown" class="form-select" aria-label="Default select example">
+					  <option selected>인기순</option>
+					  <option value="1">최신순</option>
+					  <option value="2">상품평많은순</option>
+					  <option value="3">낮은가격순</option>
+					  <option value="4">높은가격순</option>
+					</select>
 					&nbsp;&nbsp;
-					<div class="btn-group">
-					  <button id="viewDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-					     	20개씩 보기
-					  </button>
-					  <ul id="view" class="dropdown-menu">
-					    <li><a class="dropdown-item">50개씩 보기</a></li>
-					    <li><a class="dropdown-item">100개씩 보기</a></li>
-					  </ul>
-					</div>
+					<select id="viewDropdown" class="form-select" aria-label="Default select example">
+					  <option selected>20개씩 보기</option>
+					  <option value="1">50개씩 보기</option>
+					  <option value="2">100개씩 보기</option>
+					</select>
 				</div>
 			</div>
 		</div>
