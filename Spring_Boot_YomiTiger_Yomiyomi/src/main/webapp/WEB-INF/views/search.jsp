@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>상품리스트</title>
+<title>책검색</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -29,8 +29,8 @@
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/list.css">
-<script src="js/list.js"></script>
+<link rel="stylesheet" type="text/css" href="css/.search.css">
+<script src="js/search.js"></script>
 </head>
 <body>
 	
