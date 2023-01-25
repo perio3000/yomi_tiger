@@ -129,12 +129,12 @@ public class TestController {
 		return "pay";
 	}
 	
-	//상품리스트
-	@GetMapping("/list")
-	public String list() {
-		log.info("/list()...");
+	//상품검색
+	@GetMapping("/search")
+	public String search() {
+		log.info("/search()...");
 
-		return "list";
+		return "search";
 	}
 	
 	//메인

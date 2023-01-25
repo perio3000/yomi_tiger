@@ -1,0 +1,55 @@
+@charset "EUC-KR";
+body{ margin: 0 auto; width: 80%;}
+.search-title {
+	font-size: 2em;
+	padding: 30px;
+	margin:10px;
+	font-weight: 800;
+}
+.search-banner{
+	margin: 50px 0;
+} 
+
+.carousel-inner{ 
+	width: 100%; border-radius: 10px;
+}
+.searched-bookname{
+	color: #A6B1E1;	
+}
+.carousel-indicators{
+	margin: 5px 0;
+	padding-right: 30px;
+	display: flex;
+	justify-content: flex-end;
+}
+.carousel-indicators>button{
+	width: 10px !important;
+	height: 10px !important;
+}
+.carousel-control-prev, .carousel-control-next{
+	width: 5%;
+}
+.search-nav{ height: 50px; width: 100%; }
+.search-nav ul{border: none !important;}
+.nav-tabs{
+	display: flex;
+	justify-content: space-between;
+}
+.search-nav-link{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	font-weight: 600;
+	font-size: 1.2em;
+	border: 1px solid #dcdcdc !important;
+	border-bottom: 2px solid #000 !important;
+	color: #dcdcdc;
+}
+.nav-item>.active{ 
+	border: 2px solid #000 !important;
+	border-bottom: none !important;
+}
+.nav-link:hover {
+	color: #424874;
+}
