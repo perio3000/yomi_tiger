@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 경로지정 -->
+<mapper namespace="edu.global.ex.mapper.ListMapper">
+
+
+	<insert id="insertBookList">
+		<![CDATA[
+			insert into yomi_item (id, title, price, publisher, datetime, star, contents, authors, status, thumbnail) 
+			values (yomi_item_seq.nextval, #{title}, #{price}, #{publisher}, #{datetime}, #{star}, #{contents}, #{authors}, #{status}, #{thumbnail})
+		]]>
+	</insert>
+
+	
+</mapper>

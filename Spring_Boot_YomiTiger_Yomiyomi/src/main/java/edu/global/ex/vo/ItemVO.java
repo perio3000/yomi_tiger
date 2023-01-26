@@ -19,7 +19,7 @@ public class ItemVO {
 	private String title;
 	private int price;
 	private String publisher;
-	private Date datetime;
+	private String datetime;
 	private double star;
 	private int stock;
 	private String contents;
