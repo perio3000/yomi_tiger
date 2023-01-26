@@ -11,8 +11,12 @@ public interface NoticeMapper {
     List<BoardVO> getList();
     BoardVO read(int id);
 
+    BoardVO read_prev(int id);
+    BoardVO read_next(int id);
+
     int getTotalCount();
     List<BoardVO> getListWithPaging(Criteria criteria);
+
 
 
 }

@@ -28,6 +28,13 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public BoardVO read_prev(int id) {
+        log.info("read_prev()..");
+        return noticeMapper.read_prev(id);
+
+    }
+
+    @Override
     public int getTotal() {
         log.info("getTotal() ..");
         return noticeMapper.getTotalCount();
@@ -37,5 +44,12 @@ public class NoticeServiceImpl implements NoticeService {
     public List<BoardVO> getList(Criteria criteria) {
         log.info("getList(Criteria criteria) ..");
         return noticeMapper.getListWithPaging(criteria);
+    }
+
+    @Override
+    public BoardVO read_next(int id) {
+        log.info("read_nexxt()..");
+        return noticeMapper.read_next(id);
+
     }
 }
