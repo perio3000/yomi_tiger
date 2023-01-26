@@ -17,6 +17,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -177,7 +178,7 @@ public class RestfulLoginController {
 				e1.printStackTrace();
 			}
 		}else {
-			//로그인
+			//로그인			
 			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
@@ -281,6 +282,7 @@ public class RestfulLoginController {
 		memberVO.setPassword(password);
 		memberVO.setName(name);
 		
+		
 		//회원가입
 		if(loginService.findMember(username) == 0) {
 			loginService.signupSocialLogin(memberVO);
@@ -295,7 +297,7 @@ public class RestfulLoginController {
 				e1.printStackTrace();
 			}
 		}else {
-			//로그인
+			//로그인			
 			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
@@ -401,7 +403,9 @@ public class RestfulLoginController {
 		memberVO.setName(name);
 
 		//회원가입
-		if(loginService.findMember(username) == 0) {			
+		if(loginService.findMember(username) == 0) {	
+
+			
 			loginService.signupSocialLogin(memberVO);
 			
 			httpServletResponse.setContentType("text/html; charset=UTF-8");
@@ -415,6 +419,7 @@ public class RestfulLoginController {
 			}
 		}else {
 			//로그인
+			
 			Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(memberVO.getUsername(), memberVO.getPassword()));
 			SecurityContextHolder.getContext().setAuthentication(authentication);
 			
@@ -430,7 +435,5 @@ public class RestfulLoginController {
 		}
 
 	}
-	
-
 
 }
