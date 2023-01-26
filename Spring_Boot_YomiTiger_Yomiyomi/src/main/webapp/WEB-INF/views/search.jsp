@@ -84,25 +84,70 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="search-contents">
 			<div class="search-nav">
 				<ul class="nav nav-tabs nav-justified">
-					<li class="nav-item">
-						<a class="nav-link search-nav-link  search-total active" aria-current="page" href="#">통합검색<span>(1,502)</span></a></li>
-					<li class="nav-item"><a class="nav-link search-domestic search-nav-link" href="#">국내도서<span>(30)</span></a></li>
-					<li class="nav-item"><a class="nav-link search-overseas search-nav-link" href="#">해외도서<span>(100)</span></a></li>
-					<li class="nav-item"><a class="nav-link search-ebook search-nav-link" href="#">eBook<span>(445)</span></a></li>
+					<li class="nav-item"><a
+						class="nav-link search-nav-link  search-total active"
+						aria-current="page" href="#">통합검색<span>(1,502)</span></a></li>
+					<li class="nav-item"><a
+						class="nav-link search-domestic search-nav-link" href="#">국내도서<span>(30)</span></a></li>
+					<li class="nav-item"><a
+						class="nav-link search-overseas search-nav-link" href="#">해외도서<span>(100)</span></a></li>
+					<li class="nav-item"><a
+						class="nav-link search-ebook search-nav-link" href="#">eBook<span>(445)</span></a></li>
 				</ul>
 			</div>
+
+			<div class="view-contents">
 			
-			<div class="search-view">
-				<div class="view-mid-head">
-				
-					<p>전체 <span>152</span>건</p>
+				<div class="search-sidebar">
+					<p>사이드바</p>
 				</div>
 				
-			</div>
+				
+				<div class="search-view">
+					<div class="view-mid-head">
+						<p>
+							전체 <span>152</span>건
+						</p>
+
+						<div class="search-item">
+						
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle label" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									인기순</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">판매량순</a></li>
+									<li><a class="dropdown-item" href="#">최신순</a></li>
+									<li><a class="dropdown-item" href="#">상품명순</a></li>
+									<li><a class="dropdown-item" href="#">낮은가격순</a></li>
+									<li><a class="dropdown-item" href="#">높은가격순</a></li>
+								</ul>
+							</div>
+							
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle label" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									20개씩 보기</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">50개씩 보기</a></li>
+									<li><a class="dropdown-item" href="#">100개씩 보기</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					
+					
+					
+				</div>
+				
+				
+				
+			</div>	
 			
 		</div>
 
