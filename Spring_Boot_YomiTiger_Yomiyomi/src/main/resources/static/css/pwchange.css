@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+body{
+	margin: 0 auto;
+	width: 80%;
+}
+
+#pwChangeBtn {
+	background-color: #424874; 
+	border: 1px solid #424874; 
+	color: #DCD6F7;
+}
+
+.pwChange {
+	font-size: 17px;
+	font-weight: 500;
+	color: #424874;
+}
+
+.pwChangeNotice {
+	font-size: 15px;
+	font-weight: 400;
+	color: #A6B1E1;
+}

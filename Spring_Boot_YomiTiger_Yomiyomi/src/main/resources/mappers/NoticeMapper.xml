@@ -83,6 +83,20 @@
 		]]>
 	</select>
 
+	<select id="read_prev" resultType="BoardVo">
+		<![CDATA[
+		select * from yomi_board where id = (select max(ID) from YOMI_BOARD where ID<#{id})
+		]]>
+	</select>
+
+	<select id="read_next" resultType="BoardVo">
+		<![CDATA[
+		select * from yomi_board where id = (select min(ID) from YOMI_BOARD where ID>#{id})
+		]]>
+	</select>
+
+
+
 
 
 

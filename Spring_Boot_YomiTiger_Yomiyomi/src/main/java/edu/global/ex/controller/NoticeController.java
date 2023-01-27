@@ -63,6 +63,8 @@ public class NoticeController {
 
         int id = boardVO.getId();
         model.addAttribute("announceread", noticeService.read(id));
+        model.addAttribute("read_prev",noticeService.read_prev(id));
+        model.addAttribute("read_next",noticeService.read_next(id));
 
         return "announceread";
     }

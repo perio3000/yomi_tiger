@@ -8,10 +8,12 @@ import java.util.List;
 public interface NoticeService {
     public List<BoardVO> getList();
     BoardVO read(int id);
+    BoardVO read_prev(int id);
 
     //paging
     int getTotal();
     List<BoardVO> getList(Criteria criteria);
 
 
+    BoardVO read_next(int id);
 }

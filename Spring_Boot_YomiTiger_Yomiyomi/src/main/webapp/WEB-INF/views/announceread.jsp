@@ -70,12 +70,12 @@
    				<br><hr>
    				<div class="row">
 	   				<div class="col announcePrev">이전글</div>
-	   				<div class="col-md-11 announcePrev"><a href="#">이전글 제목 ${announceread.next_id}</a></div>
+	   				<div class="col-md-11 announcePrev"><a href="/announceread?id=${read_prev.id}">${read_prev.title} </a></div>
    				</div>
    				<hr>
    				<div class="row">
 	   				<div class="col announceNext">다음글</div>
-	   				<div class="col-md-11 announceNext"><a href="#">다음글 제목</a></div>
+	   				<div class="col-md-11 announceNext"><a href="/announceread?id=${read_next.id}">${read_next.title}</a></div>
 	   			</div>
 	   			<hr><br>
 	   			<div class="d-flex justify-content-center align-items-center">

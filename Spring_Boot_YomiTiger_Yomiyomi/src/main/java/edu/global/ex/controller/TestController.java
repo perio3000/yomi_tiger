@@ -105,6 +105,14 @@ public class TestController {
 		
 		return "booklist";
 	}
+	
+	// 비밀번호 변경
+		@GetMapping("/pwchange")
+		public String pwchange() {
+			log.info("/pwchange");
+			
+			return "pwchange";
+		}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
