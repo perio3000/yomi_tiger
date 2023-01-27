@@ -180,7 +180,5 @@ CREATE SEQUENCE yomi_reply_seq;
 
 CREATE SEQUENCE yomi_image_seq;
 
-CREATE SEQUENCE yomi_image_seq;
-
 CREATE SEQUENCE yomi_point_seq;
 
