@@ -108,6 +108,7 @@
 				
 				
 				<div class="search-view">
+				
 					<div class="view-mid-head">
 						<p>
 							전체 <span>152</span>건
@@ -139,6 +140,36 @@
 							</div>
 
 						</div>
+					</div>
+					
+					<div class="search-result">
+						<table>
+							<tr>
+								<td style="width:10%; text-align: center" class="checkbox"><input type="checkbox" name="check" value="check"></td>
+								<td style="width:15%"><img src="https://contents.kyobobook.co.kr/pdt/9791136736697.jpg" alt="검색한 책"></td>
+								<td style="width:60%; padding-left: 10px;">
+									<p class="bookname">[국내도서] 주술회전 19권</p>
+									<p class="bookauthor">Gege Akutami</p>
+									<p class="publisher">
+										서울 미디어 코믹스 (서울문화사)
+										<i class="fa-solid fa-period"></i>
+										<span>2022년 06월 01일</span></p>
+									<div class="bookprice">
+										<p><span class="discount-price">5,400</span>원</p>
+										<p><span class="discount-rate">10%</span></p>
+										<p><span class="discount-price">6,000원</span></p>
+										<p><span class="points-earned">300</span>p(<span>5</span>%)</p>
+									</div>
+								</td>
+								<td style="vertical-align: middle">
+									<div class="d-grid gap-2">
+										<button class="btn btn-primary" type="button">Button</button>
+										<button class="btn btn-primary" type="button">Button</button>
+									</div>
+								</td>
+
+							</tr>
+						</table>
 					</div>
 					
 					

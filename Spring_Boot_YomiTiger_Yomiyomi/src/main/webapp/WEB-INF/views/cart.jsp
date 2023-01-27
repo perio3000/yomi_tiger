@@ -41,8 +41,8 @@
 				<form>
 					<thead>
 						<tr>
-							<th class="cart-list-head"><input id="checkbox"
-								type="checkbox" checked="checked" onclick='selectAll(this)'></th>
+							<th class="cart-list-head">
+								<input id="checkbox" type="checkbox" checked="checked" onclick='selectAll(this)'></th>
 							<th class="cart-list-head" colspan="4">전체선택</th>
 						</tr>
 					</thead>
@@ -106,6 +106,7 @@
 					</tfoot>
 				</form>
 			</table>
+			
 			<div class="accordion accordion-flush" id="accordionFlushExample">
 				<div class="accordion-item">
 					<h2 class="accordion-headers" id="flush-headingOne">
