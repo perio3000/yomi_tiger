@@ -368,7 +368,7 @@ public class RestfulLoginController {
 		
 		//Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음
 		ResponseEntity<String> response2 = rt2.exchange(
-					"https://www.googleapis.com/oauth2/v1/userinfo",
+					"https://www.googleapis.com/oauth2/v1/userinfo?access_token="+oAuthToken.getAccess_token(),
 					HttpMethod.GET,
 					googleProfileRequest,
 					String.class

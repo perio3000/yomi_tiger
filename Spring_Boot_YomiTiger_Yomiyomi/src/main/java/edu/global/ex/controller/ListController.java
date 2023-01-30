@@ -13,9 +13,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.global.ex.page.Criteria;
 import edu.global.ex.service.ListService;
 import edu.global.ex.vo.ItemVO;
 
@@ -28,10 +30,11 @@ public class ListController {
 	private ListService listService;
 	
 	@GetMapping("/list")
-	public String List(String listCategory) {
+	public String List(String listCategory, Criteria criteria, Model model) {
 		log.info("/List..");
 		
 		System.out.println(listCategory);
+		
 		
 		return "booklist";
 	}
