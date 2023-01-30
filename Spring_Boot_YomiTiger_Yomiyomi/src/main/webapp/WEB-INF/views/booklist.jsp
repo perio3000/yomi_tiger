@@ -127,11 +127,7 @@
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="d-flex justify-content-center">
-			<div class="row">
+			
 				<div class="col">
 					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
@@ -162,11 +158,7 @@
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="d-flex justify-content-center">
-			<div class="row">
+			
 				<div class="col">
 					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
@@ -197,11 +189,7 @@
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
 				</div>
-			</div>
-		</div>
-		<br><br>
-		<div class="d-flex justify-content-center">
-			<div class="row">
+			
 				<div class="col">
 					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>

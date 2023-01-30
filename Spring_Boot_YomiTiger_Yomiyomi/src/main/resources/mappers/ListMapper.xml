@@ -8,8 +8,8 @@
 
 	<insert id="insertBookList">
 		<![CDATA[
-			insert into yomi_item (id, title, price, publisher, datetime, star, contents, authors, status, thumbnail) 
-			values (yomi_item_seq.nextval, #{title}, #{price}, #{publisher}, #{datetime}, #{star}, #{contents}, #{authors}, #{status}, #{thumbnail})
+			insert into yomi_item (id, title, price, publisher, datetime, contents, authors, thumbnail) 
+			values (yomi_item_seq.nextval, #{title}, #{price}, #{publisher}, TO_DATE(#{datetime}, 'YYYY-MM-DD'), #{contents}, #{authors}, #{thumbnail})
 		]]>
 	</insert>
 
