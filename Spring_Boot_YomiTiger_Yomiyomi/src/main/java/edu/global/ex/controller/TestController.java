@@ -107,12 +107,20 @@ public class TestController {
 	}
 	
 	// 비밀번호 변경
-		@GetMapping("/pwchange")
-		public String pwchange() {
-			log.info("/pwchange");
-			
-			return "pwchange";
-		}
+	@GetMapping("/pwchange")
+	public String pwchange() {
+		log.info("/pwchange");
+		
+		return "pwchange";
+	}
+	
+	// 상세페이지
+	@GetMapping("/productdetail")
+	public String productdetail() {
+		log.info("/productdetail");
+		
+		return "productdetail";
+	}
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
