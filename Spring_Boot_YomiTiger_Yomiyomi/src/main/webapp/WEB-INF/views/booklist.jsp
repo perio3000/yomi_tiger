@@ -25,15 +25,22 @@
 			<div class="col-md-2 bookTitle">
 				신상품
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-8">
 				<div class="d-flex align-items-center" style="height: 48px">
-					<input type="radio" class="btn-check bookBtn1" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-					<label class="btn btn-outline-success" for="success-outlined">국내도서</label>&nbsp;&nbsp;
-					<input type="radio" class="btn-check bookBtn2" name="options-outlined" id="success-outlined2" autocomplete="on">
-					<label class="btn btn-outline-success" for="success-outlined2">해외도서</label>&nbsp;&nbsp;
-					<input type="radio" class="btn-check bookBtn3" name="options-outlined" id="success-outlined3" autocomplete="off">
-					<label class="btn btn-outline-success" for="success-outlined3">eBook</label>
-					
+					<form action="/store/searchnew" method="get" id="categoryForm">
+						<input type="radio" class="btn-check bookBtn" name="type" id="success-outlined" value="all" 
+							<c:out value="${pageMaker.criteria.type eq 'all' ? 'selected' : '' }"/>>
+						<label class="btn btn-outline-success" for="success-outlined">전체</label>&nbsp;&nbsp;
+						<input type="radio" class="btn-check bookBtn1" name="type" id="success-outlined1" value="nat"
+							<c:out value="${pageMaker.criteria.type eq 'nat' ? 'selected' : '' }"/>>
+						<label class="btn btn-outline-success" for="success-outlined1">국내도서</label>&nbsp;&nbsp;
+						<input type="radio" class="btn-check bookBtn2" name="type" id="success-outlined2" value="int"
+							<c:out value="${pageMaker.criteria.type eq 'int' ? 'selected' : '' }"/>>
+						<label class="btn btn-outline-success" for="success-outlined2">해외도서</label>&nbsp;&nbsp;
+						<input type="radio" class="btn-check bookBtn3" name="type" id="success-outlined3" value="ebo"
+							<c:out value="${pageMaker.criteria.type eq 'ebo' ? 'selected' : '' }"/>>
+						<label class="btn btn-outline-success" for="success-outlined3">eBook</label>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -73,11 +80,10 @@
 			<div class="col-md-6">
 				<div class="d-flex justify-content-end">
 					<select id="sortDropdown" class="form-select" aria-label="Default select example">
-					  <option value="1" selected>인기순</option>
-					  <option value="2">최신순</option>
-					  <option value="3">상품평많은순</option>
-					  <option value="4">낮은가격순</option>
-					  <option value="5">높은가격순</option>
+					  <option id="datetime" value="datetime"data-datanm="datetime" selected>최신순</option>
+					  <option id="star" value="star" data-datanm="star">인기순</option>
+					  <option id="lowprice" value="lowprice" data-datanm="lowprice">낮은가격순</option>
+					  <option id="highprice" value="highprice" data-datanm="highprice">높은가격순</option>
 					</select>
 					&nbsp;&nbsp;
 					<select id="viewDropdown" class="form-select" aria-label="Default select example">
@@ -91,16 +97,18 @@
 		<hr>
 		<br>
 		<div class="d-flex justify-content-center">
-			<div class="row">
-				<c:forEach var="itemList" items="${ list }">
-					<div class="col mb-5 text-center">
-						<img src="${ itemList.thumbnail }" width="210px" height="270px"><br>
-						<a class="bookName" href="#">${ itemList.title }</a><br>
-						<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
-						<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
-					</div>
-				</c:forEach>
-
+			<div >
+				<ul class="row" id="testList">
+					<c:forEach var="itemList" items="${ list }">
+						<li class="col mb-5 text-center" data-datetime="${ itemList.datetime }" data-star="${ itemList.star }" data-lowprice="${ itemList.price }" data-highprice="${ itemList.price }">
+							<img src="${ itemList.thumbnail }" width="210px" height="270px"><br>
+							<a class="bookName" href="#">${ itemList.title }</a><br>
+							<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
+							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
+						</li>
+					</c:forEach>
+				</ul>
+				
 				<nav aria-label="Page navigation example">
 					<ul class="pagination d-flex justify-content-center mb-5 mt-3">
 						<c:if test="${pageMaker.prev}">

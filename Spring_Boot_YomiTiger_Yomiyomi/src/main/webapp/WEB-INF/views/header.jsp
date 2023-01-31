@@ -52,22 +52,27 @@
 			</ul>
 		</div>
 
-		<div class="row header">
-			<div class="header_logo col-1">
-				<a href="/"> <img alt="logo" src="/logo/logo.png">
+		<div class="row header justify-content-center">
+			<div class="header_logo col-2 d-flex justify-content-center">
+				<a href="/"> 
+					<img alt="logo" src="/logo/logo.png">
 				</a>
 			</div>
-			<form class="search-form col-8 search_form" role="search">
+			<form class="search-form col-7 search_form mt-3" role="search">
 				<input class="search-control search_control" type="search" placeholder="Search" aria-label="Search">
 				<button class="search-btn search_btn" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</form>
-			<div class="header-icon col-2 header_icon justify-content-center">
-				<ul class="row justify-content-end justify_content_end">
-					<li class="col icon-i col2"><a href="#"><i class="xi-cart-o xi-3x"></i></a></li>
-					<li class="col icon-i col2"><a href="/mypage/main"><i class="xi-user-o xi-3x"></i></a></li>
-				</ul>
+			<div class="col-3">
+				<div class="d-flex justify-content-center mt-3">
+					<div class="icon-i me-2">
+						<a href="#"><i class="xi-cart-o xi-3x"></i></a>
+					</div>
+					<div class="icon-i ms-2">
+						<a href="/mypage/main"><i class="xi-user-o xi-3x"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
