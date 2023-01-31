@@ -115,7 +115,7 @@
 		<![CDATA[
 			SELECT * FROM (
 			    SELECT ROWNUM AS RNUM, A.* FROM (
-			        SELECT * FROM yomi_board
+			        SELECT * FROM yomi_board where BOARD_NUMBER = 1
 				) A WHERE ROWNUM <= #{pageNum} * #{amount}
 			) WHERE RNUM > (#{pageNum} - 1) * #{amount}
 		]]>
