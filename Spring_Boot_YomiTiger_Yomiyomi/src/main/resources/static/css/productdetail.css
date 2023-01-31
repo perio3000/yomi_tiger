@@ -1,0 +1,17 @@
+.detailTitle {
+	font-size: 25px;
+	font-weight: bold;
+	color: #424874;
+}
+
+.detailAuthor {
+	font-size: 17px;
+	font-weight: 500;
+	color: #A6B1E1;
+}
+
+.detailNotice {
+	font-size: 18px;
+	font-weight: 500;
+	color: #424874;
+}

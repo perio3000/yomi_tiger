@@ -64,9 +64,19 @@
 		<![CDATA[
 		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
 		WHERE yomi_board.user_id = yomi_user.id
-		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID
+		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and BOARD_NUMBER = 1
 		]]>
 	</select>
+
+	<select id="getFAQ" resultMap="boardMap">
+		<![CDATA[
+		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
+		WHERE yomi_board.user_id = yomi_user.id
+		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and BOARD_NUMBER = 2
+		]]>
+	</select>
+
+
 	<!--<select id="getList" resultMap="boardMap">
 		<![CDATA[
 		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
@@ -105,7 +115,7 @@
 		<![CDATA[
 			SELECT * FROM (
 			    SELECT ROWNUM AS RNUM, A.* FROM (
-			        SELECT * FROM yomi_board
+			        SELECT * FROM yomi_board where BOARD_NUMBER = 1
 				) A WHERE ROWNUM <= #{pageNum} * #{amount}
 			) WHERE RNUM > (#{pageNum} - 1) * #{amount}
 		]]>
@@ -113,7 +123,7 @@
 	</select>
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-		select count(*) from yomi_board
+		select count(*) from yomi_board where BOARD_NUMBER = 1
 		]]>
 	</select>
 

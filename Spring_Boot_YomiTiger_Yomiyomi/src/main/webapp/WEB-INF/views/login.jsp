@@ -11,6 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="google-signin-client_id" content="305589923343-id0m33jrcjjgfv985bbj9rtgc0qc8vul.apps.googleusercontent.com.apps.googleusercontent.com">
 <title>yomiyomi</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link

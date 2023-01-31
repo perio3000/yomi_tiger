@@ -73,8 +73,27 @@ public class NoticeController {
     public String announcewrite(BoardVO boardVO, Model model){
         log.info("CONTROLLER : announcewrite()..");
 
-
         return "announcewrite";
     }
+
+
+    @GetMapping("/FAQ_")
+    public String FAQ(Criteria criteria, Model model) {
+        log.info("CONTROLLER : FAQ()...");
+
+        model.addAttribute("FAQ", noticeService.getList(criteria));
+
+        int total = noticeService.getTotal();
+        log.info("total" + total );
+
+        model.addAttribute("pageMaker", new PageVO(criteria, total));
+
+
+
+
+        return "FAQ_";
+    }
+
+
 
 }

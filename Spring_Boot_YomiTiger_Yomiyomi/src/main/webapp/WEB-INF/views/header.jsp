@@ -39,12 +39,12 @@
 				<sec:authorize access="isAnonymous()">
 					<li class="col col2"><a href="/member/signup">회원가입</a></li>
 					<li class="col col2"><a href="<c:url value="/login" />">로그인</a></li>
-					<li class="col col2"><a href="#">고객센터</a></li>
+					<li class="col col2"><a href="/customercenter">고객센터</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
 						<li class="col me-4 col2"><a href="#" onclick="logout()">로그아웃</a></li>
-						<li class="col col2"><a href="#">고객센터</a></li>
+						<li class="col col2"><a href="/customercenter">고객센터</a></li>
 					</form:form>
 				</sec:authorize>
 				
@@ -84,16 +84,16 @@
 			<div class="collapse navbar-collapse navbar_collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="#">베스트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=best">베스트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="#">신상품</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=new">신상품</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="#">이벤트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=event">이벤트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="#">Picks</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=pick">Picks</a>
 					</li>
 				</ul>
 			</div>
@@ -103,18 +103,18 @@
 			<div class="row">
 				<div class="col">
 					<ul>
-						<li><a href="#" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="#">베스트셀러</a></li>
-						<li><a href="#">신상품</a></li>
-						<li><a href="#">할인상품</a></li>
-						<li><a href="#">추천</a></li>
+						<li><a href="/store/list?listCategory=all" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/list?listCategory=best">베스트셀러</a></li>
+						<li><a href="/store/list?listCategory=new">신상품</a></li>
+						<li><a href="/store/list?listCategory=event">할인상품</a></li>
+						<li><a href="/store/list?listCategory=pick">추천</a></li>
 					</ul>
 					<br>
 					<ul>
-						<li><a href="#" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="#">국내도서</a></li>
-						<li><a href="#">해외도서</a></li>
-						<li><a href="#">eBook</a></li>
+						<li><a href="/store/list?listCategory=all" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/list?listCategory=nation">국내도서</a></li>
+						<li><a href="/store/list?listCategory=inter">해외도서</a></li>
+						<li><a href="/store/list?listCategory=ebook">eBook</a></li>
 					</ul>
 				</div>
 				

@@ -23,12 +23,12 @@ CREATE TABLE yomi_item (
 	datetime	date	NULL,
 	star	number	NULL,
 	stock	number(30)	NULL,
-	contents	varchar2(3000)	NULL,
+	contents	clob	NULL,
 	authors	varchar2(100)	NULL,
 	translators	varchar2(100)	NULL,
 	status	varchar2(100)	NULL,
 	thumbnail	varchar2(300)	NULL,
-	event_id	number(30)	NOT NULL
+	event_id	number(30)	NULL
 );
 
 CREATE TABLE yomi_event (
@@ -177,8 +177,6 @@ CREATE SEQUENCE yomi_boardcategory_seq;
 CREATE SEQUENCE yomi_addfile_seq;
 
 CREATE SEQUENCE yomi_reply_seq;
-
-CREATE SEQUENCE yomi_image_seq;
 
 CREATE SEQUENCE yomi_image_seq;
 

@@ -17,7 +17,7 @@ public class NoticeServiceImpl implements NoticeService {
     private NoticeMapper noticeMapper;
     @Override
     public List<BoardVO> getList(){
-        log.info("getList()..");
+        log.info("SERVICE : getList()..");
 
         return noticeMapper.getList();
     }
@@ -25,6 +25,11 @@ public class NoticeServiceImpl implements NoticeService {
     public BoardVO read(int id){
         log.info("read()..");
         return noticeMapper.read(id);
+    }
+
+    @Override
+    public List<BoardVO> getFAQ() {
+        return noticeMapper.getFAQ();
     }
 
     @Override
