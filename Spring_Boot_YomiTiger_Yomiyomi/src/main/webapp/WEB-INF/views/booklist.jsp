@@ -14,7 +14,7 @@
 
 <meta charset="UTF-8">
 <title>책 리스트</title>
-
+<script type="text/javascript" src="/js/list.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/booklist.css">
 </head>
@@ -23,7 +23,7 @@
 	<br><br>
 		<div class="row">
 			<div class="col-md-2 bookTitle">
-				신상품
+				<!-- 신상품 -->${ listCategory }
 			</div>
 			<div class="col-md-4">
 				<div class="d-flex align-items-center" style="height: 48px">
@@ -97,7 +97,16 @@
 		<br>
 		<div class="d-flex justify-content-center">
 			<div class="row">
-				<div class="col">
+				<c:forEach var="itemList" items="${ list }">
+					<div class="col mb-5">
+						<img src="${ itemList.thumbnail }" width="210px" height="270px"><br>
+						<a class="bookName" href="#">${ itemList.title }</a><br>
+						<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
+						<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
+					</div>
+				</c:forEach>
+			
+				<!-- <div class="col">
 					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
@@ -219,7 +228,47 @@
 					<a class="bookName" href="#">책 제목</a><br>
 					<span class="bookAuthor">작가, 출판사</span><br>
 					<span class="bookCost">10,000원</span>
-				</div>
+				</div> -->
+
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<c:if test="${pageMaker.prev}">
+							<li class="page-item">
+								<a class="/store/list${pageMaker.makeQuery(pageMaker.startPage - 1) }&listCategory=${ category }" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+							<li class="page-item"><a class="page-link" href="/store/list${pageMaker.makeQuery(idx) }&listCategory=${ category }"><c:out value="${pageMaker.criteria.pageNum == idx?'':''}" /></a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li class="page-item">
+								<a class="page-link" href="/store/list${pageMaker.makeQuery(pageMaker.endPage +1) }&listCategory=${ category }" aria-label="Next"> 
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</c:if>
+					</ul>
+				</nav>
+
+				<form action="/store/search" method="get" id="searchForm"
+					class="search_area">
+					<select name="type">
+						<option value=""
+							<c:out value="${pageMaker.criteria.type == null ? 'selected' : '' }"/>>--</option>
+						<option value="T"
+							<c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목</option>
+						<option value="C"
+							<c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용</option>
+						<option value="N"
+							<c:out value="${pageMaker.criteria.type eq 'A' ? 'selected' : '' }"/>>작가</option>
+					</select> <input type="text" name="keyword"
+						value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
+					<input type="hidden" name="pageNum" value="1"> <input
+						type="hidden" name="amount" value="${pageMaker.criteria.amount}">
+					<button>검색</button>
+				</form>
 			</div>
 		</div>
 		<br><br>

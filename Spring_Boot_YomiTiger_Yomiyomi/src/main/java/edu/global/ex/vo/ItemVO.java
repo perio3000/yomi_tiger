@@ -17,7 +17,7 @@ import lombok.ToString;
 public class ItemVO {
 	private int id;
 	private String title;
-	private int price;
+	private String price;
 	private String publisher;
 	private String datetime;
 	private double star;

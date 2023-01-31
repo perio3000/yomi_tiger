@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.global.ex.page.Criteria;
+import edu.global.ex.page.PageVO;
 import edu.global.ex.service.ListService;
 import edu.global.ex.vo.ItemVO;
 
@@ -29,11 +30,23 @@ public class ListController {
 	@Autowired
 	private ListService listService;
 	
-	@GetMapping("/list")
+	@GetMapping({"/list", "/search"})
 	public String List(String listCategory, Criteria criteria, Model model) {
 		log.info("/List..");
 		
 		System.out.println(listCategory);
+		
+		if(listCategory.equals("new")) {
+			log.info("list_new_Criteria " + criteria);
+			model.addAttribute("category", listCategory);
+			model.addAttribute("listCategory", "신상품");
+			model.addAttribute("list", listService.getNewProductList(criteria));
+			
+			int total = listService.getNewProductListCount(criteria);
+			log.info("total " + total);
+			
+			model.addAttribute("pageMaker", new PageVO(criteria, total));
+		}
 		
 		
 		return "booklist";
@@ -80,7 +93,7 @@ public class ListController {
 					final String dateBefore = dateElements.get(j).text();
 					final String datetime = toDate(dateBefore);
 					final String priceNumberic = priceElements.get(j).text();
-					final int price = toInt(removeNotNumeric(priceNumberic));
+					final String price = String.valueOf(toInt(removeNotNumeric(priceNumberic)));
 					final String publisher = publisherElements.get(j).text();	
 					final String contents = readElements.get(j).text();
 					final String thumbnail =  Thumbnail[j];
