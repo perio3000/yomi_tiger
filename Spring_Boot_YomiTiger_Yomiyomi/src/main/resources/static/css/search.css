@@ -136,9 +136,11 @@ select::-ms-expand {
 	width: 100%;
 }
 .bookname{ 
-	font-size: 1.2em; font-weight: 700;
+	font-size: 1.2em; 
+	font-weight: 700;
 	padding: 10px 0;
 }
+/* АЁАн  */
 .bookprice{
 	display: flex;
 	justify-content: flex-start;
