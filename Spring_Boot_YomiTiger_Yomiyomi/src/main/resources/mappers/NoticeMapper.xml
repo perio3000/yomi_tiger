@@ -123,7 +123,7 @@
 	</select>
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
-		select count(*) from yomi_board
+		select count(*) from yomi_board where BOARD_NUMBER = 1
 		]]>
 	</select>
 
