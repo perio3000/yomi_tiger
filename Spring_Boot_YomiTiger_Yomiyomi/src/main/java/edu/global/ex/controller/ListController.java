@@ -30,23 +30,17 @@ public class ListController {
 	@Autowired
 	private ListService listService;
 	
-	@GetMapping({"/list", "/search"})
-	public String List(String listCategory, Criteria criteria, Model model) {
+	@GetMapping({"/listnew", "/searchnew"})
+	public String List(Criteria criteria, Model model) {
 		log.info("/List..");
 		
-		System.out.println(listCategory);
+		log.info("list_new_Criteria " + criteria);
+		model.addAttribute("list", listService.getNewProductList(criteria));
 		
-		if(listCategory.equals("new")) {
-			log.info("list_new_Criteria " + criteria);
-			model.addAttribute("category", listCategory);
-			model.addAttribute("listCategory", "신상품");
-			model.addAttribute("list", listService.getNewProductList(criteria));
-			
-			int total = listService.getNewProductListCount(criteria);
-			log.info("total " + total);
-			
-			model.addAttribute("pageMaker", new PageVO(criteria, total));
-		}
+		int total = listService.getNewProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
 		
 		
 		return "booklist";

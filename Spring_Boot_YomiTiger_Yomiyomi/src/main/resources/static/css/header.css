@@ -144,3 +144,9 @@ body::-webkit-scrollbar-track {
 .offcanvas-body::-webkit-scrollbar-track {
     background: white;  /*스크롤바 뒷 배경 색상*/
 }
+.xi-cart-o, .xi-user-o{
+	color: #424874;
+}
+.xi-cart-o:hover, .xi-user-o:hover{
+	color: #DCD6F7;
+}

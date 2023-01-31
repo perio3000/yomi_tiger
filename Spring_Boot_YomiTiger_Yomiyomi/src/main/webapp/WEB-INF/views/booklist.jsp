@@ -23,7 +23,7 @@
 	<br><br>
 		<div class="row">
 			<div class="col-md-2 bookTitle">
-				<!-- 신상품 -->${ listCategory }
+				신상품
 			</div>
 			<div class="col-md-4">
 				<div class="d-flex align-items-center" style="height: 48px">
@@ -41,54 +41,49 @@
 		<div class="row">
 			<div class="col-md-6">
 				<select id="yearDropdown" class="form-select" aria-label="Default select example">
-				  <option selected>2023년</option>
-				  <option value="1">2022년</option>
-				  <option value="2">2021년</option>
-				  <option value="3">2020년</option>
-				  <option value="4">2019년</option>
-				  <option value="5">2018년</option>
-				  <option value="6">2017년</option>
-				  <option value="7">2016년</option>
-				  <option value="8">2015년</option>
+				  <option value="2023" selected>2023년</option>
+				  <option value="2022">2022년</option>
+				  <option value="2021">2021년</option>
+				  <option value="2020">2020년</option>
 				</select>
 				&nbsp;
 				<select id="monthDropdown" class="form-select" aria-label="Default select example">
-				  <option selected>1월</option>
-				  <option value="1">2월</option>
-				  <option value="2">3월</option>
-				  <option value="3">4월</option>
-				  <option value="4">5월</option>
-				  <option value="5">6월</option>
-				  <option value="6">7월</option>
-				  <option value="7">8월</option>
-				  <option value="8">9월</option>
-				  <option value="9">10월</option>
-				  <option value="10">11월</option>
-				  <option value="11">12월</option>
+				  <option value="01" selected>1월</option>
+				  <option value="02">2월</option>
+				  <option value="03">3월</option>
+				  <option value="04">4월</option>
+				  <option value="05">5월</option>
+				  <option value="06">6월</option>
+				  <option value="07">7월</option>
+				  <option value="08">8월</option>
+				  <option value="09">9월</option>
+				  <option value="10">10월</option>
+				  <option value="11">11월</option>
+				  <option value="12">12월</option>
 				</select>
 				&nbsp;
 				<select id="weekDropdown" class="form-select" aria-label="Default select example">
-				  <option selected>첫째 주</option>
-				  <option value="1">둘째 주</option>
-				  <option value="2">셋째 주</option>
-				  <option value="3">넷째 주</option>
-				  <option value="4">다섯째 주</option>
+				  <option value="1" selected>첫째 주</option>
+				  <option value="2">둘째 주</option>
+				  <option value="3">셋째 주</option>
+				  <option value="4">넷째 주</option>
+				  <option value="5">다섯째 주</option>
 				</select>
 			</div>
 			<div class="col-md-6">
 				<div class="d-flex justify-content-end">
 					<select id="sortDropdown" class="form-select" aria-label="Default select example">
-					  <option selected>인기순</option>
-					  <option value="1">최신순</option>
-					  <option value="2">상품평많은순</option>
-					  <option value="3">낮은가격순</option>
-					  <option value="4">높은가격순</option>
+					  <option value="1" selected>인기순</option>
+					  <option value="2">최신순</option>
+					  <option value="3">상품평많은순</option>
+					  <option value="4">낮은가격순</option>
+					  <option value="5">높은가격순</option>
 					</select>
 					&nbsp;&nbsp;
 					<select id="viewDropdown" class="form-select" aria-label="Default select example">
-					  <option selected>20개씩 보기</option>
-					  <option value="1">50개씩 보기</option>
-					  <option value="2">100개씩 보기</option>
+					  <option value="20" selected>20개씩 보기</option>
+					  <option value="50">50개씩 보기</option>
+					  <option value="100">100개씩 보기</option>
 					</select>
 				</div>
 			</div>
@@ -98,176 +93,56 @@
 		<div class="d-flex justify-content-center">
 			<div class="row">
 				<c:forEach var="itemList" items="${ list }">
-					<div class="col mb-5">
+					<div class="col mb-5 text-center">
 						<img src="${ itemList.thumbnail }" width="210px" height="270px"><br>
 						<a class="bookName" href="#">${ itemList.title }</a><br>
 						<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
 						<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
 					</div>
 				</c:forEach>
-			
-				<!-- <div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-			
-				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-			
-				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-			
-				<div class="col">
-					<img src="logo/book/bookcover1.jpeg" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover2.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover3.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover4.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div>
-				<div class="col">
-					<img src="logo/book/bookcover5.png" width="210px" height="270px"><br>
-					<a class="bookName" href="#">책 제목</a><br>
-					<span class="bookAuthor">작가, 출판사</span><br>
-					<span class="bookCost">10,000원</span>
-				</div> -->
 
 				<nav aria-label="Page navigation example">
-					<ul class="pagination">
+					<ul class="pagination d-flex justify-content-center mb-5 mt-3">
 						<c:if test="${pageMaker.prev}">
 							<li class="page-item">
-								<a class="/store/list${pageMaker.makeQuery(pageMaker.startPage - 1) }&listCategory=${ category }" href="#" aria-label="Previous">
-									<span aria-hidden="true">&laquo;</span>
+								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+									<span aria-hidden="true">«</span>
 								</a>
 							</li>
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-							<li class="page-item"><a class="page-link" href="/store/list${pageMaker.makeQuery(idx) }&listCategory=${ category }"><c:out value="${pageMaker.criteria.pageNum == idx?'':''}" /></a></li>
+							<li class="page-item">
+								<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
+								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(idx) }">${idx}</a>
+							</li>
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 							<li class="page-item">
-								<a class="page-link" href="/store/list${pageMaker.makeQuery(pageMaker.endPage +1) }&listCategory=${ category }" aria-label="Next"> 
-									<span aria-hidden="true">&raquo;</span>
+								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+									<span aria-hidden="true">»</span>
 								</a>
 							</li>
 						</c:if>
 					</ul>
 				</nav>
 
-				<form action="/store/search" method="get" id="searchForm"
-					class="search_area">
-					<select name="type">
-						<option value=""
-							<c:out value="${pageMaker.criteria.type == null ? 'selected' : '' }"/>>--</option>
+				<form action="/store/searchnew" method="get" id="searchForm" class="search_area d-flex justify-content-center">
+					<select name="type" class="form-select selectCategory">
 						<option value="T"
 							<c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목</option>
 						<option value="C"
 							<c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용</option>
-						<option value="N"
+						<option value="A"
 							<c:out value="${pageMaker.criteria.type eq 'A' ? 'selected' : '' }"/>>작가</option>
-					</select> <input type="text" name="keyword"
-						value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
-					<input type="hidden" name="pageNum" value="1"> <input
-						type="hidden" name="amount" value="${pageMaker.criteria.amount}">
-					<button>검색</button>
+						<option value="P"
+							<c:out value="${pageMaker.criteria.type eq 'P' ? 'selected' : '' }"/>>출판사</option>
+					</select> 
+					<input type="text" name="keyword" class="form-control" id="exampleFormControlInput1" value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
+					<label for="exampleFormControlInput1" class="form-label"></label>
+					
+					<input type="hidden" name="pageNum" value="1" class="form-control"> 
+					<input type="hidden" name="amount" value="${pageMaker.criteria.amount}">
+					<button class="newSearchBtn">검색</button>
 				</form>
 			</div>
 		</div>

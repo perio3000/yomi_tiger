@@ -49,7 +49,7 @@
 		<![CDATA[
 			SELECT * FROM (
     			SELECT ROWNUM AS RNUM, A.* FROM (
-        			SELECT id, TO_CHAR(PRICE, '999,999') as price, title, thumbnail, publisher, authors, status FROM yomi_item 
+        			SELECT id, TO_CHAR(PRICE, '999,999') as price, title, thumbnail, contents, publisher, authors, status FROM yomi_item 
         			where datetime >= to_char(add_months(sysdate,-36),'yyyy-mm-dd') 
         			]]>
         			<include refid="criteria"></include>
@@ -69,6 +69,9 @@
     	</if>
     	<if test="type eq 'A'.toString()">
     		 and authors LIKE '%'||#{keyword}||'%' 
+    	</if>
+    	<if test="type eq 'P'.toString()">
+    		 and publisher LIKE '%'||#{keyword}||'%' 
     	</if>
     </sql>
 	
