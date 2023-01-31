@@ -18,5 +18,5 @@ public interface NoticeMapper {
     List<BoardVO> getListWithPaging(Criteria criteria);
 
 
-
+    List<BoardVO> getFAQ();
 }
