@@ -27,8 +27,6 @@ public class ListServiceImpl implements ListService{
 	@Override
 	public int getNewProductListCount(Criteria criteria) {
 		log.info("getNewProductListCount()..");
-		
-		criteria.setAmount(20);
 
 		return listMapper.getNewProductListCount(criteria);
 	}
@@ -36,8 +34,6 @@ public class ListServiceImpl implements ListService{
 	@Override
 	public List<ItemVO> getNewProductList(Criteria criteria) {
 		log.info("getNewProductList()..");
-		
-		criteria.setAmount(20);
 
 		return listMapper.getNewProductList(criteria);
 	}

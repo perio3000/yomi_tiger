@@ -40,9 +40,11 @@
 	<!-- 신상품 리스트 -->
 	<select id="getNewProductListCount" resultType="int">
 		<![CDATA[
-		SELECT COUNT(*) FROM yomi_item where datetime >= to_char(add_months(sysdate,-36),'yyyy-mm-dd')
-		]]>
+			SELECT count(*) FROM yomi_item where datetime >= to_char(add_months(sysdate,-36),'yyyy-mm-dd') 
+        ]]>
 		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
 	</select>
 	
 	<select id="getNewProductList" resultMap="itemMap">
@@ -53,9 +55,13 @@
         			where datetime >= to_char(add_months(sysdate,-36),'yyyy-mm-dd') 
         			]]>
         			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
 					<![CDATA[
-					order by datetime desc
     			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
          	) WHERE RNUM > (#{pageNum}-1) * #{amount}
 		]]>
 	</select>
@@ -73,17 +79,92 @@
     	<if test="type eq 'P'.toString()">
     		 and publisher LIKE '%'||#{keyword}||'%' 
     	</if>
-    	<if test="type eq 'all'.toString()">
+    	<if test="category eq 'all'.toString()">
     		 
     	</if>
-    	<if test="type eq 'nat'.toString()">
+    	<if test="category eq 'nat'.toString()">
     		 and status LIKE '%국내%' 
     	</if>
-    	<if test="type eq 'int'.toString()">
+    	<if test="category eq 'int'.toString()">
     		 and status LIKE '%해외%' 
     	</if>
-    	<if test="type eq 'ebo'.toString()">
+    	<if test="category eq 'ebo'.toString()">
     		 and status LIKE '%ebook%' 
+    	</if>
+    </sql>
+    
+     <sql id="year">
+     	<if test="year eq 'all'.toString()">
+    		 
+    	</if>
+    	<if test="year eq '20'.toString()">
+    		 and datetime between '20/01/01' and '20/12/31' 
+    	</if>
+    	<if test="year eq '21'.toString()">
+    		 and datetime between '21/01/01' and '21/12/31' 
+    	</if>
+    	<if test="year eq '22'.toString()">
+    		 and datetime between '22/01/01' and '22/12/31' 
+    	</if>
+    	<if test="year eq '23'.toString()">
+    		 and datetime between '23/01/01' and '23/12/31' 
+    	</if>
+    </sql>
+    
+    <sql id="month">
+    	<if test="month eq 'all'.toString()">
+    		 
+    	</if>
+    	<if test="month eq '01'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '01'
+    	</if>
+    	<if test="month eq '02'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '02'
+    	</if>
+    	<if test="month eq '03'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '03' 
+    	</if>
+    	<if test="month eq '04'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '04' 
+    	</if>
+    	<if test="month eq '05'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '05' 
+    	</if>
+    	<if test="month eq '06'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '06' 
+    	</if>
+    	<if test="month eq '07'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '07' 
+    	</if>
+    	<if test="month eq '08'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '08' 
+    	</if>
+    	<if test="month eq '09'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '09' 
+    	</if>
+    	<if test="month eq '10'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '10' 
+    	</if>
+    	<if test="month eq '11'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '11' 
+    	</if>
+    	<if test="month eq '12'.toString()">
+    		 and substr(to_char(datetime), 4, 2) = '12' 
+    	</if>
+    </sql>
+    
+    <sql id="sort">
+    	<if test="sort eq 'datetime'.toString()">
+    		 order by datetime desc 
+    	</if>
+    	<if test="sort eq 'star'.toString()">
+    		 order by star desc 
+    	</if>
+    	<if test="sort eq 'lowprice'.toString()">
+    		 order by price 
+    	</if>
+    	<if test="sort eq 'highprice'.toString()">
+    		 order by price desc 
     	</if>
     </sql>
 	

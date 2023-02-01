@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<jsp:include page="header.jsp"></jsp:include>
 <link rel="icon" href="/logo/logo.png" />
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -28,7 +29,6 @@
 </head>
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
 
 	<main class="container">
 		<div class="row" id="breadcrumb">
