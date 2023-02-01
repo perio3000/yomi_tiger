@@ -42,8 +42,22 @@ public class ListController {
 		
 		model.addAttribute("pageMaker", new PageVO(criteria, total));
 		
-		
 		return "booklist";
+	}
+	
+	@GetMapping({"/listbest", "/searchbest"})
+	public String bestList(Criteria criteria, Model model) {
+		log.info("/bestList..");
+		
+		log.info("list_best_Criteria " + criteria);
+		model.addAttribute("list", listService.getBestProductList(criteria));
+		
+		int total = listService.getBestProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "bestbooklist";
 	}
 	
 	//크롤링

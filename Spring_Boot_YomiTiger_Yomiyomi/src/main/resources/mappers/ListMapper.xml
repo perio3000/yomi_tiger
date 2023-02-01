@@ -167,5 +167,34 @@
     		 order by price desc 
     	</if>
     </sql>
+    
+    <!-- 베스트 리스트 -->
+	<select id="getBestProductListCount" resultType="int">
+		<![CDATA[
+			SELECT count(*) FROM yomi_item where star >= 9.0
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getBestProductList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			SELECT id, TO_CHAR(PRICE, '999,999') as price, title, thumbnail, star, publisher, authors, datetime, status, contents FROM yomi_item 
+        			where star >= 9.0 
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
 	
 </mapper>

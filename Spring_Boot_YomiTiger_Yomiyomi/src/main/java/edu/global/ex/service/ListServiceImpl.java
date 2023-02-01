@@ -37,6 +37,20 @@ public class ListServiceImpl implements ListService{
 
 		return listMapper.getNewProductList(criteria);
 	}
+
+	@Override
+	public int getBestProductListCount(Criteria criteria) {
+		log.info("getNewProductList()..");
+		
+		return listMapper.getBestProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getBestProductList(Criteria criteria) {
+		log.info("getNewProductList()..");
+		
+		return listMapper.getBestProductList(criteria);
+	}
 	
 	
 }

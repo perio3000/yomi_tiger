@@ -117,3 +117,7 @@
     --bs-btn-active-bg: #424874;
     --bs-btn-active-border-color: #424874;
 } */
+.active>.page-link{
+	background-color: #424874;
+    border-color: #424874;
+}

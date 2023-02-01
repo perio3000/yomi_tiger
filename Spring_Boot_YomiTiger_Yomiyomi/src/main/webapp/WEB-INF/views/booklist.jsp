@@ -125,7 +125,7 @@
 							</li>
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-							<li class="page-item">
+							<li class="page-item page_item">
 								<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
 								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(idx) }">${idx}</a>
 							</li>
