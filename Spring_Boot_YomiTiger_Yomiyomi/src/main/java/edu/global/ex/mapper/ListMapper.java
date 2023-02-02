@@ -19,4 +19,8 @@ public interface ListMapper {
 	//베스트 리스트
 	int getBestProductListCount(Criteria criteria);
 	public List<ItemVO> getBestProductList(Criteria criteria);
+	
+	//all 리스트
+	int getAllProductListCount(Criteria criteria);
+	public List<ItemVO> getAllProductList(Criteria criteria);
 }

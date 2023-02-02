@@ -60,6 +60,21 @@ public class ListController {
 		return "bestbooklist";
 	}
 	
+	@GetMapping({"/listall", "/searchall"})
+	public String allList(Criteria criteria, Model model) {
+		log.info("/allList..");
+		
+		log.info("list_all_Criteria " + criteria);
+		model.addAttribute("list", listService.getAllProductList(criteria));
+		
+		int total = listService.getAllProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "allbooklist";
+	}
+	
 	//크롤링
 	@GetMapping("/insertbooklist")
 	public String insertBookList() {

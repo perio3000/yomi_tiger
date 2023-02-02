@@ -58,11 +58,24 @@
 					<img alt="logo" src="/logo/logo.png">
 				</a>
 			</div>
-			<form class="search-form col-7 search_form mt-3" role="search">
-				<input class="search-control search_control" type="search" placeholder="Search" aria-label="Search">
+			<form class="search-form col-7 search_form mt-3" role="search" action="/store/searchall" method="get">
+				<input class="search-control search_control" type="search" name="keyword" placeholder="Search" aria-label="Search" value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
 				<button class="search-btn search_btn" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
+				
+				<div class="search_area2 d-flex justify-content-center">
+					<select name="type" class="form-select selectCategory2">
+						<option value="T"
+							<c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목</option>
+						<option value="C"
+							<c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용</option>
+						<option value="A"
+							<c:out value="${pageMaker.criteria.type eq 'A' ? 'selected' : '' }"/>>작가</option>
+						<option value="P"
+							<c:out value="${pageMaker.criteria.type eq 'P' ? 'selected' : '' }"/>>출판사</option>
+					</select> 
+				</div>
 			</form>
 			<div class="col-3">
 				<div class="d-flex justify-content-center mt-3">
@@ -109,7 +122,7 @@
 			<div class="row">
 				<div class="col">
 					<ul>
-						<li><a href="/store/listall" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
 						<li><a href="/store/listbest">베스트셀러</a></li>
 						<li><a href="/store/listnew">신상품</a></li>
 						<li><a href="/store/listevent">할인상품</a></li>
