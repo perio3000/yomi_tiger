@@ -108,12 +108,11 @@ body {
 }
 
 /*--------------------------------=--- 사이드바 아코디언 */
-.search-sidebar-benefits{ 
+.search-sidebar-benefits {
 	padding: 20px 0;
+	border-collapse: collapse;
 }
-.search-sidebar-benefits button {
-	border-bottom: 1px solid #dcdcdc;
-}
+
 .collapsible {
 	background-color: #fff;
 	cursor: pointer;
@@ -124,21 +123,74 @@ body {
 	outline: none;
 	font-size: 0.7em;
 	font-weight: 600;
+	border-bottom: 1px solid #dcdcdc;
 }
 
 .active, .collapsible:hover {
 	color: #A6B1E1;
 }
+
 .content {
 	padding: 0 18px;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
-	font-size: 0.7em;
-	font-weight: 400;	
+	font-size: 0.6em;
+	font-weight: 400;
+	border-bottom: 1px solid #dcdcdc;
 }
-.content p{ margin: 20px 0 10px;}
-.content input { margin-right: 10px;}
+
+.content label {
+	display: flex;
+	align-items: center;
+	margin: 15px 0;
+}
+
+.content input {
+	margin-right: 10px;
+}
+
+.content input[type=radio] {
+	accent-color: grey;
+	width: 1.5em;
+	height: 1.5em;
+	outline: none;
+	border: 5px solid #dcdcdc;
+}
+/* ------------------------------------체크박스 커스텀------------------- */
+input[type="checkbox"] {
+	display: inline-block;
+	position: relative;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+	border: 1px solid #999;
+	appearance: none;
+	cursor: pointer;
+	/* accent-color: grey; */
+}
+input[type="checkbox"]:checked {
+	background-color: #A6B1E1;
+	border: none;
+}
+/* input[type="checkbox"]:checked::after {
+	display:block;
+	content:'\f00c';
+	color:#fff;
+	background-color: #A6B1E1;
+	border-radius: 100%;
+	font-size: 1em;
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+} */
+
+.content label:first-child{
+	margin-top: 30px;
+}
+.content label:last-child{
+	margin-bottom: 30px;
+}
 
 .collapsible:after {
 	content: '\002B';
@@ -150,6 +202,41 @@ body {
 .search-active:after {
 	content: "\2212";
 	font-weight: bold;
+}
+
+.col-box input {
+	border: 1px solid #dcdcdc;
+	border-radius: 5px;
+	height: 38px;
+	margin-bottom: 10px;
+	justify-content: middle;
+}
+
+.col-box input:hover {
+	border: 1px solid #9c9c9c;
+}
+
+.col-price-box {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 30px;
+}
+
+.col-price-box input {
+	width: 65%;
+	margin: 0 5px 0 0;
+}
+
+.col-price-box .btn-light {
+	border: 1px solid #58619c;
+	background-color: #fff;
+}
+
+.col-price-box .btn-light:hover {
+	background-color: #A6B1E1;
+	border: 1px solid #A6B1E1;
 }
 /* ------------------------  본문    ------------------------  */
 .search-view {
@@ -259,14 +346,19 @@ select::-ms-expand {
 }
 
 /* 목록 버튼들 */
+.btns {
+	height: 260px;
+}
+
 .search-heart {
-	height: 50%;
-	text-align: right; font-size : 1.5em;
+	height: 40%;
+	text-align: right;
+	font-size: 1.5em;
 	color: #dcdcdc;
 	font-size: 1.5em;
 }
 
-.search-heart:hover {
+.search-heart i:hover {
 	color: #ff7d7d;
 }
 
