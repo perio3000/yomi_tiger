@@ -89,7 +89,7 @@
 			<div class="search-nav">
 				<ul class="nav nav-tabs nav-justified">
 					<li class="nav-item"><a
-						class="nav-link search-nav-link  search-total active"
+						class="nav-link search-nav-link search-total active"
 						aria-current="page" href="#">통합검색<span>(1,502)</span></a></li>
 					<li class="nav-item"><a
 						class="nav-link search-domestic search-nav-link" href="#">국내도서<span>(30)</span></a></li>
@@ -103,7 +103,37 @@
 			<div class="view-contents">
 			
 				<div class="search-sidebar">
-					<p>사이드바</p>
+					<div class="search-sidebar-head">
+						<p>필터 <span><i class="fa-sharp fa-solid fa-rotate-right"></i>초기화</span></p>
+					</div>
+					
+					<div class="search-sidebar-benefits">
+						<button type="button" class="collapsible"
+							onclick="collapse(this);">혜택/조건</button>
+						<div class="content">
+							<p><input type="checkbox" name="check" value="check">쿠폰</p>
+							<p><input type="checkbox" name="check" value="check">이벤트</p>
+							<p><input type="checkbox" name="check" value="check">무료배송</p>
+							<p><input type="checkbox" name="check" value="check">품절판매제외</p>	
+						</div>
+						<button type="button" class="collapsible"
+							onclick="collapse(this);">가격</button>
+						<div class="content">
+							<p><input type="radio" name="radio" value="radio">~1만원</p>
+							<p><input type="radio" name="radio" value="radio">1만원~3만원</p>
+							<p><input type="radio" name="radio" value="radio">3만원~10만원</p>
+							<p><input type="radio" name="radio" value="radio">10만원~</p>
+							<div class="col-box">
+								<input type="number">
+							</div>
+						</div>
+						<button type="button" class="collapsible"
+							onclick="collapse(this);">발행일</button>
+						<div class="content">
+							<p>내용 3 입니다.</p>
+						</div>
+					</div>
+					
 				</div>
 				
 				
@@ -152,22 +182,79 @@
 									<p class="bookauthor">Gege Akutami</p>
 									<p class="publisher">
 										서울 미디어 코믹스 (서울문화사)
-										<i class="fa-solid fa-period"></i>
+										<span>&#183;</span>
 										<span>2022년 06월 01일</span></p>
 									<div class="bookprice">
 										<p><span class="discount-price">5,400</span>원</p>
 										<p><span class="discount-rate">10%</span></p>
-										<p><span class="discount-price">6,000원</span></p>
-										<p><span class="points-earned">300</span>p(<span>5</span>%)</p>
+										<p><span class="original-price">6,000원</span></p>
+										<span style="font-size: 0.5em; margin-right: 10px">&#124;</span>
+										<p><span class="points-earned">300</span>p (<span>5</span>%)</p>
 									</div>
 								</td>
 								<td style="vertical-align: middle">
-									<div class="d-grid gap-2">
-										<button class="btn btn-primary" type="button">Button</button>
-										<button class="btn btn-primary" type="button">Button</button>
+									<div class="btns">
+										<div class="search-heart"><i class="fa-regular fa-heart"></i></div>
+										<div class="d-grid gap-2">
+											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
+											<button class="btn btn-primary buy-btn" type="button">바로구매</button>
+										</div>
 									</div>
 								</td>
-
+							</tr>
+							<tr>
+								<td style="width:10%; text-align: center" class="checkbox"><input type="checkbox" name="check" value="check"></td>
+								<td style="width:15%"><img src="https://contents.kyobobook.co.kr/pdt/9791136736697.jpg" alt="검색한 책"></td>
+								<td style="width:60%; padding-left: 10px;">
+									<p class="bookname">[국내도서] 주술회전 19권</p>
+									<p class="bookauthor">Gege Akutami</p>
+									<p class="publisher">
+										서울 미디어 코믹스 (서울문화사)
+										<span>&#183;</span>
+										<span>2022년 06월 01일</span></p>
+									<div class="bookprice">
+										<p><span class="discount-price">5,400</span>원</p>
+										<p><span class="discount-rate">10%</span></p>
+										<p><span class="original-price">6,000원</span></p>
+										<span style="font-size: 0.5em; margin-right: 10px">&#124;</span>
+										<p><span class="points-earned">300</span>p (<span>5</span>%)</p>
+									</div>
+								</td>
+								<td style="vertical-align: middle">
+									<div class="btns">
+										<div class="search-heart"><i class="fa-regular fa-heart"></i></div>
+										<div class="d-grid gap-2">
+											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
+											<button class="btn btn-primary buy-btn" type="button">바로구매</button>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:10%; text-align: center" class="checkbox"><input type="checkbox" name="check" value="check"></td>
+								<td style="width:15%"><img src="https://contents.kyobobook.co.kr/pdt/9791136736697.jpg" alt="검색한 책"></td>
+								<td style="width:60%; padding-left: 10px;">
+									<p class="bookname">[국내도서] 주술회전 19권</p>
+									<p class="bookauthor">Gege Akutami</p>
+									<p class="publisher">
+										서울 미디어 코믹스 (서울문화사)
+										<span>&#183;</span>
+										<span>2022년 06월 01일</span></p>
+									<div class="bookprice">
+										<p><span class="discount-price">5,400</span>원</p>
+										<p><span class="discount-rate">10%</span></p>
+										<p><span class="original-price">6,000원</span></p>
+										<span style="font-size: 0.5em; margin-right: 10px">&#124;</span>
+										<p><span class="points-earned">300</span>p (<span>5</span>%)</p>
+									</div>
+								</td>
+								<td style="vertical-align: top">
+									<div class="search-heart" style="vertical-align: top"><i class="fa-regular fa-heart"></i></div>
+									<div class="d-grid gap-2">
+										<button class="btn btn-primary cart-btn" type="button">장바구니</button>
+										<button class="btn btn-primary buy-btn" type="button">바로구매</button>
+									</div>
+								</td>
 							</tr>
 						</table>
 					</div>
