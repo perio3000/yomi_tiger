@@ -54,7 +54,7 @@ header {
 	border-radius: 19px;
 	padding: 0.63em 0.75em;
 	font-size: 0.88em;
-	padding: 0 50px 0 20px;
+	padding: 0 50px 0 120px;
 }
 .search_btn {
 	position: absolute;
@@ -151,4 +151,13 @@ body::-webkit-scrollbar-track {
 }
 .xi-cart-o:hover, .xi-user-o:hover{
 	color: #DCD6F7;
+}
+.selectCategory2{
+	border: none !important;
+	border-radius: 13.5px !important;
+	position: absolute;
+	top: 5px;
+	left: 18px;
+	font-size: 10px !important;
+	width: 100px !important;
 }

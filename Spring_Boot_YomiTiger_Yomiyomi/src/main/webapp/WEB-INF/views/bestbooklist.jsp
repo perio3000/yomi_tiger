@@ -113,6 +113,11 @@
 							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
 						</li>
 					</c:forEach>
+					<c:if test="${ empty list }">
+						<li class="text-center fs-4">
+							검색 결과가 없습니다.
+						</li>
+					</c:if>
 				</ul>
 				
 				<nav aria-label="Page navigation example">
