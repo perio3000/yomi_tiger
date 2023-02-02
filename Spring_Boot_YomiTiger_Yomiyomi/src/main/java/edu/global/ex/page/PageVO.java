@@ -40,6 +40,10 @@ public class PageVO {
                 .queryParam("amount", criteria.getAmount()) // pageNum=3&amount=10
                 .queryParam("type", criteria.getType())
 				.queryParam("keyword", criteria.getKeyword())
+				.queryParam("sort", criteria.getSort())
+				.queryParam("year", criteria.getYear())
+				.queryParam("month", criteria.getMonth())
+				.queryParam("category", criteria.getCategory())
                 .build(); // ?pageNum=3&amount=10
         return uriComponentsBuilder.toUriString(); // ?pageNum=3&amount=10 리턴
     }

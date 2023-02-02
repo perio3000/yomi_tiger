@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.global.ex.page.Criteria;
+import edu.global.ex.page.PageVO;
 import edu.global.ex.service.ListService;
 import edu.global.ex.vo.ItemVO;
 
@@ -29,14 +30,34 @@ public class ListController {
 	@Autowired
 	private ListService listService;
 	
-	@GetMapping("/list")
-	public String List(String listCategory, Criteria criteria, Model model) {
+	@GetMapping({"/listnew", "/searchnew"})
+	public String List(Criteria criteria, Model model) {
 		log.info("/List..");
 		
-		System.out.println(listCategory);
+		log.info("list_new_Criteria " + criteria);
+		model.addAttribute("list", listService.getNewProductList(criteria));
 		
+		int total = listService.getNewProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
 		
 		return "booklist";
+	}
+	
+	@GetMapping({"/listbest", "/searchbest"})
+	public String bestList(Criteria criteria, Model model) {
+		log.info("/bestList..");
+		
+		log.info("list_best_Criteria " + criteria);
+		model.addAttribute("list", listService.getBestProductList(criteria));
+		
+		int total = listService.getBestProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "bestbooklist";
 	}
 	
 	//크롤링
@@ -80,7 +101,7 @@ public class ListController {
 					final String dateBefore = dateElements.get(j).text();
 					final String datetime = toDate(dateBefore);
 					final String priceNumberic = priceElements.get(j).text();
-					final int price = toInt(removeNotNumeric(priceNumberic));
+					final String price = String.valueOf(toInt(removeNotNumeric(priceNumberic)));
 					final String publisher = publisherElements.get(j).text();	
 					final String contents = readElements.get(j).text();
 					final String thumbnail =  Thumbnail[j];

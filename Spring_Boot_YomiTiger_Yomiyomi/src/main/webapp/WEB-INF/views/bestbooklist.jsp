@@ -22,10 +22,10 @@
 
 	<main class="container">
 	<br><br>
-	<form action="/store/searchnew" method="get" id="searchForm" >
+	<form action="/store/searchbest" method="get" id="searchForm" >
 		<div class="row">
 			<div class="col-md-2 bookTitle">
-				신상품
+				베스트
 			</div>
 			<div class="col-md-8">
 				<div class="d-flex align-items-center" style="height: 48px">
@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="col-md-6">
 
-				<select id="yearDropdown" class="form-select" name="year" aria-label="Default select example">
+				<%-- <select id="yearDropdown" class="form-select" name="year" aria-label="Default select example">
 				  <option value="all" <c:out value="${pageMaker.criteria.year eq 'all' ? 'selected' : '' }"/>>전체</option>
 				  <option value="23" <c:out value="${pageMaker.criteria.year eq '23' ? 'selected' : '' }"/>>2023년</option>
 				  <option value="22" <c:out value="${pageMaker.criteria.year eq '22' ? 'selected' : '' }"/>>2022년</option>
@@ -72,7 +72,7 @@
 				  <option value="10" <c:out value="${pageMaker.criteria.month eq '10' ? 'selected' : '' }"/>>10월</option>
 				  <option value="11" <c:out value="${pageMaker.criteria.month eq '11' ? 'selected' : '' }"/>>11월</option>
 				  <option value="12" <c:out value="${pageMaker.criteria.month eq '12' ? 'selected' : '' }"/>>12월</option>
-				</select>
+				</select> --%>
 
 <!-- 				&nbsp;
 				<select id="weekDropdown" class="form-select" aria-label="Default select example">
@@ -119,7 +119,7 @@
 					<ul class="pagination d-flex justify-content-center mb-5 mt-3">
 						<c:if test="${pageMaker.prev}">
 							<li class="page-item">
-								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
 									<span aria-hidden="true">«</span>
 								</a>
 							</li>
@@ -127,12 +127,12 @@
 						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
 							<li class="page-item page_item">
 								<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
-								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(idx) }">${idx}</a>
+								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(idx) }">${idx}</a>
 							</li>
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 							<li class="page-item">
-								<a class="page-link" href="/store/listnew${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
 									<span aria-hidden="true">»</span>
 								</a>
 							</li>

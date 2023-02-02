@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="logo/logo-white.png" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <!-- <link rel="icon" href="/logo/logo-back-white.png" /> -->
 <!-- <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -51,22 +52,27 @@
 			</ul>
 		</div>
 
-		<div class="row header">
-			<div class="header_logo col-1">
-				<a href="/"> <img alt="logo" src="/logo/logo.png">
+		<div class="row header justify-content-center">
+			<div class="header_logo col-2 d-flex justify-content-center">
+				<a href="/"> 
+					<img alt="logo" src="/logo/logo.png">
 				</a>
 			</div>
-			<form class="search-form col-8 search_form" role="search">
+			<form class="search-form col-7 search_form mt-3" role="search">
 				<input class="search-control search_control" type="search" placeholder="Search" aria-label="Search">
 				<button class="search-btn search_btn" type="submit">
 					<i class="fa fa-search" aria-hidden="true"></i>
 				</button>
 			</form>
-			<div class="header-icon col-2 header_icon">
-				<ul class="row justify-content-end justify_content_end">
-					<li class="col icon-i col2"><a href="#"><i class="fa-regular fa-cart-shopping fa-2x"></i></a></li>
-					<li class="col icon-i col2"><a href="/mypage/main"><i class="fa-regular fa-user fa-2x"></i></a></li>
-				</ul>
+			<div class="col-3">
+				<div class="d-flex justify-content-center mt-3">
+					<div class="icon-i me-2">
+						<a href="#"><i class="xi-cart-o xi-3x"></i></a>
+					</div>
+					<div class="icon-i ms-2">
+						<a href="/mypage/main"><i class="xi-user-o xi-3x"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -84,16 +90,16 @@
 			<div class="collapse navbar-collapse navbar_collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=best">베스트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listbest">베스트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=new">신상품</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listnew">신상품</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=event">이벤트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listevent">이벤트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/list?listCategory=pick">Picks</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpick">Picks</a>
 					</li>
 				</ul>
 			</div>
@@ -103,18 +109,18 @@
 			<div class="row">
 				<div class="col">
 					<ul>
-						<li><a href="/store/list?listCategory=all" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/list?listCategory=best">베스트셀러</a></li>
-						<li><a href="/store/list?listCategory=new">신상품</a></li>
-						<li><a href="/store/list?listCategory=event">할인상품</a></li>
-						<li><a href="/store/list?listCategory=pick">추천</a></li>
+						<li><a href="/store/listall" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/listbest">베스트셀러</a></li>
+						<li><a href="/store/listnew">신상품</a></li>
+						<li><a href="/store/listevent">할인상품</a></li>
+						<li><a href="/store/listpick">추천</a></li>
 					</ul>
 					<br>
 					<ul>
-						<li><a href="/store/list?listCategory=all" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/list?listCategory=nation">국내도서</a></li>
-						<li><a href="/store/list?listCategory=inter">해외도서</a></li>
-						<li><a href="/store/list?listCategory=ebook">eBook</a></li>
+						<li><a href="/store/listall" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/listnational">국내도서</a></li>
+						<li><a href="/store/listinter">해외도서</a></li>
+						<li><a href="/store/listebook">eBook</a></li>
 					</ul>
 				</div>
 				
