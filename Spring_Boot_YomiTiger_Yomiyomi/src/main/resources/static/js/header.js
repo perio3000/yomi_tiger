@@ -12,3 +12,46 @@ function menuOpen(){
 		$(".menuBody").css("display", "none");
 	}
 };
+
+$(document).ready(function(){
+	$(".search_control").focus(function(){
+		$(".searchBody").css("display", "block");		
+	});
+	
+	$(".search_control").focusout(function(){
+		$(".searchBody").css("display", "none");
+	});
+	
+	$(".search_control").keyup(function(){
+		let keyword = $(".search_control").val();
+		let type = $(".selectCategory2").val();
+		
+		if(keyword != ""){
+			$.ajax({
+				type : "GET",
+				url : "/searchpre/" + keyword + "/" + type + "/1/20",
+				cashe : false,
+				contentType : 'application/json; charset=utf-8', //MIME 타입
+	//			data : {"keyword":keyword,"type":type},
+				dataType : "json",
+				success : function(result) {
+					
+					$(".searchBodyUl>li").remove();
+					
+					for(var i = 0; i < result.length; i++){
+						$(".searchBodyUl").append(`
+							<li class="col text-center">
+								<img src="${result[i].thumbnail}" width="168px" height="216px"><br>
+								<a class="bookName" href="#">${result[i].title}</a><br>
+								<span class="bookAuthor">${result[i].authors}, ${result[i].publisher}</span><br>
+								<span class="bookCost"><span class="bookprice">${result[i].price}</span>원</span>
+							</li>
+						`);
+					}
+				},
+				error : function(e) {
+				}
+			});
+		};
+	});
+});

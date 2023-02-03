@@ -12,20 +12,20 @@
 <link rel="icon" href="logo/logo-white.png" />
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 <!-- <link rel="icon" href="/logo/logo-back-white.png" /> -->
-<!-- <link
+<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-	crossorigin="anonymous"> -->
+	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
-<!-- <script
+<script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 	crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js"
 	integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-	crossorigin="anonymous"></script> -->
+	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="/js/header.js"></script>
@@ -114,6 +114,14 @@
 					<li class="nav-item nav_item">
 						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpick">Picks</a>
 					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="searchBody" style="display: none;">
+			<div>
+				<ul class="searchBodyUl row">
+	
 				</ul>
 			</div>
 		</div>
