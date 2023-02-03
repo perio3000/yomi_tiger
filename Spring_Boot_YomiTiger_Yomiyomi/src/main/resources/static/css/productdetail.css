@@ -13,13 +13,13 @@
 .detailNotice, .bookReview {
 	font-size: 18px;
 	font-weight: 500;
-	color: #424874;
+	/* color: #424874; */
 }
 
 .cost, .mileage, .deliveryFee, .deliveryDate{
 	font-size: 18px;
 	font-weight: 500;
-	color: #424874;
+	/* color: #424874; */
 }
 
 .dcCost {
@@ -47,5 +47,5 @@
 .authorName, .publisherName {
 	font-size: 20px;
 	font-weight: 600;
-	color: #424874;
+	/* color: #424874; */
 }
