@@ -52,20 +52,16 @@
 				<span class="deliveryFee">무료</span><br><br>
 				<span class="deliveryDate">오후 1시 이전까지 주문 시 당일 출고</span><br><br>
 				
-				<!-- 수량 +,- 버튼 모르겠어서 일단 셀렉트로 넣었습니다... 무능한 이정향 ;v; -->
-				<select id="bookCount" class="form-select form-select mb-3" aria-label="Default select example" style="width:100px;">
-				  <option selected>수량</option>
-				  <option value="1">1</option>
-				  <option value="2">2</option>
-				  <option value="3">3</option>
-				  <option value="4">4</option>
-				  <option value="5">5</option>
-				  <option value="6">6</option>
-				  <option value="7">7</option>
-				  <option value="8">8</option>
-				  <option value="9">9</option>
-				  <option value="10">10</option>
-				</select>
+				<div class="bookUpDown">
+					<span onclick="fnCalCount('m',this)">
+						<i class="fa-solid fa-minus"></i>
+					</span> 
+					<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1"> 
+					<span onclick="fnCalCount('p',this)">
+						<i class="fa-solid fa-plus"></i>
+					</span>
+				</div>
+				<br>
 				<input class="btn" type="button" id="cartBtn" value="장바구니">
 				<input class="btn" type="button" id="buyBtn" value="구매하기">
 				<input class="btn" type="button" id="presentBtn" value="선물하기">
