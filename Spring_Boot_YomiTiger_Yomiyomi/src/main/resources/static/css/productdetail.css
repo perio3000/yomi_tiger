@@ -10,8 +10,42 @@
 	color: #A6B1E1;
 }
 
-.detailNotice {
+.detailNotice, .bookReview {
 	font-size: 18px;
 	font-weight: 500;
+	color: #424874;
+}
+
+.cost, .mileage, .deliveryFee, .deliveryDate{
+	font-size: 18px;
+	font-weight: 500;
+	color: #424874;
+}
+
+.dcCost {
+	font-size: 18px;
+	font-weight: bold;
+	color: #424874;
+}
+
+#bookCount {
+	border: 1px solid #424874;
+}
+
+#cartBtn, #buyBtn, #presentBtn, #likeBtn {
+	--bs-btn-color: #fff;
+    --bs-btn-bg: #424874;
+    --bs-btn-border-color: #424874;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #A6B1E1;
+    --bs-btn-hover-border-color: #A6B1E1;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #424874;
+    --bs-btn-active-border-color: #424874;
+}
+
+.authorName, .publisherName {
+	font-size: 20px;
+	font-weight: 600;
 	color: #424874;
 }
