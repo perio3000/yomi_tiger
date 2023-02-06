@@ -19,7 +19,9 @@ $(document).ready(function(){
 	});
 	
 	$(".search_control").focusout(function(){
-		$(".searchBody").css("display", "none");
+		setTimeout(function() { 
+			$(".searchBody").css("display", "none");
+		}, 200);
 	});
 	
 	$(".search_control").keyup(function(){
@@ -41,8 +43,9 @@ $(document).ready(function(){
 					for(var i = 0; i < result.length; i++){
 						$(".searchBodyUl").append(`
 							<li class="col text-center">
-								<img src="${result[i].thumbnail}" width="168px" height="216px"><br>
-								<a class="bookName" href="#">${result[i].title}</a><br>
+								<a class="bookName" href="/store/detail?id=${result[i].id}">
+									<img src="${result[i].thumbnail}" width="168px" height="216px"></a><br>
+								<a class="bookName" href="/store/detail?id=${result[i].id}">${result[i].title}</a><br>
 								<span class="bookAuthor">${result[i].authors}, ${result[i].publisher}</span><br>
 								<span class="bookCost"><span class="bookprice">${result[i].price}</span>원</span>
 							</li>

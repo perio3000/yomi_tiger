@@ -42,6 +42,16 @@ header {
 	width: 7.5em;
 	height: 8.5em;
 }
+@media (max-width: 800px) {
+	.header_logo img {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		margin-top: 1em;
+		width: 3.75em;
+		height: 4.25em;
+	}
+}
 .search_form{
 	position: relative;
 	width: 50em;

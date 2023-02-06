@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-<script src="js/productdetail.js"></script>
+<script src="/js/productdetail.js"></script>
 <meta charset="UTF-8">
 <title>상세페이지</title>
 
@@ -19,53 +19,73 @@
 <link rel="stylesheet" type="text/css" href="/css/productdetail.css">
 </head>
 <body>
+	<input type="hidden" value="" class="bookurl">
 	<main class="container">
 	<br><br>
 		<div class="row">
 			<div class="col">
-				<span class="detailTitle">책 제목</span>
+				<span class="detailTitle titleText">${ item.title }</span>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
-				<span class="detailAuthor">저자 / 출판사 / 날짜</span>
+				<span class="detailAuthor">${ item.authors } / ${ item.publisher } / ${ item.datetime }</span>
 			</div>
 		</div>
 		<hr><br>
 		
 		<div class="row">
 			<div class="col-md-5">
-				<img src="logo/book/bookcover1.jpeg" width="450px" height="550px"><br>
+				<img src="${ item.thumbnail }" class="detailThumbnail"><br>
 			</div>
-			<div class="col-md-2">
-				<span class="detailNotice">정가</span><br><br>
-				<span class="detailNotice">판매가</span><br><br>
-				<span class="detailNotice">마일리지</span><br><br>
-				<span class="detailNotice">배송료</span><br><br>
-				<span class="detailNotice">배송 예상일</span><br><br>
-				<span class="detailNotice">수량</span>
-			</div>
-			<div class="col-md-5">
-				<span class="cost">15,000원</span><br><br>
-				<span class="dcCost">13,500원 (10% 할인)</span><br><br>
-				<span class="mileage">5%</span><br><br>
-				<span class="deliveryFee">무료</span><br><br>
-				<span class="deliveryDate">오후 1시 이전까지 주문 시 당일 출고</span><br><br>
+			
+			<div class="col-md-7">
+				<table style="margin: auto;">
+					<tr class="row">
+						<td class="col"><span class="detailNotice">정가</span><br><br></td>
+						<td class="col"><span class="cost">${ item.price }원</span><br><br></td>
+					</tr>
+					<tr class="row">
+						<td class="col"><span class="detailNotice">판매가</span><br><br></td>
+						<td class="col"><span class="dcCost">${ item.price }원 (0% 할인)</span><br><br></td>
+					</tr>
+					<tr class="row">
+						<td class="col"><span class="detailNotice">마일리지</span><br><br></td>
+						<td class="col"><span class="mileage">5%</span><br><br></td>
+					</tr>
+					<tr class="row">
+						<td class="col"><span class="detailNotice">배송료</span><br><br></td>
+						<td class="col"><span class="deliveryFee">무료</span><br><br></td>
+					</tr>
+					<tr class="row">
+						<td class="col"><span class="detailNotice">배송 예상일</span><br><br></td>
+						<td class="col"><span class="deliveryDate">오후 1시 이전까지 주문 시 당일 출고</span><br><br></td>
+					</tr>
+					<tr class="row">
+						<td class="col"><span class="detailNotice">수량</span></td>
+						<td class="col">
+							<div class="bookUpDown">
+								<span onclick="fnCalCount('m',this)">
+									<i class="fa-solid fa-minus"></i>
+								</span> 
+								<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1"> 
+								<span onclick="fnCalCount('p',this)">
+									<i class="fa-solid fa-plus"></i>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
 				
-				<div class="bookUpDown">
-					<span onclick="fnCalCount('m',this)">
-						<i class="fa-solid fa-minus"></i>
-					</span> 
-					<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1"> 
-					<span onclick="fnCalCount('p',this)">
-						<i class="fa-solid fa-plus"></i>
-					</span>
-				</div>
+
 				<br>
-				<input class="btn" type="button" id="cartBtn" value="장바구니">
-				<input class="btn" type="button" id="buyBtn" value="구매하기">
-				<input class="btn" type="button" id="presentBtn" value="선물하기">
-				<input class="btn" type="button" id="likeBtn" value="♡찜하기">
+				<br>
+				<div class="d-flex justify-content-center">
+					<input class="btn me-3" type="button" id="cartBtn" value="장바구니">
+					<input class="btn me-3" type="button" id="buyBtn" value="구매하기">
+					<input class="btn me-3" type="button" id="presentBtn" value="선물하기">
+					<input class="btn me-3" type="button" id="likeBtn" value="♡찜하기">
+				</div>
 			</div>
 		</div><br><hr>
 		
@@ -90,16 +110,15 @@
 			</div>
 			<div class="col-md-10">
 				<div class="d-flex align-items-center">
-					<span class="detailNotice">
-						2000년부터 발표된 그의 주옥같은 글들. 독자들이 자발적으로 만든 제본서는 물론, 전자책과 앱까지 나왔던 《세이노의 가르침》이 드디어 전국 서점에서 독자들을 마주한다. 
-						여러 판본을 모으고 저자의 확인을 거쳐 최근 생각을 추가로 수록하였다. 정식 출간본에만 추가로 수록된 글들은 목차와 본문에 별도 표시하였다.
+					<span class="detailNotice detailText">
+						
 					</span>
 				</div>
 				<hr>
 			</div>
 		</div>
 		
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-md-2">
 				<span class="detailTitle">목차</span>
 			</div>
@@ -130,9 +149,9 @@
 				</div>
 				<hr>
 			</div>
-		</div>
+		</div> -->
 		
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-md-2">
 				<span class="detailTitle">저자 및 <br>역자 소개</span>
 			</div>
@@ -150,9 +169,9 @@
 				</div>
 				<hr>
 			</div>
-		</div>
+		</div> -->
 			
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-md-2">
 				<span class="detailTitle">출판사 소개</span>
 			</div>
@@ -166,7 +185,7 @@
 				</div>
 				<hr>
 			</div>
-		</div>
+		</div> -->
 		
 		<div class="row">
 			<div class="col-md-2">

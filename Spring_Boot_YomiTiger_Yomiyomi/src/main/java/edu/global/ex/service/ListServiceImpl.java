@@ -65,6 +65,13 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getAllProductList(criteria);
 	}
+
+	@Override
+	public ItemVO getProductDetail(ItemVO itemVO) {
+		log.info("getProductDetail()..");
+		
+		return listMapper.getProductDetail(itemVO);
+	}
 	
 	
 }

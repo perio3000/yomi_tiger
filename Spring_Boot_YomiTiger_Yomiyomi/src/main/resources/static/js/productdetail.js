@@ -10,6 +10,33 @@ function fnCalCount(type, ths){
     }else{
         if(tCount > 1) $input.val(Number(tCount)-1);    
         }
-}/**
- * 
- */
+}
+
+$(document).ready(function(){
+	
+	let title = $(".titleText").text();
+
+	$.ajax({
+		method: "GET",
+		url: "https://dapi.kakao.com/v3/search/book",
+		data: {query: title},
+		headers: {Authorization: "KakaoAK bc4cda6f8f7a42949e52b295bbbaca0f"},
+	}).done(function(result){
+		
+		let detailUrl = result.documents[0].url;
+
+		$.ajax({
+			method: "POST",
+			url: "/detailtext",
+			data: detailUrl,
+			success: function(result2){
+				
+				$(".detailText").append(result2);
+			}
+		});
+		
+	});
+	
+
+	
+});

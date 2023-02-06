@@ -107,8 +107,9 @@
 				<ul class="row" id="testList">
 					<c:forEach var="itemList" items="${ list }">
 						<li class="col mb-5 text-center">
-							<img src="${ itemList.thumbnail }" width="210px" height="270px"><br>
-							<a class="bookName" href="#">${ itemList.title }</a><br>
+							<a class="bookName" href="/store/detail?id=${ itemList.id }">
+							<img src="${ itemList.thumbnail }" width="210px" height="270px"></a><br>
+							<a class="bookName" href="/store/detail?id=${ itemList.id }">${ itemList.title }</a><br>
 							<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
 							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
 						</li>

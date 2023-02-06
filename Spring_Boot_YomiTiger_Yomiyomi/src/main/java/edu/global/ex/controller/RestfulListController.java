@@ -2,11 +2,22 @@ package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.global.ex.page.Criteria;
@@ -35,4 +46,28 @@ public class RestfulListController {
 		return listService.getAllProductList(criteria);
 	}
 	
+	@PostMapping("/detailtext")
+	public String detailText(@RequestBody String detailUrl, Model model) throws UnsupportedEncodingException {
+		log.info("detailText()..");
+
+		
+		String decodeUrl = URLDecoder.decode(detailUrl, "UTF-8");
+		
+		final String inflearnUrl = decodeUrl;
+		Connection conn = Jsoup.connect(inflearnUrl);
+		Document document;
+		
+		try {
+			document = conn.get();
+
+			Elements infoText = document.select(".info_section > .desc");
+			
+			System.out.println(infoText);
+			
+			return String.valueOf(infoText);
+			
+		} catch (IOException e) {
+			return "";
+		}
+	}
 }

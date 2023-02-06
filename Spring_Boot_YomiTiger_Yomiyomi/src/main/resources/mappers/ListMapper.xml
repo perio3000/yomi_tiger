@@ -226,4 +226,11 @@
 		]]>
 	</select>
 	
+	<select id="getProductDetail" resultMap="itemMap">
+		<![CDATA[
+			SELECT id, TO_CHAR(PRICE, '999,999') as price, title, thumbnail, star, publisher, authors, datetime, status, contents 
+			FROM yomi_item where id = #{ id }
+		]]>
+	</select>
+	
 </mapper>

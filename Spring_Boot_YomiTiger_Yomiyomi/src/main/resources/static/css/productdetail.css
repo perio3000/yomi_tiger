@@ -70,3 +70,13 @@
 .bookUpDown span {
 	padding: 5px 5px 0;
 }
+.detailThumbnail{
+	width: 33vw;
+	height: 40vw;
+}
+@media (max-width: 800px) {
+	.detailThumbnail {
+		width: 450px;
+		height: 550px;
+	}
+}
