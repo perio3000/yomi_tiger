@@ -101,10 +101,15 @@ body {
 	align-items: center;
 }
 
-.search-sidebar-head span {
+.search-sidebar-head button {
 	font-size: 0.7em;
 	color: #b0b0b0;
 	font-weight: 400;
+	background-color: #fff;
+	border: none;
+}
+.search-sidebar-head button:hover{
+	color: #828282;
 }
 
 /*--------------------------------=--- 사이드바 아코디언 */
@@ -170,7 +175,7 @@ input[type="checkbox"] {
 	/* accent-color: grey; */
 }
 input[type="checkbox"]:checked {
-	background-color: #A6B1E1;
+	background-color: grey;
 	border: none;
 }
 /* input[type="checkbox"]:checked::after {
@@ -354,14 +359,19 @@ select::-ms-expand {
 	height: 40%;
 	text-align: right;
 	font-size: 1.5em;
-	color: #dcdcdc;
-	font-size: 1.5em;
 }
-
+.heartBtn {
+	background-color: #fff;
+	border:none;
+	color: #dcdcdc;
+	font-size: 1em;
+}
 .search-heart i:hover {
 	color: #ff7d7d;
 }
-
+.xi-heart::before{
+	font-size: 1em;
+}
 .cart-btn {
 	background-color: #757575;
 	border: 1px solid #757575;

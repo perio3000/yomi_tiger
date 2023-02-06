@@ -114,7 +114,7 @@
 				<div class="search-sidebar">
 					<div class="search-sidebar-head">
 						<p>
-							필터 <span><i class="fa-sharp fa-solid fa-rotate-right"></i>초기화</span>
+							필터 <button onclick="resetbtn()"><i class="fa-sharp fa-solid fa-rotate-right"></i>초기화</button>
 						</p>
 					</div>
 
@@ -122,39 +122,39 @@
 						<button type="button" class="collapsible"
 							onclick="collapse(this);">혜택/조건</button>
 						<div class="content">
-							<label><input type="checkbox" name="check" value="check">쿠폰</label>
-							<label><input type="checkbox" name="check" value="check">이벤트</label>
-							<label><input type="checkbox" name="check" value="check">무료배송</label>
-							<label><input type="checkbox" name="check" value="check">품절판매제외</label>
+							<label><input id="reset" type="checkbox" name="check" value="check">쿠폰</label>
+							<label><input id="reset" type="checkbox" name="check" value="check">이벤트</label>
+							<label><input id="reset" type="checkbox" name="check" value="check">무료배송</label>
+							<label><input id="reset" type="checkbox" name="check" value="check">품절판매제외</label>
 						</div>
-						<button type="button" class="collapsible"
-							onclick="collapse(this);">가격</button>
+						<button type="button" class="collapsible" onclick="collapse(this);">가격</button>
 						<div class="content">
-							<label><input type="radio" name="radio" value="radio">~1만원</label>
-							<label><input type="radio" name="radio" value="radio">1만원~3만원</label>
-							<label><input type="radio" name="radio" value="radio">3만원~10만원</label>
-							<label><input type="radio" name="radio" value="radio">10만원~</label>
-							<div class="col-box">
-								<input type="text" name="searchPrice" value=""
-									placeholder="최소가격 끌고와야함"> <span>~</span>
-								<div class="col-price-box">
-									<input type="text" name="searchPrice" value=""
-										placeholder="최대가격끌고와야함">
-									<button class="btn btn-light" type="submit">적용</button>
+							<form>
+								<label><input id="reset" type="radio" name="radio" value="radio">~1만원</label>
+								<label><input id="reset" type="radio" name="radio" value="radio">1만원~3만원</label>
+								<label><input id="reset" type="radio" name="radio" value="radio">3만원~10만원</label>
+								<label><input id="reset" type="radio" name="radio" value="radio">10만원~</label>
+								<div class="col-box">
+									<input type="text" id="reset" name="searchPrice" value=""
+										placeholder="최소가격 끌고와야함"> <span>~</span>
+									<div class="col-price-box">
+										<input type="text" id="reset" name="searchPrice" value=""
+											placeholder="최대가격끌고와야함">
+										<button class="btn btn-light" type="submit">적용</button>
+									</div>
+	
 								</div>
-
-							</div>
+							</form>
 						</div>
 						<button type="button" class="collapsible"
 							onclick="collapse(this);">발행일</button>
 						<div class="content">
-							<label><input type="radio" name="radio" value="radio">전체</label>
-							<label><input type="radio" name="radio" value="radio">3개월
-								이내</label> <label><input type="radio" name="radio" value="radio">6개월
-								이내</label> <label><input type="radio" name="radio" value="radio">1년
-								이내</label> <label><input type="radio" name="radio" value="radio">3년
-								이내</label> <label><input type="radio" name="radio" value="radio">5년
-								이내</label>
+							<label><input id="reset" type="radio" name="radio" value="radio">전체</label>
+							<label><input id="reset" type="radio" name="radio" value="radio">3개월 이내</label> 
+							<label><input id="reset" type="radio" name="radio" value="radio">6개월 이내</label> 
+							<label><input id="reset" type="radio" name="radio" value="radio">1년 이내</label> 
+							<label><input id="reset" type="radio" name="radio" value="radio">3년 이내</label> 
+							<label><input id="reset" type="radio" name="radio" value="radio">5년 이내</label>
 						</div>
 					</div>
 
@@ -235,7 +235,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -276,7 +276,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -317,7 +317,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -362,7 +362,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -403,7 +403,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -444,7 +444,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -489,7 +489,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -530,7 +530,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -571,7 +571,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
@@ -615,7 +615,7 @@
 								<td style="vertical-align: top">
 									<div class="btns">
 										<div class="search-heart">
-											<i class="fa-regular fa-heart"></i>
+											<button class="heartBtn" onclick="addLike()"><i class="fa-regular fa-heart"></i></button>
 										</div>
 										<div class="d-grid gap-2">
 											<button class="btn btn-primary cart-btn" type="button">장바구니</button>
