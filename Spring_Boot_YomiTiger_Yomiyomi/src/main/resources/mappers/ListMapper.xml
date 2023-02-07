@@ -34,6 +34,7 @@
 		<result property="translators" column="translators" />
 		<result property="status" column="status" />
 		<result property="thumbnail" column="thumbnail" />
+		<result property="amount" column="amount" />
 		<collection property="imageList" resultMap="imageMap"></collection> <!-- 1:N, List 매핑 -->
 	</resultMap>   
 	
@@ -68,16 +69,16 @@
 
     <sql id="criteria">
     	<if test="type eq 'T'.toString()">
-    		 and title LIKE '%'||#{keyword}||'%' 
+    		 and lower(title) LIKE lower('%'||#{keyword}||'%') 
     	</if>
     	<if test="type eq 'C'.toString()">
-    		 and contents LIKE '%'||#{keyword}||'%' 
+    		 and lower(contents) LIKE lower('%'||#{keyword}||'%') 
     	</if>
     	<if test="type eq 'A'.toString()">
-    		 and authors LIKE '%'||#{keyword}||'%' 
+    		 and lower(authors) LIKE lower('%'||#{keyword}||'%') 
     	</if>
     	<if test="type eq 'P'.toString()">
-    		 and publisher LIKE '%'||#{keyword}||'%' 
+    		 and lower(publisher) LIKE lower('%'||#{keyword}||'%') 
     	</if>
     	<if test="category eq 'all'.toString()">
     		 
@@ -230,6 +231,28 @@
 		<![CDATA[
 			SELECT id, TO_CHAR(PRICE, '999,999') as price, title, thumbnail, star, publisher, authors, datetime, status, contents 
 			FROM yomi_item where id = #{ id }
+		]]>
+	</select>
+	
+	<delete id="cartDeleteBeforeInsert">
+		<![CDATA[
+			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username}) and item_id = #{item_id}
+		]]>
+	</delete>
+	
+	<insert id="cartInsert">
+		<![CDATA[
+			insert into yomi_cart (id, user_id, item_id, amount) 
+				values (yomi_cart_seq.nextval, (select id from yomi_user where username = #{username}), #{item_id}, #{amount})
+		]]>
+	</insert>
+	
+	<select id="getCartList" resultMap="itemMap">
+		<![CDATA[
+			select i.id, i.title, i.price, i.publisher, i.authors, i.thumbnail, c.amount from yomi_item i, yomi_cart c, yomi_user u
+			where u.id = (select id from yomi_user where username = #{username})
+			and u.id = c.user_id
+			and i.id = c.item_id
 		]]>
 	</select>
 	

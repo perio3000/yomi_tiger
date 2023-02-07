@@ -38,5 +38,8 @@ $(document).ready(function() {
 		if(total != checked) $("#checkbox").prop("checked", false);
 		else $("#checkbox").prop("checked", true); 
 	});
+	
 });
+
+
 

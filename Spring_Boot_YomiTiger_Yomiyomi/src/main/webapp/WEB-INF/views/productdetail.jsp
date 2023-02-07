@@ -19,7 +19,12 @@
 <link rel="stylesheet" type="text/css" href="/css/productdetail.css">
 </head>
 <body>
-	<input type="hidden" value="" class="bookurl">
+	<sec:authorize access="isAuthenticated()">
+		<input type="hidden" value="true" class="isAuthenticated">
+		<input type="hidden" value="${ item.id }" class="itemId">
+		<input type="hidden" value="${ user }" class="userId">
+	</sec:authorize>
+	<input type="hidden" value="${ item.id }" class="idNum">
 	<main class="container">
 	<br><br>
 		<div class="row">
@@ -81,10 +86,33 @@
 				<br>
 				<br>
 				<div class="d-flex justify-content-center">
-					<input class="btn me-3" type="button" id="cartBtn" value="장바구니">
+					<input class="btn me-3" type="button" id="cartBtn" value="장바구니" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 					<input class="btn me-3" type="button" id="buyBtn" value="구매하기">
 					<input class="btn me-3" type="button" id="presentBtn" value="선물하기">
 					<input class="btn me-3" type="button" id="likeBtn" value="♡찜하기">
+				</div>
+				
+				<!-- 장바구니 Modal -->
+				<div class="modal fade" id="staticBackdrop"
+					data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+					aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="staticBackdropLabel">장바구니</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">장바구니에 담았습니다.</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">계속 쇼핑</button>
+								<a href="/store/cart2">
+									<button type="button" class="btn btn-primary">장바구니로</button>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div><br><hr>
@@ -96,8 +124,7 @@
 			<div class="col-md-10">
 				<div class="d-flex align-items-center" style="height:40px;">
 					<span class="detailNotice">
-						328쪽&nbsp;&nbsp;<div class="vr"></div>&nbsp;&nbsp;117*175mm&nbsp;&nbsp;<div class="vr"></div>
-						&nbsp;230g&nbsp;&nbsp;<div class="vr"></div>&nbsp;&nbsp;ISBN : 9791133487554
+						ISBN : <span class="isbn"></span>
 					</span>
 				</div>
 				<hr>
