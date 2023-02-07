@@ -121,6 +121,15 @@ public class TestController {
 		
 		return "productdetail";
 	}
+	
+	// 비회원 주문조회
+	@GetMapping("/nonmemberorder")
+	public String nonmemberorder() {
+		log.info("/nonmemberorder");
+		
+		return "nonmemberorder";
+	}
+	
 		
 	//아이디 비번 찾기
 	@GetMapping("/findIDPW")
