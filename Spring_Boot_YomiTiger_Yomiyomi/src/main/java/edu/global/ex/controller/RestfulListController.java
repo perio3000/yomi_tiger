@@ -10,7 +10,6 @@ import java.util.List;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.global.ex.page.Criteria;
 import edu.global.ex.service.ListService;
+import edu.global.ex.vo.CartVO;
 import edu.global.ex.vo.ItemVO;
 
 @Slf4j
@@ -67,7 +67,49 @@ public class RestfulListController {
 			return String.valueOf(infoText);
 			
 		} catch (IOException e) {
-			return "";
+			return "이 책은 소개글이 없습니다.";
 		}
+	}
+	
+	@PostMapping("/insertCart")
+	public void insertCart(@RequestBody CartVO cartVO) {
+		log.info("insertCart()..");
+		
+		listService.cartInsert(cartVO);
+	}
+	
+	@GetMapping("/getCartList/{username}")
+	public List<ItemVO> getCartList(@PathVariable(name = "username") String username) {
+		log.info("getCartList()..");
+		
+		return listService.getCartList(username);
+	}
+	
+	@GetMapping("/getCartListSS/{item_id}")
+	public ItemVO getCartListSS(@PathVariable(name = "item_id") String item_id) {
+		log.info("getCartListSS()..");
+		
+		return listService.getCartListSS(item_id);
+	}
+	
+	@GetMapping("/insertCartSS/{item_id}/{username}")
+	public int insertCartSS(@PathVariable(name = "item_id") String item_id, @PathVariable(name = "username") String username) {
+		log.info("insertCartSS()..");
+		
+		return listService.insertCartSS(username, item_id);
+	}
+	
+	@GetMapping("/cartDelCh/{username}/{item_id}")
+	public int cartDelCh(@PathVariable(name = "username") String username, @PathVariable(name = "item_id") String item_id) {
+		log.info("cartDelCh()..");
+		
+		return listService.cartDelCh(username, item_id);
+	}
+	
+	@GetMapping("/cartDelAll/{username}")
+	public int cartDelAll(@PathVariable(name = "username") String username) {
+		log.info("cartDelAll()..");
+		
+		return listService.cartDelAll(username);
 	}
 }

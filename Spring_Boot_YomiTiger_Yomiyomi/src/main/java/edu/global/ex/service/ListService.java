@@ -3,6 +3,7 @@ package edu.global.ex.service;
 import java.util.List;
 
 import edu.global.ex.page.Criteria;
+import edu.global.ex.vo.CartVO;
 import edu.global.ex.vo.ItemVO;
 
 public interface ListService {
@@ -23,4 +24,20 @@ public interface ListService {
 	
 	//디테일
 	ItemVO getProductDetail(ItemVO itemVO);
+	
+	//장바구니 담기
+	void cartInsert(CartVO cartVO);
+	
+	//장바구니 리스트
+	public List<ItemVO> getCartList(String username);
+	public ItemVO getCartListSS(String item_id);
+	
+	//로그인시 장바구니 저장
+	int insertCartSS(String username, String item_id);
+
+	//장바구니 선택 삭제
+	int cartDelCh(String username, String item_id);
+	
+	//장바구니 전체 삭제
+	int cartDelAll(String username);
 }

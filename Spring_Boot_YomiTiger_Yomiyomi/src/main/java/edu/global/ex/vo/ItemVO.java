@@ -28,6 +28,7 @@ public class ItemVO {
 	private String status;
 	private String thumbnail;
 	private int event_id;
+	private int amount;
 	
 	private List<EventVO> eventList;
 	private List<ImageVO> imageList;

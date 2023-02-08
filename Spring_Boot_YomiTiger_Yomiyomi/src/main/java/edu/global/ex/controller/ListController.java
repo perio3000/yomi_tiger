@@ -12,6 +12,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.AuthenticatedPrincipal;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -76,12 +79,34 @@ public class ListController {
 	}
 	
 	@GetMapping("/detail")
-	public String detail(Model model, ItemVO itemVO) {
+	public String detail(Model model, ItemVO itemVO, Authentication authentication) {
 		log.info("/allList..");
 		
 		model.addAttribute("item", listService.getProductDetail(itemVO));
-		
+		if(authentication != null) {
+			model.addAttribute("user", authentication.getName());
+			System.out.println(authentication.getName());
+		}
 		return "productdetail";
+	}
+	
+	@GetMapping("/cart")
+	public String Cart() {
+		log.info("/Cart..");
+		
+		return "cart";
+	}
+	
+	@GetMapping("/cart2")
+	public String Cart2(Model model, ItemVO itemVO, Authentication authentication) {
+		log.info("/Cart2..");
+		
+		if(authentication != null) {
+			model.addAttribute("user", authentication.getName());
+			System.out.println(authentication.getName());
+		}
+		
+		return "cart2";
 	}
 	
 	

@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.global.ex.mapper.ListMapper;
 import edu.global.ex.page.Criteria;
+import edu.global.ex.vo.CartVO;
 import edu.global.ex.vo.ItemVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -71,6 +73,56 @@ public class ListServiceImpl implements ListService{
 		log.info("getProductDetail()..");
 		
 		return listMapper.getProductDetail(itemVO);
+	}
+
+	@Transactional
+	@Override
+	public void cartInsert(CartVO cartVO) {
+		log.info("cartInsert()..");
+		
+		listMapper.cartDeleteBeforeInsert(cartVO);
+		listMapper.cartInsert(cartVO);
+	}
+
+	@Override
+	public List<ItemVO> getCartList(String username) {
+		log.info("getCartList()..");
+		
+		return listMapper.getCartList(username);
+	}
+
+	@Override
+	public ItemVO getCartListSS(String item_id) {
+		log.info("getCartListSS()..");
+		
+		return listMapper.getCartListSS(item_id);
+	}
+
+	@Override
+	public int insertCartSS(String username, String item_id) {
+		log.info("getCartListSS()..");
+		
+		listMapper.insertCartSS(username, item_id);
+		
+		return 1;
+	}
+
+	@Override
+	public int cartDelCh(String username, String item_id) {
+		log.info("cartDelCh()..");
+		
+		listMapper.cartDelCh(username, item_id);
+		
+		return 1;
+	}
+
+	@Override
+	public int cartDelAll(String username) {
+		log.info("cartDelAll()..");
+
+		listMapper.cartDelAll(username);
+		
+		return 1;
 	}
 	
 	

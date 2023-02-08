@@ -14,6 +14,38 @@ function menuOpen(){
 };
 
 $(document).ready(function(){
+	
+	if($(".principal").val() == null){
+		
+	}else{
+		if(window.sessionStorage != null){
+			for(let i = 0; i < window.sessionStorage.length; i++){
+				let key = window.sessionStorage.key(i);
+				
+				if(key.includes("bookId")){
+					let item_id = window.sessionStorage.getItem(key);
+					let username = $(".principal").val();
+					
+					$.ajax({
+						type: "GET",
+						url: "/insertCartSS/" + item_id + "/" + username,
+						cashe: false,
+			            contentType:'application/json; charset=utf-8', //MIME 타입
+						data : {item_id, username},
+						success: function(result) {
+							console.log(result);
+						},
+			            error: function (e) {
+			                console.log(e);
+			            }
+					});
+				}
+			}
+		}
+		sessionStorage.clear();
+	}
+	
+	
 	$(".search_control").focus(function(){
 		$(".searchBody").css("display", "block");		
 	});

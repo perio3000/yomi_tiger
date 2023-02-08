@@ -224,8 +224,15 @@ tfoot tr td {
 	top: 0;
 	margin: 0 auto;
 	padding: 30px;
-	width: 30%;
+	width: 450px;
 	height: 500px;
+}
+@media (max-width: 1000px){
+	.aside {
+
+		width: 450px;
+		height: 500px;
+	}
 }
 .card {
 	border: 1px solid #c0c0c0;

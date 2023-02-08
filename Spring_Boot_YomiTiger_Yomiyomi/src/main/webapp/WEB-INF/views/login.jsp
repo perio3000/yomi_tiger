@@ -96,7 +96,7 @@ redirect_uri=http://localhost:8282/login/oauth2/code/google&response_type=code&c
 							<button onclick="location.href='/member/signup'">회원가입</button>
 						</div>
 						<div class="divider"></div>
-						<div class="Non-member-order"><a href="#">비회원 주문조회 ></a></div>
+						<div class="Non-member-order"><a href="nonmemberorder">비회원 주문조회 ></a></div>
 					</div>
 				</div>
 			</div>

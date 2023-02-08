@@ -46,6 +46,7 @@
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
 						<li class="col me-4 col2"><a href="#" onclick="logout()">로그아웃</a></li>
 						<li class="col col2"><a href="/customercenter">고객센터</a></li>
+						<input type="hidden" class="principal" value="<sec:authentication property="principal.username"/>">
 					</form:form>
 				</sec:authorize>
 				
@@ -80,7 +81,7 @@
 			<div class="col-3">
 				<div class="d-flex justify-content-center mt-3">
 					<div class="icon-i me-2">
-						<a href="#"><i class="xi-cart-o xi-3x"></i></a>
+						<a href="/store/cart2"><i class="xi-cart-o xi-3x"></i></a>
 					</div>
 					<div class="icon-i ms-2">
 						<a href="/mypage/main"><i class="xi-user-o xi-3x"></i></a>
