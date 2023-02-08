@@ -23,7 +23,7 @@ public class NoticeController {
 
         model.addAttribute("notice_john", noticeService.getList(criteria));
 
-        int total = noticeService.getTotal();
+        int total = noticeService.getTotal(criteria);
         log.info("total" + total );
 
         model.addAttribute("pageMaker", new PageVO(criteria, total));
@@ -40,13 +40,13 @@ public class NoticeController {
         return "JOHN_detail";
     }
 
-    @GetMapping("/announcement")
+    @GetMapping({"/announcement","/searchNotice"})
     public String announcement(Criteria criteria, Model model){
         log.info("CONTROLLER : announcement()...");
 
         model.addAttribute("announcement", noticeService.getList(criteria));
 
-        int total = noticeService.getTotal();
+        int total = noticeService.getTotal(criteria);
         log.info("total" + total );
 
         model.addAttribute("pageMaker", new PageVO(criteria, total));
@@ -81,13 +81,13 @@ public class NoticeController {
     public String FAQ(Criteria criteria, Model model) {
         log.info("CONTROLLER : FAQ()...");
 
-        model.addAttribute("FAQ", noticeService.getList(criteria));
-
+        model.addAttribute("FAQ", noticeService.getFAQ());
+/*
         int total = noticeService.getTotal();
         log.info("total" + total );
 
         model.addAttribute("pageMaker", new PageVO(criteria, total));
-
+*/
 
 
 

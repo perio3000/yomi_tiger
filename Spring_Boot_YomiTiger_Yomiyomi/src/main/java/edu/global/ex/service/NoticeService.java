@@ -6,18 +6,21 @@ import edu.global.ex.vo.BoardVO;
 import java.util.List;
 
 public interface NoticeService {
-    public List<BoardVO> getList();
+
+/*    public List<BoardVO> getList();*/
     BoardVO read(int id);
 
-    public List<BoardVO> getFAQ();
+    List<BoardVO> getFAQ();
 
 
     //paging
-    int getTotal();
+    int getTotal(Criteria criteria);
     List<BoardVO> getList(Criteria criteria);
     BoardVO read_prev(int id);
     BoardVO read_next(int id);
 
 
+    List<BoardVO> getCategory(Criteria criteria, int categoryNo);
 
+    List<BoardVO> category(int category);
 }

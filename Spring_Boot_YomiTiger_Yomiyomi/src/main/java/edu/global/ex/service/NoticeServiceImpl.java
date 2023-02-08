@@ -15,12 +15,12 @@ import java.util.List;
 public class NoticeServiceImpl implements NoticeService {
     @Autowired
     private NoticeMapper noticeMapper;
-    @Override
+/*    @Override
     public List<BoardVO> getList(){
         log.info("SERVICE : getList()..");
 
         return noticeMapper.getList();
-    }
+    }*/
 
     public BoardVO read(int id){
         log.info("read()..");
@@ -40,9 +40,9 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public int getTotal() {
+    public int getTotal(Criteria criteria) {
         log.info("getTotal() ..");
-        return noticeMapper.getTotalCount();
+        return noticeMapper.getTotalCount(criteria);
     }
 
     @Override
@@ -57,4 +57,18 @@ public class NoticeServiceImpl implements NoticeService {
         return noticeMapper.read_next(id);
 
     }
+
+    @Override
+    public List<BoardVO> getCategory(Criteria criteria, int categoryNo) {
+        log.info("SERVICE : getCategoryNo()..");
+        return noticeMapper.getCategorys(criteria, categoryNo);
+
+    }
+
+    @Override
+    public List<BoardVO> category(int category) {
+        log.info("SERVICE : category()..");
+        return noticeMapper.category(category);
+    }
+
 }
