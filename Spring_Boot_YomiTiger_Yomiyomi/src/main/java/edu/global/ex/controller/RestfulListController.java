@@ -84,4 +84,32 @@ public class RestfulListController {
 		
 		return listService.getCartList(username);
 	}
+	
+	@GetMapping("/getCartListSS/{item_id}")
+	public ItemVO getCartListSS(@PathVariable(name = "item_id") String item_id) {
+		log.info("getCartListSS()..");
+		
+		return listService.getCartListSS(item_id);
+	}
+	
+	@GetMapping("/insertCartSS/{item_id}/{username}")
+	public int insertCartSS(@PathVariable(name = "item_id") String item_id, @PathVariable(name = "username") String username) {
+		log.info("insertCartSS()..");
+		
+		return listService.insertCartSS(username, item_id);
+	}
+	
+	@GetMapping("/cartDelCh/{username}/{item_id}")
+	public int cartDelCh(@PathVariable(name = "username") String username, @PathVariable(name = "item_id") String item_id) {
+		log.info("cartDelCh()..");
+		
+		return listService.cartDelCh(username, item_id);
+	}
+	
+	@GetMapping("/cartDelAll/{username}")
+	public int cartDelAll(@PathVariable(name = "username") String username) {
+		log.info("cartDelAll()..");
+		
+		return listService.cartDelAll(username);
+	}
 }

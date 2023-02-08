@@ -256,4 +256,28 @@
 		]]>
 	</select>
 	
+	<select id="getCartListSS" resultMap="itemMap">
+		<![CDATA[
+			select * from yomi_item where id = #{ item_id }
+		]]>
+	</select>
+	
+	<insert id="insertCartSS">
+		<![CDATA[
+			insert into yomi_cart (id, user_id, item_id, amount) 
+				values (yomi_cart_seq.nextval, (select id from yomi_user where username = #{username}), #{item_id}, 1)
+		]]>
+	</insert>
+	
+	<delete id="cartDelCh">
+		<![CDATA[
+			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username}) and item_id = #{item_id}
+		]]>
+	</delete>
+	
+	<delete id="cartDelAll">
+		<![CDATA[
+			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username})
+		]]>
+	</delete>
 </mapper>

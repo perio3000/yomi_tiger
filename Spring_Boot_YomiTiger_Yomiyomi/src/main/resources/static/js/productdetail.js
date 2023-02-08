@@ -65,7 +65,9 @@ $(document).ready(function(){
 	            }
 			});
 		}else{
+			
 			window.sessionStorage.setItem("bookId" + $(".idNum").val(), $(".idNum").val());
+			
 		}
 		
 	});

@@ -7,14 +7,24 @@ let basket = {
         this.reCalc();
         this.updateUI();
 
-        if(sessionStorage.getItem("login") == "ok" || getCookie("login") == "ok"){
+        if($(".username").val() != ""){
             for(let i = 0; i < $("input[name=buy]:checked").length; i++){
                 document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
-                    axios.get('/cartDelCh', {
-                        params: {
-                            user_id: $("#hidden").val(),
-                            imgenum: $("input[name=buy]:checked").val()
-                        }
+                    let username = $(".username").val();
+                    let item_id = $("input[name=buy]:checked").val();
+                    
+                    $.ajax({
+                    	type: "GET",
+                    	url: "/cartDelCh/" + username + "/" + item_id,
+                    	cashe: false,
+			            contentType:'application/json; charset=utf-8', //MIME 타입
+						data : {username, item_id},
+						success: function(result) {
+							console.log(result);
+						},
+			            error: function (e) {
+			                console.log(e);
+			            }
                     });
                     item.parentElement.parentElement.parentElement.remove();
                 });
@@ -23,10 +33,10 @@ let basket = {
             $("#check_box").trigger("click");
         }
         else{
-            localStorage.removeItem($("input[name=buy]:checked").val());
+            sessionStorage.removeItem("bookId"+$("input[name=buy]:checked").val());
             document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
                 console.log($("input[name=buy]:checked").val());
-                localStorage.removeItem($("input[name=buy]:checked").val());
+                sessionStorage.removeItem("bookId"+$("input[name=buy]:checked").val());
                 item.parentElement.parentElement.parentElement.remove();
             });
             $("#check_box").trigger("click");
@@ -44,15 +54,26 @@ let basket = {
         this.reCalc();
         this.updateUI();
 
-        if(sessionStorage.getItem("login") == "ok" || getCookie("login") == "ok"){
-            axios.get('/cartDelAll', {
-                params: {
-                    user_id: $("#hidden").val()
-                }
-            })
+        if($(".username").val() != ""){
+        	let username = $(".username").val();
+        	
+            $.ajax({
+            	type: "GET",
+            	url: "/cartDelAll/" + username,
+            	cashe: false,
+	            contentType:'application/json; charset=utf-8', //MIME 타입
+				data : username,
+				success: function(result) {
+					console.log(result);
+				},
+	            error: function (e) {
+	                console.log(e);
+	            }
+            });
+            
         }
         else{
-            localStorage.clear();
+            sessionStorage.clear();
         }
         
         
@@ -60,7 +81,7 @@ let basket = {
     //재계산
     reCalc: function () {
         this.totalCount = 0;
-        this.totalPrice = 0;
+        this.totalPrice = 2500;
         document.querySelectorAll(".p_num").forEach(function (item) {
             if (item.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.checked == true) {
                 var count = parseInt(item.getAttribute('value'));
@@ -124,7 +145,7 @@ Number.prototype.formatNumber = function () {
 };
 
 $(document).ready(function(){
-	if($(".username").val() != null){
+	if($(".username").val() != ""){
 		let username = $(".username").val();
 		
 		$.ajax({
@@ -139,20 +160,21 @@ $(document).ready(function(){
 				for(let i = 0; i < result.length; i++){
 
 					$("#left_block").append(`
-							<div class="d-flex justify-content-between align-items-center data flex-wrap">
+							<div class="d-flex justify-content-between align-items-center data flex-nowrap">
 							    <div class="subdiv d-flex flex-wrap">
 							        <div class="checks etrans check">
 							            <input type="checkbox" id="check_box${i+1}" class="all_check" name="buy" value="${result[i].id}" checked="" onclick="javascript:basket.checkItem();">
 							            <label for="check_box${i+1}" class="check_box"></label>
 							        </div>
-							        <div><a href="/product_detail.html/123?id=${result[i].id}"><img src="${result[i].thumbnail}" class="img" width="100px" height="100px"></a></div>
-							        <div class="pname" style="width: 250px;">
-							            <span id="local_title">${result[i].title}</span>
+							        <div><a href="/product_detail.html/123?id=${result[i].id}"><img src="${result[i].thumbnail}" class="img" width="150px" height="200px"></a></div>
+							        <div class="pname" style="padding: 15px;">
+							            <span id="local_title" class="fs-4">${result[i].title}</span><br>
+							            ${result[i].price.toLocaleString()}<span>원</span>
 							        </div>
 							    </div>
 							    <div class="subdiv d-flex price_area">
 							        <div class="basketprice"><input type="hidden" name="p_price${i+1}" id="p_price${i+1}" class="p_price"
-							                value="${result[i].price}">${result[i].price.toLocaleString()}<span>원</span></div>
+							                value="${result[i].price}"></div>
 							        <div class="num">
 							            <div class="updown d-flex">
 							            
@@ -160,11 +182,11 @@ $(document).ready(function(){
 							                <input type="text" name="p_num${i+1}" id="p_num${i+1}" size="2" maxlength="4" class="p_num" value="${result[i].amount}"
 							                    onkeyup="javascript:basket.changePNum(${i+1});">                         
 							    
-							                <div class="down" onclick="javascript:basket.changePNum(${i+1});">-</div>
+							                <div class="down" onclick="javascript:basket.changePNum(${i+1});">-</i></div>
 							                
 							            </div>
 							        </div>
-							        <div class="sum" id="sumPrice">${result[i].price * result[i].amount}</div><span class="sum">원</span>
+							        <div class="sum" id="sumPrice">${result[i].price * result[i].amount}</div><span class="sum2">원</span>
 							    </div>
 							</div>
 							<input type="hidden" class="sumPriceHidden" value="${result[i].price * result[i].amount}">
@@ -187,9 +209,10 @@ $(document).ready(function(){
 					        if(!isNaN($(this).val())){
 					            sumAll2 += parseInt($(this).val());
 					        }
+					        
 					    });
 
-					    $(".sumPriceText").text(sumAll2.toLocaleString());
+					    $(".sumPriceText").text((sumAll2+2500).toLocaleString());
 
 				};
 				              
@@ -198,8 +221,88 @@ $(document).ready(function(){
                 console.log(e);
             }
 		});
-		
-		
+	}
+	else{
+		console.log(sessionStorage.getItem("bookId112"));
+		if(window.sessionStorage != null){
+			for(let i = 0; i < window.sessionStorage.length; i++){
+				let key = window.sessionStorage.key(i);
+				
+				if(key.includes("bookId")){
+					let item_id = window.sessionStorage.getItem(key);
+					
+					$.ajax({
+						type: "GET",
+						url: "/getCartListSS/" + item_id,
+						cashe: false,
+			            contentType:'application/json; charset=utf-8', //MIME 타입
+						data : item_id,
+						success: function(result) {       
+							console.log(result);
+	
+							$("#left_block").append(`
+									<div class="d-flex justify-content-between align-items-center data flex-nowrap">
+									    <div class="subdiv d-flex flex-wrap">
+									        <div class="checks etrans check">
+									            <input type="checkbox" id="check_box${i+1}" class="all_check" name="buy" value="${result.id}" checked="" onclick="javascript:basket.checkItem();">
+									            <label for="check_box${i+1}" class="check_box"></label>
+									        </div>
+									        <div><a href="/product_detail.html/123?id=${result.id}"><img src="${result.thumbnail}" class="img" width="150px" height="200px"></a></div>
+									        <div class="pname" style="padding: 15px;">
+									            <span id="local_title" class="fs-4">${result.title}</span><br>
+									            ${result.price.toLocaleString()}<span>원</span>
+									        </div>
+									    </div>
+									    <div class="subdiv d-flex price_area row">
+									        <div class="basketprice"><input type="hidden" name="p_price${i+1}" id="p_price${i+1}" class="p_price"
+									                value="${result.price}"></div>
+									        <div class="num">
+									            <div class="updown d-flex">
+									            
+													<div class="up" onclick="javascript:basket.changePNum(${i+1});">+</i></div> 
+									                <input type="text" name="p_num${i+1}" id="p_num${i+1}" size="2" maxlength="4" class="p_num" value="1"
+									                    onkeyup="javascript:basket.changePNum(${i+1});">                         
+									    
+									                <div class="down" onclick="javascript:basket.changePNum(${i+1});">-</i></div>
+									                
+									            </div>
+									        </div>
+									        <div class="sum" id="sumPrice">${result.price}</div><span class="sum2">원</span>
+									    </div>
+									</div>
+									<input type="hidden" class="sumPriceHidden" value="${result.price}">
+									<input type="hidden" class="sumCountHidden" value="1">
+								`)
+								
+							    let sumAll = 0;
+	
+							    $('.sumCountHidden').each(function(){
+							        if(!isNaN($(this).val())){
+							            sumAll += parseInt($(this).val());
+							        }
+							    });
+	
+							    $(".sumCountText").text(sumAll);
+							    
+							    let sumAll2 = 0;
+	
+							    $('.sumPriceHidden').each(function(){
+							        if(!isNaN($(this).val())){
+							            sumAll2 += parseInt($(this).val());
+							        }
+							    });
+	
+							    $(".sumPriceText").text((sumAll2+2500).toLocaleString());
+	
+							              
+			            },
+			            error: function (e) {
+			                console.log(e);
+			            }
+					});
+				}
+			}
+		}
 	}
 });
 

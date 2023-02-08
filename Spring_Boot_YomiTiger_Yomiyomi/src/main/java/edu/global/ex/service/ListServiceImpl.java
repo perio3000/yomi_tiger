@@ -90,6 +90,40 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getCartList(username);
 	}
+
+	@Override
+	public ItemVO getCartListSS(String item_id) {
+		log.info("getCartListSS()..");
+		
+		return listMapper.getCartListSS(item_id);
+	}
+
+	@Override
+	public int insertCartSS(String username, String item_id) {
+		log.info("getCartListSS()..");
+		
+		listMapper.insertCartSS(username, item_id);
+		
+		return 1;
+	}
+
+	@Override
+	public int cartDelCh(String username, String item_id) {
+		log.info("cartDelCh()..");
+		
+		listMapper.cartDelCh(username, item_id);
+		
+		return 1;
+	}
+
+	@Override
+	public int cartDelAll(String username) {
+		log.info("cartDelAll()..");
+
+		listMapper.cartDelAll(username);
+		
+		return 1;
+	}
 	
 	
 }

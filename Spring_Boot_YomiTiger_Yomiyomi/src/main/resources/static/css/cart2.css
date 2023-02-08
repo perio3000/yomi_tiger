@@ -1,0 +1,162 @@
+input[type="checkbox"] {
+	width: 1.3rem;
+	height: 1.3rem;
+	border-radius: 50%;
+	border: 1px solid #999;
+	appearance: none;
+	cursor: pointer;
+	transition: background 0.2s;
+	background-color: #fff;
+}
+
+input[type="checkbox"]:checked {
+	background: #424874;
+	border: none;
+}
+
+#check_box{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.cart-head {
+	font-size: 2em;
+	margin: 10px 0;
+}
+
+.list_header{
+	padding: 20px 10px;
+	background-color: #efefef;
+	font-size: 16px;
+	text-align: left;
+	font-weight: bold;
+	border-radius: 10px;
+}
+.data{
+	border: 1px solid #efefef;
+	margin: 5px;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.accordion-headers, .accordion-button {
+	outline: none !important;
+	box-shadow: none !important;
+	background-color: #efefef;
+	color: #000;
+	font-weight: bold;
+}
+
+.accordion {
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	max-width: 700px;
+	border: 2px solid #efefef;
+	border-radius: 5px;
+}
+
+.accordion, .accordion-item, .accordion-header, .accordion-button {
+	background-color: #efefef;
+	padding: 10px;
+}
+
+.accordion-body {
+	color: #585858;
+}
+
+.accordion-button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0;
+	color: #000;
+	text-align: left;
+	background-color: #efefef;
+	border: 0;
+	overflow-anchor: none;
+	width: 100%;
+}
+
+.accordion-button:not(.collapsed){
+	color: #000;	
+	background-color: #efefef;
+}
+.accordion-button:not (.collapsed )::after {
+	background-image: var(- -bs-accordion-btn-active-icon);
+	color: #000;
+}
+
+.accordion-button:hover {
+	z-index: 2;
+}
+
+.accordion-button:focus {
+	z-index: 3;
+	border-color: #efefef;
+	outline: 0;
+	color: #000;
+}
+
+.accordion-button::after {
+	color: #000;
+}
+
+.updown {
+	margin: 5px auto;
+	display: flex;
+	justify-content: space-around;
+	align-item: center;
+	width: 100px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+
+.updown input {
+	width: 50px;
+	height: 30px;
+	font-size: 15px;
+	border: 0;
+	text-align: center;
+}
+
+.updown div {
+	padding: 5px 5px 0;
+}
+
+.right_block{
+	border: 1px solid #efefef;
+	padding: 10px;
+	border-radius: 10px;
+	height: 430px;
+}
+
+.order_btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	width: 100%;
+	height: 50px;
+	background-color: #efefef;
+	color: #000;
+	border: 1px solid #efefef;
+}
+.order_btn:hover{
+	width: 100%;
+	background-color:  #424874;
+	border: none;
+	color: white;
+}
+.sum{
+	padding: 10px 0 0 10px;
+}
+.sum2{
+	padding: 10px 0 0 0;
+}
+
+.abutton{
+	line-height: 50px;
+}
+

@@ -30,4 +30,14 @@ public interface ListService {
 	
 	//장바구니 리스트
 	public List<ItemVO> getCartList(String username);
+	public ItemVO getCartListSS(String item_id);
+	
+	//로그인시 장바구니 저장
+	int insertCartSS(String username, String item_id);
+
+	//장바구니 선택 삭제
+	int cartDelCh(String username, String item_id);
+	
+	//장바구니 전체 삭제
+	int cartDelAll(String username);
 }

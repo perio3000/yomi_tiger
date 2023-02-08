@@ -86,8 +86,7 @@
 									<span onclick="fnCalCount('m',this)"><i
 										class="fa-solid fa-minus"></i></span> <input type="text"
 										name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num"
-										value="1"> <span onclick="fnCalCount('p',this)"><i
-										class="fa-solid fa-plus"></i></span>
+										value="1"> <span onclick="fnCalCount('p',this)"><i class="fa-solid fa-plus"></i></span>
 								</div></td>
 							<td class="cart-style-del">
 								<div class="del"><button type="button" class="btn-close" aria-label="Close"></button></div>
