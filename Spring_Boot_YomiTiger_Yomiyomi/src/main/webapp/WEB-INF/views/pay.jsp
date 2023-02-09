@@ -29,9 +29,9 @@
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
 	
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/pay.css">
-<script src="js/pay.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/pay.css">
+<script src="/js/pay.js"></script>
 
 </head>
 <body>

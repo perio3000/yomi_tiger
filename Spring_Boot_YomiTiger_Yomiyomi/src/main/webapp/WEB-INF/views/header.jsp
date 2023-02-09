@@ -104,16 +104,16 @@
 			<div class="collapse navbar-collapse navbar_collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listbest">베스트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listbest?sort=star">베스트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listnew">신상품</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listnew?sort=datetime">신상품</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listevent">이벤트</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listevent?sort=datetime">이벤트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpick">Picks</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpick?sort=datetime">Picks</a>
 					</li>
 				</ul>
 			</div>
@@ -132,17 +132,17 @@
 				<div class="col">
 					<ul>
 						<li><a href="/" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/listbest">베스트셀러</a></li>
-						<li><a href="/store/listnew">신상품</a></li>
-						<li><a href="/store/listevent">할인상품</a></li>
-						<li><a href="/store/listpick">추천</a></li>
+						<li><a href="/store/listbest?sort=star">베스트셀러</a></li>
+						<li><a href="/store/listnew?sort=datetime">신상품</a></li>
+						<li><a href="/store/listevent?sort=datetime">할인상품</a></li>
+						<li><a href="/store/listpick?sort=datetime">추천</a></li>
 					</ul>
 					<br>
 					<ul>
-						<li><a href="/store/listall" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/listnational">국내도서</a></li>
-						<li><a href="/store/listinter">해외도서</a></li>
-						<li><a href="/store/listebook">eBook</a></li>
+						<li><a href="/store/listall?sort=datetime" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/listnational?sort=datetime">국내도서</a></li>
+						<li><a href="/store/listinter?sort=datetime">해외도서</a></li>
+						<li><a href="/store/listebook?sort=datetime">eBook</a></li>
 					</ul>
 				</div>
 				

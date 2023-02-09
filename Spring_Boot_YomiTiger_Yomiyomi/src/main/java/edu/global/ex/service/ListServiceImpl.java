@@ -124,6 +124,15 @@ public class ListServiceImpl implements ListService{
 		
 		return 1;
 	}
+
+	@Override
+	public int updateAmount(CartVO cartVO) {
+		log.info("updateAmount()..");
+		
+		listMapper.updateAmount(cartVO);
+		
+		return 1;
+	}
 	
 	
 }

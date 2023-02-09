@@ -31,7 +31,7 @@
 	                <h1 class="cart-head">
 	                    	장바구니
 	                </h1>
-	                <form name="orderform" id="orderform" method="post" class="orderform row" action="/Page" onsubmit="return false;">
+	                <form name="orderform" id="orderform" method="post" class="orderform row" action="/store/pay" onsubmit="return false;">
 	
 	                        <div class="left_block col-lg-8">
 	                            <div class="d-flex flex-row list_header">
@@ -71,7 +71,7 @@
 	                        <div id="goorder" class="">
 	                            <div class="clear"></div>
 	                            <div class="buttongroup center-align cmd">
-	                                <button onclick="location.href='javascript:void(0);'" class="order_btn btn">선택한 상품 주문</button>
+	                                <button type="submit" class="order_btn btn">선택한 상품 주문</button>
 	                                <button onclick="history.back()" class="order_btn btn">쇼핑 계속하기</button>
 	                            </div>
 	                        </div>

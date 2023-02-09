@@ -160,3 +160,6 @@ input[type="checkbox"]:checked {
 	line-height: 50px;
 }
 
+.up,.down{
+	cursor: pointer;
+}

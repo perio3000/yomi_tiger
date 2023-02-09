@@ -280,4 +280,12 @@
 			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username})
 		]]>
 	</delete>
+	
+	<update id="updateAmount">
+		<![CDATA[
+			UPDATE yomi_cart SET amount = #{amount} WHERE user_id = (select id from yomi_user where username = #{username}) and item_id = #{item_id}
+		]]>
+	</update>
+	
+	
 </mapper>
