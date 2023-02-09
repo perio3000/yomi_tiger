@@ -287,6 +287,17 @@
 		]]>
 	</update>
 	
-
+	<select id="getOrderList" resultMap="itemMap">
+		<![CDATA[
+			select i.id, i.title, i.price, i.publisher, i.authors, i.thumbnail, c.amount from yomi_item i, yomi_cart c, yomi_user u
+			where u.id = (select id from yomi_user where username = #{username})
+			and u.id = c.user_id
+			and i.id = c.item_id
+			and i.id in
+		]]>
+		<foreach collection="item_id" item="arr" open="(" close=")" separator=",">
+		    #{arr}
+		</foreach>
+	</select>
 
 </mapper>

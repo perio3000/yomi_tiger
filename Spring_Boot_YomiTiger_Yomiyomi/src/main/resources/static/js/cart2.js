@@ -331,20 +331,45 @@ $(document).ready(function(){
 	}
 	
 	
-//	$("#orderform").submit(function(event) {
-//        //prevendDefault()는 href로 연결해 주지 않고 
-//        //단순히 click에 대한 처리를 하도록 해준다.
-//        event.preventDefault();
-//
-//        let item_id_list = [];
-//        
-//        document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
-//        	item_id_list.push(item.value);
-//        });
-//
-//
-//        
-//     });
+	$("#orderform").submit(function(event) {
+        //prevendDefault()는 href로 연결해 주지 않고 
+        //단순히 click에 대한 처리를 하도록 해준다.
+        event.preventDefault();
+
+        let item_id_list = [];
+        
+        document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
+        	item_id_list.push(item.value);
+        });
+
+        let form={
+        		item_id_list:item_id_list
+             };
+        
+        $.ajax({
+            type : "POST",
+            url : "/orderFromCart",
+            cashe:false,
+            contentType:'application/json; charset=utf-8', //MIME 타입
+            data: JSON.stringify(form), 
+            success: function (result) {       
+				console.log(result.item_id_list);
+				
+				let orderList = "";
+				
+				for(let i = 0; i < result.item_id_list.length; i++){
+					orderList += (result.item_id_list[i] + "/");
+				}
+				
+				$(location).attr('href', '/store/pay?orderList=' + orderList);              
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+        
+        
+     });
 });
 
 

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.global.ex.page.Criteria;
@@ -124,6 +125,20 @@ public class RestfulListController {
 		log.info("updateAmount()..");
 		
 		return listService.updateAmount(cartVO);
+	}
+	
+	@PostMapping("/orderFromCart")
+	public JSONObject orderFromCart(@RequestBody String item_id_list) throws ParseException{
+		log.info("orderFromCart()..");
+
+        @SuppressWarnings("deprecation")
+		JSONParser jsonParser = new JSONParser();
+
+        Object obj = jsonParser.parse(item_id_list);
+
+        JSONObject jsonObj = (JSONObject) obj;
+		
+		return jsonObj;
 	}
 	
 }

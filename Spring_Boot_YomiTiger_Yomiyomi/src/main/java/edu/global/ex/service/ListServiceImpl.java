@@ -133,6 +133,13 @@ public class ListServiceImpl implements ListService{
 		
 		return 1;
 	}
+
+	@Override
+	public List<ItemVO> getOrderList(String username, String[] item_id) {
+		log.info("updateAmount()..");
+		
+		return listMapper.getOrderList(username, item_id);
+	}
 	
 	
 }
