@@ -130,6 +130,30 @@
 
 
 					</div>
+
+					<div class="search_area d-flex justify-content-center">
+						<form action="/searchNotice" method="get" id="searchForm">
+						<select name="type" class="form-select selectCategory">
+							<option value="T"
+									<c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목</option>
+							<option value="C"
+									<c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용</option>
+							<option value="A"
+									<c:out value="${pageMaker.criteria.type eq 'A' ? 'selected' : '' }"/>>작가</option>
+							<option value="P"
+									<c:out value="${pageMaker.criteria.type eq 'P' ? 'selected' : '' }"/>>출판사</option>
+						</select>
+						<input type="text" name="keyword" class="form-control" id="exampleFormControlInput1" value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
+						<label for="exampleFormControlInput1" class="form-label"></label>
+
+						<input type="hidden" name="pageNum" value="1" class="form-control">
+
+						<button class="newSearchBtn">검색</button>
+						</form>
+					</div>
+
+
+
 				</div>
 			</div>				
 		</div>	

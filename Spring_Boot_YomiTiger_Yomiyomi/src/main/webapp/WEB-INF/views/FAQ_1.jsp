@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>FAQ</title>
-	<script type="text/javascript" src="/js/FAQ.js"></script>
+
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/FAQ.css">
 </head>
@@ -75,8 +75,8 @@
 					<table class="table">
 					  <tbody>
 					    <tr>
-					      <td><a class="qnaMenu" onclick="qnaMenu(22)">회원</a></td>
-					      <td><a href="#" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a></td>
+					      <td><a href="#" class="qnaMenu" data-value="2">회원</a></td>
+					      <td><a href="#" class="qnaMenu">도서/상품정보</a></td>
 					      <td><a href="#" class="qnaMenu">주문/결제</a></td>
 					    </tr>
 					    <tr>

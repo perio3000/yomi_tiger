@@ -14,9 +14,14 @@ public interface NoticeMapper {
     BoardVO read_prev(int id);
     BoardVO read_next(int id);
 
-    int getTotalCount();
+    int getTotalCount(Criteria criteria);
     List<BoardVO> getListWithPaging(Criteria criteria);
 
 
     List<BoardVO> getFAQ();
+
+    List<BoardVO> getCategorys(Criteria criteria, int categoryNo);
+
+    List<BoardVO> category(int category);
+
 }
