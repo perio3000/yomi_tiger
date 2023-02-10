@@ -125,10 +125,8 @@ public class ListController {
 		
 		if(authentication != null) {
 			model.addAttribute("user", authentication.getName());
-			
-			System.out.println(listService.getOrderList(authentication.getName(), item_id));
+			model.addAttribute("items", listService.getOrderList(authentication.getName(), item_id));
 		}
-		
 		
 		return "pay";
 	}

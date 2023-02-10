@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> -->
 <meta charset="UTF-8">
 
-<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<!-- <link rel="stylesheet" type="text/css" href="/css/reset.css"> -->
 <link rel="stylesheet" type="text/css" href="/css/footer.css">
 </head>
 <body>

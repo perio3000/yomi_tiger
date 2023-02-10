@@ -37,7 +37,7 @@ public interface ListMapper {
 	public ItemVO getCartListSS(String item_id);
 	
 	//로그인시 장바구니 저장
-	int insertCartSS(String username, String item_id);
+	int insertCartSS(String username, String item_id, int amount);
 	
 	//장바구니 선택 삭제
 	int cartDelCh(String username, String item_id);

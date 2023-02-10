@@ -127,6 +127,11 @@ li>a{height:30px;}
 .nav_link { margin-right: 1em; height: 50px;}
 .material_symbols_outlined {font-size: 2.5em;}
 .nav_item:hover, .navbar_menu:hover {color: #A6B1E1;}
+@media (max-width: 992px) {
+	.nav_link{
+		display: none !important;
+	}
+}
 
 body::-webkit-scrollbar {
     width: 8px;  /* 스크롤바의 너비 */

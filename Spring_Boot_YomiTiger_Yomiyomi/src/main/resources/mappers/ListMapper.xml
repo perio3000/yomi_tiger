@@ -265,7 +265,7 @@
 	<insert id="insertCartSS">
 		<![CDATA[
 			insert into yomi_cart (id, user_id, item_id, amount) 
-				values (yomi_cart_seq.nextval, (select id from yomi_user where username = #{username}), #{item_id}, 1)
+				values (yomi_cart_seq.nextval, (select id from yomi_user where username = #{username}), #{item_id}, #{amount})
 		]]>
 	</insert>
 	
@@ -299,5 +299,7 @@
 		    #{arr}
 		</foreach>
 	</select>
+	
+
 
 </mapper>

@@ -66,7 +66,7 @@ $(document).ready(function(){
 			});
 		}else{
 			
-			window.sessionStorage.setItem("bookId" + $(".idNum").val(), $(".idNum").val());
+			window.sessionStorage.setItem("bookId" + $(".idNum").val(), $(".idNum").val() + "/" + $("#p_num1").val());
 			
 		}
 		

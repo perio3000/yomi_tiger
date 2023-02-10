@@ -134,6 +134,11 @@ let basket = {
                     console.log(e);
                 }
             });
+        }else{
+        	let item_id = $("#check_box"+pos).val();
+            let amount = newval;
+            
+            window.sessionStorage.setItem("bookId" + item_id, item_id + "/" + amount);
         }
 
         //전송 처리 결과가 성공이면    
@@ -248,13 +253,14 @@ $(document).ready(function(){
 		});
 	}
 	else{
-		console.log(sessionStorage.getItem("bookId112"));
 		if(window.sessionStorage != null){
 			for(let i = 0; i < window.sessionStorage.length; i++){
 				let key = window.sessionStorage.key(i);
 				
 				if(key.includes("bookId")){
-					let item_id = window.sessionStorage.getItem(key);
+					let idAndAmount = window.sessionStorage.getItem(key);
+					let splitIdAmount = idAndAmount.split("/");
+					let item_id = splitIdAmount[0];
 					
 					$.ajax({
 						type: "GET",
@@ -264,6 +270,10 @@ $(document).ready(function(){
 						data : item_id,
 						success: function(result) {       
 							console.log(result);
+							
+							let idAndAmount = window.sessionStorage.getItem(key);
+							let splitIdAmount = idAndAmount.split("/");
+							let amount = splitIdAmount[1];
 	
 							$("#left_block").append(`
 									<div class="d-flex justify-content-between align-items-center data flex-nowrap">
@@ -278,25 +288,25 @@ $(document).ready(function(){
 									            ${result.price.toLocaleString()}<span>원</span>
 									        </div>
 									    </div>
-									    <div class="subdiv d-flex price_area row">
+									    <div class="subdiv d-flex price_area">
 									        <div class="basketprice"><input type="hidden" name="p_price${i+1}" id="p_price${i+1}" class="p_price"
 									                value="${result.price}"></div>
 									        <div class="num">
 									            <div class="updown d-flex">
 									            
 													<div class="up" onclick="javascript:basket.changePNum(${i+1});">+</i></div> 
-									                <input type="text" name="p_num${i+1}" id="p_num${i+1}" size="2" maxlength="4" class="p_num" value="1"
+									                <input type="text" name="p_num${i+1}" id="p_num${i+1}" size="2" maxlength="4" class="p_num" value="${amount}"
 									                    onkeyup="javascript:basket.changePNum(${i+1});">                         
 									    
 									                <div class="down" onclick="javascript:basket.changePNum(${i+1});">-</i></div>
 									                
 									            </div>
 									        </div>
-									        <div class="sum" id="sumPrice">${result.price}</div><span class="sum2">원</span>
+									        <div class="sum" id="sumPrice">${result.price * amount}</div><span class="sum2">원</span>									        
 									    </div>
 									</div>
-									<input type="hidden" class="sumPriceHidden" value="${result.price}">
-									<input type="hidden" class="sumCountHidden" value="1">
+									<input type="hidden" class="sumPriceHidden" value="${result.price * amount}">
+									<input type="hidden" class="sumCountHidden" value="${amount}">
 								`)
 								
 							    let sumAll = 0;

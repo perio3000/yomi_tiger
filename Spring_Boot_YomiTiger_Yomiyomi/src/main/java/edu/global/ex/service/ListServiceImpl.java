@@ -99,10 +99,10 @@ public class ListServiceImpl implements ListService{
 	}
 
 	@Override
-	public int insertCartSS(String username, String item_id) {
+	public int insertCartSS(String username, String item_id, int amount) {
 		log.info("getCartListSS()..");
 		
-		listMapper.insertCartSS(username, item_id);
+		listMapper.insertCartSS(username, item_id, amount);
 		
 		return 1;
 	}

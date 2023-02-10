@@ -18,11 +18,11 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
-
-<script
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<!-- <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script> -->
 <script src="https://code.jquery.com/jquery-3.6.3.js"
 	integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
 	crossorigin="anonymous"></script>
@@ -37,27 +37,33 @@
 <body>
 	<section>
 		<div class="pay-content">
-
-			<div class="unknow-pay">
-				<h3>비회원 주문/결제</h3>
-			</div>
-			<div class="pay-content-head">
-				<div clas="pay-head-and-btn">
-					<p>
-						<i class="fa-solid fa-quote-left"></i> 비회원으로 주문시에는 쿠폰할인, 포인트 적립의
-						혜택을 받을 수 없습니다. <i class="fa-solid fa-quote-right"></i>
-					</p>
-					<div class="pay-head-btn">
-						<a class="btn btn-primary pay-btn1" href="#" role="button">회원가입</a>
-						<a class="btn btn-primary pay-btn2" href="#" role="button">로그인</a>
+			<sec:authorize access="isAnonymous()">
+				<div class="unknow-pay">
+					<h3>비회원 주문/결제</h3>
+				</div>
+				<div class="pay-content-head">
+					<div class="pay-head-and-btn">
+						<p>
+							<i class="fa-solid fa-quote-left"></i> 비회원으로 주문시에는 쿠폰할인, 포인트 적립의
+							혜택을 받을 수 없습니다. <i class="fa-solid fa-quote-right"></i>
+						</p>
+						<div class="pay-head-btn">
+							<a class="btn btn-primary pay-btn1" href="/member/signup" role="button">회원가입</a>
+							<a class="btn btn-primary pay-btn2" href="/login" role="button">로그인</a>
+						</div>
 					</div>
 				</div>
-			</div>
-
+			</sec:authorize>
+			
+			<sec:authorize access="isAuthenticated()">
+				<div class="unknow-pay">
+					<h3>주문/결제</h3>
+				</div>
+			</sec:authorize>
 
 			<div class="pay-order-info">
 				<div class="pay-orderer-head">
-					<h3>주문자 정보 입력</h3>
+					<h3 style="padding: 0 20px 0 20px">주문자 정보 입력</h3>
 				</div>
 
 				<div class="pay-orderer-form">
@@ -76,16 +82,18 @@
 								for="inputTel" class="form-label">입력하신 이메일과 휴대폰번호로 주문에
 								관한 문자 및 메일이 발송됩니다.</label>
 						</div>
-						<p class="form-pw">주문조회 비밀번호 입력</p>
-						<div class="col-12">
-							<input type="text" class="form-control" id="inputPW"
-								placeholder="비밀번호를 입력해주세요."> <label for="inputPW"
-								class="form-label">영문/숫자/특수문자 6~10자리로 입력</label>
-						</div>
-						<div class="col-12">
-							<input type="text" class="form-control"
-								placeholder="비밀번호를 한번 더 입력해주세요.">
-						</div>
+						<sec:authorize access="isAnonymous()">
+							<p class="form-pw">주문조회 비밀번호 입력</p>
+							<div class="col-12">
+								<input type="text" class="form-control" id="inputPW"
+									placeholder="비밀번호를 입력해주세요."> <label for="inputPW"
+									class="form-label">영문/숫자/특수문자 6~10자리로 입력</label>
+							</div>
+							<div class="col-12">
+								<input type="text" class="form-control"
+									placeholder="비밀번호를 한번 더 입력해주세요.">
+							</div>
+						</sec:authorize>
 					</form>
 				</div>
 			</div>
@@ -93,15 +101,34 @@
 			<!---------------------------------- 배송정보-------------------------------------->
 			<div class="pay-order-info">
 				<div class="pay-orderer-head">
-					<h3>배송지 정보</h3>
+					<h3 style="padding: 0 20px 0 20px">배송지 정보</h3>
 				</div>
 
 				<div class="pay-orderer-form">
 					<form class="row g-3">
-						<div class="col-12">
-							<a class="btn btn-info" href="#" role="button"> 
+						<div>
+							<a class="btn btn-info" role="button" onclick="sample6_execDaumPostcode()"> 
 								<i class="fa-solid fa-pen-to-square"></i>배송지 입력
 							</a>
+						</div>
+						<label for="sample6_postcode" class="col-form-label">우편번호</label>
+						<div style="margin: 0px;">
+							<input type="text" id="sample6_postcode" class="form-control" style="margin: 0px;" readonly>
+						</div>
+						
+						<label for="sample6_address" class="col-form-label">주소</label>
+						<div class="" style="margin: 0px;">
+							<input  type="text" id="sample6_address" class="form-control" style="margin: 0px;" readonly>
+						</div>
+						
+						<label for="sample6_extraAddress" class="col-form-label">참고항목</label>
+						<div class="" style="margin: 0px;">
+							<input type="text" id="sample6_extraAddress" class="form-control" style="margin: 0px;" readonly>
+						</div>
+						
+						<label for="sample6_detailAddress" class="col-form-label">상세주소</label>
+						<div class="" style="margin: 0px;">
+							<input type="text" id="sample6_detailAddress" class="form-control" style="margin: 0px;">
 						</div>
 					</form>
 				</div>
@@ -157,7 +184,7 @@
 							다른 결제 수단
 						</label>
 					</div>
-					<div class="paytypes">
+					<div class="paytypes d-flex flex-wrap">
 						<button type="button" class="btn btn-outline-dark">신용카드</button>
 						<button type="button" class="btn btn-outline-dark"><img src="/logo/naver_pay/npay_32.png" alt="네이버페이"></button>
 						<button type="button" class="btn btn-outline-dark"><img src="/logo/kakao_pay_icon/카카오페이.png"></button>
@@ -342,8 +369,6 @@
 		</aside>
 	</section>
 	
-
-
-	<footer> 푸터 </footer>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -99,11 +99,11 @@ public class RestfulListController {
 		return listService.getCartListSS(item_id);
 	}
 	
-	@GetMapping("/insertCartSS/{item_id}/{username}")
-	public int insertCartSS(@PathVariable(name = "item_id") String item_id, @PathVariable(name = "username") String username) {
+	@GetMapping("/insertCartSS/{item_id}/{username}/{amount}")
+	public int insertCartSS(@PathVariable(name = "item_id") String item_id, @PathVariable(name = "username") String username, @PathVariable(name = "amount") int amount) {
 		log.info("insertCartSS()..");
 		
-		return listService.insertCartSS(username, item_id);
+		return listService.insertCartSS(username, item_id, amount);
 	}
 	
 	@GetMapping("/cartDelCh/{username}/{item_id}")

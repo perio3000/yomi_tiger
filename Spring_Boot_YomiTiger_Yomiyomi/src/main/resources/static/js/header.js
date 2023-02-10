@@ -19,19 +19,25 @@ $(document).ready(function(){
 		
 	}else{
 		if(window.sessionStorage != null){
+			
+
+			
 			for(let i = 0; i < window.sessionStorage.length; i++){
 				let key = window.sessionStorage.key(i);
 				
 				if(key.includes("bookId")){
-					let item_id = window.sessionStorage.getItem(key);
+					let idAndAmount = window.sessionStorage.getItem(key);
+					let splitIdAmount = idAndAmount.split("/");
+					let item_id = splitIdAmount[0];
+					let amount = splitIdAmount[1];
 					let username = $(".principal").val();
 					
 					$.ajax({
 						type: "GET",
-						url: "/insertCartSS/" + item_id + "/" + username,
+						url: "/insertCartSS/" + item_id + "/" + username + "/" + amount,
 						cashe: false,
 			            contentType:'application/json; charset=utf-8', //MIME 타입
-						data : {item_id, username},
+						data : {item_id, username, amount},
 						success: function(result) {
 							console.log(result);
 						},

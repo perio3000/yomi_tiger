@@ -6,7 +6,7 @@ section {
 	justify-content: flex-start;
 }
 .pay-content{
-	width: 80%;
+	min-width: 437px;
 	padding: 30px;
 }
 .unknow-pay{
@@ -152,11 +152,20 @@ section {
 }
 
 .accordion-body td{
-	padding: 20px;
+	padding: 10px;
 	width: 20%;
 	vertical-align: middle;
 	text-align: center;
 	border-bottom: 1px dashed #dcdcdc;
+}
+@media (max-width: 1200px) {
+	.accordion-body td {
+		padding: 3px;
+		width: 20%;
+		vertical-align: middle;
+		text-align: center;
+		border-bottom: 1px dashed #dcdcdc;
+	}
 }
 .accordion-body td:nth-child(2){
 	width: 45%;
@@ -229,6 +238,9 @@ section {
 .paytypes>button:last-child>img{
 	width: 50% !important;
 }
+.btn-outline-dark{
+	min-width: 100px;
+}
 /* -------------------------사이드바---------------------------------------------------------- */
 .aside {
 	position: sticky;
@@ -236,10 +248,9 @@ section {
 	top: 0;
 	margin: 0 auto;
 	padding: 30px;
-	width: 30%;
-	height: 800px;
+	height: 1000px;
+	
 }
-
 .card {
 	border: 1px solid #c0c0c0;
 	border-radius: 10px;
@@ -249,6 +260,7 @@ section {
 	padding: 30px;
 	height: auto;
 	font-size: 1.1em;
+	width: 337px;
 }
 
 .aside li {
@@ -299,7 +311,7 @@ input[type='checkbox']{
 }
 input[type="checkbox"] + label {
   display: inline-block;
-  width: 24px;
+  width: 25px;
   height: 22px;  
   border: 1px solid #424874;
   cursor: pointer;
@@ -310,6 +322,8 @@ input[id="check"]:checked + label::before {
   content: '\f00c';
   display: block;
   position: absolute;
+  top: -1px;
+  left: -1px;
   width: 22px;
   height: 22px;
   font-size: 1em;
@@ -343,6 +357,7 @@ input[id="check"]:checked + label::before {
 
 .pay-accordion-body {
 	height: 300px;
+	width: 318px;
 	overflow: scroll;
 	overflow-x: hidden;
 	background-color:#efefef;
