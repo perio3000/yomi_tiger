@@ -44,4 +44,11 @@ public interface ListMapper {
 	
 	//장바구니 전체 삭제
 	int cartDelAll(String username);
+	
+	//장바구니 수량 변경
+	int updateAmount(CartVO cartVO);
+	
+	//pay페이지 목록
+	public List<ItemVO> getOrderList(String username, String[] item_id);
+	
 }

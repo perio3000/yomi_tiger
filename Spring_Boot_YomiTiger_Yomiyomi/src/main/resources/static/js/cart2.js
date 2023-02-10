@@ -110,6 +110,31 @@ let basket = {
         var price = item.parentElement.parentElement.previousElementSibling.firstElementChild.getAttribute('value');
         item.parentElement.parentElement.nextElementSibling.textContent = (newval * price).formatNumber();
         //AJAX 업데이트 전송
+        
+        if($(".username").val() != ""){
+        	let username = $(".username").val();
+            let item_id = $("#check_box"+pos).val();
+            let amount = newval;
+            let form = {
+            		username : username,
+            		item_id : item_id,
+            		amount : amount
+            };
+            
+            $.ajax({
+            	type: "PUT",
+            	url: "/updateAmount",
+        		cashe: false,
+                contentType:'application/json; charset=utf-8', //MIME 타입
+    			data : JSON.stringify(form),
+    			success: function(result) {
+    				console.log(result);
+    			},
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        }
 
         //전송 처리 결과가 성공이면    
         this.reCalc();
@@ -304,9 +329,48 @@ $(document).ready(function(){
 			}
 		}
 	}
+	
+	
+	$("#orderform").submit(function(event) {
+        //prevendDefault()는 href로 연결해 주지 않고 
+        //단순히 click에 대한 처리를 하도록 해준다.
+        event.preventDefault();
+
+        let item_id_list = [];
+        
+        document.querySelectorAll("input[name=buy]:checked").forEach(function (item) {
+        	item_id_list.push(item.value);
+        });
+
+        let form={
+        		item_id_list:item_id_list
+             };
+        
+        $.ajax({
+            type : "POST",
+            url : "/orderFromCart",
+            cashe:false,
+            contentType:'application/json; charset=utf-8', //MIME 타입
+            data: JSON.stringify(form), 
+            success: function (result) {       
+				console.log(result.item_id_list);
+				
+				let orderList = "";
+				
+				for(let i = 0; i < result.item_id_list.length; i++){
+					orderList += (result.item_id_list[i] + "/");
+				}
+				
+				$(location).attr('href', '/store/pay?orderList=' + orderList);              
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+        
+        
+     });
 });
-
-
 
 
 

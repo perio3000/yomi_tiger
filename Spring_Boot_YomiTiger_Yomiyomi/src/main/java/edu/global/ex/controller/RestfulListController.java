@@ -1,10 +1,15 @@
 package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.jsoup.Connection;
@@ -16,7 +21,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.global.ex.page.Criteria;
@@ -112,4 +119,26 @@ public class RestfulListController {
 		
 		return listService.cartDelAll(username);
 	}
+	
+	@PutMapping("/updateAmount")
+	public int updateAmount(@RequestBody CartVO cartVO) {
+		log.info("updateAmount()..");
+		
+		return listService.updateAmount(cartVO);
+	}
+	
+	@PostMapping("/orderFromCart")
+	public JSONObject orderFromCart(@RequestBody String item_id_list) throws ParseException{
+		log.info("orderFromCart()..");
+
+        @SuppressWarnings("deprecation")
+		JSONParser jsonParser = new JSONParser();
+
+        Object obj = jsonParser.parse(item_id_list);
+
+        JSONObject jsonObj = (JSONObject) obj;
+		
+		return jsonObj;
+	}
+	
 }

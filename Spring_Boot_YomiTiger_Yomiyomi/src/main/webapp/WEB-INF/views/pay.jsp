@@ -29,9 +29,9 @@
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
 	
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/pay.css">
-<script src="js/pay.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/pay.css">
+<script src="/js/pay.js"></script>
 
 </head>
 <body>
@@ -159,12 +159,12 @@
 					</div>
 					<div class="paytypes">
 						<button type="button" class="btn btn-outline-dark">신용카드</button>
-						<button type="button" class="btn btn-outline-dark"><img src="logo/naver_pay/npay_32.png" alt="네이버페이"></button>
-						<button type="button" class="btn btn-outline-dark"><img src="logo/kakao_pay_icon/카카오페이.png"></button>
-						<button type="button" class="btn btn-outline-dark sizing"><img src="logo/samsungpay.png"></button>
+						<button type="button" class="btn btn-outline-dark"><img src="/logo/naver_pay/npay_32.png" alt="네이버페이"></button>
+						<button type="button" class="btn btn-outline-dark"><img src="/logo/kakao_pay_icon/카카오페이.png"></button>
+						<button type="button" class="btn btn-outline-dark sizing"><img src="/logo/samsungpay.png"></button>
 						<button type="button" class="btn btn-outline-dark">온라인입금</button>
 						<button type="button" class="btn btn-outline-dark">실시간 계좌이체</button>
-						<button type="button" class="btn btn-outline-dark"><img src="logo/toss.png"></button>
+						<button type="button" class="btn btn-outline-dark"><img src="/logo/toss.png"></button>
 					</div>
 				</div>
 			</div>

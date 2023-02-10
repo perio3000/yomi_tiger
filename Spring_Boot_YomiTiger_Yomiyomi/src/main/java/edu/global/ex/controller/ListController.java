@@ -1,8 +1,14 @@
 package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import net.minidev.json.parser.ParseException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +24,9 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.global.ex.page.Criteria;
@@ -109,6 +118,22 @@ public class ListController {
 		return "cart2";
 	}
 	
+	@GetMapping("/pay")
+	public String Pay(Model model, ItemVO itemVO, Authentication authentication, String orderList) {
+		log.info("/Pay..");
+		String[] item_id = orderList.split("/");
+		
+		if(authentication != null) {
+			model.addAttribute("user", authentication.getName());
+			
+			System.out.println(listService.getOrderList(authentication.getName(), item_id));
+		}
+		
+		
+		return "pay";
+	}
+	
+
 	
 	//크롤링
 //	@GetMapping("/insertbooklist")
