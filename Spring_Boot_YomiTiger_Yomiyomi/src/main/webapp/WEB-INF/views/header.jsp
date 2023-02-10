@@ -149,11 +149,11 @@
 				<div class="col">
 					<ul>
 						<li><a href="/customercenter" class="fs-5 fw-bolder">고객센터&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/FAQ">자주 묻는 질문</a></li>
+						<li><a href="/notice/FAQ">자주 묻는 질문</a></li>
 						<li><a href="/qna">1:1 문의</a></li>
 						<li><a href="/events">이벤트</a></li>
 						<li><a href="/location">오프라인 매장</a></li>
-						<li><a href="/announcement">공지사항</a></li>
+						<li><a href="/notice/announcement">공지사항</a></li>
 					</ul>
 					<br>
 					<ul>

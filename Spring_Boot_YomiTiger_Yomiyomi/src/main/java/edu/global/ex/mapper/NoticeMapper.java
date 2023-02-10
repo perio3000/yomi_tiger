@@ -24,4 +24,5 @@ public interface NoticeMapper {
 
     List<BoardVO> category(int category);
 
+
 }

@@ -34,13 +34,13 @@ public class TestController {
 
 	}
 
-	// 자주 묻는 질문
-	@GetMapping("/FAQ")
+	// 자주 묻는 질문 //NoticeController 로 이동
+/*	@GetMapping("/FAQ")
 	public String FAQ() {
 		log.info("/FAQ");
 			
 		return "FAQ";
-	}
+	}*/
 	
 	// 고객센터
 	@GetMapping("/customercenter")
