@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
+@RequestMapping("/notice")
 public class NoticeController {
 
     @Autowired
@@ -53,10 +55,6 @@ public class NoticeController {
         return "announcement";
     }
 
-
-
-
-
     @GetMapping("/announceread")
     public String announceread(BoardVO boardVO, Model model){
         log.info("CONTROLLER : announceread()..");
@@ -77,17 +75,20 @@ public class NoticeController {
     }
 
 
-    @GetMapping("/FAQ_")
+    @GetMapping({"/FAQ","/searchFAQ"})
     public String FAQ(Criteria criteria, Model model) {
+
         log.info("CONTROLLER : FAQ()...");
 
         model.addAttribute("FAQ", noticeService.getFAQ());
-/*
+
+
+        /*
         int total = noticeService.getTotal();
         log.info("total" + total );
 
         model.addAttribute("pageMaker", new PageVO(criteria, total));
-*/
+        */
 
 
 

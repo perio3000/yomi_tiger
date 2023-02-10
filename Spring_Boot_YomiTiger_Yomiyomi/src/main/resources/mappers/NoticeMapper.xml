@@ -77,6 +77,8 @@
 	</select>
 
 
+
+
 	<!--<select id="getList" resultMap="boardMap">
 		<![CDATA[
 		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
