@@ -300,6 +300,14 @@
 		</foreach>
 	</select>
 	
-
+	<select id="getOrderListNotMember" resultMap="itemMap">
+		<![CDATA[
+			select id, title, price, publisher, authors, thumbnail from yomi_item
+			where id in
+		]]>
+		<foreach collection="item_id" item="arr" open="(" close=")" separator=",">
+		    #{arr}
+		</foreach>
+	</select>
 
 </mapper>

@@ -345,6 +345,12 @@ $(document).ready(function(){
         //prevendDefault()는 href로 연결해 주지 않고 
         //단순히 click에 대한 처리를 하도록 해준다.
         event.preventDefault();
+        
+       	if($("input[name=buy]:checked").length == 0){
+       		alert("주문할 상품이 없습니다.");
+       		
+       		return
+       	};
 
         let item_id_list = [];
         
@@ -371,7 +377,7 @@ $(document).ready(function(){
 					orderList += (result.item_id_list[i] + "/");
 				}
 				
-				$(location).attr('href', '/store/pay?orderList=' + orderList);              
+				$(location).attr('href', '/store/pay?orderList=' + orderList);
             },
             error: function (e) {
                 console.log(e);

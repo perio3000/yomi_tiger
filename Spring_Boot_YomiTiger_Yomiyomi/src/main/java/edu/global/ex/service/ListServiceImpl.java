@@ -140,6 +140,13 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getOrderList(username, item_id);
 	}
+
+	@Override
+	public List<ItemVO> getOrderListNotMember(String[] item_id) {
+		log.info("updateAmount()..");
+		
+		return listMapper.getOrderListNotMember(item_id);
+	}
 	
 	
 }

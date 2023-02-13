@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.global.ex.page.Criteria;
 import edu.global.ex.page.PageVO;
 import edu.global.ex.service.ListService;
+import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.ItemVO;
 
 @Slf4j
@@ -41,6 +42,9 @@ public class ListController {
 	
 	@Autowired
 	private ListService listService;
+	
+	@Autowired
+	private MypageService mypageService;
 	
 	@GetMapping({"/listnew", "/searchnew"})
 	public String List(Criteria criteria, Model model) {
@@ -124,8 +128,11 @@ public class ListController {
 		String[] item_id = orderList.split("/");
 		
 		if(authentication != null) {
-			model.addAttribute("user", authentication.getName());
+			model.addAttribute("user", mypageService.getUser(authentication.getName()));
 			model.addAttribute("items", listService.getOrderList(authentication.getName(), item_id));
+		}
+		else {
+			model.addAttribute("items", listService.getOrderListNotMember(item_id));
 		}
 		
 		return "pay";

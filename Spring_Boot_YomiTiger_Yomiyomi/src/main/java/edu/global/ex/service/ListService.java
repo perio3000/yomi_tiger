@@ -46,4 +46,5 @@ public interface ListService {
 	
 	//pay페이지 목록
 	public List<ItemVO> getOrderList(String username, String[] item_id);
+	public List<ItemVO> getOrderListNotMember(String[] item_id);
 }
