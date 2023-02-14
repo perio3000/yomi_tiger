@@ -29,6 +29,9 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/ebf4d50ec6.js"
 	crossorigin="anonymous"></script>
+	<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+	
 	
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/pay.css">
@@ -60,6 +63,7 @@
 				<div class="unknow-pay">
 					<h3>주문/결제</h3>
 				</div>
+				<input type="hidden" class="isAuthenticated" value="true">
 			</sec:authorize>
 
 			<div class="pay-order-info">
@@ -86,12 +90,12 @@
 						<sec:authorize access="isAnonymous()">
 							<p class="form-pw">주문조회 비밀번호 입력</p>
 							<div class="col-12">
-								<input type="text" class="form-control" id="inputPW"
+								<input type="password" class="form-control" id="inputPW"
 									placeholder="비밀번호를 입력해주세요."> <label for="inputPW"
 									class="form-label">영문/숫자/특수문자 6~10자리로 입력</label>
 							</div>
 							<div class="col-12">
-								<input type="text" class="form-control"
+								<input type="password" class="form-control" id="inputPW2" 
 									placeholder="비밀번호를 한번 더 입력해주세요.">
 							</div>
 						</sec:authorize>
@@ -161,35 +165,41 @@
 												<input type="hidden" class="inputId${ orderList.id }" value="${ orderList.id }">
 												<input type="hidden" class="inputPrice${ orderList.id }" value="${ orderList.price }">
 												<img alt="구매도서" src="${ orderList.thumbnail }"></td>
-												<td>${ orderList.title }</td>
-												<td>
-													<script type="text/javascript">
-														var item_id${ orderList.id } = $(".inputId"+${ orderList.id }).val();
-														var amountWithId${ orderList.id } = window.sessionStorage.getItem("bookId"+item_id${ orderList.id });
-
-														var amountSplit${ orderList.id } = amountWithId${ orderList.id }.split("/");
-														var amount${ orderList.id } = amountSplit${ orderList.id }[1];
-														
-														document.write(amount${ orderList.id });
-													</script>
+												<td><span class="orderName">${ orderList.title }</span></td>
+												<td><span class="amount${ orderList.id }">
+													
+												</span>
+													
 												개</td>
-												<td><span class="price">
-													<script type="text/javascript">
-														var price${ orderList.id } = $(".inputPrice"+${ orderList.id }).val();
-														
-														document.write((amount${ orderList.id } * price${ orderList.id }).toLocaleString());
-													</script>
+												<td><span class="price price${ orderList.id }">
+													
 												</span><span>원</span></td>
+												
 											</tr>
+											<script type="text/javascript">
+												var item_id${ orderList.id } = $(".inputId"+${ orderList.id }).val();
+												var amountWithId${ orderList.id } = window.sessionStorage.getItem("bookId"+item_id${ orderList.id });
+	
+												var amountSplit${ orderList.id } = amountWithId${ orderList.id }.split("/");
+												var amount${ orderList.id } = amountSplit${ orderList.id }[1];
+												
+												$(".amount"+${ orderList.id }).append(amount${ orderList.id });												
+												
+												var price${ orderList.id } = $(".inputPrice"+${ orderList.id }).val();
+												
+												$(".price"+${ orderList.id }).append((amount${ orderList.id } * price${ orderList.id }).toLocaleString());
+											</script>
 										</c:forEach>
 									</sec:authorize>
 									
 									<sec:authorize access="isAuthenticated()">
 										<c:forEach var="orderList" items="${ items }">
 											<tr>
-												<td><img alt="구매도서" src="${ orderList.thumbnail }"></td>
-												<td>${ orderList.title } </td>
-												<td>${ orderList.amount}개</td>
+												
+												<td><input type="hidden" class="inputId${ orderList.id }" value="${ orderList.id }">
+												<img alt="구매도서" src="${ orderList.thumbnail }"></td>
+												<td><span class="orderName">${ orderList.title }</span></td>
+												<td><span class="amount">${ orderList.amount}개</span></td>
 												<td><span class="price"><fmt:formatNumber value="${ orderList.amount * orderList.price }" pattern="#,###" /></span><span>원</span></td>
 											</tr>
 										</c:forEach>
@@ -206,21 +216,27 @@
 					<h3>결제수단</h3>
 				</div>
 				<div class="paytype-btns">
-					<div class="form-check">
+					<!-- <div class="form-check">
 						<input class="form-check-input" type="radio"
-							name="flexRadioDefault" id="flexRadioDefault2" checked> 
+							name="flexRadioDefault1" id="flexRadioDefault2" checked> 
 						<label class="form-check-label" for="flexRadioDefault2"> 
 							다른 결제 수단
 						</label>
-					</div>
+					</div> -->
 					<div class="paytypes d-flex flex-wrap">
-						<button type="button" class="btn btn-outline-dark">신용카드</button>
-						<button type="button" class="btn btn-outline-dark"><img src="/logo/naver_pay/npay_32.png" alt="네이버페이"></button>
-						<button type="button" class="btn btn-outline-dark"><img src="/logo/kakao_pay_icon/카카오페이.png"></button>
-						<button type="button" class="btn btn-outline-dark sizing"><img src="/logo/samsungpay.png"></button>
-						<button type="button" class="btn btn-outline-dark">온라인입금</button>
-						<button type="button" class="btn btn-outline-dark">실시간 계좌이체</button>
-						<button type="button" class="btn btn-outline-dark"><img src="/logo/toss.png"></button>
+						
+						
+						<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="card">
+						<label class="btn btn-outline-dark d-flex align-items-center justify-content-center" for="option1">신용카드</label>
+						
+						<input type="radio" class="btn-check" name="options" id="option5" autocomplete="off" value="vbank">
+						<label class="btn btn-outline-dark d-flex align-items-center justify-content-center" for="option5">온라인 입금</label>
+						
+						<input type="radio" class="btn-check" name="options" id="option6" autocomplete="off" value="trans">
+						<label class="btn btn-outline-dark d-flex align-items-center justify-content-center" for="option6">실시간 계좌이체</label>
+						
+						<input type="radio" class="btn-check" name="options" id="option7" autocomplete="off" value="phone">
+						<label class="btn btn-outline-dark d-flex align-items-center justify-content-center" for="option7">휴대폰 소액결제</label>
 					</div>
 				</div>
 			</div>
@@ -259,7 +275,7 @@
 						<li class="list-group-item right">+ <span class="plusPoint"></span>P</li>
 
 					</ul>
-					<a href="#" class="btn btn-primary">주문하기 (2)</a>
+					<a class="btn btn-primary" onclick="payment();">주문하기</a>
 				</div>
 			</div>
 

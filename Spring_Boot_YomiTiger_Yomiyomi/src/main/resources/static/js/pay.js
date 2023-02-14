@@ -58,10 +58,11 @@ function sample6_execDaumPostcode() {
 }
 
 $(document).ready(function(){
+		
 	let sum = 0;
 	
-	$("span[class=price]").each(function(){       
-		console.log($(this).html());
+	$("span[class^=price]").each(function(){       
+
         let eachPrice = $(this).text();
         let sumPrice = eachPrice.replace(",", "");
         
@@ -99,4 +100,206 @@ function inputPhoneNumber(obj) {
         phone += number.substr(7);
     }
     obj.value = phone;
+}
+
+function payment(){
+	let item_id_list = [];
+	let amount_list = [];
+    let priceText = $(".totalPrice").text();
+    let totalPrice = priceText.replace(",","");
+	let pattern_tel = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+	pattern_tel = new RegExp(pattern_tel);
+	let pattern_email = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+	pattern_email = new RegExp(pattern_email);	
+	
+	$("input[class^=inputId]").each(function(){
+		item_id_list.push($(this).val());
+	});
+	
+	$("span[class^=amount]").each(function(){		
+		amount_list.push($(this).val());
+	});
+	
+	if($(".isAuthenticated").val() == "true"){
+		const data = {
+				payMethod : $("input[type='radio']:checked").val(),
+				orderNum : createOrderNum(),
+				name : $("#inputName").val(),
+				orderName : $(".orderName").text(),
+				amount : totalPrice,
+				email : $("#inputEmail").val(),
+				phone : $("#inputTel").val(),
+				postcode : $("#sample6_postcode").val(),
+				address : $("#sample6_address").val(),
+				extraAddress : $("#sample6_extraAddress").val(),
+				detailAddress : $("#sample6_detailAddress").val(),
+				itemIdList : item_id_list,
+				amountList : amount_list				
+		};
+		
+		if(!data.payMethod){
+			alert("결제수단을 선택해주세요.");
+			return
+		}
+		if(!data.name){
+			alert("수령인 이름을 입력해주세요.");
+			return
+		}
+		if(!data.email){
+			alert("이메일을 입력해주세요.");
+			return
+		}
+		if(!data.phone){
+			alert("휴대폰 번호를 입력해주세요.");
+			return
+		}
+		if(!data.postcode || !data.address || !data.detailAddress){
+			alert("주소를 입력해주세요.");
+			return
+		}
+		if($('input:checkbox[id="check"]').is(":checked") == false){
+			alert("주문내용 확인 및 동의를 확인해주세요.");
+			return
+		}
+		if(pattern_tel.test(data.phone) == false) {
+            alert('정확한 휴대폰 번호를 입력해주세요.');
+            return
+        }
+		if (pattern_email.test(data.email) == false) {
+			alert('정확한 이메일 주소를 입력하세요');
+			return
+		}
+		
+		paymentCard(data);
+		
+	}else{
+		let pw = $("#inputPW").val();
+        let number = pw.search(/[0-9]/g);
+        let english = pw.search(/[a-z]/ig);
+        let spece = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+        
+		const data = {
+				payMethod : $("input[type='radio']:checked").val(),
+				orderNum : createOrderNum(),
+				name : $("#inputName").val(),
+				orderName : $(".orderName").text(),
+				amount : totalPrice,
+				email : $("#inputEmail").val(),
+				phone : $("#inputTel").val(),
+				postcode : $("#sample6_postcode").val(),
+				address : $("#sample6_address").val(),
+				extraAddress : $("#sample6_extraAddress").val(),
+				detailAddress : $("#sample6_detailAddress").val(),
+				itemIdList : item_id_list,
+				amountList : amount_list,
+				password : $("#inputPW").val()
+		};
+		
+		if(!data.payMethod){
+			alert("결제수단을 선택해주세요.");
+			return
+		}
+		if(!data.name){
+			alert("수령인 이름을 입력해주세요.");
+			return
+		}
+		if(!data.email){
+			alert("이메일을 입력해주세요.");
+			return
+		}
+		if(!data.phone){
+			alert("휴대폰 번호를 입력해주세요.");
+			return
+		}
+		if(!data.postcode || !data.address || !data.detailAddress){
+			alert("주소를 입력해주세요.");
+			return
+		}
+		if(!data.password){
+			alert("비밀번호를 입력해주세요.");
+			return
+		}
+		if($('input:checkbox[id="check"]').is(":checked") == false){
+			alert("주문내용 확인 및 동의를 확인해주세요.");
+			return
+		}
+		
+		if(pw.length < 8 || pw.length > 20) {
+            alert("8자리 ~ 20자리 이내로 입력해주세요.");
+            return
+        }
+		if(pw.search(/\s/) != -1) {
+            alert("비밀번호는 공백 없이 입력해주세요.");
+            return
+        }
+		if(number < 0 || english < 0 || spece < 0) {
+            alert("영문,숫자,특수문자를 혼합하여 입력해주세요.");
+            return
+        }
+		if((number < 0 && english < 0) || (english < 0 && spece < 0) || (spece < 0 && number < 0)) {
+            alert("영문,숫자, 특수문자 중 2가지 이상을 혼합하여 입력해주세요.");
+            return
+        }
+		if(/(\w)\1\1\1/.test(pw)) {
+            alert('같은 문자를 4번 이상 사용하실 수 없습니다.');
+            return
+        }
+		if($("#inputPW").val() != $("#inputPW2").val()) {
+            alert('비밀번호와 비밀번호 확인의 입력내용이 일치하지 않습니다.');
+            return
+        }
+		if(pattern_tel.test(data.phone) == false) {
+            alert('정확한 휴대폰 번호를 입력해주세요.');
+            return
+        }
+		if (pattern_email.test(data.email) == false) {
+			alert('정확한 이메일 주소를 입력하세요');
+			return
+		}
+		
+		paymentCard(data);
+	}
+}
+
+//주문번호 만들기
+function createOrderNum(){
+	const date = new Date();
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, "0");
+	const day = String(date.getDate()).padStart(2, "0");
+	
+	let orderNum = year + month + day;
+	for(let i=0;i<10;i++) {
+		orderNum += Math.floor(Math.random() * 8);	
+	}
+	return orderNum;
+}
+
+//카드 결제
+function paymentCard(data) {
+		
+	IMP.init("imp63607421"); 
+		
+	IMP.request_pay({ // param
+		pg: "html5_inicis.INIpayTest",
+	  	pay_method: data.payMethod,
+	  	merchant_uid: data.orderNum,
+	  	name: data.orderName,
+	  	amount: data.amount,
+	   	buyer_email: data.email,
+	   	buyer_name: data.name,
+	  	buyer_tel: data.phone,
+	  	buyer_addr: data.address + " " + data.extraAddress + " " + data.detailAddress,
+	  	buyer_postcode: data.postcode 
+  	}, 
+	function (rsp) { // callback
+		if (rsp.success) {
+         // 결제 성공 시 로직,
+	        console.log(rsp);
+			
+		} else {
+          // 결제 실패 시 로직,
+			console.log(rsp);
+		}
+	});
 }

@@ -87,7 +87,7 @@
 				<br>
 				<div class="d-flex justify-content-center">
 					<input class="btn me-3" type="button" id="cartBtn" value="장바구니" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-					<input class="btn me-3" type="button" id="buyBtn" value="구매하기">
+					<input class="btn me-3" type="button" id="buyBtn" value="구매하기" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
 					<input class="btn me-3" type="button" id="presentBtn" value="선물하기">
 					<input class="btn me-3" type="button" id="likeBtn" value="♡찜하기">
 				</div>
@@ -110,6 +110,27 @@
 								<a href="/store/cart2">
 									<button type="button" class="btn btn-primary">장바구니로</button>
 								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 구매하기Modal -->
+				<div class="modal fade" id="staticBackdrop2"
+					data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+					aria-labelledby="staticBackdropLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="staticBackdropLabel">바로 구매</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Close"></button>
+							</div>
+							<div class="modal-body">결제페이지로 이동하시겠습니까?</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-bs-dismiss="modal">취소</button>
+								<button type="button" class="btn btn-primary" onclick="toBuy();">이동</button>
 							</div>
 						</div>
 					</div>

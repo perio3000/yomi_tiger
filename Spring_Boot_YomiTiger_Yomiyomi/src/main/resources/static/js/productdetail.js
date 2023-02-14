@@ -72,5 +72,43 @@ $(document).ready(function(){
 		
 	});
 	
+	
+	
 });
+
+function toBuy(){
+	let item_id = $(".idNum").val();
+	
+	if($(".isAuthenticated").val() == "true"){
+		let item_id = $(".itemId").val();
+		let username = $(".userId").val();
+		let amount = $("#p_num1").val();
+		let cartObj = {
+				item_id:item_id,
+				username:username,
+				amount:amount
+		};
+		
+		$.ajax({
+			type: "POST",
+			url: "/insertCart",
+			cashe: false,
+            contentType:'application/json; charset=utf-8', //MIME 타입
+			data : JSON.stringify(cartObj),
+			success: function(result) {       
+				console.log(result);
+				              
+            },
+            error: function (e) {
+                console.log(e);
+            }
+		});
+	}else{
+		
+		window.sessionStorage.setItem("bookId" + $(".idNum").val(), $(".idNum").val() + "/" + $("#p_num1").val());
+		
+	}
+	
+	window.location.href = "/store/pay?orderList="+item_id;
+};
 
