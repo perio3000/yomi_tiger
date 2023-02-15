@@ -104,6 +104,10 @@ function inputPhoneNumber(obj) {
 
 function payment(){
 
+	const urlParams = new URL(location.href).searchParams;
+
+	const orderList = urlParams.get('orderList');
+	
     let priceText = $(".totalPrice").text();
     let totalPrice = priceText.replace(",","");
 	let pattern_tel = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
@@ -128,7 +132,8 @@ function payment(){
 				itemIdList : Number($("input[class^=inputId]").val()),
 				amountList : $("span[class^=orderName]").length,
 				point : Number($(".plusPoint").text()),
-				username : $(".principal").val()
+				username : $(".principal").val(),
+				orderList: orderList
 		};
 		
 		if(!data.payMethod){
@@ -186,7 +191,8 @@ function payment(){
 				detailAddress : $("#sample6_detailAddress").val(),
 				itemIdList : Number($("input[class^=inputId]").val()),
 				amountList : $("span[class^=orderName]").length,
-				password : $("#inputPW").val()
+				password : $("#inputPW").val(),
+				orderList: orderList
 		};
 		
 		if(!data.payMethod){
@@ -300,6 +306,8 @@ function paymentCard(data) {
 				data : JSON.stringify(data),
 				success: function(result) {
 					console.log(result);
+					
+					window.location.href = "/mypage/orderdeliverylist"
 				},
 	            error: function (e) {
 	                console.log(e);

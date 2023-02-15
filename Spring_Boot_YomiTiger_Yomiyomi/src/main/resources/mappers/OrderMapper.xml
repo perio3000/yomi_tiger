@@ -23,6 +23,15 @@
 		]]>
 	</insert>
 	
+	<delete id="deletePaidCart">
+		<![CDATA[
+			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username}) and item_id in
+		]]>
+		<foreach collection="orderList" item="arr" open="(" close=")" separator=",">
+		    #{arr}
+		</foreach>
+	</delete>
+	
 	<insert id="insertOrderNotMember">
 		<![CDATA[
 			
