@@ -103,8 +103,11 @@ function inputPhoneNumber(obj) {
 }
 
 function payment(){
-	let item_id_list = [];
-	let amount_list = [];
+
+	const urlParams = new URL(location.href).searchParams;
+
+	const orderList = urlParams.get('orderList');
+	
     let priceText = $(".totalPrice").text();
     let totalPrice = priceText.replace(",","");
 	let pattern_tel = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
@@ -112,18 +115,11 @@ function payment(){
 	let pattern_email = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
 	pattern_email = new RegExp(pattern_email);	
 	
-	$("input[class^=inputId]").each(function(){
-		item_id_list.push($(this).val());
-	});
-	
-	$("span[class^=amount]").each(function(){		
-		amount_list.push($(this).val());
-	});
 	
 	if($(".isAuthenticated").val() == "true"){
 		const data = {
 				payMethod : $("input[type='radio']:checked").val(),
-				orderNum : createOrderNum(),
+				orderNum : Number(createOrderNum()),
 				name : $("#inputName").val(),
 				orderName : $(".orderName").text(),
 				amount : totalPrice,
@@ -133,8 +129,11 @@ function payment(){
 				address : $("#sample6_address").val(),
 				extraAddress : $("#sample6_extraAddress").val(),
 				detailAddress : $("#sample6_detailAddress").val(),
-				itemIdList : item_id_list,
-				amountList : amount_list				
+				itemIdList : Number($("input[class^=inputId]").val()),
+				amountList : $("span[class^=orderName]").length,
+				point : Number($(".plusPoint").text()),
+				username : $(".principal").val(),
+				orderList: orderList
 		};
 		
 		if(!data.payMethod){
@@ -180,7 +179,7 @@ function payment(){
         
 		const data = {
 				payMethod : $("input[type='radio']:checked").val(),
-				orderNum : createOrderNum(),
+				orderNum : Number(createOrderNum()),
 				name : $("#inputName").val(),
 				orderName : $(".orderName").text(),
 				amount : totalPrice,
@@ -190,9 +189,10 @@ function payment(){
 				address : $("#sample6_address").val(),
 				extraAddress : $("#sample6_extraAddress").val(),
 				detailAddress : $("#sample6_detailAddress").val(),
-				itemIdList : item_id_list,
-				amountList : amount_list,
-				password : $("#inputPW").val()
+				itemIdList : Number($("input[class^=inputId]").val()),
+				amountList : $("span[class^=orderName]").length,
+				password : $("#inputPW").val(),
+				orderList: orderList
 		};
 		
 		if(!data.payMethod){
@@ -296,10 +296,27 @@ function paymentCard(data) {
 		if (rsp.success) {
          // 결제 성공 시 로직,
 	        console.log(rsp);
-			
+	        console.log(data);
+	        
+	        $.ajax({
+            	type: "POST",
+            	url: "/successPayment",
+            	cashe: false,
+	            contentType:'application/json; charset=utf-8', //MIME 타입
+				data : JSON.stringify(data),
+				success: function(result) {
+					console.log(result);
+					
+					window.location.href = "/mypage/orderdeliverylist"
+				},
+	            error: function (e) {
+	                console.log(e);
+	            }
+            });
 		} else {
           // 결제 실패 시 로직,
 			console.log(rsp);
+			alert("결제에 실패 했습니다.");
 		}
 	});
 }

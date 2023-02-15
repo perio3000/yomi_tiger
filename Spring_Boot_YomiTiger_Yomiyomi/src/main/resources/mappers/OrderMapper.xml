@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 경로지정 -->
+<mapper namespace="edu.global.ex.mapper.OrderMapper">
+
+	<insert id="insertOrder">
+		<![CDATA[
+			insert all
+				into yomi_order (id, order_date, user_id) 
+				values (#{orderNum}, sysdate, (select id from yomi_user where username = #{username}))
+				
+				into yomi_pay (id, pay_date, pay_result, order_id)
+				values (yomi_pay_seq.nextval, sysdate, 'paid', #{orderNum})
+				
+				into yomi_delivery (id, delivery_state, order_id)
+				values (yomi_delivery_seq.nextval, '준비중', #{orderNum})
+				
+				into yomi_orderdetail (amount, recipient_name, recipient_postnumber, recipient_city, recipient_street, recipient_location, item_id, order_id, total_price)
+				values (#{amountList}, #{name}, #{postcode}, #{address}, #{extraAddress}, #{detailAddress}, #{itemIdList}, #{orderNum}, #{amount})
+			select * from dual
+		]]>
+	</insert>
+	
+	<delete id="deletePaidCart">
+		<![CDATA[
+			DELETE FROM yomi_cart WHERE user_id = (select id from yomi_user where username = #{username}) and item_id in
+		]]>
+		<foreach collection="orderList" item="arr" open="(" close=")" separator=",">
+		    #{arr}
+		</foreach>
+	</delete>
+	
+	<insert id="insertOrderNotMember">
+		<![CDATA[
+			
+		]]>
+	</insert>
+
+</mapper>

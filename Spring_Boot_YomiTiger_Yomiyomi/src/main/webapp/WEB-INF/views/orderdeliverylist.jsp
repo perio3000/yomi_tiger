@@ -222,7 +222,7 @@
 											<div class="row">
 												<div class="col"><img alt="" src="${ orderList.thumbnail }" width="140px" height="195px"></div>
 												<div class="col d-flex align-items-center">
-													<div class="">${ orderList.title }</div>
+													<div class="">${ orderList.title } 등</div>
 												</div>
 											</div>
 										</td>

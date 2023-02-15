@@ -1,12 +1,29 @@
 package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.global.ex.service.OrderService;
+import edu.global.ex.vo.OrderVO;
 
 @Slf4j
-@Controller
+@RestController
 public class RestfulOrderController {
-
+	
+	@Autowired
+	private OrderService orderService;
+	
+	@PostMapping("/successPayment")
+	public int successPayment(@RequestBody OrderVO orderVO) {
+		log.info("successPayment()..");
+		
+		System.out.println(orderVO);
+		
+		return orderService.insertOrder(orderVO);
+	}
 
 }
