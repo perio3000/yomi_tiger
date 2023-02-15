@@ -39,8 +39,10 @@
 			<div class="search-header">
 				<div class="search-title">
 					<p>
-						<span class="searched-bookname">'주술회전'</span> 에 대한<span
-							id="searched-count">152</span>개의 검색 결과
+						<span class="searched-bookname">'주술회전'</span>
+						에 대한
+						<span id="searched-count">152 <-갯수 끌고오기)   </span>
+						개의 검색 결과
 					</p>
 				</div>
 				<div class="search-banner">
@@ -96,16 +98,28 @@
 
 		<div class="search-contents">
 			<div class="search-nav">
-				<ul class="nav nav-tabs nav-justified">
-					<li class="nav-item"><a
-						class="nav-link search-nav-link search-total active s-active"
-						aria-current="page">통합검색<span>(1,502)</span></a></li>
-					<li class="nav-item"><a
-						class="nav-link search-domestic search-nav-link domestic-books">국내도서<span>(30)</span></a></li>
-					<li class="nav-item"><a
-						class="nav-link search-overseas search-nav-link overseas-books">해외도서<span>(100)</span></a></li>
-					<li class="nav-item"><a
-						class="nav-link search-ebook search-nav-link ebooks">eBook<span>(445)</span></a></li>
+			
+				<ul class="nav nav-tabs nav-justified tab">
+					<li class="nav-item current" data-tab="search-total">
+						<a class="nav-link search-nav-link active">
+							통합검색<span>(1,502) <-갯수 끌고 와야함</span>
+						</a>
+					</li>
+					<li class="nav-item" data-tab="search-domestic">
+						<a class="nav-link search-nav-link">
+							국내도서<span>(30)</span>
+						</a>
+					</li>
+					<li class="nav-item" data-tab="search-overseas">
+						<a class="nav-link search-nav-link">
+							해외도서<span>(100)</span>
+						</a>
+					</li>
+					<li class="nav-item" data-tab="search-ebooks">
+						<a class="nav-link search-ebook search-nav-link">
+							eBook<span>(445)</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 
@@ -167,7 +181,7 @@
 
 						<div class="search-count">
 							<p>
-								전체 <span>152</span>건
+								전체 <span>152 (갯수 끌고와야함)</span>건
 							</p>
 						</div>
 
@@ -202,7 +216,7 @@
 					<!--                        검색했을 때 화면                             -----                              -->
 					<div class="search-result">
 
-						<table class="search-total-table s-active">
+						<table id="search-total" class="tab-content current">
 							<tr>
 								<td style="width: 10%; text-align: center" class="checkbox"><input
 									type="checkbox" name="check" value="check"></td>
@@ -329,7 +343,7 @@
 
 						</table>
 
-						<table class="domestic-books-table">
+						<table id="search-domestic" class="tab-content">
 							<tr>
 								<td style="width: 10%; text-align: center" class="checkbox"><input
 									type="checkbox" name="check" value="check"></td>
@@ -456,7 +470,7 @@
 
 						</table>
 
-						<table class="overseas-books-table">
+						<table id="search-overseas" class="tab-content">
 							<tr>
 								<td style="width: 10%; text-align: center" class="checkbox"><input
 									type="checkbox" name="check" value="check"></td>
@@ -582,7 +596,7 @@
 							</tr>
 						</table>
 
-						<table class="ebooks-table">
+						<table id="search-ebooks" class="tab-content">
 							<tr>
 								<td style="width: 10%; text-align: center" class="checkbox"><input
 									type="checkbox" name="check" value="check"></td>

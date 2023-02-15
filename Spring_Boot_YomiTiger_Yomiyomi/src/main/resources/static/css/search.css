@@ -74,6 +74,7 @@ body {
 
 .nav-link:hover, .nav-link:focus {
 	color: #424874;
+	cursor: pointer;
 }
 
 /* ---------------------------------º»¹®   */
@@ -149,6 +150,9 @@ body {
 	display: flex;
 	align-items: center;
 	margin: 15px 0;
+}
+.content label:hover{
+	font-weight: 700;
 }
 
 .content input {

@@ -7,38 +7,20 @@ function resetbtn(){
 }
 
 
+//탭 이동
+$(document).ready(function(){
+	
+	$('ul.tab>li').click(function(){
+		var tab_id = $(this).attr('data-tab');
 
-let spanOption = document.querySelectorAll(".nav-item a");
+		$('ul.tab>li').removeClass('current');
+		$('.tab-content').removeClass('current');
 
-spanOption.forEach(function (span) {
-	span.addEventListener("click", function (e) {
-
-		//Remove class active
-		e.target.parentElement.querySelectorAll(".s-active").forEach(function (element) {
-			element.classList.remove("s-active");
-		});
-		//Add class active
-		e.target.classList.add("s-active");
-
-		if (e.target.classList.contains("search-total")) {
-
-			document.querySelectorAll(".find-id-pw form").forEach(function (element) {
-				element.classList.remove("s-active");
-			});
-
-			document.querySelector(".find-id-form").classList.add("s-active");
-
-		} else {
-
-			document.querySelectorAll(".find-id-pw form").forEach(function (element) {
-				element.classList.remove("s-active");
-			});
-
-			document.querySelector(".find-pw-form").classList.add("s-active");
-		}
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
 	})
-})
 
+});
 
 //아코디언 기능
 function collapse(element) {
