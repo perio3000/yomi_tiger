@@ -110,7 +110,7 @@
 	
 	 <select id="getOrder" resultType="OrderVO">
 		<![CDATA[
-			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_item.price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
+			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_orderdetail.total_price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
 			FROM yomi_user, yomi_order, yomi_orderdetail, yomi_delivery, yomi_pay, yomi_item
 			WHERE yomi_user.id = yomi_order.user_id 
 			AND yomi_order.id = yomi_orderdetail.order_id 
@@ -123,7 +123,7 @@
 	
 	<select id="getOrderSearch" resultType="OrderVO">
 		<![CDATA[
-			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_item.price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
+			SELECT yomi_order.id, yomi_order.order_date, TO_CHAR(yomi_orderdetail.total_price, '999,999') as price, yomi_item.thumbnail, yomi_item.title, yomi_orderdetail.amount, yomi_delivery.delivery_state 
 			FROM yomi_user, yomi_order, yomi_orderdetail, yomi_delivery, yomi_pay, yomi_item
 			WHERE yomi_user.id = yomi_order.user_id 
 			AND yomi_order.id = yomi_orderdetail.order_id 
