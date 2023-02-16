@@ -70,7 +70,7 @@
    		<div class="row">
    			<div class="col-md-2"></div>
    			<div class="col-md-10">
-   			<font color="gray">* JPG, PNG, GIF 파일만 최대 3장 업로드 가능합니다.</font>
+   			<font color="gray">* JPG, PNG, GIF 파일만 최대 3장 업로드 가능 합니다.</font>
    			</div>
    		</div>
    		<hr>
