@@ -80,15 +80,15 @@ public class NoticeController {
 
         log.info("CONTROLLER : FAQ()...");
 
-        model.addAttribute("FAQ", noticeService.getFAQ());
+        model.addAttribute("FAQ", noticeService.getFAQ(criteria));
 
 
-        /*
-        int total = noticeService.getTotal();
+
+        int total = noticeService.getTotal(criteria);
         log.info("total" + total );
 
         model.addAttribute("pageMaker", new PageVO(criteria, total));
-        */
+
 
 
 

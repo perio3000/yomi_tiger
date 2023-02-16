@@ -28,8 +28,8 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
-    public List<BoardVO> getFAQ() {
-        return noticeMapper.getFAQ();
+    public List<BoardVO> getFAQ(Criteria criteria) {
+        return noticeMapper.getFAQ(criteria);
     }
 
     @Override

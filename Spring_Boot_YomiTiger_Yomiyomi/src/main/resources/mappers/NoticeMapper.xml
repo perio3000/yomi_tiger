@@ -72,7 +72,10 @@
 		<![CDATA[
 		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
 		WHERE yomi_board.user_id = yomi_user.id
-		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and BOARD_NUMBER = 2
+		]]>
+		<include refid="searchThis"></include>
+		<![CDATA[
+		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and BOARD_NUMBER != 2
 		]]>
 	</select>
 

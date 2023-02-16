@@ -10,7 +10,7 @@ public interface NoticeService {
 /*    public List<BoardVO> getList();*/
     BoardVO read(int id);
 
-    List<BoardVO> getFAQ();
+    List<BoardVO> getFAQ(Criteria criteria);
 
 
     //paging

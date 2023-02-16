@@ -20,7 +20,7 @@ public class Criteria {
     private String category;
 
     public Criteria() {
-        this(1, 20, "", "", "", "", "", ""); // 기본값 1페이지 10개로 지정
+        this(1, 10, "", "", "", "", "", ""); // 기본값 1페이지 10개로 지정
     }
 
     public Criteria(int pageNum, int amount, String type, String keyword, String sort, String year, String month, String category) {
