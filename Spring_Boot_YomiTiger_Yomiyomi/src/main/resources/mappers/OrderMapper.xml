@@ -52,5 +52,18 @@
 			select * from dual
 		]]>
 	</insert>
+	
+	<select id="getNonmemberOrderList" resultType="OrderVO">
+		<![CDATA[
+			select o.id, o.order_date, d.*, v.*, i.title, i.thumbnail, n.password 
+			from yomi_order o, yomi_orderdetail d, yomi_pay p, yomi_delivery v, yomi_item i, yomi_nonmember n 
+			where o.id in (select order_id from yomi_nonmember where name = #{name} and tel = #{phone}) 
+			and o.id = d.order_id
+			and o.id = p.order_id
+			and o.id = v.order_id
+			and i.id = d.item_id
+			and n.order_id = o.id
+		]]>
+	</select>
 
 </mapper>

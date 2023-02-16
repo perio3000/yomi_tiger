@@ -48,6 +48,7 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public List<BoardVO> getList(Criteria criteria) {
         log.info("getList(Criteria criteria) ..");
+        
         return noticeMapper.getListWithPaging(criteria);
     }
 

@@ -2,6 +2,8 @@ package edu.global.ex.controller;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,4 +33,10 @@ public class RestfulOrderController {
 		return orderService.insertOrderNotMember(orderVO);
 	}
 
+	@PostMapping("/nonMemberOrderList")
+	public List<OrderVO> nonMemberOrderList(@RequestBody OrderVO orderVO) {
+		log.info("nonMemberOrderList()..");
+		
+		return orderService.getNonmemberOrderList(orderVO);
+	}
 }
