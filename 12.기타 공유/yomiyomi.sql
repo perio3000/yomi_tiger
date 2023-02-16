@@ -73,7 +73,9 @@ CREATE TABLE yomi_nonmember (
 	tel	varchar2(20)	NOT NULL,
 	account	varchar2(100)	NULL,
 	bank	varchar2(100)	NULL,
-	order_id	number(30)	NOT NULL
+	order_id	number(30)	NOT NULL,
+	email	varchar2(100)	NOT NULL,
+	password	varchar2(100)	NOT NULL
 );
 
 CREATE TABLE yomi_orderdetail (
