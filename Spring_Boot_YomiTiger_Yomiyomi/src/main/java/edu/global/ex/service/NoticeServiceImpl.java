@@ -29,45 +29,51 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public List<BoardVO> getFAQ(Criteria criteria) {
+        log.info("SERVICE : getFAQ(Criteria criteria)..");
+        criteria.setAmount(10);
+
         return noticeMapper.getFAQ(criteria);
     }
 
     @Override
     public BoardVO read_prev(int id) {
-        log.info("read_prev()..");
+        log.info("SERVICE : read_prev(int id)..");
         return noticeMapper.read_prev(id);
 
     }
 
     @Override
     public int getTotal(Criteria criteria) {
-        log.info("getTotal() ..");
+        log.info("SERVICE : getTotal(Criteria) ..");
         return noticeMapper.getTotalCount(criteria);
     }
 
     @Override
     public List<BoardVO> getList(Criteria criteria) {
-        log.info("getList(Criteria criteria) ..");
+        log.info("SERVICE : getList(Criteria criteria) ..");
+
+        criteria.setAmount(10);
+
         return noticeMapper.getListWithPaging(criteria);
     }
 
     @Override
     public BoardVO read_next(int id) {
-        log.info("read_nexxt()..");
+        log.info("SERVICE : read_next(int id)..");
         return noticeMapper.read_next(id);
 
     }
 
     @Override
     public List<BoardVO> getCategory(Criteria criteria, int categoryNo) {
-        log.info("SERVICE : getCategoryNo()..");
+        log.info("SERVICE : getCategoryNo(Criteria criteria, int categoryNo)..");
         return noticeMapper.getCategorys(criteria, categoryNo);
 
     }
 
     @Override
     public List<BoardVO> category(int category) {
-        log.info("SERVICE : category()..");
+        log.info("SERVICE : category(int category)..");
         return noticeMapper.category(category);
     }
 
