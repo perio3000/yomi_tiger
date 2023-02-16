@@ -5,4 +5,6 @@ import edu.global.ex.vo.OrderVO;
 public interface OrderService {
 	
 	int insertOrder(OrderVO orderVO);
+	
+	int insertOrderNotMember(OrderVO orderVO);
 }

@@ -22,69 +22,71 @@
 <body>
 	<br><br>
 	<main class="container">
-		<div class="d-flex justify-content-center">
+		<form:form id="nonMemberOrderForm">
+			<div class="d-flex justify-content-center">
+				<div class="row">
+					<div class="col">
+						<img alt="logo" src="logo/logo.png">
+					</div>
+				</div>
+			</div><br>
 			<div class="row">
-				<div class="col">
-					<img alt="logo" src="logo/logo.png">
+				<div class="d-flex justify-content-center">
+					<div class="col-md-4" id="blank">&nbsp;</div>
+					<div class="col-md-4">
+						<span>주문자명</span>
+					</div>
+					<div class="col-md-4" id="blank">&nbsp;</div>
 				</div>
 			</div>
-		</div><br>
-		<div class="row">
 			<div class="d-flex justify-content-center">
-				<div class="col-md-4" id="blank">&nbsp;</div>
 				<div class="col-md-4">
-					<span>주문번호</span>
+					<div class="row">
+						<input type="text" title="nonMemberName" class="nonMemberName" placeholder="주문자명을 입력해 주세요." maxlength="50">
+					</div>
 				</div>
-				<div class="col-md-4" id="blank">&nbsp;</div>
-			</div>
-		</div>
-		<div class="d-flex justify-content-center">
-			<div class="col-md-4">
-				<div class="row">
-					<input type="text" title="nonMemberOrederNum" class="nonMemberOrederNum" placeholder="주문번호를 입력해 주세요." maxlength="50">
+			</div><br>
+			<div class="row">
+				<div class="d-flex justify-content-center">
+					<div class="col-md-4" id="blank">&nbsp;</div>
+					<div class="col-md-4">
+						<span>휴대폰번호</span>
+					</div>
+					<div class="col-md-4" id="blank">&nbsp;</div>
 				</div>
 			</div>
-		</div><br>
-		<div class="row">
 			<div class="d-flex justify-content-center">
-				<div class="col-md-4" id="blank">&nbsp;</div>
 				<div class="col-md-4">
-					<span>주문자명</span>
+					<div class="row">
+						<input type="text" title="nonMemberPhone" class="nonMemberPhone" placeholder="휴대폰번호를 입력해 주세요." 
+							   onkeyup="inputPhoneNumber(this);">
+					</div>
 				</div>
-				<div class="col-md-4" id="blank">&nbsp;</div>
-			</div>
-		</div>
-		<div class="d-flex justify-content-center">
-			<div class="col-md-4">
-				<div class="row">
-					<input type="text" title="nonMemberName" class="nonMemberName" placeholder="주문자명을 입력해 주세요." maxlength="50">
+			</div><br>
+			<div class="row">
+				<div class="d-flex justify-content-center">
+					<div class="col-md-4" id="blank">&nbsp;</div>
+					<div class="col-md-4">
+						<span>비밀번호</span>
+					</div>
+					<div class="col-md-4" id="blank">&nbsp;</div>
 				</div>
 			</div>
-		</div><br>
-		<div class="row">
 			<div class="d-flex justify-content-center">
-				<div class="col-md-4" id="blank">&nbsp;</div>
 				<div class="col-md-4">
-					<span>휴대폰번호</span>
+					<div class="row">
+						<input type="text" title="nonMemberPassword" class="nonMemberPassword" placeholder="비밀번호를 입력해 주세요." maxlength="50">
+					</div>
 				</div>
-				<div class="col-md-4" id="blank">&nbsp;</div>
-			</div>
-		</div>
-		<div class="d-flex justify-content-center">
-			<div class="col-md-4">
-				<div class="row">
-					<input type="text" title="nonMemberPhone" class="nonMemberPhone" placeholder="휴대폰번호를 입력해 주세요." 
-						   onkeyup="inputPhoneNumber(this);">
+			</div><br>
+			<div class="d-flex justify-content-center">
+				<div class="col-md-4">
+					<div class="row">
+						<input type="submit" value="주문조회" class="nonMemberOrderCheck">
+					</div>
 				</div>
-			</div>
-		</div><br>
-		<div class="d-flex justify-content-center">
-			<div class="col-md-4">
-				<div class="row">
-					<input type="submit" value="주문조회" class="nonMemberOrderCheck">
-				</div>
-			</div>
-		</div><br>
+			</div><br>
+		</form:form>
 	</main>
 	<br><br>
 </body>

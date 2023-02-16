@@ -52,6 +52,7 @@ public class OrderVO {
 	private int point;
 	private String orderName;
 	private String orderList;
+	private String password;
 	
 	private List<PayVO> payList;
 	private List<OrderdetailVO> orderdetailList;

@@ -21,9 +21,14 @@ public class RestfulOrderController {
 	public int successPayment(@RequestBody OrderVO orderVO) {
 		log.info("successPayment()..");
 		
-		System.out.println(orderVO);
-		
 		return orderService.insertOrder(orderVO);
+	}
+	
+	@PostMapping("/successPaymentNotMember")
+	public int successPaymentNotMember(@RequestBody OrderVO orderVO) {
+		log.info("successPaymentNotMember()..");
+		
+		return orderService.insertOrderNotMember(orderVO);
 	}
 
 }

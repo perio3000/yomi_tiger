@@ -81,7 +81,7 @@
 			<div class="col-3">
 				<div class="d-flex justify-content-center mt-3">
 					<div class="icon-i me-2">
-						<a href="/store/cart2"><i class="xi-cart-o xi-3x"></i></a>
+						<a href="/store/cart2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="장바구니"><i class="xi-cart-o xi-3x"></i></a>
 					</div>
 					<div class="icon-i ms-2">
 						<a href="/mypage/main"><i class="xi-user-o xi-3x"></i></a>

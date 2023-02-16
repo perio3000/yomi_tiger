@@ -25,3 +25,4 @@ function inputPhoneNumber(obj) {
     }
     obj.value = phone;
 }
+

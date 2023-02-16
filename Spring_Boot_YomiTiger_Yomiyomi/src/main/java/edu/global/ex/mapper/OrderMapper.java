@@ -9,4 +9,6 @@ public interface OrderMapper {
 	
 	int insertOrder(OrderVO orderVO);
 	void deletePaidCart(String username, String[] orderList);
+	
+	int insertOrderNotMember(OrderVO orderVO);
 }

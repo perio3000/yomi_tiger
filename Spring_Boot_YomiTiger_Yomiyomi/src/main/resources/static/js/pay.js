@@ -298,21 +298,42 @@ function paymentCard(data) {
 	        console.log(rsp);
 	        console.log(data);
 	        
-	        $.ajax({
-            	type: "POST",
-            	url: "/successPayment",
-            	cashe: false,
-	            contentType:'application/json; charset=utf-8', //MIME 타입
-				data : JSON.stringify(data),
-				success: function(result) {
-					console.log(result);
-					
-					window.location.href = "/mypage/orderdeliverylist"
-				},
-	            error: function (e) {
-	                console.log(e);
-	            }
-            });
+	        if($(".isAuthenticated").val() == "true"){
+	        	$.ajax({
+	            	type: "POST",
+	            	url: "/successPayment",
+	            	cashe: false,
+		            contentType:'application/json; charset=utf-8', //MIME 타입
+					data : JSON.stringify(data),
+					success: function(result) {
+						console.log(result);
+						
+						window.location.href = "/mypage/orderdeliverylist"
+					},
+		            error: function (e) {
+		                console.log(e);
+		            }
+	            });
+	        }
+	        else{
+	        	$.ajax({
+	            	type: "POST",
+	            	url: "/successPaymentNotMember",
+	            	cashe: false,
+		            contentType:'application/json; charset=utf-8', //MIME 타입
+					data : JSON.stringify(data),
+					success: function(result) {
+						console.log(result);
+						alert("주문이 접수되었습니다.");
+						window.sessionStorage.clear();
+						window.location.href = "/";
+					},
+		            error: function (e) {
+		                console.log(e);
+		            }
+	            });
+	        }
+	        
 		} else {
           // 결제 실패 시 로직,
 			console.log(rsp);

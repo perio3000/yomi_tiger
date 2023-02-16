@@ -34,7 +34,22 @@
 	
 	<insert id="insertOrderNotMember">
 		<![CDATA[
-			
+			insert all
+				into yomi_order (id, order_date) 
+				values (#{orderNum}, sysdate)
+				
+				into yomi_pay (id, pay_date, pay_result, order_id)
+				values (yomi_pay_seq.nextval, sysdate, 'paid', #{orderNum})
+				
+				into yomi_delivery (id, delivery_state, order_id)
+				values (yomi_delivery_seq.nextval, '준비중', #{orderNum})
+				
+				into yomi_orderdetail (amount, recipient_name, recipient_postnumber, recipient_city, recipient_street, recipient_location, item_id, order_id, total_price)
+				values (#{amountList}, #{name}, #{postcode}, #{address}, #{extraAddress}, #{detailAddress}, #{itemIdList}, #{orderNum}, #{amount})
+				
+				into yomi_nonmember (name, tel, order_id, email, password) 
+				values (#{name}, #{phone}, #{orderNum}, #{email}, #{password})
+			select * from dual
 		]]>
 	</insert>
 

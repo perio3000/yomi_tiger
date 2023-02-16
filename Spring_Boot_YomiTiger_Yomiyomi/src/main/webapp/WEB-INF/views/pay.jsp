@@ -261,20 +261,23 @@
 						<li class="list-group-item">쿠폰할인</li>
 						<li class="list-group-item right">0원</li>
 					</ul>
-					<ul class="list-group list-group-horizontal-sm">
-						<li class="list-group-item">포인트 사용</li>
-						<li class="list-group-item right">0원</li>
-					</ul>
+					<sec:authorize access="isAuthenticated()">
+						<ul class="list-group list-group-horizontal-sm">
+							<li class="list-group-item">포인트 사용</li>
+							<li class="list-group-item right">0원</li>
+						</ul>
+					</sec:authorize>
 					<div class="line"></div>
 					<ul class="list-group list-group-horizontal">
 						<li class="list-group-item">결제 예정 금액</li>
 						<li class="list-group-item right"><span class="totalPrice"></span> 원</li>
 					</ul>
-					<ul class="list-group list-group-horizontal-sm">
-						<li class="list-group-item">적립 예정 포인트</li>
-						<li class="list-group-item right">+ <span class="plusPoint"></span>P</li>
-
-					</ul>
+					<sec:authorize access="isAuthenticated()">
+						<ul class="list-group list-group-horizontal-sm">
+							<li class="list-group-item">적립 예정 포인트</li>
+							<li class="list-group-item right">+ <span class="plusPoint"></span>P</li>
+						</ul>
+					</sec:authorize>
 					<a class="btn btn-primary" onclick="payment();">주문하기</a>
 				</div>
 			</div>
