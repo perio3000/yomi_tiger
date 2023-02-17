@@ -77,6 +77,7 @@ $(document).ready(function (){
 		        data: email, 
 		        success: function (result) {       
 					console.log(result);
+					
 					$(".noResult").remove();
 					$(".formst").remove();
 					$(".veriBtn").remove();

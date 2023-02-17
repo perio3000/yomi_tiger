@@ -4,8 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +41,7 @@ import edu.global.ex.security.GoogleProfile;
 import edu.global.ex.security.KakaoProfile;
 import edu.global.ex.security.NaverProfile;
 import edu.global.ex.security.OAuthToken;
+import edu.global.ex.service.EmailService;
 import edu.global.ex.service.LoginService;
 import edu.global.ex.vo.MemberVO;
 
@@ -51,6 +54,10 @@ public class RestfulLoginController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private EmailService emailService;
+
 	
 	@GetMapping("/idcheck/{username}")
 	public int idCheck(@PathVariable(name = "username") String username) {
@@ -89,10 +96,13 @@ public class RestfulLoginController {
 	}
 	
 	@GetMapping("/mailConfirm/{email}")
-	public String mailConfirm(@PathVariable(name = "email") String email) {
+	public String mailConfirm(@PathVariable(name = "email") String email, Model model) throws UnsupportedEncodingException, MessagingException {
+		log.info("mailConfirm() ..");
 		
+		String code = emailService.sendEmail(email);
+		model.addAttribute("code", code);
 		
-		return email;
+		return code;
 	}
 	
 	
