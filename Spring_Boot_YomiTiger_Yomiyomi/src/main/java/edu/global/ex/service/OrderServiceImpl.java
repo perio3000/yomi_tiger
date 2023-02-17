@@ -31,6 +31,7 @@ public class OrderServiceImpl implements OrderService{
 		String username = orderVO.getUsername();
 		
 		orderMapper.deletePaidCart(username, orderList);
+		orderMapper.updatePoint(orderVO);
 		
 		return orderMapper.insertOrder(orderVO);
 	}

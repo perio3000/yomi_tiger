@@ -60,7 +60,7 @@
 							</c:if>
 							<input type="submit" value="로그인">
 							<span class="check"><input type="checkbox" id="idSaveCheck"><label>아이디 저장</label></span> 
-							<a href="findIDPW">아이디/비밀번호 찾기</a> 
+							<a href="/member/findIDPW">아이디/비밀번호 찾기</a> 
 						</form:form>
 
 						<%

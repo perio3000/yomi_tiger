@@ -66,4 +66,11 @@
 		]]>
 	</select>
 
+	<update id="updatePoint">
+		<![CDATA[
+			UPDATE yomi_user 
+			SET point = #{point} + point 
+			WHERE id = (select id from yomi_user where username = #{username})
+		]]>
+	</update>
 </mapper>

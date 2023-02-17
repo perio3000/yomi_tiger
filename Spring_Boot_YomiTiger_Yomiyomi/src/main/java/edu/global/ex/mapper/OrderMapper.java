@@ -13,6 +13,7 @@ public interface OrderMapper {
 	void deletePaidCart(String username, String[] orderList);
 	
 	int insertOrderNotMember(OrderVO orderVO);
+	void updatePoint(OrderVO orderVO);
 	
 	List<OrderVO> getNonmemberOrderList(OrderVO orderVO);
 }

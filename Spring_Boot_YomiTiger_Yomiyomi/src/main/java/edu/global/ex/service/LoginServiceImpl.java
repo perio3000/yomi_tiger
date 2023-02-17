@@ -1,5 +1,7 @@
 package edu.global.ex.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -69,6 +71,13 @@ public class LoginServiceImpl implements LoginService{
 		System.out.println("findMember : " + rn);
 		
 		return rn;
+	}
+
+	@Override
+	public List<MemberVO> findId(MemberVO memberVO) {
+		log.info("findId()..");
+		
+		return loginMapper.findId(memberVO);
 	}
 	
 

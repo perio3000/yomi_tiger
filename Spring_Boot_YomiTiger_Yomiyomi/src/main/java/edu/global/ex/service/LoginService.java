@@ -1,5 +1,7 @@
 package edu.global.ex.service;
 
+import java.util.List;
+
 import edu.global.ex.vo.MemberVO;
 
 public interface LoginService {
@@ -13,5 +15,7 @@ public interface LoginService {
 	void signupSocialLogin(MemberVO memberVO);
 	
 	int findMember(String username);
+	
+	List<MemberVO> findId(MemberVO memberVO);
 	
 }

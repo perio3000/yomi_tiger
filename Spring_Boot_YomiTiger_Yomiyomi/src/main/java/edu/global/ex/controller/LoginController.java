@@ -41,5 +41,13 @@ public class LoginController {
 		
 		return "signup";
 	}
+	
+	//아이디 비번 찾기
+	@GetMapping("/findIDPW")
+	public String findIDPW() {
+		log.info("/findIDPW()...");
+
+		return "findIDPW";
+	}
 
 }

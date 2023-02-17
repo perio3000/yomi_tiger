@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,12 +19,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -36,6 +39,7 @@ import edu.global.ex.security.GoogleProfile;
 import edu.global.ex.security.KakaoProfile;
 import edu.global.ex.security.NaverProfile;
 import edu.global.ex.security.OAuthToken;
+import edu.global.ex.service.EmailService;
 import edu.global.ex.service.LoginService;
 import edu.global.ex.vo.MemberVO;
 
@@ -45,6 +49,9 @@ public class RestfulLoginController {
 	
 	@Autowired
 	private LoginService loginService;
+	
+	@Autowired
+	private EmailService emailService;
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -77,6 +84,22 @@ public class RestfulLoginController {
 
 		return entity;
 	}
+	
+	@PostMapping("/findId")
+	public List<MemberVO> findId(@RequestBody MemberVO memberVO) {
+		log.info("findId() ..");
+		
+		return loginService.findId(memberVO);
+	}
+	
+	@PostMapping("/mailConfirm")
+    public String mailConfirm(@RequestBody String email, Model model) throws Exception {
+        String code = emailService.sendSimpleMessage(email);
+        log.info("인증코드 : " + code);
+        model.addAttribute("code", code);
+        
+        return code;
+    }
 	
 	//카카오 인증
 	@GetMapping("/auth/kakao/callback")
