@@ -70,8 +70,8 @@ $(document).ready(function (){
 	   	else{
 		    
 		    $.ajax({
-		        type : "POST",
-		        url : "/mailConfirm",
+		        type : "GET",
+		        url : "/mailConfirm/" + email,
 		        cashe:false,
 		        contentType:'application/json; charset=utf-8', //MIME 타입
 		        data: email, 

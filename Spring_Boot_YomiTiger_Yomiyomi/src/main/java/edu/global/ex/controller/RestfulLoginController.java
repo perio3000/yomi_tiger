@@ -39,7 +39,6 @@ import edu.global.ex.security.GoogleProfile;
 import edu.global.ex.security.KakaoProfile;
 import edu.global.ex.security.NaverProfile;
 import edu.global.ex.security.OAuthToken;
-import edu.global.ex.service.EmailService;
 import edu.global.ex.service.LoginService;
 import edu.global.ex.vo.MemberVO;
 
@@ -49,9 +48,6 @@ public class RestfulLoginController {
 	
 	@Autowired
 	private LoginService loginService;
-	
-	@Autowired
-	private EmailService emailService;
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -92,14 +88,13 @@ public class RestfulLoginController {
 		return loginService.findId(memberVO);
 	}
 	
-	@PostMapping("/mailConfirm")
-    public String mailConfirm(@RequestBody String email, Model model) throws Exception {
-        String code = emailService.sendSimpleMessage(email);
-        log.info("인증코드 : " + code);
-        model.addAttribute("code", code);
-        
-        return code;
-    }
+	@GetMapping("/mailConfirm/{email}")
+	public String mailConfirm(@PathVariable(name = "email") String email) {
+		
+		
+		return email;
+	}
+	
 	
 	//카카오 인증
 	@GetMapping("/auth/kakao/callback")
