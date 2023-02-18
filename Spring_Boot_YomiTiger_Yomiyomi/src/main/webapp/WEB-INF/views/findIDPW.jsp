@@ -85,13 +85,15 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
-				<div class="modal-body text-center">
-					
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">닫기</button>
-				</div>
+				
+					<div class="modal-body text-center">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">닫기</button>
+					</div>
+				
 			</div>
 		</div>
 	</div>
@@ -107,15 +109,20 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
-				<div class="modal-body text-center">
-				
-
-					
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">취소</button>
-				</div>
+				<form id="confirmForm">
+					<div class="modal-body text-center">
+						<!-- <span id="id_span_timer"></span> -->
+						<div class="formst2">
+							<label>인증번호 입력</label>
+							<input type="text" id="veriNum" placeholder="인증번호를 입력해 주세요." value="">
+						</div> 
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-bs-dismiss="modal">취소</button>
+						<button type="submit" class="btn btn-primary veriBtn">인증</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

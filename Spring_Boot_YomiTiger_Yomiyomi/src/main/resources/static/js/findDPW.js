@@ -1,4 +1,5 @@
 $(document).ready(function (){
+		
 	$("#findIdForm").submit(function(event) {
 	    //prevendDefault()는 href로 연결해 주지 않고 
 	    //단순히 click에 대한 처리를 하도록 해준다.
@@ -61,37 +62,51 @@ $(document).ready(function (){
 	    event.preventDefault();
 	    
 	    let email = $("#findPwId").val();
+	   	var timer;
 	   	
 	   	if(email == ""){
+   		
 	   		$(".noResult").remove();
 	   		$(".modal-body").append(`<p class="noResult">아이디(이메일)를 입력해주세요.<p>`);
 	   		return
 	   	}
 	   	else{
-		    
+	   		var highestIntervalId = setInterval(";");
+	   		for (var i = 0 ; i < highestIntervalId ; i++) {
+	   		  clearInterval(i);
+	   		}
+	   		$(".id_span_timer").remove();
+	   		$(".formst2").append(`<span id="id_span_timer"></span>`);
+	   		
 		    $.ajax({
 		        type : "GET",
 		        url : "/mailConfirm/" + email,
 		        cashe:false,
-		        contentType:'application/json; charset=utf-8', //MIME 타입
-		        data: email, 
+		        contentType:'application/json; charset=utf-8', //MIME 타입 
 		        success: function (result) {       
 					console.log(result);
 					
-					$(".noResult").remove();
-					$(".formst").remove();
-					$(".veriBtn").remove();
-									
-					$(".modal-body").append(`								
-						<div class="formst">
-							<label>인증번호 입력</label>
-							<input type="text" id="veriNum" placeholder="인증번호를 입력해 주세요.">
-						</div>
-					`);
+					var timer;
 					
-					$(".modal-footer").append(`
-							<button type="button" class="btn btn-primary veriBtn">인증</button>
-					`);
+					$(".noResult").remove();
+					
+					var seconds = 300;
+
+					timer = setInterval(function(){
+						var min = parseInt((seconds)/60);
+					    var sec = seconds%60 < 10 ? "0" + seconds%60 : seconds%60;
+
+					    $("#id_span_timer").html(min+":" + sec);
+
+					    seconds--;
+					    
+					    if(seconds == 0){
+					    	alert("인증 시간 초과");
+					    	$("#id_span_timer").html("인증시간이 초과되었습니다. 다시 시도해주세요.");
+					    	clearInterval(timer);
+					    }
+					},1000);
+					
 		        },
 		        error: function (e) {
 		            console.log(e);
@@ -100,6 +115,35 @@ $(document).ready(function (){
 		    
 	   	}
 	});
+	
+	$("#confirmForm").submit(function(event){
+		event.preventDefault();
+		
+		let veriNum = $("#veriNum").val();
+		console.log(veriNum);
+		if(veriNum == ""){
+	   		alert("인증번호를 입력해주세요.");
+	   		return
+	   	}
+	   	else{
+	   		
+		    $.ajax({
+		        type : "GET",
+		        url : "/confirm/" + veriNum,
+		        cashe:false,
+		        contentType:'application/json; charset=utf-8', //MIME 타입 
+		        success: function (result) {       
+					console.log(result);
+					
+					
+					
+		        },
+		        error: function (e) {
+		            console.log(e);
+		        }
+		    });
+	   	}
+	})
 	
 });
 
@@ -130,3 +174,5 @@ function inputPhoneNumber(obj) {
     }
     obj.value = phone;
 }
+
+

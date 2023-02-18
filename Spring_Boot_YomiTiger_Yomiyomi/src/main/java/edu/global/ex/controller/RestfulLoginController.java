@@ -20,7 +20,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -28,7 +27,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -101,10 +99,20 @@ public class RestfulLoginController {
 		
 		String code = emailService.sendEmail(email);
 		model.addAttribute("code", code);
-		
+
 		return code;
 	}
 	
+	@GetMapping("/confirm/{veriNum}")
+	public String confirm(@PathVariable(name = "veriNum") String veriNum, Model model) {
+		log.info("confirm() ..");
+		
+		
+		
+		System.out.println(model.getAttribute("code"));
+		
+		return "";
+	}
 	
 	//카카오 인증
 	@GetMapping("/auth/kakao/callback")
