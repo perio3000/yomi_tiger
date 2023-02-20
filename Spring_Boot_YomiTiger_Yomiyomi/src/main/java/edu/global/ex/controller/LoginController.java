@@ -49,5 +49,21 @@ public class LoginController {
 
 		return "findIDPW";
 	}
+	
+	//아이디 비번 찾기
+	@GetMapping("/pwChange")
+	public String pwChange() {
+		log.info("/pwChange()...");
+
+		return "pwchange";
+	}
+	
+	//아이디 비번 찾기
+	@GetMapping("/pwCheck")
+	public String pwCheck() {
+		log.info("/pwCheck()...");
+
+		return "pwcheck";
+	}
 
 }

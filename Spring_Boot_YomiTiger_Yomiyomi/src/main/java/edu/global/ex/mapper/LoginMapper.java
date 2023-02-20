@@ -18,4 +18,6 @@ public interface LoginMapper {
 	int signupSocialLogin(MemberVO memberVO);
 	
 	List<MemberVO> findId(MemberVO memberVO);
+	
+	MemberVO pwCheck(MemberVO memberVO);
 }

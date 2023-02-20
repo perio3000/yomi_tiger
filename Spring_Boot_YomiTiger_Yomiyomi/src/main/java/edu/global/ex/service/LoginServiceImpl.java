@@ -79,6 +79,13 @@ public class LoginServiceImpl implements LoginService{
 		
 		return loginMapper.findId(memberVO);
 	}
+
+	@Override
+	public MemberVO pwCheck(MemberVO memberVO) {
+		log.info("pwCheck()..");
+		
+		return loginMapper.pwCheck(memberVO);
+	}
 	
 
 }

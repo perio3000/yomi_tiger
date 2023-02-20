@@ -20,7 +20,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.ui.Model;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,6 +52,9 @@ public class RestfulLoginController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private EmailService emailService;
@@ -94,24 +97,37 @@ public class RestfulLoginController {
 	}
 	
 	@GetMapping("/mailConfirm/{email}")
-	public String mailConfirm(@PathVariable(name = "email") String email, Model model) throws UnsupportedEncodingException, MessagingException {
+	public String mailConfirm(@PathVariable(name = "email") String email) throws UnsupportedEncodingException, MessagingException {
 		log.info("mailConfirm() ..");
 		
 		String code = emailService.sendEmail(email);
-		model.addAttribute("code", code);
+		String encodedCode = passwordEncoder.encode(code);
 
-		return code;
+		return encodedCode;
 	}
 	
-	@GetMapping("/confirm/{veriNum}")
-	public String confirm(@PathVariable(name = "veriNum") String veriNum, Model model) {
+	@GetMapping("/confirm/{veriNum}/{encodedCode}")
+	public String confirm(@PathVariable(name = "veriNum") String veriNum, @PathVariable(name = "encodedCode") String encodedCode) {
 		log.info("confirm() ..");
 		
+		if(passwordEncoder.matches(veriNum, encodedCode) == true) {
+			return "true";
+		}
+		else {
+			return "false";
+		}
+	}
+	
+	@PostMapping("/pwCheck")
+	public String pwCheck(@RequestBody MemberVO memberVO) {
+		log.info("pwCheck() ..");
 		
-		
-		System.out.println(model.getAttribute("code"));
-		
-		return "";
+		if(passwordEncoder.matches(memberVO.getPassword(), loginService.pwCheck(memberVO).getPassword()) == true) {
+			return "true";
+		}
+		else {
+			return "false";
+		}
 	}
 	
 	//카카오 인증

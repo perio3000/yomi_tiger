@@ -219,7 +219,7 @@
 							</table>
 						</form:form>
 						<div class="row p-2">
-							<a href="#"><button type="button" class="changePassword col">비밀번호 변경하러 가기</button></a>
+							<a href="/member/pwCheck"><button type="button" class="changePassword col">비밀번호 변경하러 가기</button></a>
 						</div>
 						
 						<!-- Modal 이름 -->

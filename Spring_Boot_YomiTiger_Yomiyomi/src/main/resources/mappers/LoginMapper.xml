@@ -72,4 +72,11 @@
 		]]>
 	</select>
 	
+	<select id="pwCheck" resultMap="userMap">
+		<![CDATA[
+			SELECT password FROM yomi_user 
+      		WHERE username = #{username}
+		]]>
+	</select>
+	
 </mapper>

@@ -60,11 +60,17 @@ $(document).ready(function (){
 	    //prevendDefault()는 href로 연결해 주지 않고 
 	    //단순히 click에 대한 처리를 하도록 해준다.
 	    event.preventDefault();
-	    
 	    let email = $("#findPwId").val();
-	   	var timer;
-	   	
-	   	if(email == ""){
+	    let pattern_email = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+		pattern_email = new RegExp(pattern_email);	
+		var timer;
+		
+		if (pattern_email.test(email) == false) {
+			$(".noResult").remove();
+	   		$(".modal-body").append(`<p class="noResult">이메일을 잘못 입력하셨습니다.</p><p class="noResult">(소셜 로그인 계정인 경우 비밀번호 변경이 불가합니다.)</p>`);
+	   		return
+		}	
+		else if(email == ""){
    		
 	   		$(".noResult").remove();
 	   		$(".modal-body").append(`<p class="noResult">아이디(이메일)를 입력해주세요.<p>`);
@@ -85,6 +91,7 @@ $(document).ready(function (){
 		        contentType:'application/json; charset=utf-8', //MIME 타입 
 		        success: function (result) {       
 					console.log(result);
+					$(".encodedCode").val(result);
 					
 					var timer;
 					
@@ -101,6 +108,7 @@ $(document).ready(function (){
 					    seconds--;
 					    
 					    if(seconds == 0){
+					    	$(".encodedCode").val("");
 					    	alert("인증 시간 초과");
 					    	$("#id_span_timer").html("인증시간이 초과되었습니다. 다시 시도해주세요.");
 					    	clearInterval(timer);
@@ -120,7 +128,8 @@ $(document).ready(function (){
 		event.preventDefault();
 		
 		let veriNum = $("#veriNum").val();
-		console.log(veriNum);
+		let encodedCode = $(".encodedCode").val();
+		
 		if(veriNum == ""){
 	   		alert("인증번호를 입력해주세요.");
 	   		return
@@ -129,14 +138,19 @@ $(document).ready(function (){
 	   		
 		    $.ajax({
 		        type : "GET",
-		        url : "/confirm/" + veriNum,
+		        url : "/confirm/" + veriNum + "/" + encodedCode,
 		        cashe:false,
 		        contentType:'application/json; charset=utf-8', //MIME 타입 
 		        success: function (result) {       
 					console.log(result);
 					
-					
-					
+					if(result == "true"){
+						alert("인증에 성공하였습니다.");
+						window.location.href = "/member/pwChange";
+					}
+					else{
+						alert("인증에 실패하였습니다.");
+					}
 		        },
 		        error: function (e) {
 		            console.log(e);

@@ -159,6 +159,7 @@
 	    })
 	})
 	</script>
+	<input type="hidden" class="encodedCode" value="">
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

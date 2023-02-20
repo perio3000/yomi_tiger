@@ -18,4 +18,6 @@ public interface LoginService {
 	
 	List<MemberVO> findId(MemberVO memberVO);
 	
+	MemberVO pwCheck(MemberVO memberVO);
+	
 }

@@ -14,49 +14,36 @@
 
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
-
+<script type="text/javascript" src="/js/pwcheck.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/pwchange.css">
 </head>
 <body>
 	<main class="container">
 	<br><br>
-		<form id="pwChangeForm">
+		<form id="pwCheckForm">
 			<div class="d-flex justify-content-center mt-5 mb-3">
 				<img alt="logo" src="/logo/logo.png">
 			</div>
 			<div class="find row d-flex justify-content-center text-center">
-				<span class="find-id">비밀번호 변경</span> 
+				<span class="find-id">비밀번호 확인</span> 
 			</div>
-			<div class="row">
-				
-				<div class="col-4">
-					<div class="d-flex justify-content-end align-items-center" style="height:35px;">
-						<span class="pwChange">새 비밀번호</span>
-					</div>
-				</div>
-				<div class="col-6">
-					<input type="text" class="form-control" placeholder="새 비밀번호를 입력해 주세요." id="newPw" style="width: 400px;">
-	  				<label for="newPw"></label>
-					<span class="pwChangeNotice">* 비밀번호는 영문/숫자/특수문자 중 2가지 이상 이용. <br>&nbsp;&nbsp;&nbsp;&nbsp;최소 8글자 이상.</span>
-				</div>			
-				<div class="col-2">&nbsp;</div>
-			</div>
+			
 			<div class="row">
 				<div class="col-4">
 					<div class="d-flex justify-content-end align-items-center" style="height:35px;">
-						<span class="pwChange">비밀번호 확인</span>
+						<span class="pwChange">기존 비밀번호</span>
 					</div>
 				</div>
 				<div class="col-6">
-					<input type="text" class="form-control" placeholder="새 비밀번호를 한번 더 입력해 주세요." id="newPwCheck" style="width: 400px;">
-	  				<label for="newPwCheck"></label>
+					<input type="password" class="form-control" placeholder="현재 비밀번호를 입력해 주세요." id="pwCheck" style="width: 400px;">
+	  				<label for="pwCheck"></label>
 				</div>			
 				<div class="col-2">&nbsp;</div>
 			</div>
 			<br><br>
 			<div class="d-grid gap-2 col-4 mx-auto">
-			  <button class="btn btn-primary" type="submit" id="pwChangeBtn">비밀번호 변경</button>
+			  <button class="btn btn-primary" type="submit" id="pwChangeBtn">비밀번호 확인</button>
 			</div>
 		</form>
 	</main>

@@ -65,6 +65,16 @@ function fourthTab(){
 
 
 $(document).ready(function(){
+	//소셜로그인의 경우 비밀번호 변경창 숨김
+	let email = $("#staticEmail").val();
+    let pattern_email = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/;
+	pattern_email = new RegExp(pattern_email);	
+	
+	if (pattern_email.test(email) == false) {
+		$(".changePassword").css("display", "none");
+	}	
+	
+	
 //	주문 배송 목록 진행상태 표시
 	$(".preText").text($(".준비중").length)
 	$(".ingText").text($(".배송중").length);
