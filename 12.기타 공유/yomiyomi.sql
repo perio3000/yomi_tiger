@@ -88,7 +88,8 @@ CREATE TABLE yomi_orderdetail (
 	please	varchar2(300)	NULL,
 	item_id	number(30)	NOT NULL,
 	order_id	number(30)	NOT NULL,
-	total_price	number(30) NULL
+	total_price	number(30) NULL,
+	orderlist	varchar(300) NULL
 );
 
 CREATE TABLE yomi_auth (
