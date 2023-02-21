@@ -14,7 +14,7 @@
 
 <meta charset="UTF-8">
 <title>비밀번호 찾기</title>
-
+<script type="text/javascript" src="/js/pwchange.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/pwchange.css">
 </head>
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 				<div class="col-6">
-					<input type="text" class="form-control" placeholder="새 비밀번호를 입력해 주세요." id="newPw" style="width: 400px;">
+					<input type="password" class="form-control" placeholder="새 비밀번호를 입력해 주세요." id="newPw" style="width: 400px;">
 	  				<label for="newPw"></label>
 					<span class="pwChangeNotice">* 비밀번호는 영문/숫자/특수문자 중 2가지 이상 이용. <br>&nbsp;&nbsp;&nbsp;&nbsp;최소 8글자 이상.</span>
 				</div>			
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div class="col-6">
-					<input type="text" class="form-control" placeholder="새 비밀번호를 한번 더 입력해 주세요." id="newPwCheck" style="width: 400px;">
+					<input type="password" class="form-control" placeholder="새 비밀번호를 한번 더 입력해 주세요." id="newPwCheck" style="width: 400px;">
 	  				<label for="newPwCheck"></label>
 				</div>			
 				<div class="col-2">&nbsp;</div>

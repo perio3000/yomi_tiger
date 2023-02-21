@@ -79,4 +79,12 @@
 		]]>
 	</select>
 	
+	<update id="pwChange">
+		<![CDATA[
+			UPDATE yomi_user 
+			SET password = #{password} 
+			WHERE id = (select id from yomi_user where username = #{username})
+		]]>
+	</update>
+	
 </mapper>

@@ -20,4 +20,6 @@ public interface LoginMapper {
 	List<MemberVO> findId(MemberVO memberVO);
 	
 	MemberVO pwCheck(MemberVO memberVO);
+	
+	int pwChange(MemberVO memberVO);
 }

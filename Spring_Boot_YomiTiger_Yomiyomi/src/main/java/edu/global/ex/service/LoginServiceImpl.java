@@ -86,6 +86,16 @@ public class LoginServiceImpl implements LoginService{
 		
 		return loginMapper.pwCheck(memberVO);
 	}
+
+	@Override
+	public int pwChange(MemberVO memberVO) {
+		log.info("pwChange()..");
+		
+		String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
+		memberVO.setPassword(encodedPassword);
+		
+		return loginMapper.pwChange(memberVO);
+	}
 	
 
 }

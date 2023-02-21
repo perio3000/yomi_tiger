@@ -26,6 +26,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -128,6 +129,15 @@ public class RestfulLoginController {
 		else {
 			return "false";
 		}
+	}
+	
+	@PutMapping("/pwChange")
+	public int pwChange(@RequestBody MemberVO memberVO) {
+		log.info("pwChange() ..");
+		
+		System.out.println(memberVO.getUsername());
+		
+		return loginService.pwChange(memberVO);
 	}
 	
 	//카카오 인증

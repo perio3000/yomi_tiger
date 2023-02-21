@@ -20,4 +20,6 @@ public interface LoginService {
 	
 	MemberVO pwCheck(MemberVO memberVO);
 	
+	int pwChange(MemberVO memberVO);
+	
 }
