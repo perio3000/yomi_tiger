@@ -199,7 +199,8 @@ main{
         vertical-align: middle;
 }
 
-.newProductsTitle {
+.newProductsTitle,
+.bestProductsTitle {
 	font-size: 30px;
 	font-weight: 700;
 	color: #424874;

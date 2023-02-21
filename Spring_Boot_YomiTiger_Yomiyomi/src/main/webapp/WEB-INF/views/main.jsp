@@ -75,9 +75,17 @@
 		</div>
 		<br><br>
 		<div id="newProducts" class="row">
-			<span class="newProductsTitle">화제의 신상</span>
-			<!-- 밑에 신작 5개정도 띄워야되는데 ㅇㅅaㅇ -->
-			<%-- <div class="d-flex justify-content-center">
+			<div class="col">
+				<span class="newProductsTitle">화제의 신상</span>
+			</div>
+			<div class="col-md-1" >
+				<div class="d-flex justify-content-end align-items-end" style="height: 48px;">
+					<a class="newProductsMore" href="/store/listnew?sort=datetime">더보기 ></a>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="d-flex justify-content-center">
 			<div>
 				<ul class="row" id="testList">
 					<c:forEach var="itemList" items="${ list }">
@@ -86,19 +94,38 @@
 							<img src="${ itemList.thumbnail }" width="210px" height="270px"></a><br>
 							<a class="bookName" href="/store/detail?id=${ itemList.id }">${ itemList.title }</a><br>
 							<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
-							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
 						</li>
 					</c:forEach>
 				</ul>
 			</div>
-			</div> --%>
+		</div> 
+		<div id="bestProducts" class="row">
+			<div class="col-md-11">
+				<span class="bestProductsTitle">베스트 상품</span>
+			</div>
+			<div class="col-md-1">
+				<div class="d-flex justify-content-end align-items-end" style="height: 48px;">
+					<a class="bestProductsMore" href="/store/listbest?sort=star">더보기 ></a>
+				</div>
+			</div>
 		</div>
-
-
-		
-		
+		<br>	
+		<div class="d-flex justify-content-center">
+			<div>
+				<ul class="row" id="testList">
+					<c:forEach var="bestList" items="${ best }">
+						<li class="col mb-5 text-center">
+							<a class="bookName" href="/store/detail?id=${ bestList.id }">
+							<img src="${ bestList.thumbnail }" width="210px" height="270px"></a><br>
+							<a class="bookName" href="/store/detail?id=${ bestList.id }">${ bestList.title }</a><br>
+							<span class="bookAuthor">${ bestList.authors }, ${ bestList.publisher }</span><br>
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
 	</main>
-	<div style="height: 150px"></div>
+	<!-- <div style="height: 150px"></div> -->
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

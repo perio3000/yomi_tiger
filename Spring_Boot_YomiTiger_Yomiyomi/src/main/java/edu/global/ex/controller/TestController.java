@@ -1,13 +1,21 @@
 package edu.global.ex.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import edu.global.ex.page.Criteria;
+import edu.global.ex.page.PageVO;
+import edu.global.ex.service.ListService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
 public class TestController {
+	
+	@Autowired
+	private ListService listService;
 
 	//헤더
 	@GetMapping("/header")
@@ -164,8 +172,19 @@ public class TestController {
 	
 	//메인
 	@GetMapping("/")
-	public String main() {
+	public String main(Criteria criteria, Model model) {
 		log.info("/main()...");
+		
+		log.info("list_new_Criteria " + criteria);
+		
+		criteria.setAmount(5);
+		model.addAttribute("list", listService.getNewProductList(criteria));
+		model.addAttribute("best", listService.getBestProductList(criteria));
+		
+		int total = listService.getNewProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
 
 		return "main";
 	}
