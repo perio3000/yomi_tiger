@@ -88,7 +88,6 @@ $(document).ready(function() {
         		tel:tel               
             };
         	
-        	
         	$.ajax({
     			type : "POST",
     			url : "/signupMember",

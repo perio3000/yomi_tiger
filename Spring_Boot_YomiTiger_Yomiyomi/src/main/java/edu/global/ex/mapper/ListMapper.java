@@ -25,6 +25,10 @@ public interface ListMapper {
 	int getAllProductListCount(Criteria criteria);
 	public List<ItemVO> getAllProductList(Criteria criteria);
 	
+	//이벤트 리스트
+	int getEventProductListCount(Criteria criteria);
+	public List<ItemVO> getEventProductList(Criteria criteria);
+	
 	//디테일
 	ItemVO getProductDetail(ItemVO itemVO);
 	

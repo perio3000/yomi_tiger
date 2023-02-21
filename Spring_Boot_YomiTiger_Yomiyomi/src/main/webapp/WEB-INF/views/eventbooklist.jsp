@@ -22,10 +22,10 @@
 
 	<main class="container">
 	<br><br>
-	<form action="/store/searchall" method="get" id="searchForm" >
+	<form action="/store/searchevent" method="get" id="searchForm" >
 		<div class="row">
 			<div class="col-md-2 bookTitle">
-				도서
+				이벤트
 			</div>
 			<div class="col-md-8">
 				<div class="d-flex align-items-center" style="height: 48px">

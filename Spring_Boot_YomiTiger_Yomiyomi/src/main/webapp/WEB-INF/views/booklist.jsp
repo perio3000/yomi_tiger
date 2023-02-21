@@ -111,7 +111,7 @@
 							<img src="${ itemList.thumbnail }" width="210px" height="270px"></a><br>
 							<a class="bookName" href="/store/detail?id=${ itemList.id }">${ itemList.title }</a><br>
 							<span class="bookAuthor">${ itemList.authors }, ${ itemList.publisher }</span><br>
-							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span>
+							<span class="bookCost"><span class="bookprice">${ itemList.price }</span>원</span><span style="color: red;">(<span style="text-decoration: line-through;">${itemList.basicPrice}</span> ${ itemList.discount }% 할인)</span>
 						</li>
 					</c:forEach>
 					<c:if test="${ empty list }">

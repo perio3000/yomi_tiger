@@ -85,10 +85,25 @@ public class ListController {
 		
 		int total = listService.getAllProductListCount(criteria);
 		log.info("total " + total);
-		
+
 		model.addAttribute("pageMaker", new PageVO(criteria, total));
 		
 		return "allbooklist";
+	}
+	
+	@GetMapping({"/listevent", "/searchevent"})
+	public String eventList(Criteria criteria, Model model) {
+		log.info("/allList..");
+		
+		log.info("list_event_Criteria " + criteria);
+		model.addAttribute("list", listService.getEventProductList(criteria));
+		
+		int total = listService.getEventProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "eventbooklist";
 	}
 	
 	@GetMapping("/detail")

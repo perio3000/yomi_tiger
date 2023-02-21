@@ -147,6 +147,20 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getOrderListNotMember(item_id);
 	}
+
+	@Override
+	public int getEventProductListCount(Criteria criteria) {
+		log.info("getEventProductListCount()..");
+		
+		return listMapper.getEventProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getEventProductList(Criteria criteria) {
+		log.info("getEventProductList()..");
+		
+		return listMapper.getEventProductList(criteria);
+	}
 	
 	
 }

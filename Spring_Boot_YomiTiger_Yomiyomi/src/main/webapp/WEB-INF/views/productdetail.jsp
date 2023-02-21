@@ -52,7 +52,7 @@
 					</tr>
 					<tr class="row">
 						<td class="col"><span class="detailNotice">판매가</span><br><br></td>
-						<td class="col"><span class="dcCost">${ item.price }원 (0% 할인)</span><br><br></td>
+						<td class="col"><span class="dcCost">${ item.price }원 <span style="color: red;">(<span style="text-decoration: line-through;">${item.basicPrice}</span> ${ item.discount }% 할인)</span></span><br><br></td>
 					</tr>
 					<tr class="row">
 						<td class="col"><span class="detailNotice">마일리지</span><br><br></td>

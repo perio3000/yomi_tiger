@@ -131,15 +131,15 @@
 			<div class="row">
 				<div class="col">
 					<ul>
-						<li><a href="/" class="fs-5 fw-bolder">주요서비스&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/listbest?sort=star">베스트셀러</a></li>
+						<li><a href="/" class="fs-5 fw-bolder">홈&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/listbest?sort=star">베스트</a></li>
 						<li><a href="/store/listnew?sort=datetime">신상품</a></li>
-						<li><a href="/store/listevent?sort=datetime">할인상품</a></li>
-						<li><a href="/store/listpick?sort=datetime">추천</a></li>
+						<li><a href="/store/listevent?sort=datetime">이벤트</a></li>
+						<li><a href="/store/listpick?sort=datetime">Picks</a></li>
 					</ul>
 					<br>
 					<ul>
-						<li><a href="/store/listall?sort=datetime" class="fs-5 fw-bolder">도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
+						<li><a href="/store/listall?sort=datetime" class="fs-5 fw-bolder">전체 도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
 						<li><a href="/store/listnational?sort=datetime">국내도서</a></li>
 						<li><a href="/store/listinter?sort=datetime">해외도서</a></li>
 						<li><a href="/store/listebook?sort=datetime">eBook</a></li>
