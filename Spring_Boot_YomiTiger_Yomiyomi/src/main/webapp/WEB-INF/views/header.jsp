@@ -113,7 +113,7 @@
 						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listevent?sort=datetime">이벤트</a>
 					</li>
 					<li class="nav-item nav_item">
-						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpick?sort=datetime">Picks</a>
+						<a class="nav-link nav-active nav_link" aria-current="page" href="/store/listpicks?sort=datetime">Picks</a>
 					</li>
 				</ul>
 			</div>
@@ -135,12 +135,12 @@
 						<li><a href="/store/listbest?sort=star">베스트</a></li>
 						<li><a href="/store/listnew?sort=datetime">신상품</a></li>
 						<li><a href="/store/listevent?sort=datetime">이벤트</a></li>
-						<li><a href="/store/listpick?sort=datetime">Picks</a></li>
+						<li><a href="/store/listpicks?sort=datetime">Picks</a></li>
 					</ul>
 					<br>
 					<ul>
 						<li><a href="/store/listall?sort=datetime" class="fs-5 fw-bolder">전체 도서&nbsp;<img src="/icon/right-arrow.png" width="16px" height="16px"></a></li>
-						<li><a href="/store/listnational?sort=datetime">국내도서</a></li>
+						<li><a href="/store/listnatio?sort=datetime">국내도서</a></li>
 						<li><a href="/store/listinter?sort=datetime">해외도서</a></li>
 						<li><a href="/store/listebook?sort=datetime">eBook</a></li>
 					</ul>

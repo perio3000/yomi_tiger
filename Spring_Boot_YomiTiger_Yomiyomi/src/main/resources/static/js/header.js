@@ -85,7 +85,7 @@ $(document).ready(function(){
 									<img src="${result[i].thumbnail}" width="168px" height="216px"></a><br>
 								<a class="bookName" href="/store/detail?id=${result[i].id}">${result[i].title}</a><br>
 								<span class="bookAuthor">${result[i].authors}, ${result[i].publisher}</span><br>
-								<span class="bookCost"><span class="bookprice">${result[i].price}</span>원</span>
+								<span class="bookCost"><span class="bookprice">${result[i].price}</span>원</span><span style="color: red; font-size: 10px;">(<span style="text-decoration: line-through;">${result[i].basicPrice}</span> ${ result[i].discount }% 할인)</span>
 							</li>
 						`);
 					}

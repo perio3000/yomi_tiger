@@ -106,6 +106,66 @@ public class ListController {
 		return "eventbooklist";
 	}
 	
+	@GetMapping({"/listpicks", "/searchpicks"})
+	public String picksList(Criteria criteria, Model model) {
+		log.info("/picksList..");
+		
+		log.info("list_picks_Criteria " + criteria);
+		model.addAttribute("list", listService.getPicksProductList(criteria));
+		
+		int total = listService.getPicksProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "picksbooklist";
+	}
+	
+	@GetMapping({"/listnatio", "/searchnatio"})
+	public String natioList(Criteria criteria, Model model) {
+		log.info("/natioList..");
+		
+		log.info("list_natio_Criteria " + criteria);
+		model.addAttribute("list", listService.getNatioProductList(criteria));
+		
+		int total = listService.getNatioProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "natiobooklist";
+	}
+	
+	@GetMapping({"/listinter", "/searchinter"})
+	public String interList(Criteria criteria, Model model) {
+		log.info("/natioList..");
+		
+		log.info("list_inter_Criteria " + criteria);
+		model.addAttribute("list", listService.getInterProductList(criteria));
+		
+		int total = listService.getInterProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "interbooklist";
+	}
+	
+	@GetMapping({"/listebook", "/searchebook"})
+	public String ebookList(Criteria criteria, Model model) {
+		log.info("/ebookList..");
+		
+		log.info("list_ebook_Criteria " + criteria);
+		model.addAttribute("list", listService.getEbookProductList(criteria));
+		
+		int total = listService.getEbookProductListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+		return "ebookbooklist";
+	}
+	
 	@GetMapping("/detail")
 	public String detail(Model model, ItemVO itemVO, Authentication authentication) {
 		log.info("/allList..");

@@ -161,6 +161,62 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getEventProductList(criteria);
 	}
+
+	@Override
+	public int getPicksProductListCount(Criteria criteria) {
+		log.info("getPicksProductListCount()..");
+		
+		return listMapper.getPicksProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getPicksProductList(Criteria criteria) {
+		log.info("getPicksProductList()..");
+		
+		return listMapper.getPicksProductList(criteria);
+	}
+
+	@Override
+	public int getNatioProductListCount(Criteria criteria) {
+		log.info("getNatioProductListCount()..");
+		
+		return listMapper.getNatioProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getNatioProductList(Criteria criteria) {
+		log.info("getNatioProductList()..");
+		
+		return listMapper.getNatioProductList(criteria);
+	}
+
+	@Override
+	public int getInterProductListCount(Criteria criteria) {
+		log.info("getInterProductListCount()..");
+		
+		return listMapper.getInterProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getInterProductList(Criteria criteria) {
+		log.info("getInterProductList()..");
+		
+		return listMapper.getInterProductList(criteria);
+	}
+
+	@Override
+	public int getEbookProductListCount(Criteria criteria) {
+		log.info("getInterProductList()..");
+		
+		return listMapper.getEbookProductListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getEbookProductList(Criteria criteria) {
+		log.info("getInterProductList()..");
+		
+		return listMapper.getEbookProductList(criteria);
+	}
 	
 	
 }

@@ -229,6 +229,122 @@
 		]]>
 	</select>
 	
+	<!-- picks 리스트 -->
+	<select id="getPicksProductListCount" resultType="int">
+		<![CDATA[
+			SELECT count(*) FROM yomi_item where status LIKE '%픽%'
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getPicksProductList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			SELECT i.id, TO_CHAR(i.PRICE, '999,999') as basicPrice, TO_CHAR(i.price-i.price*e.discount/100, '999,999') as price, i.title, i.thumbnail, i.star, i.publisher, i.authors, i.datetime, i.status, i.contents, e.discount FROM yomi_item i, yomi_event e 
+        			where status LIKE '%픽%' and i.event_id = e.id 
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	<!-- 국내도서 리스트 -->
+	<select id="getNatioProductListCount" resultType="int">
+		<![CDATA[
+			SELECT count(*) FROM yomi_item where status LIKE '%국내%'
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getNatioProductList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			SELECT i.id, TO_CHAR(i.PRICE, '999,999') as basicPrice, TO_CHAR(i.price-i.price*e.discount/100, '999,999') as price, i.title, i.thumbnail, i.star, i.publisher, i.authors, i.datetime, i.status, i.contents, e.discount FROM yomi_item i, yomi_event e 
+        			where status LIKE '%국내%' and i.event_id = e.id 
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	<!-- 해외도서 리스트 -->
+	<select id="getInterProductListCount" resultType="int">
+		<![CDATA[
+			SELECT count(*) FROM yomi_item where status LIKE '%해외%'
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getInterProductList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			SELECT i.id, TO_CHAR(i.PRICE, '999,999') as basicPrice, TO_CHAR(i.price-i.price*e.discount/100, '999,999') as price, i.title, i.thumbnail, i.star, i.publisher, i.authors, i.datetime, i.status, i.contents, e.discount FROM yomi_item i, yomi_event e 
+        			where status LIKE '%해외%' and i.event_id = e.id 
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	<!-- ebook 리스트 -->
+	<select id="getEbookProductListCount" resultType="int">
+		<![CDATA[
+			SELECT count(*) FROM yomi_item where status LIKE '%ebook%'
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getEbookProductList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			SELECT i.id, TO_CHAR(i.PRICE, '999,999') as basicPrice, TO_CHAR(i.price-i.price*e.discount/100, '999,999') as price, i.title, i.thumbnail, i.star, i.publisher, i.authors, i.datetime, i.status, i.contents, e.discount FROM yomi_item i, yomi_event e 
+        			where status LIKE '%ebook%' and i.event_id = e.id 
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
 	<!-- all 리스트 -->
 	<select id="getAllProductListCount" resultType="int">
 		<![CDATA[

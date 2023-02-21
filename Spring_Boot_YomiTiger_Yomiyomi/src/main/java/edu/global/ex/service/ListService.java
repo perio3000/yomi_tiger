@@ -26,6 +26,22 @@ public interface ListService {
 	int getEventProductListCount(Criteria criteria);
 	public List<ItemVO> getEventProductList(Criteria criteria);
 	
+	//픽 리스트
+	int getPicksProductListCount(Criteria criteria);
+	public List<ItemVO> getPicksProductList(Criteria criteria);
+	
+	//국내 리스트
+	int getNatioProductListCount(Criteria criteria);
+	public List<ItemVO> getNatioProductList(Criteria criteria);
+	
+	//해외 리스트
+	int getInterProductListCount(Criteria criteria);
+	public List<ItemVO> getInterProductList(Criteria criteria);
+	
+	//ebook 리스트
+	int getEbookProductListCount(Criteria criteria);
+	public List<ItemVO> getEbookProductList(Criteria criteria);
+	
 	//디테일
 	ItemVO getProductDetail(ItemVO itemVO);
 	
