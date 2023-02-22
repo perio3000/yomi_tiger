@@ -36,7 +36,8 @@ CREATE TABLE yomi_event (
 	event_name	varchar2(100)	NOT NULL,
 	event_start	date	NULL,
 	event_end	date	NULL,
-	discount	number	NULL
+	discount	number	NULL,
+	board_id	number(30)	NOT NULL
 );
 
 CREATE TABLE yomi_cart (
