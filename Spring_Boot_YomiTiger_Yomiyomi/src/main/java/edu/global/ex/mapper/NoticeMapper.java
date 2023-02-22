@@ -2,6 +2,8 @@ package edu.global.ex.mapper;
 
 import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
+import edu.global.ex.vo.EventVO;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -27,7 +29,7 @@ public interface NoticeMapper {
     List<BoardVO> category(int category);
     
     int getEventListCount(Criteria criteria);
-    List<BoardVO> getEventList(Criteria criteria);
+    List<EventVO> getEventList(Criteria criteria);
 
     int getTotalFAQCount(Criteria criteria);
 }

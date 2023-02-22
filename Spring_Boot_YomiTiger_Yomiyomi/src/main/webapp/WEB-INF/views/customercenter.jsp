@@ -131,7 +131,7 @@
 								<i class="ri-file-list-3-line ri-3x"></i>
 							</div>
 							<div>
-									<a href="#" class="qnaMenu">1:1문의 내역</a>
+									<a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a>
 							</div>
 						</div>
 					</div>

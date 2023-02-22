@@ -93,7 +93,7 @@ public class NoticeController {
     }
 
 
-    @GetMapping("/events")
+    @GetMapping({"/events", "/searchevents"})
     public String events(Criteria criteria, Model model) {
     	log.info("events()...");
     	

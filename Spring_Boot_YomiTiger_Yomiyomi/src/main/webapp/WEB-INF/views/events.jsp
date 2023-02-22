@@ -14,14 +14,13 @@
 
 <meta charset="UTF-8">
 <title>이벤트</title>
-
+<script type="text/javascript" src="/js/events.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/events.css">
 </head>
 <body>
 	<div class="container">
 	  <br>
-	  
 		<div class="row">
 			<div class="col-md-5 title">
 				이벤트
@@ -30,8 +29,8 @@
 		
 		<div class="row">
 			<div class="d-flex justify-content-end">
-				<form class="search-form searchForm" role="search">
-					<input class="search-control searchControl" type="search" placeholder="이벤트 검색" aria-label="Search">
+				<form class="search-form searchForm" role="search" action="/notice/searchevents" method="get" id="searchEventForm1" name="formname">
+					<input class="search-control searchControl" name="keyword" type="search" placeholder="이벤트 검색" aria-label="Search" onkeypress="JavaScript:press(this.form)">
 					<button class="search-btn searchBtn" type="submit">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
@@ -56,15 +55,17 @@
 				<a class="col count">${ pageMaker.total }건</a>
 			</div>
 			<div class="col">
-				<div class="d-flex justify-content-end">
-					<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-					  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-					  <label class="btn btn-outline-primary" for="btnradio1">진행</label>
-					
-					  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-					  <label class="btn btn-outline-primary" for="btnradio2">종료</label>
+				<form action="/notice/searchevents" method="get" id="searchEventForm2">
+					<div class="d-flex justify-content-end">
+						<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+						  <input type="radio" class="btn-check" name="category" id="btnradio1" autocomplete="off" value="ing">
+						  <label class="btn btn-outline-primary" for="btnradio1">진행</label>
+						
+						  <input type="radio" class="btn-check" name="category" id="btnradio2" autocomplete="off" value="end">
+						  <label class="btn btn-outline-primary" for="btnradio2">종료</label>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		<hr>
@@ -73,17 +74,43 @@
 		<div class="row d-flex flex-wrap">
 			<c:forEach var="eventList" items="${ list }">
 				<div class="col-xxl-4 col-lg-6">
-					<img class="rounded" src="/logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
+					<a href="#"><img class="rounded" src="${ eventList.file_path }" width="350px" height="150px"></a><br>
 					<a class="eventTitle" href="#">${ eventList.event_name }</a><br>
 					<a class="period">${ eventList.event_start }~${ eventList.event_end }</a>
 				</div>
 			</c:forEach>
 		</div>
+		<br><br>
 		
+		<nav aria-label="Page navigation example">
+			<ul class="pagination d-flex justify-content-center mb-5 mt-3">
+				<c:if test="${pageMaker.prev}">
+					<li class="page-item">
+						<a class="page-link" href="/store/listall${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+							<span aria-hidden="true">«</span>
+						</a>
+					</li>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+					<li class="page-item page_item">
+						<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
+						<a class="page-link" href="/store/listall${pageMaker.makeQuery(idx) }">${idx}</a>
+					</li>
+				</c:forEach>
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li class="page-item">
+						<a class="page-link" href="/store/listall${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+							<span aria-hidden="true">»</span>
+						</a>
+					</li>
+				</c:if>
+			</ul>
+		</nav>
 		
 		<br><br>
 		
 	</div>
+	
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

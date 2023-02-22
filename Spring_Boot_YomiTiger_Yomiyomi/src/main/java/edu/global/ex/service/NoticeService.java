@@ -2,6 +2,7 @@ package edu.global.ex.service;
 
 import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
+import edu.global.ex.vo.EventVO;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public interface NoticeService {
     List<BoardVO> category(int category);
     
     int getEventListCount(Criteria criteria);
-    List<BoardVO> getEventList(Criteria criteria);
+    List<EventVO> getEventList(Criteria criteria);
 
 
 }

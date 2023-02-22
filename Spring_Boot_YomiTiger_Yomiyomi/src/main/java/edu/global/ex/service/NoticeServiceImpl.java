@@ -3,6 +3,7 @@ package edu.global.ex.service;
 import edu.global.ex.mapper.NoticeMapper;
 import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
+import edu.global.ex.vo.EventVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -105,7 +106,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public List<BoardVO> getEventList(Criteria criteria) {
+	public List<EventVO> getEventList(Criteria criteria) {
 		log.info("SERVICE : getEventList()..");
 		
 		return noticeMapper.getEventList(criteria);
