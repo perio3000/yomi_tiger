@@ -52,8 +52,8 @@
 							<div class="col fs-3">
 								보유도서
 							</div>
-							<div class="search_area d-flex justify-content-center">
-								<select name="type" class="form-select selectCategory">
+							<div class="search_area d-flex justify-content-end">
+								<select name="type" class="form-select selectCategory" style="height: 38px;">
 									<option value="T"
 										<c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목</option>
 									<option value="C"
@@ -64,13 +64,13 @@
 										<c:out value="${pageMaker.criteria.type eq 'P' ? 'selected' : '' }"/>>출판사</option>
 								</select> <input type="text" name="keyword" class="form-control"
 									id="exampleFormControlInput1"
-									value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
+									value='<c:out value="${pageMaker.criteria.keyword}"></c:out>' style="height: 38px; width: 40%">
 								<label for="exampleFormControlInput1" class="form-label"></label>
 
 								<input type="hidden" name="pageNum" value="1"
 									class="form-control">
 
-								<button class="newSearchBtn">검색</button>
+								<button class="newSearchBtn" style="height: 38px; width: 70px;">검색</button>
 							</div>
 						</div>
 						
@@ -84,7 +84,7 @@
 
 								<div class="d-flex justify-content-end" style="width: 100%">
 									<select id="sortDropdown" class="form-select" name="sort"
-										aria-label="Default select example">
+										aria-label="Default select example" style="min-width: 100px">
 										<option id="datetime" value="datetime"
 											<c:out value="${pageMaker.criteria.sort eq 'datetime' ? 'selected' : '' }"/>>최신순</option>
 										<option id="star" value="star"
@@ -94,7 +94,7 @@
 										<option id="highprice" value="highprice"
 											<c:out value="${pageMaker.criteria.sort eq 'highprice' ? 'selected' : '' }"/>>높은가격순</option>
 									</select> &nbsp;&nbsp; <select id="viewDropdown" class="form-select"
-										name="amount" aria-label="Default select example">
+										name="amount" aria-label="Default select example" style="min-width: 100px">
 										<option value="20"
 											<c:out value="${pageMaker.criteria.amount eq '20' ? 'selected' : '' }"/>>20개씩
 											보기</option>
@@ -149,13 +149,13 @@
 								<div class="col align-self-center" style="min-width: 150px">
 									<div class="mb-3">
 										<a href="#">
-											<button class="firstPageBtn text-center ">처음부터</button>
+											<button class="firstPageBtn text-center mt-3">처음부터</button>
 										</a>
 									</div>
 									
 									<div class="mt-3">
 										<a href="#">
-											<button class="continuingBtn text-center ">이어보기</button>
+											<button class="continuingBtn text-center mb-3">이어보기</button>
 										</a>
 									</div>
 								

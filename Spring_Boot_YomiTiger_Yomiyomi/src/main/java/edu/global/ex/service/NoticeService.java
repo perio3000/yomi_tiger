@@ -23,5 +23,9 @@ public interface NoticeService {
     List<BoardVO> getCategory(Criteria criteria, int categoryNo);
 
     List<BoardVO> category(int category);
+    
+    int getEventListCount(Criteria criteria);
+    List<BoardVO> getEventList(Criteria criteria);
+
 
 }

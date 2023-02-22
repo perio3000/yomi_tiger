@@ -16,8 +16,8 @@
 <title>1:1 문의</title>
 
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/qna.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/qna.css">
 </head>
 <body>
    <main class="container">

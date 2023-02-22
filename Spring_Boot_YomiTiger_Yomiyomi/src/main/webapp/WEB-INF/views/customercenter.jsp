@@ -24,7 +24,7 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<a href="customercenter" class="title">
+	   			<a href="/notice/customercenter" class="title">
 		   			고객센터
 		   		</a>
 		   		<br>
@@ -44,8 +44,12 @@
 					<a href="#" class="qnaMenu">eBook</a><br>
 					<br>
 					<span class="notice">1:1문의</span><br>
-					<a href="/qna" class="qnaMenu">1:1문의 접수</a><br>
+					<a href="/notice/qna" class="qnaMenu">1:1문의 접수</a><br>
 					<a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a><br>
+					<br>
+					<a href="/notice/events" class="notice">이벤트</a><br>
+					<br>
+					<a href="/notice/location" class="notice">오프라인 매장</a><br>
 					<br>
 					<a href="/notice/announcement" class="notice">공지사항</a><br>
 					<br>

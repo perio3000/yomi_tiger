@@ -15,20 +15,20 @@
 <meta charset="UTF-8">
 <title>오프라인 매장</title>
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/location.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/location.css">
 </head>
 <body>
 	<main class="container">
 	<br><br>
-		<div class="row">
-			<div class="col-md-7">
+		<div class="row d-flex flex-wrap">
+			<div class="col">
 				<div class="row title">오프라인 매장</div>
 				<div class="row add">서울특별시 영등포구 영중로 56 신한빌딩 4층</div>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d623.3874494393765!2d126.90486714183263!3d37.521087201529184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ee486f47657%3A0x5de60163d089d94a!2z7ISc7Jq47Yq567OE7IucIOyYgeuTse2PrOq1rCDsmIHspJHroZwgNTY!5e0!3m2!1sko!2skr!4v1673597550684!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d623.3874494393765!2d126.90486714183263!3d37.521087201529184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ee486f47657%3A0x5de60163d089d94a!2z7ISc7Jq47Yq567OE7IucIOyYgeuTse2PrOq1rCDsmIHspJHroZwgNTY!5e0!3m2!1sko!2skr!4v1673597550684!5m2!1sko!2skr" width="600" height="450" style="border:0; padding: 20px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			
-			<div class="col-md-5">
+			<div class="col" style="min-width: 300px;">
 				<br><br>
 				<div class="row notice">매장소개</div>
 				<br>
@@ -39,7 +39,7 @@
 				<div class="row contents">매장번호 : 02-1234-5678</div>
 				<br><br>
 				<div class="row">
-					<div class="col-md-4 notice"><i class="ri-map-pin-2-fill ri-2x"></i>오시는 길</div>
+					<div class="col notice"><i class="ri-map-pin-2-fill ri-2x"></i>오시는 길</div>
 				</div>
 				<br>
 				<div class="row contents" style="color: #0052A4; font-weight: bold;">1호선</div>

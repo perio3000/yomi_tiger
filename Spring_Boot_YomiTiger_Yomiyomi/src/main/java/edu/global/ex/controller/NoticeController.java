@@ -96,5 +96,40 @@ public class NoticeController {
     }
 
 
+    @GetMapping("/events")
+    public String events(Criteria criteria, Model model) {
+    	log.info("events()...");
+    	
+    	log.info("list_new_Criteria " + criteria);
+		model.addAttribute("list", noticeService.getEventList(criteria));
+		
+		int total = noticeService.getEventListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
+		
+    	return "events";
+    }
+    
+    @GetMapping("/location")
+    public String location() {
+    	log.info("location()...");
+    	
+    	return "location";
+    }
+    
+    @GetMapping("/customercenter")
+    public String customercenter() {
+    	log.info("customercenter()...");
+    	
+    	return "customercenter";
+    }
+    
+    @GetMapping("/qna")
+    public String qna() {
+    	log.info("qna()...");
+    	
+    	return "qna";
+    }
 
 }

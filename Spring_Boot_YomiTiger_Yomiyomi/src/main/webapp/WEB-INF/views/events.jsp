@@ -15,8 +15,8 @@
 <meta charset="UTF-8">
 <title>이벤트</title>
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/events.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/events.css">
 </head>
 <body>
 	<div class="container">
@@ -31,14 +31,14 @@
 		<div class="row">
 			<div class="d-flex justify-content-end">
 				<form class="search-form searchForm" role="search">
-					<input class="search-control searchControl" type="search" placeholder="이벤트, 상품명으로 검색해 보세요." aria-label="Search">
+					<input class="search-control searchControl" type="search" placeholder="이벤트 검색" aria-label="Search">
 					<button class="search-btn searchBtn" type="submit">
 						<i class="fa fa-search" aria-hidden="true"></i>
 					</button>
 				</form>
 			</div>
 		</div>
-		
+<!-- 		
 		<div class="row">
 			<div class="col">
 				<div class="d-flex justify-content-center align-items-center" style="height: 100px; border: 1px solid #F4EEFF;">
@@ -48,12 +48,12 @@
 					<a class="btn btn-primary" href="#" role="button">E-Book</a>
 	   			</div>
    			 </div>
-		</div>
+		</div> -->
 		
 		<br>
 		<div class="row">
 			<div class="col">
-				<a class="col count">100건</a>
+				<a class="col count">${ pageMaker.total }건</a>
 			</div>
 			<div class="col">
 				<div class="d-flex justify-content-end">
@@ -70,69 +70,20 @@
 		<hr>
 		
 		<br>
-		<div class="row">
-			<div class="col">
-				<img class="rounded" src="logo/events/50percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">신규 오픈 기념 50% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.02.28</a>
-			</div>
-			<div class="col">
-				<img class="rounded" src="logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">전 회원 10% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.05.31</a>
-			</div>
-			<div class="col">
-				<img class="rounded" src="logo/events/mission_20percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">미션 달성 시 20% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.01.31</a>
-			</div>
+		<div class="row d-flex flex-wrap">
+			<c:forEach var="eventList" items="${ list }">
+				<div class="col-xxl-4 col-lg-6">
+					<img class="rounded" src="/logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
+					<a class="eventTitle" href="#">${ eventList.event_name }</a><br>
+					<a class="period">${ eventList.event_start }~${ eventList.event_end }</a>
+				</div>
+			</c:forEach>
 		</div>
 		
-		<br>
-		<div class="row">
-			<div class="col">
-				<img class="rounded" src="logo/events/50percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">신규 오픈 기념 50% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.02.28</a>
-			</div>
-			<div class="col">
-				<img class="rounded" src="logo/events/all_10percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">전 회원 10% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.05.31</a>
-			</div>
-			<div class="col">
-				<img class="rounded" src="logo/events/mission_20percent_coupon.jpg" width="350px" height="150px"><br>
-				<a class="eventTitle" href="#">미션 달성 시 20% 할인 쿠폰</a><br>
-				<a class="period">2023.01.17~2023.01.31</a>
-			</div>
-		</div>
-		<br>
 		
-		<div class="row">
-			<div class="d-flex justify-content-center align-items-center">
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination pagination">
-				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li class="page-item"><a class="page-link" href="#">1</a></li>
-				    <li class="page-item"><a class="page-link" href="#">2</a></li>
-				    <li class="page-item"><a class="page-link" href="#">3</a></li>
-				    <li class="page-item"><a class="page-link" href="#">4</a></li>
-				    <li class="page-item"><a class="page-link" href="#">5</a></li>
-				    <li class="page-item">
-				      <a class="page-link" href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-				</nav>
-			</div>
-		</div>
 		<br><br>
 		
 	</div>
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

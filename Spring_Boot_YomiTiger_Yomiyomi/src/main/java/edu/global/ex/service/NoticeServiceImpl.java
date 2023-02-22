@@ -80,5 +80,19 @@ public class NoticeServiceImpl implements NoticeService {
         return noticeMapper.category(category);
     }
 
+	@Override
+	public int getEventListCount(Criteria criteria) {
+		log.info("SERVICE : getEventListCount()..");
+		
+		return noticeMapper.getEventListCount(criteria);
+	}
+
+	@Override
+	public List<BoardVO> getEventList(Criteria criteria) {
+		log.info("SERVICE : getEventList()..");
+		
+		return noticeMapper.getEventList(criteria);
+	}
+
 
 }

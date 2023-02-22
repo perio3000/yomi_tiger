@@ -23,6 +23,8 @@ public interface NoticeMapper {
     List<BoardVO> getCategorys(Criteria criteria, int categoryNo);
 
     List<BoardVO> category(int category);
-
+    
+    int getEventListCount(Criteria criteria);
+    List<BoardVO> getEventList(Criteria criteria);
 
 }
