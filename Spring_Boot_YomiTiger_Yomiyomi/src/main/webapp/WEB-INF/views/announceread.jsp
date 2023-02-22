@@ -24,7 +24,7 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<a href="customercenter" class="title">
+	   			<a href="/customercenter" class="title">
 		   			고객센터
 		   		</a>
 		   		<br>
@@ -33,6 +33,7 @@
 		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; 
 		   			 이거 틀 몇페이지에는 이용할거니까 잘 냅두기-->
 		   		<div>
+					<%--
 					<a href="FAQ" class="qnaMenu">자주 묻는 질문</a><br>
 					<a href="#" class="qnaMenu">회원</a><br>
 					<a href="#" class="qnaMenu">도서/상품정보</a><br>
@@ -42,6 +43,18 @@
 					<a href="#" class="qnaMenu">세금계산서/증빙</a><br>
 					<a href="#" class="qnaMenu">기타</a><br>
 					<a href="#" class="qnaMenu">eBook</a><br>
+					--%>
+
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(22)">회원</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(25)">배송</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(28)">기타</a><br>
+						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(29)">eBook</a><br>
+
 					<br>
 					<span class="notice">1:1문의</span><br>
 					<a href="qna" class="qnaMenu">1:1문의 접수</a><br>

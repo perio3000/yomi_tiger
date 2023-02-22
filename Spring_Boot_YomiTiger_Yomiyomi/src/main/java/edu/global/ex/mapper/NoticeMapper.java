@@ -20,6 +20,8 @@ public interface NoticeMapper {
 
     List<BoardVO> getFAQ(Criteria criteria);
 
+    List<BoardVO> getFAQWithPaging(Criteria criteria);
+
     List<BoardVO> getCategorys(Criteria criteria, int categoryNo);
 
     List<BoardVO> category(int category);
@@ -27,4 +29,5 @@ public interface NoticeMapper {
     int getEventListCount(Criteria criteria);
     List<BoardVO> getEventList(Criteria criteria);
 
+    int getTotalFAQCount(Criteria criteria);
 }

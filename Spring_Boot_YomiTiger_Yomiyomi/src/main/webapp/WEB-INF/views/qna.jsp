@@ -40,78 +40,80 @@
    			</div>
    		</div>
    		<br>
-   		<div class="row">
-   			<div class="col-md-2">
-   				내용<font color="#424874">&nbsp;*</font>
-   			</div>
-   			<div class="col-md-10">
-  				<textarea class="form-control" placeholder="제목을 입력해 주세요." id="floatingTextarea2" style="height: 30px;"></textarea>
-  				<label for="floatingTextarea2"></label>
-			</div>
-   			<br>
-   			<div class="col-md-2"></div>
-   			<div class="col-md-10">
-   				<textarea class="form-control" placeholder="10자 이상의 문의 내용을 입력해 주세요." id="floatingTextarea2" style="height: 250px;"></textarea>
-  				<label for="floatingTextarea2"></label>
-   			</div>
-   		</div>
-   		<div class="row">
-   			<div class="col-md-2">
-   				사진 첨부
-   			</div>
-   			<div class="col-md-10">
-   				<div class="input-group mb-3">
-  					<input type="file" class="form-control" id="inputGroupFile02">
-  					<label class="input-group-text" for="inputGroupFile02">Upload</label>
+	    <form action="mypage.jsp">
+			<div class="row">
+				<div class="col-md-2">
+					내용<font color="#424874">&nbsp;*</font>
 				</div>
-   				<!-- 얘는 네모.. 어케하지? 나중에 물어봐야겠당 -->
-   			</div>
-   		</div>
-   		<div class="row">
-   			<div class="col-md-2"></div>
-   			<div class="col-md-10">
-   			<font color="gray">* JPG, PNG, GIF 파일만 최대 3장 업로드 가능 합니다.</font>
-   			</div>
-   		</div>
-   		<hr>
-   		<div class="row notice">
-   			&nbsp;&nbsp;문의에 대한 답변 등록 시 알려드립니다.
-   		</div>
-   		<br>
-   		<div class="row">
-   			<div class="col-md-2">
-   				연락처<font color="#424874">&nbsp;*</font>
-   			</div>
-   			<div class="col-md-3">
-  				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-  				<label class="form-check-label" for="flexRadioDefault1">
-    			휴대폰 번호
-  				</label>
+				<div class="col-md-10">
+					<textarea class="form-control" placeholder="제목을 입력해 주세요." id="floatingTextarea2" style="height: 30px;"></textarea>
+					<label for="floatingTextarea2"></label>
+				</div>
+				<br>
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+					<textarea class="form-control" placeholder="10자 이상의 문의 내용을 입력해 주세요." id="floatingTextarea2" style="height: 250px;"></textarea>
+					<label for="floatingTextarea2"></label>
+				</div>
 			</div>
-			<div class="col-md-3">
-				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-				<label class="form-check-label" for="flexRadioDefault2">
-				이메일
-  				</label>
+			<div class="row">
+				<div class="col-md-2">
+					사진 첨부
+				</div>
+				<div class="col-md-10">
+					<div class="input-group mb-3">
+						<input type="file" class="form-control" id="inputGroupFile02">
+						<label class="input-group-text" for="inputGroupFile02">Upload</label>
+					</div>
+					<!-- 얘는 네모.. 어케하지? 나중에 물어봐야겠당 -->
+				</div>
 			</div>
-   		</div>
-   		<div class="row">
-   			<div class="col-md-2"></div>
-   			<div class="col-md-10">
-  				<textarea class="form-control" placeholder="휴대폰 번호를 '-' 제외 후 입력해 주세요." id="phoneTextarea1" style="height: 30px"></textarea>
- 			 	<textarea class="form-control" placeholder="이메일 주소를 입력해 주세요.(예:abc@abc.com)" id="emailTextarea2" style="height: 30px"></textarea>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+				<font color="gray">* JPG, PNG, GIF 파일만 최대 3장 업로드 가능 합니다.</font>
+				</div>
 			</div>
-   		</div>
-   		<hr>
-   		<br>
-   		<div class="row">
-   			<div class="col-md-4"></div>
-   			<div class="col-md-6">
-   				<button type="button" class="btn btn-secondary btn-lg" id="btnCancle" style="width: 200px">취소</button>
-   				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   				<button type="button" class="btn btn-primary btn-lg" id="btnOk" style="width: 200px" onclick="location.href='qnalist'">문의접수</button>
-   			</div>
-   		</div>
+			<hr>
+			<div class="row notice">
+				&nbsp;&nbsp;문의에 대한 답변 등록 시 알려드립니다.
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-2">
+					연락처<font color="#424874">&nbsp;*</font>
+				</div>
+				<div class="col-md-3">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+					<label class="form-check-label" for="flexRadioDefault1">
+					휴대폰 번호
+					</label>
+				</div>
+				<div class="col-md-3">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+					<label class="form-check-label" for="flexRadioDefault2">
+					이메일
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-10">
+					<textarea class="form-control" placeholder="휴대폰 번호를 '-' 제외 후 입력해 주세요." id="phoneTextarea1" style="height: 30px"></textarea>
+					<textarea class="form-control" placeholder="이메일 주소를 입력해 주세요.(예:abc@abc.com)" id="emailTextarea2" style="height: 30px"></textarea>
+				</div>
+			</div>
+			<hr>
+			<br>
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-secondary btn-lg" id="btnCancle" style="width: 200px">취소</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" class="btn btn-primary btn-lg" id="btnOk" style="width: 200px" onclick="location.href='qnalist'">문의접수</button>
+				</div>
+			</div>
+	    </form>
    		<br><br>
    </main>
 </body>

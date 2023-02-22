@@ -15,6 +15,7 @@ public interface NoticeService {
 
     //paging
     int getTotal(Criteria criteria);
+    int getTotalFAQ(Criteria criteria);
     List<BoardVO> getList(Criteria criteria);
     BoardVO read_prev(int id);
     BoardVO read_next(int id);

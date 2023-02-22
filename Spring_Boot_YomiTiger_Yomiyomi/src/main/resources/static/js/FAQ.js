@@ -1,4 +1,4 @@
-$(document).ready(function (){
+$(document).ready(function () {
 
     // $(".qnaMenu").click(function (){
     //     let category = 22;
@@ -38,22 +38,22 @@ $(document).ready(function (){
 
 });
 
-function qnaMenu(num){
+function qnaMenu(num) {
     let category = num;
 
     $.ajax({
         type: "GET",
         url: "/FAQ/" + category,
-        cashe : false,
-        contentType : 'application/json; charset=utf-8', //MIME 타입
-        data : category,
-        dataType : "json",
-        success : function(result) {
+        cashe: false,
+        contentType: 'application/json; charset=utf-8', //MIME 타입
+        data: category,
+        dataType: "json",
+        success: function (result) {
             console.log(result);
 
             $(".accordion-item").remove();
 
-            for(let i = 0; i < result.length; i++){
+            for (let i = 0; i < result.length; i++) {
                 $(".accordion").append(`
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="heading${result[i].id}">

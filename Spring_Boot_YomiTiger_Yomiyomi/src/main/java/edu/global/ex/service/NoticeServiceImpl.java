@@ -23,24 +23,33 @@ public class NoticeServiceImpl implements NoticeService {
     }*/
 
     public BoardVO read(int id){
-        log.info("read()..");
+        log.info("SERVICE : read(int id)..");
         return noticeMapper.read(id);
     }
-
+    /*
     @Override
     public List<BoardVO> getFAQ(Criteria criteria) {
         log.info("SERVICE : getFAQ(Criteria criteria)..");
+
         criteria.setAmount(10);
 
         return noticeMapper.getFAQ(criteria);
     }
-
+    */
     @Override
-    public BoardVO read_prev(int id) {
-        log.info("SERVICE : read_prev(int id)..");
-        return noticeMapper.read_prev(id);
+    public List<BoardVO> getFAQ(Criteria criteria) {
+        log.info("SERVICE : getFAQ(Criteria criteria)..");
 
+        criteria.setAmount(10);
+
+/*
+        return noticeMapper.getFAQ(criteria);
+*/
+        return noticeMapper.getFAQWithPaging(criteria);
     }
+
+
+
 
     @Override
     public int getTotal(Criteria criteria) {
@@ -49,10 +58,14 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public int getTotalFAQ(Criteria criteria) {
+        log.info("SERVICE : getTotalFAQCount(Criteria) ..");
+        return noticeMapper.getTotalFAQCount(criteria);
+    }
+
+    @Override
     public List<BoardVO> getList(Criteria criteria) {
 
-        log.info("getList(Criteria criteria) ..");
-        
         log.info("SERVICE : getList(Criteria criteria) ..");
 
         criteria.setAmount(10);
@@ -61,11 +74,16 @@ public class NoticeServiceImpl implements NoticeService {
     }
 
     @Override
+    public BoardVO read_prev(int id) {
+        log.info("SERVICE : read_prev(int id)..");
+        return noticeMapper.read_prev(id);
+    }
+    @Override
     public BoardVO read_next(int id) {
         log.info("SERVICE : read_next(int id)..");
         return noticeMapper.read_next(id);
-
     }
+
 
     @Override
     public List<BoardVO> getCategory(Criteria criteria, int categoryNo) {
@@ -73,7 +91,6 @@ public class NoticeServiceImpl implements NoticeService {
         return noticeMapper.getCategorys(criteria, categoryNo);
 
     }
-
     @Override
     public List<BoardVO> category(int category) {
         log.info("SERVICE : category(int category)..");
