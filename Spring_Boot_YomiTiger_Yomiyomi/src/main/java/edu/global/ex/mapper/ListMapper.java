@@ -72,4 +72,8 @@ public interface ListMapper {
 	public List<ItemVO> getOrderList(String username, String[] item_id);
 	public List<ItemVO> getOrderListNotMember(String[] item_id);
 	
+	//서재 리스트
+	int getLibraryListCount(Criteria criteria);
+	public List<ItemVO> getLibraryList(Criteria criteria);
+	
 }

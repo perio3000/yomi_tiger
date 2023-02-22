@@ -195,9 +195,10 @@
 									<sec:authorize access="isAuthenticated()">
 										<c:forEach var="orderList" items="${ items }">
 											<tr>
-												
-												<td><input type="hidden" class="inputId${ orderList.id }" value="${ orderList.id }">
-												<img alt="구매도서" src="${ orderList.thumbnail }"></td>
+												<td>
+													<input type="hidden" class="inputId${ orderList.id }" value="${ orderList.id }">
+													<img alt="구매도서" src="${ orderList.thumbnail }">
+												</td>
 												<td><span class="orderName">${ orderList.title }</span></td>
 												<td><span class="amount">${ orderList.amount}개</span></td>
 												<td><span class="price"><fmt:formatNumber value="${ orderList.amount * orderList.price }" pattern="#,###" /></span><span>원</span></td>

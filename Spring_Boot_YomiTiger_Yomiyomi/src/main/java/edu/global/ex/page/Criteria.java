@@ -18,12 +18,14 @@ public class Criteria {
     private String year;
     private String month;
     private String category;
+    
+    private String username;
 
     public Criteria() {
-        this(1, 20, "", "", "", "", "", ""); // 기본값 1페이지 10개로 지정
+        this(1, 20, "", "", "", "", "", "", ""); // 기본값 1페이지 10개로 지정
     }
 
-    public Criteria(int pageNum, int amount, String type, String keyword, String sort, String year, String month, String category) {
+    public Criteria(int pageNum, int amount, String type, String keyword, String sort, String year, String month, String category, String username) {
         this.pageNum = pageNum;
         this.amount = amount;
         this.type = type;
@@ -31,6 +33,7 @@ public class Criteria {
         this.sort = sort;
         this.year = year;
         this.month = month;
-        this.month = category;
+        this.category = category;
+        this.username = username;
     }
 }

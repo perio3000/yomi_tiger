@@ -56,7 +56,7 @@
 					</tr>
 					<tr class="row">
 						<td class="col"><span class="detailNotice">마일리지</span><br><br></td>
-						<td class="col"><span class="mileage">5%</span><br><br></td>
+						<td class="col"><span class="mileage">10%</span><br><br></td>
 					</tr>
 					<tr class="row">
 						<td class="col"><span class="detailNotice">배송료</span><br><br></td>

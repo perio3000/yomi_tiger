@@ -11,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.global.ex.page.Criteria;
+import edu.global.ex.page.PageVO;
+import edu.global.ex.service.ListService;
 import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.MemberVO;
@@ -22,6 +25,9 @@ public class MypageController {
 
 	@Autowired
 	private MypageService mypageService;
+	
+	@Autowired
+	private ListService listService;
 	
 	//메인
 	@GetMapping("/main")
@@ -110,11 +116,21 @@ public class MypageController {
 	}
 	
 	//서재
-	@GetMapping("/library")
-	public String library(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
+	@GetMapping({"/library", "/searchlibrary"})
+	public String library(Model model, MemberVO memberVO, Authentication authentication, Principal principal, Criteria criteria) {
 		log.info("library..");
 		
+		model.addAttribute("member", mypageService.getUser(authentication.getName()));
+	
+		criteria.setUsername(authentication.getName());
 		
+		log.info("list_new_Criteria " + criteria);
+		model.addAttribute("list", listService.getLibraryList(criteria));
+		
+		int total = listService.getLibraryListCount(criteria);
+		log.info("total " + total);
+		
+		model.addAttribute("pageMaker", new PageVO(criteria, total));
 		
 		return "library";
 	}

@@ -17,8 +17,8 @@
 				into yomi_delivery (id, delivery_state, order_id)
 				values (yomi_delivery_seq.nextval, '준비중', #{orderNum})
 				
-				into yomi_orderdetail (amount, recipient_name, recipient_postnumber, recipient_city, recipient_street, recipient_location, item_id, order_id, total_price)
-				values (#{amountList}, #{name}, #{postcode}, #{address}, #{extraAddress}, #{detailAddress}, #{itemIdList}, #{orderNum}, #{amount})
+				into yomi_orderdetail (amount, recipient_name, recipient_postnumber, recipient_city, recipient_street, recipient_location, item_id, order_id, total_price, orderlist)
+				values (#{amountList}, #{name}, #{postcode}, #{address}, #{extraAddress}, #{detailAddress}, #{itemIdList}, #{orderNum}, #{amount}, #{orderList})
 			select * from dual
 		]]>
 	</insert>

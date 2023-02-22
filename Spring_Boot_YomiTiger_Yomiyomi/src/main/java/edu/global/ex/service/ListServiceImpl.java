@@ -217,6 +217,20 @@ public class ListServiceImpl implements ListService{
 		
 		return listMapper.getEbookProductList(criteria);
 	}
+
+	@Override
+	public int getLibraryListCount(Criteria criteria) {
+		log.info("getLibraryListCount()..");
+		
+		return listMapper.getLibraryListCount(criteria);
+	}
+
+	@Override
+	public List<ItemVO> getLibraryList(Criteria criteria) {
+		log.info("getLibraryList()..");
+		
+		return listMapper.getLibraryList(criteria);
+	}
 	
 	
 }

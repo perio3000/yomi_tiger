@@ -44,7 +44,7 @@ public class PageVO {
 				.queryParam("year", criteria.getYear())
 				.queryParam("month", criteria.getMonth())
 				.queryParam("category", criteria.getCategory())
-
+				.queryParam("username", criteria.getUsername())
                 .build(); // ?pageNum=3&amount=10
         return uriComponentsBuilder.toUriString(); // ?pageNum=3&amount=10 리턴
     }

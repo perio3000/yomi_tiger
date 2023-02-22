@@ -436,7 +436,7 @@
 	
 	<select id="getOrderList" resultMap="itemMap">
 		<![CDATA[
-			select i.id, i.title, i.price, i.publisher, i.authors, i.thumbnail, c.amount from yomi_item i, yomi_cart c, yomi_user u
+			select i.id, i.title, i.price, i.publisher, i.authors, i.thumbnail, i.status, c.amount from yomi_item i, yomi_cart c, yomi_user u
 			where u.id = (select id from yomi_user where username = #{username})
 			and u.id = c.user_id
 			and i.id = c.item_id
@@ -455,6 +455,48 @@
 		<foreach collection="item_id" item="arr" open="(" close=")" separator=",">
 		    #{arr}
 		</foreach>
+	</select>
+	
+	<!-- 서재 리스트 -->
+	<select id="getLibraryListCount" resultType="int">
+		<![CDATA[
+			select count(distinct i.id) from yomi_item i, yomi_user u, yomi_order o, yomi_orderdetail d 
+			where u.id = o.user_id
+			and o.id = d.order_id
+			and i.id in (SELECT REGEXP_SUBSTR(d.orderlist, '[^/]+', 1, LEVEL) AS split_result
+			FROM yomi_orderdetail d 
+			CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(d.orderlist, '[^/]+','')) + 1)
+			and u.username = #{username}   
+			and i.status like '%ebook%' 
+        ]]>
+		<include refid="criteria"></include>
+		<include refid="year"></include>
+		<include refid="month"></include>
+	</select>
+	
+	<select id="getLibraryList" resultMap="itemMap">
+		<![CDATA[
+			SELECT * FROM (
+    			SELECT ROWNUM AS RNUM, A.* FROM (
+        			select distinct i.id, i.status, i.title, i.thumbnail, i.AUTHORS, i.PUBLISHER, i.star, i.datetime from yomi_item i, yomi_user u, yomi_order o, yomi_orderdetail d 
+					where u.id = o.user_id
+					and o.id = d.order_id
+					and i.id in (SELECT REGEXP_SUBSTR(d.orderlist, '[^/]+', 1, LEVEL) AS split_result
+					FROM yomi_orderdetail d 
+					CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(d.orderlist, '[^/]+','')) + 1)
+					and u.username = #{username}  
+					and i.status like '%ebook%'
+        			]]>
+        			<include refid="criteria"></include>
+        			<include refid="year"></include>
+        			<include refid="sort"></include>
+					<![CDATA[
+    			) A WHERE ROWNUM <= #{pageNum} * #{amount}
+    			]]>
+    			<include refid="month"></include>
+    			<![CDATA[
+         	) WHERE RNUM > (#{pageNum}-1) * #{amount}
+		]]>
 	</select>
 
 </mapper>
