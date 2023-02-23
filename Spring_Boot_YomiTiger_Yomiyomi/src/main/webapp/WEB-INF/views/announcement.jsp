@@ -18,7 +18,7 @@
 
     <meta charset="UTF-8">
     <title>공지사항</title>
-
+<script type="text/javascript" src="/js/FAQ.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/announcement.css">
 </head>
@@ -89,7 +89,7 @@
 			<form action="/notice/searchNotice" method="get">
 
 	            <div class="d-flex justify-content-center align-items-center"
-	                 style="height: 150px; background-color: #F4EEFF;">
+	                 style="height: 150px; background-color: #F4EEFF; border-radius: 15px;">
 	                <div class="">
 	                    <input class="form-control" type="text" name="keyword" placeholder="공지사항을 검색해보세요."
 	                           aria-label="default input example">
@@ -106,17 +106,17 @@
 
             <br>
             <div class="row">
-                <a class="col count">건 ${pageMaker.total} 건 </a>
+                <a class="col count">총 ${pageMaker.total} 건 </a>
             </div>
-            <div class="row">
+            <div class="row" style="border-radius: 10px">
                 <div class="col-md-12">
-                    <table class="table announcement" style="text-align: center; border: 1px solid #F4EEFF ">
+                    <table class="table announcement table-hover" style="text-align: center; border: 1px solid #F4EEFF; border-collapse: separate; border-radius: 15px">
                         <thead>
                         <tr>
-                            <th style="background-color: #F4EEFF; text-align: center;">번호</th>
+                            <th style="background-color: #F4EEFF; text-align: center; border-top-left-radius: 15px;">번호</th>
                             <th style="background-color: #F4EEFF; text-align: center; width:300px;">제목</th>
                             <th style="background-color: #F4EEFF; text-align: center;">작성자</th>
-                            <th style="background-color: #F4EEFF; text-align: center;">작성일</th>
+                            <th style="background-color: #F4EEFF; text-align: center; border-top-right-radius: 15px;">작성일</th>
                         </tr>
                         </thead>
 

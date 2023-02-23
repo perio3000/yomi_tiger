@@ -42,7 +42,12 @@ body{
 #btnSearch{
 	background-color: #424874; 
 	border: 1px solid #424874; 
-	color: #A6B1E1;
+	color: white;
+}
+#btnSearch:hover{
+	background-color: white; 
+	border: 1px solid #424874; 
+	color: #424874;
 }
 
 .accordion-button:active, .accordion-button:focus, .accordion-button {
@@ -65,5 +70,11 @@ td{
 .page-link{
 	color: #424874;
 	padding: 0 10px 0 10px;
+
+}
+
+.accordion-button:not(.collapsed) {
+	
+	color: #424874;	
 
 }

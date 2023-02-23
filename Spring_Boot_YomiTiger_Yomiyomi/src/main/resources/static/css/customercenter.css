@@ -43,7 +43,12 @@ body{
 #btnSearch{
 	background-color: #424874; 
 	border: 1px solid #424874; 
-	color: #A6B1E1;
+	color: white;
+}
+#btnSearch:hover{
+	background-color: white; 
+	border: 1px solid #424874; 
+	color: #424874;
 }
 
 /* 고객센터번호, 근무시간 등 */
@@ -76,4 +81,21 @@ h2 + .col-md-3 {
 }
 .td{
 	width: 33%;
+}
+.table {
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: var(--bs-body-color);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: var(--bs-body-color);
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: #F4EEFF;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: var(--bs-table-color);
+    vertical-align: top;
+    border-color: var(--bs-table-border-color);
 }

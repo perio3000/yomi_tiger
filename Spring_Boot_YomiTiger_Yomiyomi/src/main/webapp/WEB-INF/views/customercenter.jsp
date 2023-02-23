@@ -80,7 +80,7 @@
    			<br><br><br>
    				<div class="col-md-3 notice">자주 묻는 질문</div>
 				
-				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
+				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF; border-radius: 15px">
 					<form action="/notice/searchFAQ" method="get" class="d-flex">
 	                <div class="">
 	                    <input class="form-control" type="text" name="keyword" placeholder="질문을 검색해보세요."
@@ -93,7 +93,7 @@
                 </form>
 				</div>
 				<br>
-				<div class="d-flex justify-content-center align-items-center" style="height: 150px; border: 1px solid #F4EEFF;">
+				<div class="d-flex justify-content-center align-items-center" style="height: 150px; border: 1px solid #F4EEFF; border-radius: 15px">
 					<table class="table menu">
 					  <tbody>
 					    <tr>
@@ -119,36 +119,38 @@
    				<div class="row notice-area">
    				
 	   				<h2 class="notice">1:1 문의</h2>
-					<div class="col-md-3">
-						<div class="d-flex justify-content-center align-items-center flex-column" style="height: 150px; background-color: #F4EEFF;">
-							<div>
-								<i class="ri-question-answer-line ri-3x"></i>
-							</div>
-							<div>
-								<a href="qna" class="qnaMenu">1:1문의 접수</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3" id="qnaList">
-						<div class="d-flex justify-content-center align-items-center flex-column" style="height: 150px;background-color: #F4EEFF;">
-							<div>
-								<i class="ri-file-list-3-line ri-3x"></i>
-							</div>
-							<div>
-									<a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a>
+	   				<div class="row" style="margin: auto;">
+						<div class="col-3" style="padding: 0; ">
+							<div class="d-flex justify-content-center align-items-center flex-column" style="height: 150px; background-color: #F4EEFF; border-bottom-left-radius: 15px; border-top-left-radius: 15px">
+								<div>
+									<i class="ri-question-answer-line ri-3x"></i>
+								</div>
+								<div>
+									<a href="qna" class="qnaMenu">1:1문의 접수</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					
-					<div class="col-md-6 d-flex justify-content-center flex-column" style="height: 150px; border: 1px solid #F4EEFF;">
-						<div class="telConsult">
-							전화 상담
+						<div class="col-3" id="qnaList">
+							<div class="d-flex justify-content-center align-items-center flex-column" style="height: 150px;background-color: #F4EEFF;">
+								<div>
+									<i class="ri-file-list-3-line ri-3x"></i>
+								</div>
+								<div>
+										<a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a>
+								</div>
+							</div>
 						</div>
-						<div class="telNumber">
-							0000-0000
-						</div>
-						<div class="qnaMenu">
-							평일 09:00 ~ 18:00 (주말 및 공휴일 휴무)
+						
+						<div class="col-6 d-flex justify-content-center flex-column" style="height: 150px; border: 1px solid #F4EEFF; border-bottom-right-radius: 15px; border-top-right-radius: 15px">
+							<div class="telConsult">
+								전화 상담
+							</div>
+							<div class="telNumber">
+								0000-0000
+							</div>
+							<div class="qnaMenu">
+								평일 09:00 ~ 18:00 (주말 및 공휴일 휴무)
+							</div>
 						</div>
 					</div>
    			  	</div>
@@ -159,13 +161,13 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<table class="table announcement" style="text-align: center; border: 1px solid #F4EEFF ">
+						<table class="table announcement table-hover" style="text-align: center; border: 1px solid #F4EEFF; border-collapse: separate; border-radius: 15px">
 							<thead>
 								<tr>
-									<th style="background-color: #F4EEFF; text-align: center;">번호</th>
+									<th style="background-color: #F4EEFF; text-align: center; border-top-left-radius: 15px;">번호</th>
 									<th style="background-color: #F4EEFF; text-align: center; width:300px;">제목</th>
 									<th style="background-color: #F4EEFF; text-align: center;">작성자</th>
-									<th style="background-color: #F4EEFF; text-align: center;">작성일</th>
+									<th style="background-color: #F4EEFF; text-align: center; border-top-right-radius: 15px;">작성일</th>
 								</tr>
 							</thead>
 							<tbody>

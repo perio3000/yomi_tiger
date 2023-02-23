@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js"
             integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <title>FAQ</title>
     <script type="text/javascript" src="/js/FAQ.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
@@ -72,7 +73,7 @@
             <div class="col-md-3 notice">자주 묻는 질문</div>
 
             <div class="d-flex justify-content-center align-items-center"
-                 style="height: 150px; background-color: #F4EEFF;">
+                 style="height: 150px; background-color: #F4EEFF; border-radius: 15px">
                 <form action="/notice/searchFAQ" method="get" class="d-flex">
 	                <div class="">
 	                    <input class="form-control" type="text" name="keyword" placeholder="질문을 검색해보세요."
@@ -86,7 +87,7 @@
             </div>
             <br>
             <div class="d-flex justify-content-center align-items-center"
-                 style="height: 150px; border: 1px solid #F4EEFF;">
+                 style="height: 150px; border: 1px solid #F4EEFF; border-radius: 15px">
                 <table class="table">
                     <tbody>
                     <tr>
