@@ -28,7 +28,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <a href="/customercenter" class="title">
+            <a href="/notice/customercenter" class="title">
                 고객센터
             </a>
             <br>
@@ -49,15 +49,15 @@
                 <a href="#" class="qnaMenu">eBook</a><br>
                 --%>
 
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(22)">회원</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(25)">배송</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(28)">기타</a><br>
-                <a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(29)">eBook</a><br>
+                <a href="/notice/FAQ" class="qnaMenu">자주 묻는 질문</a><br>
+                <a href="/notice/FAQ?category=22" class="qnaMenu">회원</a><br>
+                <a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a><br>
+                <a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a><br>
+                <a href="/notice/FAQ?category=25" class="qnaMenu">배송</a><br>
+                <a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a><br>
+                <a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a><br>
+                <a href="/notice/FAQ?category=28" class="qnaMenu">기타</a><br>
+                <a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a><br>
 
                 <br>
                 <span class="notice">1:1문의</span><br>
@@ -85,18 +85,21 @@
         <div class="col-md-9">
             <br><br><br>
             <div class="col-md-3 notice">공지사항</div>
+            
+			<form action="/notice/searchNotice" method="get">
 
-            <div class="d-flex justify-content-center align-items-center"
-                 style="height: 150px; background-color: #F4EEFF;">
-                <div class="">
-                    <input class="form-control" type="text" placeholder="공지사항을 검색해보세요."
-                           aria-label="default input example">
-                </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="">
-                    <button type="button" class="btn" id="btnSearch">검색</button>
-                </div>
-            </div>
+	            <div class="d-flex justify-content-center align-items-center"
+	                 style="height: 150px; background-color: #F4EEFF;">
+	                <div class="">
+	                    <input class="form-control" type="text" name="keyword" placeholder="공지사항을 검색해보세요."
+	                           aria-label="default input example">
+	                </div>
+	                &nbsp;&nbsp;&nbsp;&nbsp;
+	                <div class="">
+	                    <button type="submit" class="btn" id="btnSearch">검색</button>
+	                </div>
+	            </div>
+            </form>
             <br>
 
             <br>
@@ -118,11 +121,11 @@
                         </thead>
 
                         <tbody>
-                        <c:forEach var="announcement" items="${announcement}">
+                        <c:forEach var="announcementList" items="${announcement}">
                             <tr>
-                                <td>${announcement.id}</td>
+                                <td>${announcementList.id}</td>
                                 <td>
-                                    <a href="announceread?id=${announcement.id}">${announcement.title}</a>
+                                    <a href="/notice/announceread?id=${announcementList.id}">${announcementList.title}</a>
                                 </td>
                                     <%--
                             <td>
@@ -131,8 +134,8 @@
                                 <!--bindent : 가로 (댓글이 보이는 순서 때문에 들어간 것)-->
                             </td>
                             --%>
-                                <td>${announcement.user_id}</td>
-                                <td>${announcement.written_date}</td>
+                                <td>${announcementList.name}</td>
+                                <td>${announcementList.written_date}</td>
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -140,47 +143,34 @@
                     </table>
 
 
-                    <c:if test="${pageMaker.prev}">
-                        <a href="announcement${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
-                    </c:if>
-
-                    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-                        <%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
-                        <a href="announcement${pageMaker.makeQuery(idx)}">${idx}</a>
-                    </c:forEach>
-
-                    <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                        <a href="announcement${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
-                    </c:if> <br>
+                   <nav aria-label="Page navigation example">
+						<ul class="pagination d-flex justify-content-center mb-5 mt-3">
+							<c:if test="${pageMaker.prev}">
+								<li class="page-item">
+									<a class="page-link" href="/notice/announcement${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+										<span aria-hidden="true">«</span>
+									</a>
+								</li>
+							</c:if>
+							<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+								<li class="page-item page_item">
+									<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
+									<a class="page-link" href="/notice/announcement${pageMaker.makeQuery(idx) }">${idx}</a>
+								</li>
+							</c:forEach>
+							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+								<li class="page-item">
+									<a class="page-link" href="/notice/announcement${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+										<span aria-hidden="true">»</span>
+									</a>
+								</li>
+							</c:if>
+						</ul>
+					</nav>
 
 
                 </div>
 
-                <div class="search_area d-flex justify-content-center">
-                    <form action="/notice/searchNotice" method="get" id="searchForm">
-                        <select name="type" class="form-select selectCategory">
-                            <option value="T"
-                                    <c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목
-                            </option>
-                            <option value="C"
-                                    <c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용
-                            </option>
-                            <option value="A"
-                                    <c:out value="${pageMaker.criteria.type eq 'A' ? 'selected' : '' }"/>>작가
-                            </option>
-                            <option value="P"
-                                    <c:out value="${pageMaker.criteria.type eq 'P' ? 'selected' : '' }"/>>출판사
-                            </option>
-                        </select>
-                        <input type="text" name="keyword" class="form-control" id="exampleFormControlInput1"
-                               value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
-                        <label for="exampleFormControlInput1" class="form-label"></label>
-
-                        <input type="hidden" name="pageNum" value="1" class="form-control">
-
-                        <button class="newSearchBtn">검색</button>
-                    </form>
-                </div>
 
 
             </div>

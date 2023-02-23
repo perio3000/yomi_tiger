@@ -80,6 +80,8 @@ public class NoticeController {
 
     @GetMapping({"/FAQ", "/searchFAQ"})
     public String FAQ(Criteria criteria, Model model) {
+    	
+    	criteria.setAmount(10);
 
         log.info("CONTROLLER : FAQ()...");
         model.addAttribute("FAQ", noticeService.getFAQ(criteria));
@@ -116,8 +118,10 @@ public class NoticeController {
     }
     
     @GetMapping("/customercenter")
-    public String customercenter() {
+    public String customercenter(Model model) {
     	log.info("customercenter()...");
+    	
+    	model.addAttribute("notice", noticeService.getCenterList());
     	
     	return "customercenter";
     }

@@ -24,7 +24,7 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<a href="/customercenter" class="title">
+	   			<a href="/notice/customercenter" class="title">
 		   			고객센터
 		   		</a>
 		   		<br>
@@ -45,15 +45,15 @@
 					<a href="#" class="qnaMenu">eBook</a><br>
 					--%>
 
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(22)">회원</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(25)">배송</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(28)">기타</a><br>
-						<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(29)">eBook</a><br>
+                <a href="/notice/FAQ" class="qnaMenu">자주 묻는 질문</a><br>
+                <a href="/notice/FAQ?category=22" class="qnaMenu">회원</a><br>
+                <a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a><br>
+                <a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a><br>
+                <a href="/notice/FAQ?category=25" class="qnaMenu">배송</a><br>
+                <a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a><br>
+                <a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a><br>
+                <a href="/notice/FAQ?category=28" class="qnaMenu">기타</a><br>
+                <a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a><br>
 
 					<br>
 					<span class="notice">1:1문의</span><br>
@@ -85,7 +85,7 @@
    				<div class="col">${announceread.content}</div>
 
    				<br><hr>
-   				<div class="row">
+   				<%-- <div class="row">
 	   				<div class="col announcePrev">이전글</div>
 	   				<div class="col-md-11 announcePrev"><a href="/announceread?id=${read_prev.id}">${read_prev.title} </a></div>
    				</div>
@@ -94,7 +94,7 @@
 	   				<div class="col announceNext">다음글</div>
 	   				<div class="col-md-11 announceNext"><a href="/announceread?id=${read_next.id}">${read_next.title}</a></div>
 	   			</div>
-	   			<hr><br>
+	   			<hr> --%><br>
 	   			<div class="d-flex justify-content-center align-items-center">
    					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="location='announcement'" style="width: 200px">공지사항 목록</button>
    				</div>

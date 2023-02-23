@@ -13,19 +13,6 @@ import java.util.List;
 @RestController
 public class RestfulNoticeController {
 
-    private final NoticeService noticeService;
-
-    public RestfulNoticeController(NoticeService noticeService) {
-        this.noticeService = noticeService;
-    }
-
-
-    @GetMapping("/FAQ/{category}")
-    public List<BoardVO> FAQ(@PathVariable(name = "category") int category) {
-        log.info("CONTROLLER : FAQ()...");
-        return noticeService.category(category);
-    }
-
 
 
 }

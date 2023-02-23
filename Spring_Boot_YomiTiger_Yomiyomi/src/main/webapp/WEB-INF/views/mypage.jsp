@@ -183,7 +183,7 @@
 					<div class="row">
 						<div class="col categoryText">서재</div>
 						<div class="col text-end moreText align-self-center p-3">
-							<a href="#"> 더보기 > </a>
+							<a href="/mypage/library"> 더보기 > </a>
 						</div>
 					</div>
 					<div class="row">

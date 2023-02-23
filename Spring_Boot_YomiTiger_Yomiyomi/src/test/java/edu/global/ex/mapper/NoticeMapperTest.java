@@ -16,9 +16,7 @@ class NoticeMapperTest {
 	@Test
 	void boardTest() {
 
-		List<BoardVO> boardList = noticeMapper.getList();
 		
-		System.out.println(boardList);
 		
 	}
 

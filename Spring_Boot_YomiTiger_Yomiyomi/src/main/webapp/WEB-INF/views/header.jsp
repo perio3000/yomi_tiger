@@ -40,7 +40,7 @@
 				<sec:authorize access="isAnonymous()">
 					<li class="col col2"><a href="/member/signup">회원가입</a></li>
 					<li class="col col2"><a href="<c:url value="/login" />">로그인</a></li>
-					<li class="col col2"><a href="/customercenter">고객센터</a></li>
+					<li class="col col2"><a href="/notice/customercenter">고객센터</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">

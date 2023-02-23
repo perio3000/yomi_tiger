@@ -24,7 +24,7 @@
    	
    		<div class="row">
    			<div class="col-md-3">
-	   			<a href="customercenter" class="title">
+	   			<a href="/notice/customercenter" class="title">
 		   			고객센터
 		   		</a>
 		   		<br>
@@ -33,23 +33,23 @@
 		   		<!-- 파일 만들고 하이퍼링크 다시 걸어주기;v; 
 		   			 이거 틀 몇페이지에는 이용할거니까 잘 냅두기-->
 		   		<div>
-					<a href="FAQ" class="qnaMenu">자주 묻는 질문</a><br>
-					<a href="#" class="qnaMenu">회원</a><br>
-					<a href="#" class="qnaMenu">도서/상품정보</a><br>
-					<a href="#" class="qnaMenu">주문/결제</a><br>
-					<a href="#" class="qnaMenu">배송</a><br>
-					<a href="#" class="qnaMenu">반품/교환/환불</a><br>
-					<a href="#" class="qnaMenu">세금계산서/증빙</a><br>
-					<a href="#" class="qnaMenu">기타</a><br>
-					<a href="#" class="qnaMenu">eBook</a><br>
+                <a href="/notice/FAQ" class="qnaMenu">자주 묻는 질문</a><br>
+                <a href="/notice/FAQ?category=22" class="qnaMenu">회원</a><br>
+                <a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a><br>
+                <a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a><br>
+                <a href="/notice/FAQ?category=25" class="qnaMenu">배송</a><br>
+                <a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a><br>
+                <a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a><br>
+                <a href="/notice/FAQ?category=28" class="qnaMenu">기타</a><br>
+                <a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a><br>
 					<br>
 					<span class="notice">1:1문의</span><br>
 					<a href="qna" class="qnaMenu">1:1문의 접수</a><br>
 					<a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a><br>
+					<br>
 					<a href="/notice/events" class="notice">이벤트</a><br>
 					<br>
 					<a href="/notice/location" class="notice">오프라인 매장</a><br>
-					<br>
 					<br>
 					<a href="/notice/announcement" class="notice">공지사항</a><br>
 					<br>

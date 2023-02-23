@@ -34,7 +34,7 @@
 		
 		<div class="row">
 
-			<div class="row">
+			<div class="row" style="margin: auto;">
 				<div class="text-center profileContainer" style="display: flex; align-items: center; background-color: #A6B1E1; border-radius: 20px">
 					<div>
 						<img src="/icon/user.png" class="rounded-circle" width="100px" height="100px">

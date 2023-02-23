@@ -74,3 +74,6 @@ h2 + .col-md-3 {
 #qnaList {
 	padding: 0px;
 }
+.td{
+	width: 33%;
+}

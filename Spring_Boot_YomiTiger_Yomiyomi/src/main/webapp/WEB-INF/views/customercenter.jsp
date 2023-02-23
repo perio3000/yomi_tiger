@@ -14,7 +14,6 @@
 
 <meta charset="UTF-8">
 <title>고객센터</title>
-
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/customercenter.css">
 </head>
@@ -46,15 +45,15 @@
 					<a href="#" class="qnaMenu">eBook</a><br>
 --%>
 
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(22)">회원</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(25)">배송</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(28)">기타</a><br>
-					<a href="notice/FAQ" class="qnaMenu" onclick="qnaMenu(29)">eBook</a><br>
+                <a href="/notice/FAQ" class="qnaMenu">자주 묻는 질문</a><br>
+                <a href="/notice/FAQ?category=22" class="qnaMenu">회원</a><br>
+                <a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a><br>
+                <a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a><br>
+                <a href="/notice/FAQ?category=25" class="qnaMenu">배송</a><br>
+                <a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a><br>
+                <a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a><br>
+                <a href="/notice/FAQ?category=28" class="qnaMenu">기타</a><br>
+                <a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a><br>
 
 					<br>
 					<span class="notice">1:1문의</span><br>
@@ -82,32 +81,37 @@
    				<div class="col-md-3 notice">자주 묻는 질문</div>
 				
 				<div class="d-flex justify-content-center align-items-center" style="height: 150px; background-color: #F4EEFF;">
-					<div class="">
-						<input class="form-control" type="text" placeholder="질문을 검색해보세요." aria-label="default input example">
-					</div>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<div class="">
-					  	<button type="button" class="btn" id="btnSearch">검색</button>
-					</div>
+					<form action="/notice/searchFAQ" method="get" class="d-flex">
+	                <div class="">
+	                    <input class="form-control" type="text" name="keyword" placeholder="질문을 검색해보세요."
+	                           aria-label="default input example">
+	                </div>
+	                &nbsp;&nbsp;&nbsp;&nbsp;
+	                <div class="">
+	                    <button type="submit" class="btn" id="btnSearch">검색</button>
+	                </div>
+                </form>
 				</div>
 				<br>
 				<div class="d-flex justify-content-center align-items-center" style="height: 150px; border: 1px solid #F4EEFF;">
 					<table class="table menu">
 					  <tbody>
 					    <tr>
-					      <td><a href="#" class="qnaMenu">회원</a></td>
-					      <td><a href="#" class="qnaMenu">도서/상품정보</a></td>
-					      <td><a href="#" class="qnaMenu">주문/결제</a></td>
-					    </tr>
-					    <tr>
-					      <td><a href="#" class="qnaMenu">배송</a></td>
-					      <td><a href="#" class="qnaMenu">반품/교환/환불</a></td>
-					      <td><a href="#" class="qnaMenu">세금계산서/증빙</a></td>
-					    </tr>
-					    <tr>
-					      <td><a href="#" class="qnaMenu">기타</a></td>
-					      <td><a href="#" class="qnaMenu">eBook</a></td>
-					    </tr>
+                        <td><a href="/notice/FAQ?category=22" class="qnaMenu">회원</a></td>
+                        <td><a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a></td>
+                        <td><a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a></td>
+                    </tr>
+                    <tr>
+                   
+                        <td><a href="/notice/FAQ?category=25" class="qnaMenu">배송</a></td>
+                        <td><a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a></td>
+                        <td><a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a></td>
+                    </tr>
+                    <tr>
+                        
+                        <td><a href="/notice/FAQ?category=28" class="qnaMenu">기타</a></td>
+                        <td><a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a></td>
+                    </tr>
 					  </tbody>
 					</table>
    			  	</div>
@@ -151,7 +155,7 @@
    			  	<br>
    			  	<div class="row">
 				<div class="col notice">공지사항</div>
-				<div class="col-md-1 d-flex justify-content-center align-items-right"><a href="announcement">더보기 ></a></div>
+				<div class="col d-flex justify-content-end align-items-right"><a href="/notice/announcement">더보기 ></a></div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
@@ -165,24 +169,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td><a href="#">1번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="#">2번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td><a href="#">3번 공지사항</a></td>
-									<td>고객센터</td>
-									<td>2023-01-13</td>
-								</tr>
+								<c:forEach var="noticeList" items="${ notice }">
+									<tr>
+										<td>${ noticeList.id }</td>
+										<td><a href="/notice/announceread?id=${ noticeList.id }">${ noticeList.title }</a></td>
+										<td>${ noticeList.name }</td>
+										<td>${ noticeList.written_date }</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

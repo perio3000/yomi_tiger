@@ -125,7 +125,7 @@
 					<ul class="pagination d-flex justify-content-center mb-5 mt-3">
 						<c:if test="${pageMaker.prev}">
 							<li class="page-item">
-								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+								<a class="page-link" href="/store/listinter${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
 									<span aria-hidden="true">«</span>
 								</a>
 							</li>
@@ -133,12 +133,12 @@
 						<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
 							<li class="page-item page_item">
 								<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
-								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(idx) }">${idx}</a>
+								<a class="page-link" href="/store/listinter${pageMaker.makeQuery(idx) }">${idx}</a>
 							</li>
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 							<li class="page-item">
-								<a class="page-link" href="/store/listbest${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+								<a class="page-link" href="/store/listinter${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
 									<span aria-hidden="true">»</span>
 								</a>
 							</li>

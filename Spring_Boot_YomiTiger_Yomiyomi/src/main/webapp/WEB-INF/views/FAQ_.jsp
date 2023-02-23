@@ -26,7 +26,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <a href="/customercenter" class="title">
+            <a href="/notice/customercenter" class="title">
                 고객센터
             </a>
             <br>
@@ -35,20 +35,24 @@
             <!-- 파일 만들고 하이퍼링크 다시 걸어주기;v;
                  이거 틀 몇페이지에는 이용할거니까 잘 냅두기-->
             <div class="">
-                <a href="#" class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(22)">회원</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(25)">배송</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(28)">기타</a><br>
-                <a href="#" class="qnaMenu" onclick="qnaMenu(29)">eBook</a><br>
+                <a href="/notice/FAQ" class="qnaMenu">자주 묻는 질문</a><br>
+                <a href="/notice/FAQ?category=22" class="qnaMenu">회원</a><br>
+                <a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a><br>
+                <a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a><br>
+                <a href="/notice/FAQ?category=25" class="qnaMenu">배송</a><br>
+                <a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a><br>
+                <a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a><br>
+                <a href="/notice/FAQ?category=28" class="qnaMenu">기타</a><br>
+                <a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a><br>
                 <br>
                 <span class="notice">1:1문의</span><br>
                 <a href="qna" class="qnaMenu">1:1문의 접수</a><br>
                 <a href="/mypage/inquirylist" class="qnaMenu">1:1문의 내역</a><br>
                 <br>
+                <a href="/notice/events" class="notice">이벤트</a><br>
+				<br>
+				<a href="/notice/location" class="notice">오프라인 매장</a><br>
+				<br>
                 <a href="/notice/announcement" class="notice">공지사항</a><br>
                 <br>
                 <p class="customerInfo">고객센터 이용안내
@@ -69,14 +73,16 @@
 
             <div class="d-flex justify-content-center align-items-center"
                  style="height: 150px; background-color: #F4EEFF;">
-                <div class="">
-                    <input class="form-control" type="text" placeholder="질문을 검색해보세요."
-                           aria-label="default input example">
-                </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="">
-                    <button type="button" class="btn" id="btnSearch">검색</button>
-                </div>
+                <form action="/notice/searchFAQ" method="get" class="d-flex">
+	                <div class="">
+	                    <input class="form-control" type="text" name="keyword" placeholder="질문을 검색해보세요."
+	                           aria-label="default input example">
+	                </div>
+	                &nbsp;&nbsp;&nbsp;&nbsp;
+	                <div class="">
+	                    <button type="submit" class="btn" id="btnSearch">검색</button>
+	                </div>
+                </form>
             </div>
             <br>
             <div class="d-flex justify-content-center align-items-center"
@@ -84,19 +90,20 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td><a class="qnaMenu" onclick="qnaMenu(2)">자주 묻는 질문</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(22)">회원</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(23)">도서/상품정보</a></td>
+                        <td><a href="/notice/FAQ?category=22" class="qnaMenu">회원</a></td>
+                        <td><a href="/notice/FAQ?category=23" class="qnaMenu">도서/상품정보</a></td>
+                        <td><a href="/notice/FAQ?category=24" class="qnaMenu">주문/결제</a></td>
                     </tr>
                     <tr>
-                        <td><a class="qnaMenu" onclick="qnaMenu(24)">주문/결제</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(25)">배송</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(26)">반품/교환/환불</a></td>
+                   
+                        <td><a href="/notice/FAQ?category=25" class="qnaMenu">배송</a></td>
+                        <td><a href="/notice/FAQ?category=26" class="qnaMenu">반품/교환/환불</a></td>
+                        <td><a href="/notice/FAQ?category=27" class="qnaMenu">세금계산서/증빙</a></td>
                     </tr>
                     <tr>
-                        <td><a class="qnaMenu" onclick="qnaMenu(27)">세금계산서/증빙</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(28)">기타</a></td>
-                        <td><a class="qnaMenu" onclick="qnaMenu(29)">eBook</a></td>
+                        
+                        <td><a href="/notice/FAQ?category=28" class="qnaMenu">기타</a></td>
+                        <td><a href="/notice/FAQ?category=29" class="qnaMenu">eBook</a></td>
                     </tr>
                     </tbody>
                 </table>
@@ -104,79 +111,49 @@
 
             <div class="row notice">BEST 10</div>
             <div class="accordion" id="accordionExample">
-                <c:forEach var="FAQ" items="${FAQ}">
+                <c:forEach var="FAQList" items="${FAQ}">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading${FAQ.id}">
+                        <h2 class="accordion-header" id="heading${FAQList.id}">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse${FAQ.id}" aria-expanded="true"
-                                    aria-controls="collapse${FAQ.id}">
-                                질문 ${FAQ.title}
+                                    data-bs-target="#collapse${FAQList.id}" aria-expanded="true"
+                                    aria-controls="collapse${FAQList.id}">
+                                질문 ${FAQList.title}
                             </button>
                         </h2>
-                        <div id="collapse${FAQ.id}" class="accordion-collapse collapse"
-                             aria-labelledby="heading${FAQ.id}" data-bs-parent="#accordionExample">
+                        <div id="collapse${FAQList.id}" class="accordion-collapse collapse"
+                             aria-labelledby="heading${FAQList.id}" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                답변 ${FAQ.content}
+                                답변 ${FAQList.content}
                             </div>
                         </div>
                     </div>
                 </c:forEach>
             </div>
 
-            <%--<div class="accordion" id="accordionPanelsStayOpenExample">
-
-             <c:forEach var="FAQ" items="${FAQ}">
-           <div class="accordion-item">
-             <h2 class="accordion-header" id="panelsStayOpen-heading${FAQ.id}">
-               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse${FAQ.id}" aria-expanded="true" aria-controls="panelsStayOpen-collapse${FAQ.id}">
-                 질문 ${FAQ.title}
-               </button>
-             </h2>
-             <div id="panelsStayOpen-collapse${FAQ.id}" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading${FAQ.id}">
-               <div class="accordion-body">
-                 답변 ${FAQ.content}
-               </div>
-             </div>
-           </div>
-             </c:forEach>
-
-         </div>--%>
-
-            <c:if test="${pageMaker.prev}">
-                <a href="FAQ${pageMaker.makeQuery(pageMaker.startPage - 1) }">«</a>
-            </c:if>
-
-            <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
-                <%-- <c:out value="${pageMaker.cri.pageNum == idx?'':''}" /> --%>
-                <a href="FAQ${pageMaker.makeQuery(idx)}">${idx}</a>
-            </c:forEach>
-
-            <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                <a href="FAQ${pageMaker.makeQuery(pageMaker.endPage +1) }"> » </a>
-            </c:if> <br>
-
-
-            <div class="search_area d-flex justify-content-center">
-                <form action="/notice/searchFAQ" method="get" id="searchForm">
-                    <select name="type" class="form-select selectCategory">
-                        <option value="T"
-                                <c:out value="${pageMaker.criteria.type eq 'T' ? 'selected' : '' }"/>>제목
-                        </option>
-                        <option value="C"
-                                <c:out value="${pageMaker.criteria.type eq 'C' ? 'selected' : '' }"/>>내용
-                        </option>
-
-                    </select>
-                    <input type="text" name="keyword" class="form-control" id="exampleFormControlInput1"
-                           value='<c:out value="${pageMaker.criteria.keyword}"></c:out>'>
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-
-                    <input type="hidden" name="pageNum" value="1" class="form-control">
-
-                    <button class="newSearchBtn">검색</button>
-                </form>
-            </div>
-
+			<nav aria-label="Page navigation example">
+				<ul class="pagination d-flex justify-content-center mb-5 mt-3">
+					<c:if test="${pageMaker.prev}">
+						<li class="page-item">
+							<a class="page-link" href="/notice/FAQ${pageMaker.makeQuery(pageMaker.startPage - 1) }" aria-label="Previous">
+								<span aria-hidden="true">«</span>
+							</a>
+						</li>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+						<li class="page-item page_item">
+							<c:out value="${pageMaker.criteria.pageNum == idx?'':''}" />
+							<a class="page-link" href="/notice/FAQ${pageMaker.makeQuery(idx) }">${idx}</a>
+						</li>
+					</c:forEach>
+					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+						<li class="page-item">
+							<a class="page-link" href="/notice/FAQ${pageMaker.makeQuery(pageMaker.endPage +1) }" aria-label="Next"> 
+								<span aria-hidden="true">»</span>
+							</a>
+						</li>
+					</c:if>
+				</ul>
+			</nav>
 
         </div>
     </div>

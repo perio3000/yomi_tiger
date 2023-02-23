@@ -17,6 +17,7 @@
 		<result property="written_date" column="written_date" />
 		<result property="hit" column="hit" />
 		<result property="user_id" column="user_id" />
+		<result property="name" column="name" />
 		<result property="board_number" column="board_number"/>
 		<collection property="boardCategoryList" resultMap="boardCategoryMap"></collection>
 		<collection property="userList" resultMap="userMap"></collection> <!-- 1:N, List 매핑 -->
@@ -60,47 +61,15 @@
 	-->
 
 	<!-- VO객체와 데이터베이스 컬럼을 매핑 -->
-	<select id="getList" resultMap="boardMap">
+	<select id="getCenterList" resultMap="boardMap">
 		<![CDATA[
-		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
-		WHERE yomi_board.user_id = yomi_user.id
-		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and yomi_board.BOARD_NUMBER = 1
+		select b.title, b.id, u.name, b.written_date 
+		from yomi_board b, yomi_user u 
+		where b.user_id = u.id 
+		and b.board_number = 1 
+		and ROWNUM <= 3
 		]]>
 	</select>
-
-	<select id="getFAQ" resultMap="boardMap">
-		<![CDATA[
-		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
-		WHERE yomi_board.user_id = yomi_user.id
-		]]>
-		<include refid="searchThis"></include>
-		<![CDATA[
-		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID and BOARD_NUMBER = 2
-		]]>
-	</select>
-
-	<select id="getFAQWithPaging" resultMap="boardMap">
-		<![CDATA[
-			SELECT * FROM (
-			    SELECT ROWNUM AS RNUM, A.* FROM (
-			        SELECT * FROM yomi_board where BOARD_NUMBER != 1
-		]]>
-					<include refid="searchThis"></include>
-		<![CDATA[
-				) A WHERE ROWNUM <= #{pageNum} * #{amount}
-			) WHERE RNUM > (#{pageNum} - 1) * #{amount}
-		]]>
-	</select>
-
-
-
-	<!--<select id="getList" resultMap="boardMap">
-		<![CDATA[
-		SELECT * FROM yomi_board, yomi_user, YOMI_BOARDCATEGORY
-		WHERE yomi_board.user_id = yomi_user.id
-		  and yomi_board.BOARD_NUMBER = YOMI_BOARDCATEGORY.ID
-		]]>
-	</select>-->
 
 
 
@@ -124,15 +93,15 @@
 
 
 
-
-
-
-
 	<select id="getListWithPaging" resultMap="boardMap">
 		<![CDATA[
 			SELECT * FROM (
 			    SELECT ROWNUM AS RNUM, A.* FROM (
-			        SELECT * FROM yomi_board where BOARD_NUMBER = 1
+			        SELECT b.title, b.content, u.name, b.id, b.written_date 
+			        FROM yomi_board b, yomi_user u 
+			        where BOARD_NUMBER = 1 
+			        and (TITLE LIKE '%'||#{keyword}||'%' or CONTENT LIKE '%'||#{keyword}||'%') 
+			        and b.user_id = u.id
 					]]>
 					<include refid="searchThis"></include>
 					<![CDATA[
@@ -144,51 +113,11 @@
 	<select id="getTotalCount" resultType="int">
 		<![CDATA[
 		select count(*) from yomi_board
-		where BOARD_NUMBER = 1
+		where BOARD_NUMBER = 1 
+		and (TITLE LIKE '%'||#{keyword}||'%' or CONTENT LIKE '%'||#{keyword}||'%') 
 		]]>
 		<include refid="searchThis"></include>
 	</select>
-
-	<select id="getTotalFAQCount" resultType="int">
-		<![CDATA[
-		select count(*) from yomi_board
-		where BOARD_NUMBER in (2,22,23,24,25,26,27,28,29)
-		]]>
-		<include refid="searchThis"></include>
-	</select>
-
-
-
-
-
-
-
-
-
-	<sql id="searchThis">
-		<if test="type eq 'T'.toString()">
-			AND TITLE LIKE '%'||#{keyword}||'%'
-		</if>
-		<if test="type eq 'C'.toString()">
-			AND CONTENT LIKE '%'||#{keyword}||'%'
-		</if>
-		<if test="type eq 'N'.toString()">
-			AND USER_ID LIKE '%'||#{keyword}||'%'
-		</if>
-	</sql>
-
-	<select id="category" resultMap="boardMap">
-		<![CDATA[
-			SELECT * FROM yomi_board where BOARD_NUMBER = #{category}
-		]]>
-	</select>
-
-
-<!--	<select id="read" resultType="NoticeVO">
-		<![CDATA[
-		select * from yomi_board where id = #{id}
-		]]>
-	</select>-->
 
 
 	<select id="getEventListCount" resultType="int">
@@ -232,6 +161,61 @@
     	</if>
     	<if test="category eq 'end'.toString()">
     		 and (event_start <![CDATA[>]]> sysdate or event_end <![CDATA[<]]> sysdate)
+    	</if>
+    </sql>
+    
+    
+    <select id="getFAQ" resultMap="boardMap">
+		<![CDATA[
+			SELECT * FROM (
+			    SELECT ROWNUM AS RNUM, A.* FROM (
+			        SELECT * from yomi_board 
+			        where board_number in (22, 23, 24, 25, 26, 27, 28, 29)
+			        and (TITLE LIKE '%'||#{keyword}||'%' or CONTENT LIKE '%'||#{keyword}||'%')
+					]]>
+					<include refid="searchThis"></include>
+					<![CDATA[
+				) A WHERE ROWNUM <= #{pageNum} * #{amount}
+			) WHERE RNUM > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+
+	<select id="getTotalFAQ" resultType="int">
+		<![CDATA[
+		SELECT count(*) from yomi_board 
+		where board_number in (22, 23, 24, 25, 26, 27, 28, 29)
+		and (TITLE LIKE '%'||#{keyword}||'%' or CONTENT LIKE '%'||#{keyword}||'%') 
+		]]>
+		<include refid="searchThis"></include>
+	</select>
+	
+    <sql id="searchThis">
+    	<if test="category eq ''.toString()">
+    		 
+    	</if>
+    	<if test="category eq '22'.toString()">
+    		 and board_number = 22 
+    	</if>
+    	<if test="category eq '23'.toString()">
+    		 and board_number = 23 
+    	</if>
+    	<if test="category eq '24'.toString()">
+    		 and board_number = 24 
+    	</if>
+    	<if test="category eq '25'.toString()">
+    		 and board_number = 25 
+    	</if>
+    	<if test="category eq '26'.toString()">
+    		 and board_number = 26 
+    	</if>
+    	<if test="category eq '27'.toString()">
+    		 and board_number = 27 
+    	</if>
+    	<if test="category eq '28'.toString()">
+    		 and board_number = 28 
+    	</if>
+    	<if test="category eq '29'.toString()">
+    		 and board_number = 29 
     	</if>
     </sql>
 

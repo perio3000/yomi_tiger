@@ -10,7 +10,7 @@ import java.util.List;
 
 @Mapper
 public interface NoticeMapper {
-    List<BoardVO> getList();
+    
     BoardVO read(int id);
 
     BoardVO read_prev(int id);
@@ -19,17 +19,11 @@ public interface NoticeMapper {
     int getTotalCount(Criteria criteria);
     List<BoardVO> getListWithPaging(Criteria criteria);
 
-
-    List<BoardVO> getFAQ(Criteria criteria);
-
-    List<BoardVO> getFAQWithPaging(Criteria criteria);
-
-    List<BoardVO> getCategorys(Criteria criteria, int categoryNo);
-
-    List<BoardVO> category(int category);
-    
     int getEventListCount(Criteria criteria);
     List<EventVO> getEventList(Criteria criteria);
-
-    int getTotalFAQCount(Criteria criteria);
+    
+    List<BoardVO> getCenterList();
+    
+    List<BoardVO> getFAQ(Criteria criteria);
+    int getTotalFAQ(Criteria criteria);
 }
