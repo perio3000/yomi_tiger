@@ -28,4 +28,6 @@ public interface MypageService {
 	List<BoardVO> getReplyList(String username);
 	
 	int userUpdate(MemberVO memberVO);
+	
+	List<OrderVO> getOrderDeliveryDetail(Long id, String username);
 }

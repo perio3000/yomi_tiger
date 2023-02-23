@@ -118,6 +118,8 @@
 			AND yomi_order.id = yomi_pay.order_id
 			AND yomi_orderdetail.item_id = yomi_item.id
 			AND yomi_user.USERNAME = #{username}
+			and yomi_order.order_date between (select to_char(add_months(sysdate,-6),'yy/mm/dd') from dual) 
+            and (select to_char(add_months(sysdate,1),'yy/mm/dd') from dual)
 		]]>
 	</select>
 	
@@ -212,6 +214,22 @@
 			WHERE id = #{id}
 		]]>
 	</update>
+	
+	<select id="getOrderDeliveryDetail" resultType="BoardVO">
+		<![CDATA[
+			select distinct i.id, i.thumbnail, i.title, i.price-i.price*e.discount/100 as price, i.authors, i.publisher, d.recipient_name, d.recipient_postnumber,  
+			d.recipient_city, d.recipient_street, d.recipient_location, v.delivery_name, v.delivery_date, v.delivery_number, v.delivery_state 
+			from yomi_item i, yomi_user u, yomi_order o, yomi_orderdetail d, yomi_event e, yomi_delivery v 
+			where u.id = o.user_id 
+			and o.id = d.order_id 
+			and i.id in (SELECT REGEXP_SUBSTR(d.orderlist, '[^/]+', 1, LEVEL) AS split_result 
+			   FROM yomi_orderdetail d where d.order_id = #{id} 
+			CONNECT BY LEVEL <= LENGTH(REGEXP_REPLACE(d.orderlist, '[^/]+','')) + 1) 
+			and u.username = #{username} 
+			and i.event_id = e.id 
+			and v.order_id = o.id 
+		]]>
+	</select>
 	
 	
 </mapper>

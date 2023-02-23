@@ -17,6 +17,7 @@ import edu.global.ex.service.ListService;
 import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.MemberVO;
+import edu.global.ex.vo.OrderVO;
 
 @Slf4j
 @Controller
@@ -40,7 +41,6 @@ public class MypageController {
 	}
 	
 	//주문배송목록
-	//http://localhost:8282/mypage/orderdeliverylist?username=user@naver.com
 	@GetMapping("/orderdeliverylist")
 	public String orderdeliverylist(Model model, MemberVO memberVO, Authentication authentication, Principal principal) {
 		log.info("orderdeliverylist..");
@@ -59,6 +59,15 @@ public class MypageController {
 		model.addAttribute("order", mypageService.getOrderSearch(authentication.getName(), startdate, enddate));
 		
 		return "orderdeliverylist";
+	}
+	
+	@GetMapping("/orderdeliverydetail")
+	public String orderdeliverydetail(Model model, Long id, Principal principal) {
+		log.info("orderdeliverydetail..");
+		
+		model.addAttribute("orderDetail", mypageService.getOrderDeliveryDetail(id, principal.getName()));
+		
+		return "orderdeliverydetail";
 	}
 	
 	//포인트페이지

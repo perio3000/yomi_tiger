@@ -25,14 +25,18 @@ public class OrderVO {
 	private int amountList;
 	private String delivery_state;
 	private int amount;
-	
+	private String authors;
 	private String name;
 	private String account;
 	private String bank;
 	private Long orderNum;
-	
+	private String publisher;
 	private String status;
-
+	private String recipient_name;
+	private String recipient_postnumber;
+	private String recipient_city;
+	private String recipient_street;
+	private String recipient_location;
 	private String delivery_name;
 	private Date delivery_date;
 	private String delivery_number;

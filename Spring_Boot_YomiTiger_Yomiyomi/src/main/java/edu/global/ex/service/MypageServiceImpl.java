@@ -96,6 +96,12 @@ public class MypageServiceImpl implements MypageService{
 		return mypageMapper.userUpdate(memberVO);
 	}
 
+	@Override
+	public List<OrderVO> getOrderDeliveryDetail(Long id, String username) {
+		
+		return mypageMapper.getOrderDeliveryDetail(id, username);
+	}
+
 
 
 }

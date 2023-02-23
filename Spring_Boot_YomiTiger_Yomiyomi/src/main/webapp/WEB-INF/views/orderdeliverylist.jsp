@@ -129,7 +129,6 @@
 										<input type="hidden" name="username" value="${ member.username }">
 										<div class="modal-body">
 											<div class="p-4" style="background-color: #F4EEFF; border-radius: 15px; margin: 20px 0 20px 0">
-												• 조회기간 설정은 6개월 단위이며, 최대 5년까지 조회 가능합니다.<br>
 												• 필터 이용 시 선택한 이용내역만 조회 가능합니다.
 											</div>
 											<div class="fs-5 fw-bolder" style="margin-bottom: 20px">
@@ -210,27 +209,37 @@
 								
 									<tr>
 										<td class="align-middle">
-											<div>
-												<div class="fs-6">${ orderList.id }</div>
-												<div class="text-secondary">(${ orderList.order_date })</div>
-											</div>
-										</td>
-										<td class="align-middle">
-											<div>${ orderList.price }원</div>
-										</td>
-										<td class="align-middle">
-											<div class="row">
-												<div class="col"><img alt="" src="${ orderList.thumbnail }" width="140px" height="195px"></div>
-												<div class="col d-flex align-items-center">
-													<div class="">${ orderList.title } 등</div>
+											<a href="/mypage/orderdeliverydetail?id=${ orderList.id }">
+												<div>
+													<div class="fs-6">${ orderList.id }</div>
+													<div class="text-secondary">(${ orderList.order_date })</div>
 												</div>
-											</div>
+											</a>
 										</td>
 										<td class="align-middle">
-											<div>${ orderList.amount }</div>
+											<a href="/mypage/orderdeliverydetail?id=${ orderList.id }">
+												<div>${ orderList.price }원</div>
+											</a>
 										</td>
 										<td class="align-middle">
-											<div class="${ orderList.delivery_state }">${ orderList.delivery_state }</div>
+											<a href="/mypage/orderdeliverydetail?id=${ orderList.id }">
+												<div class="row">
+													<div class="col"><img alt="" src="${ orderList.thumbnail }" width="140px" height="195px"></div>
+													<div class="col d-flex align-items-center">
+														<div class="">${ orderList.title } 등</div>
+													</div>
+												</div>
+											</a>
+										</td>
+										<td class="align-middle">
+											<a href="/mypage/orderdeliverydetail?id=${ orderList.id }">
+												<div>${ orderList.amount }</div>
+											</a>
+										</td>
+										<td class="align-middle">
+											<a href="/mypage/orderdeliverydetail?id=${ orderList.id }">
+												<div class="${ orderList.delivery_state }">${ orderList.delivery_state }</div>
+											</a>
 										</td>
 									</tr>
 								
@@ -245,29 +254,7 @@
 							</div>
 						</c:if>
 						
-						<div class="d-flex justify-content-center">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination">
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Previous"> 
-											<span aria-hidden="true" class="pageText">&laquo;</span>
-										</a>
-									</li>
-									
-									<li class="page-item">
-										<a class="page-link" href="#" >
-											<span class="pageText">1</span>
-										</a>
-									</li>
-	
-									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Next"> 
-											<span aria-hidden="true" class="pageText">&raquo;</span>
-										</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
+						
 
 					</div>
 					
