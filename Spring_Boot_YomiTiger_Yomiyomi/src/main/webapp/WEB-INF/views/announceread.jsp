@@ -96,7 +96,7 @@
 	   			</div>
 	   			<hr> --%><br>
 	   			<div class="d-flex justify-content-center align-items-center">
-   					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="location='announcement'" style="width: 200px">공지사항 목록</button>
+   					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="location='/notice/announcement'" style="width: 200px">공지사항 목록</button>
    				</div>
 			</div>				
 		</div>	

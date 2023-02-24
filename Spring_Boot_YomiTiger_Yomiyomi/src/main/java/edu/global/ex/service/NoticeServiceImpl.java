@@ -89,4 +89,11 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeMapper.getTotalFAQ(criteria);
 	}
 
+	@Override
+	public List<EventVO> getEventDetail(int id) {
+		log.info("SERVICE : getCenterList()..");
+		
+		return noticeMapper.getEventDetail(id);
+	}
+
 }

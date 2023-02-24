@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -246,11 +247,15 @@
 					</span>
 				</div>
 				<br>
-					<a class="bookReview" href="">책 리뷰</a><br>
-					<a class="bookReview" href="">책 리뷰</a><br>
-					<a class="bookReview" href="">책 리뷰</a><br>
-					<a class="bookReview" href="">책 리뷰</a><br>
-					<a class="bookReview" href="">책 리뷰</a><br>
+				<c:forEach var="reviewList" items="${ review }">
+					<div class="card">
+						<div class="card-body">
+							<div>작성자 : <span class="fs-6 fw-bolder">${ fn:substring(reviewList.name, 0, 2) }* (${ fn:substring(reviewList.username, 0, 5) }***)</span></div>
+							<div>제목 : <span class="fs-6 fw-bolder">${ reviewList.title }</span> | 작성일 : <span class="fs-6 fw-bolder">${ reviewList.written_date }</span></div>
+							<div>내용 : <span class="fs-6 fw-bolder">${ reviewList.content }</span></div>
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</main>

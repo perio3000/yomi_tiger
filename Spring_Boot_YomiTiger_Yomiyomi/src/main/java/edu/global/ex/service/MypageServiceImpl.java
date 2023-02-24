@@ -98,8 +98,18 @@ public class MypageServiceImpl implements MypageService{
 
 	@Override
 	public List<OrderVO> getOrderDeliveryDetail(Long id, String username) {
+		log.info("getOrderDeliveryDetail()..");
 		
 		return mypageMapper.getOrderDeliveryDetail(id, username);
+	}
+
+	@Override
+	public int insertReview(BoardVO boardVO) {
+		log.info("insertReview()..");
+		
+		mypageMapper.insertReview(boardVO);
+		
+		return boardVO.getItem_id();
 	}
 
 

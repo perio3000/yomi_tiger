@@ -37,6 +37,7 @@ public class BoardVO {
     private String thumbnail;
     private String name;
     private String username;
+    private Long order_id;
 
 
     private List<BoardCategoryVO> boardCategoryList;

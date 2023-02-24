@@ -110,6 +110,15 @@ public class NoticeController {
     	return "events";
     }
     
+    @GetMapping("/eventdetail")
+    public String eventdetail(Model model, int id) {
+    	log.info("eventdetail()...");
+    	
+    	model.addAttribute("detail", noticeService.getEventDetail(id));
+    	
+    	return "eventdetail";
+    }
+    
     @GetMapping("/location")
     public String location() {
     	log.info("location()...");

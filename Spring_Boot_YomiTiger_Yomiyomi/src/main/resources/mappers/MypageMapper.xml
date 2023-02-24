@@ -201,6 +201,7 @@
 			select b.title, b.content, b.written_date, c.board_name, b.id, r.reply_group
 			from yomi_user u, yomi_board b, yomi_boardcategory c, yomi_reply r 
 			where u.username = #{username}
+			and u.id = b.user_id
 			and b.board_number = 201
 			and b.board_number = c.id
 			and r.board_id = b.id
@@ -215,9 +216,9 @@
 		]]>
 	</update>
 	
-	<select id="getOrderDeliveryDetail" resultType="BoardVO">
+	<select id="getOrderDeliveryDetail" resultType="OrderVO">
 		<![CDATA[
-			select distinct i.id, i.thumbnail, i.title, i.price-i.price*e.discount/100 as price, i.authors, i.publisher, d.recipient_name, d.recipient_postnumber,  
+			select distinct i.id, i.thumbnail, i.title, TO_CHAR(i.price-i.price*e.discount/100, '999,999') as price, i.authors, i.publisher, d.recipient_name, d.recipient_postnumber,  
 			d.recipient_city, d.recipient_street, d.recipient_location, v.delivery_name, v.delivery_date, v.delivery_number, v.delivery_state 
 			from yomi_item i, yomi_user u, yomi_order o, yomi_orderdetail d, yomi_event e, yomi_delivery v 
 			where u.id = o.user_id 
@@ -230,6 +231,18 @@
 			and v.order_id = o.id 
 		]]>
 	</select>
+	
+	<insert id="insertReview">
+	<![CDATA[
+		insert all
+		    into yomi_board (id, title, content, written_date, hit, user_id, board_number) 
+		    values (yomi_board_seq.nextval, #{title}, #{content}, sysdate, 0, #{user_id}, 101)
+		    
+		    into yomi_review (board_id, item_id, order_id)
+		    values (yomi_board_seq.CURRVAL, #{item_id}, #{order_id})
+		select * from dual
+		]]>
+	</insert>
 	
 	
 </mapper>

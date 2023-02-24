@@ -21,5 +21,8 @@ public class EventVO {
 	private Date event_end;
 	private double discount;
 	private String title;
+	private String content;
 	private String file_path;
+	private int board_id;
+	private Date written_date;
 }

@@ -33,4 +33,6 @@ public interface MypageMapper {
 	int userUpdate(MemberVO memberVO);
 	
 	List<OrderVO> getOrderDeliveryDetail(Long id, String username);
+	
+	int insertReview(BoardVO boardVO);
 }

@@ -16,6 +16,7 @@ import edu.global.ex.page.PageVO;
 import edu.global.ex.service.ListService;
 import edu.global.ex.service.MypageService;
 import edu.global.ex.vo.BoardVO;
+import edu.global.ex.vo.ItemVO;
 import edu.global.ex.vo.MemberVO;
 import edu.global.ex.vo.OrderVO;
 
@@ -65,9 +66,22 @@ public class MypageController {
 	public String orderdeliverydetail(Model model, Long id, Principal principal) {
 		log.info("orderdeliverydetail..");
 		
+		model.addAttribute("orderID", id);
+		model.addAttribute("member", mypageService.getUser(principal.getName()));
 		model.addAttribute("orderDetail", mypageService.getOrderDeliveryDetail(id, principal.getName()));
 		
 		return "orderdeliverydetail";
+	}
+	
+	@GetMapping("/writereview")
+	public String writereview(Model model, Long order_id, int id, String username, ItemVO itemVO, Principal principal) {
+		log.info("writereview..");
+		itemVO.setId(id);
+		model.addAttribute("orderID", order_id);
+		model.addAttribute("member", mypageService.getUser(principal.getName()));
+		model.addAttribute("item", listService.getProductDetail(itemVO));
+		
+		return "writereview";
 	}
 	
 	//포인트페이지

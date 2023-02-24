@@ -286,12 +286,12 @@
 											<div class="p-2">
 												<div style="display: flex; align-items: center;">
 													<img alt="" src="/icon/text_bubble.png" width="20px"
-														height="20px"> <a href="#" onclick="reviewTab()"><span
+														height="20px"> <a href="/store/detail?id=${ reviewList.item_id }" onclick="reviewTab()"><span
 														style="line-height: 20px">리뷰</span></a>
 												</div>
 												<div class="row" style="padding: 10px 0 10px 0">
 													<div class="col-3 mb-3">
-														<a href="#"><img alt=""
+														<a href="/store/detail?id=${ reviewList.item_id }"><img alt=""
 															src="${ reviewList.thumbnail }"
 															width="100%" height="100%"></a>
 													</div>

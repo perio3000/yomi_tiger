@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import edu.global.ex.mapper.ListMapper;
 import edu.global.ex.page.Criteria;
+import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.CartVO;
 import edu.global.ex.vo.ItemVO;
 import lombok.extern.slf4j.Slf4j;
@@ -73,6 +74,13 @@ public class ListServiceImpl implements ListService{
 		log.info("getProductDetail()..");
 		
 		return listMapper.getProductDetail(itemVO);
+	}
+	
+	@Override
+	public List<BoardVO> getReviewList(int item_id) {
+		log.info("getReviewList()..");
+		
+		return listMapper.getReviewList(item_id);
 	}
 
 	@Transactional
@@ -230,7 +238,6 @@ public class ListServiceImpl implements ListService{
 		log.info("getLibraryList()..");
 		
 		return listMapper.getLibraryList(criteria);
-	}
-	
+	}	
 	
 }

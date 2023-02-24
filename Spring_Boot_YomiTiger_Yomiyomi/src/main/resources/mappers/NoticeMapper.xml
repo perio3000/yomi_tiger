@@ -137,7 +137,7 @@
 		<![CDATA[
 			SELECT * FROM (
 			    SELECT ROWNUM AS RNUM, A.* FROM (
-			        select e.event_name, e.event_start, e.event_end, e.discount, b.title, f.file_path  
+			        select e.event_name, e.event_start, e.event_end, e.discount,e.board_id, b.title, f.file_path  
 					from yomi_event e, yomi_board b, yomi_boardcategory c, yomi_addfile f 
 					where e.board_id = b.id 
 					and b.board_number = c.id
@@ -164,6 +164,15 @@
     	</if>
     </sql>
     
+    <select id="getEventDetail" resultType="EventVO">
+		<![CDATA[
+			select b.title, b.content, b.written_date, f.file_path, e.event_name, e.event_start, e.event_end 
+			from yomi_board b, yomi_addfile f, yomi_event e 
+			where b.id = #{id}
+			and b.id = f.board_id
+			and b.id = e.board_id
+		]]>
+	</select>
     
     <select id="getFAQ" resultMap="boardMap">
 		<![CDATA[

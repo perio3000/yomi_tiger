@@ -74,7 +74,7 @@
 		<div class="row d-flex flex-wrap">
 			<c:forEach var="eventList" items="${ list }">
 				<div class="col-xxl-4 col-lg-6">
-					<a href="#"><img class="rounded" src="${ eventList.file_path }" width="350px" height="150px"></a><br>
+					<a href="/notice/eventdetail?id=${ eventList.board_id }"><img class="rounded" src="${ eventList.file_path }" width="350px" height="150px"></a><br>
 					<a class="eventTitle" href="#">${ eventList.event_name }</a><br>
 					<a class="period">${ eventList.event_start }~${ eventList.event_end }</a>
 				</div>

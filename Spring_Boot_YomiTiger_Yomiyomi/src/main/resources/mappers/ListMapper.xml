@@ -498,5 +498,16 @@
          	) WHERE RNUM > (#{pageNum}-1) * #{amount}
 		]]>
 	</select>
+	
+	<select id="getReviewList" resultType="BoardVO">
+	<![CDATA[
+		select b.title, b.content, b.written_date, u.username, u.name 
+		from yomi_board b, yomi_review r, yomi_user u 
+		where b.board_number = 101 
+		and r.item_id = #{item_id}
+		and b.id = r.board_id
+		and u.id = b.user_id
+		]]>
+	</select>
 
 </mapper>

@@ -175,6 +175,10 @@ public class ListController {
 			model.addAttribute("user", authentication.getName());
 			System.out.println(authentication.getName());
 		}
+		int item_id = itemVO.getId();
+		
+		model.addAttribute("review", listService.getReviewList(item_id));
+		
 		return "productdetail";
 	}
 	

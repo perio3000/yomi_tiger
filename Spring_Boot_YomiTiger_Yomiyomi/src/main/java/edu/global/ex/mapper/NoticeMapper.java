@@ -26,4 +26,6 @@ public interface NoticeMapper {
     
     List<BoardVO> getFAQ(Criteria criteria);
     int getTotalFAQ(Criteria criteria);
+    
+    List<EventVO> getEventDetail(int id);
 }

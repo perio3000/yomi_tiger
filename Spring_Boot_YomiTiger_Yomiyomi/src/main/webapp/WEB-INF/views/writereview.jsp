@@ -14,6 +14,7 @@
 <meta charset="UTF-8">
 <title>YOMIYOMI-주문배송목록</title>
 <script type="text/javascript" src="/js/mypage.js"></script>
+<script type="text/javascript" src="/js/writereview.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/mypage.css">
 </head>
@@ -27,7 +28,8 @@
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
 					<li class="breadcrumb-item"><a href="/mypage/main">마이페이지</a></li>
 					<li class="breadcrumb-item"><a href="/mypage/orderdeliverylist">주문배송목록</a></li>
-					<li class="breadcrumb-item active" aria-current="page">주문배송상세</li>
+					<li class="breadcrumb-item"><a href="/mypage/orderdeliverydetail">주문배송상세</a></li>
+					<li class="breadcrumb-item active" aria-current="page">리뷰작성</li>
 				</ol>
 			</nav>
 		</div>
@@ -42,6 +44,9 @@
 						<div class="name">
 							'${ member.name }'님
 						</div>
+						<input type="hidden" id="user_id" value="${ member.id }">
+						<input type="hidden" id="item_id" value="${ item.id }">
+						<input type="hidden" id="order_id" value="${ orderID }">
 						<div class="row d-flex justify-content-center">
 							<div class="card profile p-3">
 								<div class="row">
@@ -109,7 +114,7 @@
 			<div class="col-md-9">
 				
 				<div class="fs-1 fw-bolder col">
-						주문/배송  상세
+						리뷰 작성
 				</div>
 				<br>
 				<div>
@@ -120,91 +125,59 @@
 						상품정보
 				</div>
 				<div class="card" style="width: 100%">
-					<ul class="list-group list-group-flush">
-						<c:forEach var="orderDetailList" items="${ orderDetail }">
-							<li class="list-group-item">
-								<div class="row">
-									<div class="col"><img alt="" src="${ orderDetailList.thumbnail }" style="width: 140px; height: 190px;"></div>
-									<div class="col d-flex align-items-center justify-content-center" style="min-width: 88px;">${ orderDetailList.title }</div>
-									<div class="col d-flex align-items-center justify-content-center" style="min-width: 88px;">${ orderDetailList.authors }</div>
-									<div class="col d-flex align-items-center justify-content-center" style="min-width: 88px;">${ orderDetailList.publisher }</div>
-									<div class="col d-flex align-items-center justify-content-center" style="min-width: 88px;">${ orderDetailList.price }원</div>
-									<div class="col d-flex align-items-center justify-content-center writeReviewBtn">
-										<a href="/mypage/writereview?id=${ orderDetailList.id }&order_id=${ orderID }&username=${ member.username }">
-											<button class="btn btn-primary" style="
-											--bs-btn-font-size: 0.9rem;
-										    --bs-btn-color: #424874;
-										    --bs-btn-bg: white;
-										    --bs-btn-border-color: #424874;
-										    --bs-btn-hover-color: white;
-										    --bs-btn-hover-bg: #424874;
-										    --bs-btn-hover-border-color: #0a58ca;
-										    --bs-btn-focus-shadow-rgb: 49,132,253;
-										    --bs-btn-active-color: #fff;
-										    --bs-btn-active-bg: #0a58ca;
-										    --bs-btn-active-border-color: #0a53be;
-										    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-										    --bs-btn-disabled-color: #fff;
-										    --bs-btn-disabled-bg: #0d6efd;
-										    --bs-btn-disabled-border-color: #0d6efd;
-										    min-width: 89px;
-											">리뷰 작성</button>
-										</a>
-									</div>
-								</div>	
-							</li>
-						</c:forEach>
-							
-					</ul>
+					<div class="card-body">
+						<div class="d-flex justify-content-center">
+							<img alt="" src="${ item.thumbnail }" style="width: 40%;">
+						</div>
+						<div class="d-flex justify-content-center fs-4">
+							${ item.title }
+						</div>
+						<div class="d-flex justify-content-center">
+							${ item.authors } | ${ item.publisher } | ${ item.datetime }
+						</div>
+					</div>
 				</div>
 				<br>
 				<div class="fs-3 fw-bolder col">
-						배송정보
+						리뷰 작성
 				</div>
 				<div class="card" style="width: 100%">
 					<div class="card-body">
-						<table class="table text-center table-striped">
-							<tr>
-								<th class="fw-bolder">이름</th>
-								<th class="fw-bolder">우편번호</th>
-								<th class="fw-bolder">주소</th>
-			
-							</tr>
-							<tr>
-								<td>${ orderDetail[0].recipient_name }</td>
-								<td>${ orderDetail[0].recipient_postnumber }</td>
-								<td>${ orderDetail[0].recipient_city }${ orderDetail[0].recipient_street }${ orderDetail[0].recipient_location }</td>
-								
-							</tr>
-						</table>
-						
-						<table class="table text-center table-striped">
-							<tr>
-								<th class="fw-bolder">배송회사</th>
-								<th class="fw-bolder">배송시작날짜</th>
-								<th class="fw-bolder">운송장번호</th>
-								<th class="fw-bolder">배송상태</th>
-							</tr>
-							<tr>
-								<td>${ orderDetail[0].delivery_name }</td>
-								<td>${ orderDetail[0].delivery_date }</td>
-								<td>${ orderDetail[0].delivery_number }</td>
-								<td>${ orderDetail[0].delivery_state }</td>
-							</tr>
-						</table>
+						<div class="mb-3 row">
+							<label for="inputTitle" class="col-sm-2 col-form-label">제목</label>
+							<div class="col-sm-10">
+								<input class="form-control form-control-lg" type="text" placeholder="" id="inputTitle" aria-label=".form-control-lg example">
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label for="inputText" class="col-sm-2 col-form-label">내용</label>
+							<div class="col-sm-10">
+								<textarea class="form-control" rows="10" cols="" id="inputText"></textarea>
+							</div>
+						</div>
 					</div>
 				</div>
 				<br>
 				<div class="d-flex justify-content-center align-items-center">
-   					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="location='/mypage/orderdeliverylist'" style="width: 200px; 
+   					<button type="button" class="btn btn-outline-primary btn-lg" id="listBtn" onclick="history.back()" style="width: 200px; 
 						border: 1px solid #424874;
-						
+						margin: 10px;
 						--bs-btn-hover-bg: #424874;
 						--bs-btn-hover-border-color: #424874;
 						--bs-btn-color: #424874;
 						--bs-btn-active-bg: #A6B1E1;
-					    --bs-btn-active-border-color: #A6B1E1;">주문 배송 목록</button>
+					    --bs-btn-active-border-color: #A6B1E1;">취소</button>
+					    
+					    <button type="button" class="btn btn-outline-primary btn-lg" id="insertBtn" style="width: 200px; 
+						border: 1px solid #424874;
+						margin: 10px;
+						--bs-btn-hover-bg: #424874;
+						--bs-btn-hover-border-color: #424874;
+						--bs-btn-color: #424874;
+						--bs-btn-active-bg: #A6B1E1;
+					    --bs-btn-active-border-color: #A6B1E1;">작성</button>
    				</div>
+   				
 				
 			</div>
 		</div>

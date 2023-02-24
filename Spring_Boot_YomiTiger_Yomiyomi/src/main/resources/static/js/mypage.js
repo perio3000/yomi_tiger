@@ -259,7 +259,7 @@ $(document).ready(function(){
 //        }
 
 	});
-    
+	
 })
 
 //회원정보 전화번호 변경
