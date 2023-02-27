@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.logoutSuccessUrl("/login?logout");
 		
 		http.authorizeHttpRequests()
-			.antMatchers("/mypage/**","/qna").hasAnyRole("MEMBER", "ADMIN")
+			.antMatchers("/mypage/**","/notice/qna").hasAnyRole("MEMBER", "ADMIN")
 			.antMatchers("/**").permitAll(); //그 외 경로는 모두 허용
 	}
 	

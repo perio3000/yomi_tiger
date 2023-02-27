@@ -227,5 +227,19 @@
     		 and board_number = 29 
     	</if>
     </sql>
+    
+    <insert id="insertQnaBoard">
+    	<![CDATA[
+			insert into yomi_board (id, title, content, written_date, hit, user_id, board_number) 
+			values (yomi_board_seq.nextval, #{title}, #{content}, sysdate, 0, (select id from yomi_user where username = #{username}), 331)
+		]]>
+    </insert>
+    
+    <insert id="insertQnaImage">
+    	<![CDATA[
+			insert into yomi_addfile (id, file_name, file_path, BOARD_ID) 
+			values (yomi_addfile_seq.nextval, #{file_name}, #{file_path}, yomi_board_seq.CURRVAL)
+		]]>
+    </insert>
 
 </mapper>

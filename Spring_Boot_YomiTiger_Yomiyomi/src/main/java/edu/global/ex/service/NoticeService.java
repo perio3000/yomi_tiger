@@ -4,7 +4,10 @@ import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.EventVO;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public interface NoticeService {
 
@@ -28,4 +31,6 @@ public interface NoticeService {
     int getTotalFAQ(Criteria criteria);
     
     List<EventVO> getEventDetail(int id);
+    
+    boolean sendQna(BoardVO boardVO, MultipartFile file) throws IllegalStateException, IOException;
 }

@@ -160,11 +160,12 @@
 	
 	<select id="getInquiryList" resultType="BoardVO">
 		<![CDATA[
-			select yomi_board.title, yomi_board.content, yomi_board.written_date, yomi_boardcategory.board_name, yomi_board.id 
-			from yomi_board, yomi_boardcategory, yomi_user
+			select yomi_board.title, yomi_board.content, yomi_board.written_date, yomi_boardcategory.board_name, yomi_board.id, yomi_addfile.file_name, yomi_addfile.file_path  
+			from yomi_board, yomi_boardcategory, yomi_user, yomi_addfile  
 			where yomi_user.username = #{username}
 			and yomi_board.user_id = yomi_user.id
 			and yomi_board.board_number = yomi_boardcategory.id
+			and yomi_addfile.board_id = yomi_board.id
 		]]>
 	</select>
 	

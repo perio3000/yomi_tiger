@@ -266,7 +266,11 @@
 												class="accordion-collapse collapse"
 												aria-labelledby="flush-heading${ inquiryList.id }"
 												data-bs-parent="#accordionFlushExample_1">
-												<div class="accordion-body">${ inquiryList.content }</div>
+												<div class="accordion-body">
+													${ inquiryList.content }
+													<br><br>
+													<img alt="" src="${ inquiryList.file_path }" width="100%">
+												</div>
 											</div>
 										</div>
 									</c:when>

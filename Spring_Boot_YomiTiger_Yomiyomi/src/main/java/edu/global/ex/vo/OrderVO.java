@@ -40,7 +40,7 @@ public class OrderVO {
 	private String delivery_name;
 	private Date delivery_date;
 	private String delivery_number;
-	
+	private String total_price;
 	private String buyer_name;
 	private String postcode;
 	private String address;

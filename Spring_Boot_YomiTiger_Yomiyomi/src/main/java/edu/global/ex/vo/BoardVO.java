@@ -6,6 +6,8 @@ import lombok.*;
 import java.sql.Date;
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /*
 * 이름           널?       유형
 ------------ -------- --------------
@@ -38,7 +40,11 @@ public class BoardVO {
     private String name;
     private String username;
     private Long order_id;
-
+    private String category;
+    private String tel;
+    private String email;
+    private String file_path;
+    private String file_name;
 
     private List<BoardCategoryVO> boardCategoryList;
     private List<MemberVO> userList;

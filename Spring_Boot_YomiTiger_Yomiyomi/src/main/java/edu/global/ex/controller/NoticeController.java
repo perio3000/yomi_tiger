@@ -5,11 +5,18 @@ import edu.global.ex.page.PageVO;
 import edu.global.ex.service.NoticeService;
 import edu.global.ex.vo.BoardVO;
 import lombok.extern.slf4j.Slf4j;
+
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @Controller
@@ -136,10 +143,22 @@ public class NoticeController {
     }
     
     @GetMapping("/qna")
-    public String qna() {
+    public String qna(Principal principal, Model model) {
     	log.info("qna()...");
+    	
+    	model.addAttribute("user", principal.getName());
     	
     	return "qna";
     }
 
+    @PostMapping("/sendQna")
+    public String sendQna(BoardVO boardVO, @RequestPart("file") @Nullable MultipartFile file) throws Exception {
+    	log.info("sendQna()...");
+    	
+    	boolean result = noticeService.sendQna(boardVO, file);
+    	
+    	System.out.println(result);
+    	
+    	return "mypage";
+    }
 }

@@ -3,6 +3,7 @@ package edu.global.ex.mapper;
 import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.EventVO;
+import edu.global.ex.vo.ImageVO;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -28,4 +29,7 @@ public interface NoticeMapper {
     int getTotalFAQ(Criteria criteria);
     
     List<EventVO> getEventDetail(int id);
+    
+    int insertQnaBoard(BoardVO boardVO);
+    int insertQnaImage(ImageVO imageVO);
 }

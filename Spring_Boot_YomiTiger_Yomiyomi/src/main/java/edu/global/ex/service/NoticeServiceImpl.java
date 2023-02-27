@@ -4,11 +4,17 @@ import edu.global.ex.mapper.NoticeMapper;
 import edu.global.ex.page.Criteria;
 import edu.global.ex.vo.BoardVO;
 import edu.global.ex.vo.EventVO;
+import edu.global.ex.vo.ImageVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 
 @Slf4j
@@ -94,6 +100,29 @@ public class NoticeServiceImpl implements NoticeService {
 		log.info("SERVICE : getCenterList()..");
 		
 		return noticeMapper.getEventDetail(id);
+	}
+
+	@Transactional
+	@Override
+	public boolean sendQna(BoardVO boardVO, MultipartFile file) throws IllegalStateException, IOException {
+		log.info("SERVICE : sendQna()..");
+		
+		int boardResult = noticeMapper.insertQnaBoard(boardVO);
+		
+		String projectPath = System.getProperty("user.dir") + "/src/main/resources/static/files";
+		UUID uuid = UUID.randomUUID();
+		String fileName = uuid + "_" + file.getOriginalFilename();
+		File saveFile = new File(projectPath, fileName);
+		file.transferTo(saveFile);
+		 
+		ImageVO imageVO = new ImageVO();
+		
+		imageVO.setFile_name(fileName);
+		imageVO.setFile_path("/files/" + fileName);
+		
+		int imageResult = noticeMapper.insertQnaImage(imageVO);
+		
+		return boardResult == 1 && imageResult == 1;
 	}
 
 }

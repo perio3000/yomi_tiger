@@ -55,7 +55,7 @@
 	
 	<select id="getNonmemberOrderList" resultType="OrderVO">
 		<![CDATA[
-			select o.id, o.order_date, d.*, v.*, i.title, i.thumbnail, n.password 
+			select o.id, o.order_date, d.amount, d.recipient_name, d.recipient_postnumber, d.recipient_city, d.recipient_street, d.recipient_location, d.please, TO_CHAR(d.total_price, '999,999') as total_price, v.*, i.title, i.thumbnail, n.password 
 			from yomi_order o, yomi_orderdetail d, yomi_pay p, yomi_delivery v, yomi_item i, yomi_nonmember n 
 			where o.id in (select order_id from yomi_nonmember where name = #{name} and tel = #{phone}) 
 			and o.id = d.order_id

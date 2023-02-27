@@ -17,5 +17,7 @@ public class ImageVO {
 	private String image;
 	private int image_order;
 	private int item_id;
+	private String file_name;
+	private String file_path;
 
 }
