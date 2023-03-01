@@ -107,11 +107,14 @@ public class RestfulLoginController {
 		return encodedCode;
 	}
 	
-	@GetMapping("/confirm/{veriNum}/{encodedCode}")
-	public String confirm(@PathVariable(name = "veriNum") String veriNum, @PathVariable(name = "encodedCode") String encodedCode) {
+	@PostMapping("/confirmMail")
+	public String confirm(@RequestBody MemberVO memberVO ) {
 		log.info("confirm() ..");
 		
-		if(passwordEncoder.matches(veriNum, encodedCode) == true) {
+		System.out.println(memberVO.getVeriNum());
+		System.out.println(memberVO.getEncodedCode());
+		
+		if(passwordEncoder.matches(memberVO.getVeriNum(), memberVO.getEncodedCode()) == true) {
 			return "true";
 		}
 		else {

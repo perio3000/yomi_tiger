@@ -49,6 +49,8 @@ public class MemberVO {
 	private int enabled;
 	private String account;
 	private String bank;
+	private String veriNum;
+	private String encodedCode;
 	
 	private List<AuthVO> authList;
 	private List<OrderVO> orderList;

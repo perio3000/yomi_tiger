@@ -130,6 +130,11 @@ $(document).ready(function (){
 		let veriNum = $("#veriNum").val();
 		let encodedCode = $(".encodedCode").val();
 		
+		let form = {
+   				veriNum : veriNum,
+   				encodedCode : encodedCode
+   		};
+		
 		if(veriNum == ""){
 	   		alert("인증번호를 입력해주세요.");
 	   		return
@@ -137,10 +142,11 @@ $(document).ready(function (){
 	   	else{
 	   		
 		    $.ajax({
-		        type : "GET",
-		        url : "/confirm/" + veriNum + "/" + encodedCode,
+		        type : "POST",
+		        url : "/confirmMail",
 		        cashe:false,
 		        contentType:'application/json; charset=utf-8', //MIME 타입 
+		        data: JSON.stringify(form),
 		        success: function (result) {       
 					console.log(result);
 					
