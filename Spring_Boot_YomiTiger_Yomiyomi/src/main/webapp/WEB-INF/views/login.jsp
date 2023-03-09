@@ -78,10 +78,10 @@
 
 						<div class="social-login">
 							<a class="btn btn-social-icon btn-google" href="https://accounts.google.com/o/oauth2/v2/auth?
-scope=https://www.googleapis.com/auth/analytics.readonly&
-access_type=offline&
-include_granted_scopes=true&state=state_parameter_passthrough_value&
-redirect_uri=http://localhost:8282/login/oauth2/code/google&response_type=code&client_id=305589923343-id0m33jrcjjgfv985bbj9rtgc0qc8vul.apps.googleusercontent.com">
+																			scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile&
+																			redirect_uri=http://localhost:8282/login/oauth2/code/google&
+																			response_type=code&
+																			client_id=305589923343-id0m33jrcjjgfv985bbj9rtgc0qc8vul.apps.googleusercontent.com">
 								<span class="fa fa-google"></span></a>
 							<a class="btn btn-social-icon btn-naver" href="<%=apiURL%>">
 								<span class="xi-naver xi-x"></span></a>
