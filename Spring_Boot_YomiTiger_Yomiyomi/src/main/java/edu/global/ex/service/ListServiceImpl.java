@@ -238,6 +238,13 @@ public class ListServiceImpl implements ListService{
 		log.info("getLibraryList()..");
 		
 		return listMapper.getLibraryList(criteria);
+	}
+
+	@Override
+	public int insertBook(ItemVO itemVO) {
+		log.info("getLibraryList()..");
+		
+		return listMapper.insertBook(itemVO);
 	}	
 	
 }

@@ -44,6 +44,9 @@
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
 					<form:form action="/logout" method="post" onsubmit="confirm('로그아웃 하시겠습니까?')" id="logoutForm" class="row">
+						<sec:authorize access="hasRole('ADMIN')">
+						    <li class="col me-4 col2"><a href="/admin/home">관리자홈</a></li>
+					    </sec:authorize>
 						<li class="col me-4 col2"><a href="#" onclick="logout()">로그아웃</a></li>
 						<li class="col col2"><a href="/customercenter">고객센터</a></li>
 						<input type="hidden" class="principal" value="<sec:authentication property="principal.username"/>">

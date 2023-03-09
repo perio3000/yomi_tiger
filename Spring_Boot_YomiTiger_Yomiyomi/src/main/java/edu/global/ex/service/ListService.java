@@ -73,4 +73,7 @@ public interface ListService {
 	//서재 리스트
 	int getLibraryListCount(Criteria criteria);
 	public List<ItemVO> getLibraryList(Criteria criteria);
+	
+	//도서 등록
+	int insertBook(ItemVO itemVO);
 }

@@ -78,4 +78,6 @@ public interface ListMapper {
 	int getLibraryListCount(Criteria criteria);
 	public List<ItemVO> getLibraryList(Criteria criteria);
 	
+	//도서 등록
+	int insertBook(ItemVO itemVO);
 }
