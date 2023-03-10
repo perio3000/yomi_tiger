@@ -24,7 +24,8 @@
 			<nav style="-bs-breadcrumb-divider: '&gt;';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">관리자홈</li>
+					<li class="breadcrumb-item"><a href="/admin/home">관리자홈</a></li>
+					<li class="breadcrumb-item active" aria-current="page">도서등록</li>
 				</ol>
 			</nav>
 		</div>
@@ -37,7 +38,7 @@
 					<div class="menuText">
 						<a href="/admin/home" class="menuTitle">관리자홈</a><br>
 						<a href="/admin/bookregister">도서등록</a><br>
-						
+						<a href="/admin/qnalist">문의내역</a><br>
 					</div>
 				</div>
 				
@@ -61,7 +62,7 @@
 										<div class="menuText2">
 											<a href="/admin/home" class="menuTitle">관리자홈</a><br>
 											<a href="/admin/bookregister">도서등록</a><br>
-											
+											<a href="/admin/qnalist">문의내역</a><br>
 										</div>
 									</div>
 								</div>

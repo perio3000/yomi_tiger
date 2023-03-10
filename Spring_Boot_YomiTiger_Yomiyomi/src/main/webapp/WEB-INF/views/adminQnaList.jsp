@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>YOMIYOMI-관리자홈</title>
+<title>YOMIYOMI-문의내역</title>
 <script type="text/javascript" src="/js/mypage.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/css/mypage.css">
@@ -24,7 +24,8 @@
 			<nav style="-bs-breadcrumb-divider: '&gt;';" aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">관리자홈</li>
+					<li class="breadcrumb-item"><a href="/admin/home">관리자홈</a></li>
+					<li class="breadcrumb-item active" aria-current="page">문의내역</li>
 				</ol>
 			</nav>
 		</div>
@@ -73,8 +74,10 @@
 			</div>
 
 			<div class="col-md-9">
-					
-
+				<div class="fs-3 fw-bolder text-center">
+					1:1 문의 내역
+				</div>
+				
 			</div>
 		</div>
 
